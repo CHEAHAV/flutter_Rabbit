@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../models/exam_part.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
@@ -55,7 +56,7 @@ class SubjectTile extends StatelessWidget {
                   const SizedBox(height: 3),
                   Text(
                     disabled ? 'មិនទាន់មានទិន្នន័យ' : '${kh(part.count)} សំណួរ',
-                    style: const TextStyle(fontSize: 11, color: AppColors.slate),
+                    style: TextStyle(fontSize: 11, color: AppColors.slate),
                   ),
                 ],
               ),
@@ -87,8 +88,8 @@ class _AccuracyChip extends StatelessWidget {
     final color = accuracy >= 0.75
         ? AppColors.emerald
         : accuracy >= 0.5
-            ? AppColors.amber
-            : AppColors.red;
+        ? AppColors.amber
+        : AppColors.red;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
@@ -97,7 +98,11 @@ class _AccuracyChip extends StatelessWidget {
       ),
       child: Text(
         '${kh(pct)}%',
-        style: TextStyle(fontSize: 10.5, fontWeight: FontWeight.w800, color: color),
+        style: TextStyle(
+          fontSize: 10.5,
+          fontWeight: FontWeight.w800,
+          color: color,
+        ),
       ),
     );
   }

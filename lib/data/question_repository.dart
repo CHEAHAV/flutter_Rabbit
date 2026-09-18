@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/services.dart' show rootBundle;
 
 import '../models/exam_part.dart';
@@ -38,7 +39,8 @@ class QuestionRepository {
     for (var i = 0; i < ExamPart.catalog.length; i++) {
       final partId = i + 1;
       final meta = ExamPart.catalog[i];
-      final fileName = 'assets/data/part_${partId.toString().padLeft(2, '0')}.json';
+      final fileName =
+          'assets/data/part_${partId.toString().padLeft(2, '0')}.json';
       List<Question> questions = const [];
       try {
         final raw = await rootBundle.loadString(fileName);
@@ -50,13 +52,15 @@ class QuestionRepository {
         // Missing/empty data file for this part — treat as not-yet-available.
         questions = const [];
       }
-      loaded.add(ExamPart(
-        id: partId,
-        titleKm: meta['title']!,
-        titleEn: meta['en']!,
-        icon: meta['icon']!,
-        questions: questions,
-      ));
+      loaded.add(
+        ExamPart(
+          id: partId,
+          titleKm: meta['title']!,
+          titleEn: meta['en']!,
+          icon: meta['icon']!,
+          questions: questions,
+        ),
+      );
     }
     _parts = loaded;
     _loaded = true;

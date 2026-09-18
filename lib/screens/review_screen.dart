@@ -38,18 +38,36 @@ class _ReviewScreenState extends State<ReviewScreen> {
             padding: const EdgeInsets.fromLTRB(18, 8, 18, 10),
             child: Row(
               children: [
-                Expanded(child: _filterChip('ទាំងអស់ (${kh(widget.result.total)})', _ReviewFilter.all)),
+                Expanded(
+                  child: _filterChip(
+                    'ទាំងអស់ (${kh(widget.result.total)})',
+                    _ReviewFilter.all,
+                  ),
+                ),
                 const SizedBox(width: 8),
-                Expanded(child: _filterChip('ខុស (${kh(widget.result.wrongCount)})', _ReviewFilter.wrong)),
+                Expanded(
+                  child: _filterChip(
+                    'ខុស (${kh(widget.result.wrongCount)})',
+                    _ReviewFilter.wrong,
+                  ),
+                ),
                 const SizedBox(width: 8),
-                Expanded(child: _filterChip('ចំណាំ (${kh(widget.result.attempts.where((a) => a.flagged).length)})', _ReviewFilter.flagged)),
+                Expanded(
+                  child: _filterChip(
+                    'ចំណាំ (${kh(widget.result.attempts.where((a) => a.flagged).length)})',
+                    _ReviewFilter.flagged,
+                  ),
+                ),
               ],
             ),
           ),
           Expanded(
             child: list.isEmpty
-                ? const Center(
-                    child: Text('គ្មានធាតុសម្រាប់តម្រងនេះទេ', style: TextStyle(color: AppColors.slate)),
+                ? Center(
+                    child: Text(
+                      'គ្មានធាតុសម្រាប់តម្រងនេះទេ',
+                      style: TextStyle(color: AppColors.slate),
+                    ),
                   )
                 : ListView.separated(
                     padding: const EdgeInsets.fromLTRB(18, 4, 18, 24),
@@ -57,8 +75,14 @@ class _ReviewScreenState extends State<ReviewScreen> {
                     separatorBuilder: (_, _) => const SizedBox(height: 10),
                     itemBuilder: (context, i) {
                       final a = list[i];
-                      final partTitle = app.repo.partById(a.question.partId).titleKm;
-                      return _ReviewCard(attempt: a, partTitle: partTitle, index: widget.result.attempts.indexOf(a));
+                      final partTitle = app.repo
+                          .partById(a.question.partId)
+                          .titleKm;
+                      return _ReviewCard(
+                        attempt: a,
+                        partTitle: partTitle,
+                        index: widget.result.attempts.indexOf(a),
+                      );
                     },
                   ),
           ),
@@ -76,13 +100,19 @@ class _ReviewScreenState extends State<ReviewScreen> {
         padding: const EdgeInsets.symmetric(vertical: 10),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: active ? AppColors.emerald : Colors.white,
-          border: Border.all(color: active ? AppColors.emerald : AppColors.line),
+          color: active ? AppColors.emerald : AppColors.card,
+          border: Border.all(
+            color: active ? AppColors.emerald : AppColors.line,
+          ),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Text(
           label,
-          style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: active ? Colors.white : AppColors.slate),
+          style: TextStyle(
+            fontSize: 11,
+            fontWeight: FontWeight.w700,
+            color: active ? AppColors.onEmerald : AppColors.slate,
+          ),
           textAlign: TextAlign.center,
         ),
       ),
@@ -94,7 +124,11 @@ class _ReviewCard extends StatelessWidget {
   final QuestionAttempt attempt;
   final String partTitle;
   final int index;
-  const _ReviewCard({required this.attempt, required this.partTitle, required this.index});
+  const _ReviewCard({
+    required this.attempt,
+    required this.partTitle,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -109,25 +143,54 @@ class _ReviewCard extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(color: AppColors.mint, borderRadius: BorderRadius.circular(999)),
-                  child: Text('សំណួរទី ${kh(index + 1)}',
-                      style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w800, color: AppColors.emerald)),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.mint,
+                    borderRadius: BorderRadius.circular(999),
+                  ),
+                  child: Text(
+                    'សំណួរទី ${kh(index + 1)}',
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w800,
+                      color: AppColors.emerald,
+                    ),
+                  ),
                 ),
                 const SizedBox(width: 6),
                 Expanded(
-                  child: Text(partTitle,
-                      style: const TextStyle(fontSize: 9.5, color: AppColors.slate), maxLines: 1, overflow: TextOverflow.ellipsis),
+                  child: Text(
+                    partTitle,
+                    style: TextStyle(fontSize: 9.5, color: AppColors.slate),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 Icon(
-                  skipped ? Icons.remove_circle_outline_rounded : (correct ? Icons.check_circle_rounded : Icons.cancel_rounded),
+                  skipped
+                      ? Icons.remove_circle_outline_rounded
+                      : (correct
+                            ? Icons.check_circle_rounded
+                            : Icons.cancel_rounded),
                   size: 18,
-                  color: skipped ? AppColors.muted : (correct ? AppColors.emerald : AppColors.red),
+                  color: skipped
+                      ? AppColors.muted
+                      : (correct ? AppColors.emerald : AppColors.red),
                 ),
               ],
             ),
             const SizedBox(height: 10),
-            Text(attempt.question.text, style: const TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700, height: 1.55)),
+            Text(
+              attempt.question.text,
+              style: const TextStyle(
+                fontSize: 13.5,
+                fontWeight: FontWeight.w700,
+                height: 1.55,
+              ),
+            ),
             const SizedBox(height: 10),
             for (var i = 0; i < 4; i++) _optionLine(i),
           ],
@@ -161,9 +224,20 @@ class _ReviewCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('${khmerLabelOf(i)}. ', style: TextStyle(color: color, fontWeight: weight, fontSize: 12.5)),
+          Text(
+            '${khmerLabelOf(i)}. ',
+            style: TextStyle(color: color, fontWeight: weight, fontSize: 12.5),
+          ),
           Expanded(
-            child: Text(attempt.question.options[i], style: TextStyle(color: color, fontWeight: weight, fontSize: 12.5, height: 1.5)),
+            child: Text(
+              attempt.question.options[i],
+              style: TextStyle(
+                color: color,
+                fontWeight: weight,
+                fontSize: 12.5,
+                height: 1.5,
+              ),
+            ),
           ),
           if (icon != null) Icon(icon, size: 15, color: iconColor),
         ],

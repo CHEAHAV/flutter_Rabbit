@@ -47,7 +47,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
               width: 42,
               height: 42,
               decoration: BoxDecoration(
-                gradient: const LinearGradient(
+                gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [AppColors.emerald, AppColors.emeraldDeep],
@@ -58,12 +58,18 @@ class _PracticeScreenState extends State<PracticeScreen> {
               child: const Text('🐇', style: TextStyle(fontSize: 20)),
             ),
             const SizedBox(width: 10),
-            const Expanded(
+            Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Rabbit', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800)),
-                  Text('ត្រៀមប្រឡងមន្ត្រីរាជការកម្ពុជា', style: TextStyle(fontSize: 10.5, color: AppColors.slate)),
+                  const Text(
+                    'Rabbit',
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+                  ),
+                  Text(
+                    'ត្រៀមប្រឡងមន្ត្រីរាជការកម្ពុជា',
+                    style: TextStyle(fontSize: 10.5, color: AppColors.slate),
+                  ),
                 ],
               ),
             ),
@@ -77,27 +83,44 @@ class _PracticeScreenState extends State<PracticeScreen> {
         Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            gradient: const LinearGradient(
+            gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [AppColors.emerald, AppColors.emeraldDeep],
+              colors: AppColors.isDark
+                  ? [AppColors.emeraldDeep, const Color(0xFF0D5C3A)]
+                  : [AppColors.emerald, AppColors.emeraldDeep],
             ),
             borderRadius: BorderRadius.circular(26),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('ហ្វឹកហាត់ប្រចាំថ្ងៃ',
-                  style: TextStyle(color: Colors.white70, fontWeight: FontWeight.w700, fontSize: 12)),
+              const Text(
+                'ហ្វឹកហាត់ប្រចាំថ្ងៃ',
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 12,
+                ),
+              ),
               const SizedBox(height: 8),
               const Text(
                 'ត្រៀមខ្លួនឲ្យរួចរាល់\nសម្រាប់ថ្ងៃប្រឡង',
-                style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w800, height: 1.35),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w800,
+                  height: 1.35,
+                ),
               ),
               const SizedBox(height: 8),
               Text(
                 'មានសំណួរសរុប ${kh(app.repo.totalQuestionCount)} សំណួរ ពី ១៣ ផ្នែកមេរៀនផ្លូវការ',
-                style: const TextStyle(color: Color(0xFFE6F1EB), fontSize: 12, height: 1.5),
+                style: const TextStyle(
+                  color: Color(0xFFE6F1EB),
+                  fontSize: 12,
+                  height: 1.5,
+                ),
               ),
               const SizedBox(height: 16),
               Row(
@@ -109,9 +132,12 @@ class _PracticeScreenState extends State<PracticeScreen> {
                         foregroundColor: AppColors.emerald,
                         side: BorderSide.none,
                       ),
-                      onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                        builder: (_) => const ExamConfigScreen(mode: ExamMode.practice),
-                      )),
+                      onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) =>
+                              const ExamConfigScreen(mode: ExamMode.practice),
+                        ),
+                      ),
                       icon: const Icon(Icons.tune_rounded, size: 18),
                       label: const Text('កំណត់ការប្រឡង'),
                     ),
@@ -145,7 +171,11 @@ class _PracticeScreenState extends State<PracticeScreen> {
                   ? {}
                   : available.map((p) => p.id).toSet();
             }),
-            child: Text(_selected.length == available.length ? 'ដកចេញទាំងអស់' : 'ជ្រើសទាំងអស់'),
+            child: Text(
+              _selected.length == available.length
+                  ? 'ដកចេញទាំងអស់'
+                  : 'ជ្រើសទាំងអស់',
+            ),
           ),
         ),
         const SizedBox(height: 10),
@@ -178,15 +208,25 @@ class _PracticeScreenState extends State<PracticeScreen> {
         Container(
           margin: const EdgeInsets.only(top: 10),
           padding: const EdgeInsets.symmetric(vertical: 11),
-          decoration: BoxDecoration(color: AppColors.mint, borderRadius: BorderRadius.circular(14)),
+          decoration: BoxDecoration(
+            color: AppColors.mint,
+            borderRadius: BorderRadius.circular(14),
+          ),
           alignment: Alignment.center,
           child: Text(
             'បានជ្រើសរើស ${kh(selectedCount)} មុខវិជ្ជា • សរុប ${kh(totalQuestions)} សំណួរ',
-            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.emerald),
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w700,
+              color: AppColors.emerald,
+            ),
           ),
         ),
         const SizedBox(height: 22),
-        const SectionHeader(title: 'ចំនួនសំណួរក្នុងវគ្គ', subtitle: 'ជ្រើសបរិមាណសម្រាប់ការហ្វឹកហាត់លើកនេះ'),
+        const SectionHeader(
+          title: 'ចំនួនសំណួរក្នុងវគ្គ',
+          subtitle: 'ជ្រើសបរិមាណសម្រាប់ការហ្វឹកហាត់លើកនេះ',
+        ),
         const SizedBox(height: 10),
         Card(
           child: Padding(
@@ -210,7 +250,9 @@ class _PracticeScreenState extends State<PracticeScreen> {
         SizedBox(
           height: 52,
           child: ElevatedButton(
-            onPressed: selectedCount == 0 ? null : () => _launch(context, app, totalQuestions),
+            onPressed: selectedCount == 0
+                ? null
+                : () => _launch(context, app, totalQuestions),
             child: Text(
               'ចាប់ផ្ដើមហ្វឹកហាត់ • ${_count == 0 ? kh(totalQuestions) : kh(_count.clamp(0, totalQuestions))} សំណួរ',
             ),
@@ -231,6 +273,8 @@ class _PracticeScreenState extends State<PracticeScreen> {
       instantFeedback: true,
       presetLabel: 'ហ្វឹកហាត់សេរី',
     );
-    Navigator.of(context).push(MaterialPageRoute(builder: (_) => QuizSessionScreen(config: config)));
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => QuizSessionScreen(config: config)),
+    );
   }
 }

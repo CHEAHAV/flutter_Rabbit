@@ -38,20 +38,35 @@ class _NotebookScreenState extends State<NotebookScreen> {
     return ListView(
       padding: const EdgeInsets.fromLTRB(18, 18, 18, 110),
       children: [
-        const SectionHeader(title: 'សៀវភៅកត់ត្រា', subtitle: 'តាមដានកំហុស និងសំណួរដែលបានរក្សាទុក'),
+        const SectionHeader(
+          title: 'សៀវភៅកត់ត្រា',
+          subtitle: 'តាមដានកំហុស និងសំណួរដែលបានរក្សាទុក',
+        ),
         const SizedBox(height: 14),
         Row(
           children: [
             Expanded(
-              child: _metric(kh(mistakeQuestions.length), 'ត្រូវពិនិត្យឡើងវិញ', AppColors.red),
+              child: _metric(
+                kh(mistakeQuestions.length),
+                'ត្រូវពិនិត្យឡើងវិញ',
+                AppColors.red,
+              ),
             ),
             const SizedBox(width: 9),
             Expanded(
-              child: _metric(kh(bookmarkQuestions.length), 'បានរក្សាទុក', AppColors.gold),
+              child: _metric(
+                kh(bookmarkQuestions.length),
+                'បានរក្សាទុក',
+                AppColors.gold,
+              ),
             ),
             const SizedBox(width: 9),
             Expanded(
-              child: _metric(kh(mastered), 'ចម្លើយត្រឹមត្រូវសរុប', AppColors.emerald),
+              child: _metric(
+                kh(mastered),
+                'ចម្លើយត្រឹមត្រូវសរុប',
+                AppColors.emerald,
+              ),
             ),
           ],
         ),
@@ -63,15 +78,29 @@ class _NotebookScreenState extends State<NotebookScreen> {
                 ? null
                 : () => _practiceMistakes(context, mistakeQuestions),
             icon: const Icon(Icons.refresh_rounded),
-            label: Text('ហ្វឹកហាត់សំណួរខុសទាំង ${kh(mistakeQuestions.length)} ឡើងវិញ'),
+            label: Text(
+              'ហ្វឹកហាត់សំណួរខុសទាំង ${kh(mistakeQuestions.length)} ឡើងវិញ',
+            ),
           ),
         ),
         const SizedBox(height: 20),
         Row(
           children: [
-            Expanded(child: _tab('សំណួរខុស (${kh(mistakeQuestions.length)})', !_showBookmarks, () => setState(() => _showBookmarks = false))),
+            Expanded(
+              child: _tab(
+                'សំណួរខុស (${kh(mistakeQuestions.length)})',
+                !_showBookmarks,
+                () => setState(() => _showBookmarks = false),
+              ),
+            ),
             const SizedBox(width: 8),
-            Expanded(child: _tab('បានរក្សាទុក (${kh(bookmarkQuestions.length)})', _showBookmarks, () => setState(() => _showBookmarks = true))),
+            Expanded(
+              child: _tab(
+                'បានរក្សាទុក (${kh(bookmarkQuestions.length)})',
+                _showBookmarks,
+                () => setState(() => _showBookmarks = true),
+              ),
+            ),
           ],
         ),
         const SizedBox(height: 14),
@@ -81,14 +110,19 @@ class _NotebookScreenState extends State<NotebookScreen> {
               padding: const EdgeInsets.all(28),
               child: Column(
                 children: [
-                  Icon(_showBookmarks ? Icons.bookmark_border_rounded : Icons.emoji_events_outlined,
-                      size: 32, color: AppColors.muted),
+                  Icon(
+                    _showBookmarks
+                        ? Icons.bookmark_border_rounded
+                        : Icons.emoji_events_outlined,
+                    size: 32,
+                    color: AppColors.muted,
+                  ),
                   const SizedBox(height: 10),
                   Text(
                     _showBookmarks
                         ? 'អ្នកមិនទាន់រក្សាទុកសំណួរណាមួយទេ'
                         : 'ល្អណាស់! អ្នកមិនមានសំណួរខុសដែលត្រូវពិនិត្យឡើងវិញទេ',
-                    style: const TextStyle(fontSize: 12, color: AppColors.slate),
+                    style: TextStyle(fontSize: 12, color: AppColors.slate),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -96,11 +130,13 @@ class _NotebookScreenState extends State<NotebookScreen> {
             ),
           )
         else
-          ...list.map((q) => _QuestionPreviewCard(
-                question: q,
-                partTitle: app.repo.partById(q.partId).titleKm,
-                isBookmark: _showBookmarks,
-              )),
+          ...list.map(
+            (q) => _QuestionPreviewCard(
+              question: q,
+              partTitle: app.repo.partById(q.partId).titleKm,
+              isBookmark: _showBookmarks,
+            ),
+          ),
       ],
     );
   }
@@ -109,15 +145,26 @@ class _NotebookScreenState extends State<NotebookScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 6),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.card,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.line),
       ),
       child: Column(
         children: [
-          Text(value, style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800, color: color)),
+          Text(
+            value,
+            style: TextStyle(
+              fontSize: 19,
+              fontWeight: FontWeight.w800,
+              color: color,
+            ),
+          ),
           const SizedBox(height: 4),
-          Text(label, style: const TextStyle(fontSize: 9.5, color: AppColors.slate), textAlign: TextAlign.center),
+          Text(
+            label,
+            style: TextStyle(fontSize: 9.5, color: AppColors.slate),
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );
@@ -131,13 +178,19 @@ class _NotebookScreenState extends State<NotebookScreen> {
         padding: const EdgeInsets.symmetric(vertical: 10),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: active ? AppColors.emerald : Colors.white,
-          border: Border.all(color: active ? AppColors.emerald : AppColors.line),
+          color: active ? AppColors.emerald : AppColors.card,
+          border: Border.all(
+            color: active ? AppColors.emerald : AppColors.line,
+          ),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Text(
           label,
-          style: TextStyle(fontSize: 11.5, fontWeight: FontWeight.w700, color: active ? Colors.white : AppColors.slate),
+          style: TextStyle(
+            fontSize: 11.5,
+            fontWeight: FontWeight.w700,
+            color: active ? AppColors.onEmerald : AppColors.slate,
+          ),
         ),
       ),
     );
@@ -153,9 +206,12 @@ class _NotebookScreenState extends State<NotebookScreen> {
       instantFeedback: true,
       presetLabel: 'ពិនិត្យសំណួរខុស',
     );
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (_) => QuizSessionScreen(config: config, overrideQuestions: questions),
-    ));
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) =>
+            QuizSessionScreen(config: config, overrideQuestions: questions),
+      ),
+    );
   }
 }
 
@@ -164,7 +220,11 @@ class _QuestionPreviewCard extends StatelessWidget {
   final String partTitle;
   final bool isBookmark;
 
-  const _QuestionPreviewCard({required this.question, required this.partTitle, required this.isBookmark});
+  const _QuestionPreviewCard({
+    required this.question,
+    required this.partTitle,
+    required this.isBookmark,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -179,12 +239,28 @@ class _QuestionPreviewCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
-                    decoration: BoxDecoration(color: AppColors.mint, borderRadius: BorderRadius.circular(999)),
-                    child: Text(partTitle, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: AppColors.emerald)),
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 9,
+                        vertical: 5,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.mint,
+                        borderRadius: BorderRadius.circular(999),
+                      ),
+                      child: Text(
+                        partTitle,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.emerald,
+                        ),
+                      ),
+                    ),
                   ),
-                  const Spacer(),
                   IconButton(
                     visualDensity: VisualDensity.compact,
                     onPressed: () async {
@@ -192,7 +268,9 @@ class _QuestionPreviewCard extends StatelessWidget {
                       app.refresh();
                     },
                     icon: Icon(
-                      app.progress.isBookmarked(question.uid) ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
+                      app.progress.isBookmarked(question.uid)
+                          ? Icons.bookmark_rounded
+                          : Icons.bookmark_border_rounded,
                       color: AppColors.gold,
                       size: 20,
                     ),
@@ -200,15 +278,29 @@ class _QuestionPreviewCard extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 6),
-              Text(question.text, style: const TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700, height: 1.55)),
+              Text(
+                question.text,
+                style: const TextStyle(
+                  fontSize: 13.5,
+                  fontWeight: FontWeight.w700,
+                  height: 1.55,
+                ),
+              ),
               const SizedBox(height: 10),
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(color: AppColors.mint, borderRadius: BorderRadius.circular(12)),
+                decoration: BoxDecoration(
+                  color: AppColors.mint,
+                  borderRadius: BorderRadius.circular(12),
+                ),
                 child: Text(
                   '✓ ចម្លើយត្រឹមត្រូវ៖ ${khmerLabel(question.answerIndex)}. ${question.correctOptionText}',
-                  style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.emerald),
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.emerald,
+                  ),
                 ),
               ),
             ],

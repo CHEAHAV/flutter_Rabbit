@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/exam_result.dart';
@@ -20,6 +21,7 @@ class ProgressService {
   static const _kTotalCorrect = 'rabbit.totalCorrect';
   static const _kDisplayName = 'rabbit.displayName';
   static const _kGoalPartId = 'rabbit.goalPartId';
+  static const _kDarkMode = 'rabbit.darkMode';
 
   late SharedPreferences _prefs;
   bool _ready = false;
@@ -35,13 +37,19 @@ class ProgressService {
     _mistakes = (_prefs.getStringList(_kMistakes) ?? []).toSet();
     _bookmarks = (_prefs.getStringList(_kBookmarks) ?? []).toSet();
     _history = (_prefs.getStringList(_kHistory) ?? [])
-        .map((s) => HistoryEntry.fromJson(jsonDecode(s) as Map<String, dynamic>))
+        .map(
+          (s) => HistoryEntry.fromJson(jsonDecode(s) as Map<String, dynamic>),
+        )
         .toList();
     final statsRaw = _prefs.getString(_kPartStats);
     if (statsRaw != null) {
       final map = jsonDecode(statsRaw) as Map<String, dynamic>;
-      _partStats = map.map((k, v) =>
-          MapEntry(int.parse(k), PartStat.fromJson(int.parse(k), v as Map<String, dynamic>)));
+      _partStats = map.map(
+        (k, v) => MapEntry(
+          int.parse(k),
+          PartStat.fromJson(int.parse(k), v as Map<String, dynamic>),
+        ),
+      );
     }
     _ready = true;
   }
@@ -75,8 +83,10 @@ class ProgressService {
   }
 
   // ---- Profile --------------------------------------------------------
-  String get displayName => _prefs.getString(_kDisplayName) ?? 'សិស្សត្រៀមប្រឡង';
-  Future<void> setDisplayName(String name) => _prefs.setString(_kDisplayName, name);
+  String get displayName =>
+      _prefs.getString(_kDisplayName) ?? 'សិស្សត្រៀមប្រឡង';
+  Future<void> setDisplayName(String name) =>
+      _prefs.setString(_kDisplayName, name);
 
   int? get goalPartId => _prefs.getInt(_kGoalPartId);
   Future<void> setGoalPartId(int? id) async {
@@ -86,6 +96,10 @@ class ProgressService {
       await _prefs.setInt(_kGoalPartId, id);
     }
   }
+
+  // ---- Appearance -------------------------------------------------------
+  bool get isDarkMode => _prefs.getBool(_kDarkMode) ?? false;
+  Future<void> setDarkMode(bool value) => _prefs.setBool(_kDarkMode, value);
 
   // ---- Mistakes notebook ----------------------------------------------
   Set<String> get mistakeUids => _mistakes;
@@ -119,9 +133,11 @@ class ProgressService {
 
   int get totalAnswered => _prefs.getInt(_kTotalAnswered) ?? 0;
   int get totalCorrect => _prefs.getInt(_kTotalCorrect) ?? 0;
-  double get overallAccuracy => totalAnswered == 0 ? 0 : totalCorrect / totalAnswered;
+  double get overallAccuracy =>
+      totalAnswered == 0 ? 0 : totalCorrect / totalAnswered;
 
-  PartStat statFor(int partId) => _partStats[partId] ?? PartStat(partId: partId, answered: 0, correct: 0);
+  PartStat statFor(int partId) =>
+      _partStats[partId] ?? PartStat(partId: partId, answered: 0, correct: 0);
 
   /// Call once when an exam/practice session finishes.
   Future<void> recordResult(ExamResult result) async {
@@ -167,7 +183,10 @@ class ProgressService {
     if (_history.length > 60) {
       _history = _history.sublist(_history.length - 60);
     }
-    await _prefs.setStringList(_kHistory, _history.map((e) => jsonEncode(e.toJson())).toList());
+    await _prefs.setStringList(
+      _kHistory,
+      _history.map((e) => jsonEncode(e.toJson())).toList(),
+    );
 
     _touchStreak();
   }
@@ -177,10 +196,15 @@ class ProgressService {
   double readinessIndex(int totalPartsWithData) {
     if (totalAnswered == 0) return 0;
     final accuracyScore = overallAccuracy.clamp(0, 1) * 65;
-    final coveredParts = _partStats.values.where((s) => s.answered >= 10).length;
-    final coverageScore =
-        totalPartsWithData == 0 ? 0 : (coveredParts / totalPartsWithData).clamp(0, 1) * 25;
+    final coveredParts = _partStats.values
+        .where((s) => s.answered >= 10)
+        .length;
+    final coverageScore = totalPartsWithData == 0
+        ? 0
+        : (coveredParts / totalPartsWithData).clamp(0, 1) * 25;
     final volumeScore = (totalAnswered / 300).clamp(0, 1) * 10;
-    return (accuracyScore + coverageScore + volumeScore).clamp(0, 100).toDouble();
+    return (accuracyScore + coverageScore + volumeScore)
+        .clamp(0, 100)
+        .toDouble();
   }
 }

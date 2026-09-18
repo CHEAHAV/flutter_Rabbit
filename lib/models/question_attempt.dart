@@ -6,8 +6,13 @@ class QuestionAttempt {
   int? selectedIndex;
   bool flagged;
 
-  QuestionAttempt({required this.question, this.selectedIndex, this.flagged = false});
+  QuestionAttempt({
+    required this.question,
+    this.selectedIndex,
+    this.flagged = false,
+  });
 
   bool get isAnswered => selectedIndex != null;
-  bool get isCorrect => selectedIndex != null && selectedIndex == question.answerIndex;
+  bool get isCorrect =>
+      selectedIndex != null && selectedIndex == question.answerIndex;
 }

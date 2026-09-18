@@ -32,7 +32,11 @@ class SplashScreen extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(28),
                     boxShadow: [
-                      BoxShadow(color: Colors.black.withValues(alpha: 0.25), blurRadius: 30, offset: const Offset(0, 14)),
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.25),
+                        blurRadius: 30,
+                        offset: const Offset(0, 14),
+                      ),
                     ],
                   ),
                   alignment: Alignment.center,
@@ -41,19 +45,31 @@ class SplashScreen extends StatelessWidget {
                 const SizedBox(height: 22),
                 const Text(
                   'Rabbit',
-                  style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: 0.5),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 0.5,
+                  ),
                 ),
                 const SizedBox(height: 6),
                 const Text(
                   'ត្រៀមប្រឡងមន្ត្រីរាជការឲ្យលឿន និងច្បាស់',
-                  style: TextStyle(color: Color(0xFFDCEEE3), fontSize: 13, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                    color: Color(0xFFDCEEE3),
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 const SizedBox(height: 34),
                 if (app.bootError == null)
                   const SizedBox(
                     width: 28,
                     height: 28,
-                    child: CircularProgressIndicator(color: Colors.white, strokeWidth: 3),
+                    child: CircularProgressIndicator(
+                      color: Colors.white,
+                      strokeWidth: 3,
+                    ),
                   )
                 else
                   Padding(
@@ -61,7 +77,10 @@ class SplashScreen extends StatelessWidget {
                     child: Text(
                       'មិនអាចផ្ទុកទិន្នន័យបាន៖ ${app.bootError}',
                       textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.white70, fontSize: 12),
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 12,
+                      ),
                     ),
                   ),
               ],

@@ -5,7 +5,11 @@ class PartBreakdown {
   final int partId;
   final int total;
   final int correct;
-  PartBreakdown({required this.partId, required this.total, required this.correct});
+  PartBreakdown({
+    required this.partId,
+    required this.total,
+    required this.correct,
+  });
   double get percent => total == 0 ? 0 : correct / total;
 }
 
@@ -24,7 +28,8 @@ class ExamResult {
 
   int get total => attempts.length;
   int get correctCount => attempts.where((a) => a.isCorrect).length;
-  int get wrongCount => attempts.where((a) => a.isAnswered && !a.isCorrect).length;
+  int get wrongCount =>
+      attempts.where((a) => a.isAnswered && !a.isCorrect).length;
   int get skippedCount => attempts.where((a) => !a.isAnswered).length;
 
   double get scorePercent => total == 0 ? 0 : (correctCount / total) * 100;
@@ -39,13 +44,15 @@ class ExamResult {
     for (final a in attempts) {
       map.putIfAbsent(a.question.partId, () => []).add(a);
     }
-    return map.map((partId, list) => MapEntry(
-          partId,
-          PartBreakdown(
-            partId: partId,
-            total: list.length,
-            correct: list.where((a) => a.isCorrect).length,
-          ),
-        ));
+    return map.map(
+      (partId, list) => MapEntry(
+        partId,
+        PartBreakdown(
+          partId: partId,
+          total: list.length,
+          correct: list.where((a) => a.isCorrect).length,
+        ),
+      ),
+    );
   }
 }

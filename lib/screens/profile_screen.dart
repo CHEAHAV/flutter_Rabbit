@@ -30,25 +30,56 @@ class ProfileScreen extends StatelessWidget {
                   width: 78,
                   height: 78,
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(colors: [Color(0xFFD8ECE0), Color(0xFFBCD9C7)]),
+                    gradient: LinearGradient(
+                      colors: AppColors.isDark
+                          ? const [Color(0xFF1B3327), Color(0xFF14261D)]
+                          : const [Color(0xFFD8ECE0), Color(0xFFBCD9C7)],
+                    ),
                     borderRadius: BorderRadius.circular(24),
-                    border: Border.all(color: Colors.white, width: 4),
-                    boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.06), blurRadius: 14, offset: const Offset(0, 6))],
+                    border: Border.all(color: AppColors.card, width: 4),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.06),
+                        blurRadius: 14,
+                        offset: const Offset(0, 6),
+                      ),
+                    ],
                   ),
                   alignment: Alignment.center,
                   child: const Text('🐇', style: TextStyle(fontSize: 32)),
                 ),
                 const SizedBox(height: 12),
-                Text(progress.displayName, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800)),
+                Text(
+                  progress.displayName,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
                 const SizedBox(height: 4),
-                const Text('សិស្សត្រៀមប្រឡងមន្ត្រីរាជការ', style: TextStyle(fontSize: 11.5, color: AppColors.slate)),
+                Text(
+                  'សិស្សត្រៀមប្រឡងមន្ត្រីរាជការ',
+                  style: TextStyle(fontSize: 11.5, color: AppColors.slate),
+                ),
                 const SizedBox(height: 10),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
-                  decoration: BoxDecoration(color: const Color(0xFFFFF7E7), borderRadius: BorderRadius.circular(999)),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 7,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.amberBg,
+                    borderRadius: BorderRadius.circular(999),
+                  ),
                   child: Text(
                     '🔥 រៀនជាប់គ្នា ${kh(progress.streak)} ថ្ងៃ',
-                    style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: Color(0xFF865800)),
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w800,
+                      color: AppColors.isDark
+                          ? AppColors.amber
+                          : const Color(0xFF865800),
+                    ),
                   ),
                 ),
               ],
@@ -56,7 +87,78 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 22),
-        const SectionHeader(title: 'សន្ទស្សន៍ត្រៀមប្រឡង', subtitle: 'គណនាពីភាពត្រឹមត្រូវ និងភាពគ្របដណ្តប់មេរៀន'),
+        const SectionHeader(
+          title: 'រូបរាង',
+          subtitle: 'ជ្រើសរបៀបបង្ហាញដែលអ្នកចូលចិត្ត',
+        ),
+        const SizedBox(height: 10),
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            child: Row(
+              children: [
+                Container(
+                  width: 38,
+                  height: 38,
+                  decoration: BoxDecoration(
+                    color: AppColors.mint,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  alignment: Alignment.center,
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 220),
+                    child: Icon(
+                      app.isDarkMode
+                          ? Icons.dark_mode_rounded
+                          : Icons.light_mode_rounded,
+                      key: ValueKey(app.isDarkMode),
+                      color: AppColors.emerald,
+                      size: 18,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'ម៉ូដងងឹត (Dark Mode)',
+                        style: TextStyle(
+                          fontSize: 12.5,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 220),
+                        child: Text(
+                          app.isDarkMode
+                              ? 'កំពុងប្រើប្រាស់'
+                              : 'បិទ — កំពុងប្រើពន្លឺធម្មតា',
+                          key: ValueKey(app.isDarkMode),
+                          style: TextStyle(
+                            fontSize: 10.5,
+                            color: AppColors.slate,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Switch(
+                  value: app.isDarkMode,
+                  onChanged: (v) => app.setDarkMode(v),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 22),
+        const SectionHeader(
+          title: 'សន្ទស្សន៍ត្រៀមប្រឡង',
+          subtitle: 'គណនាពីភាពត្រឹមត្រូវ និងភាពគ្របដណ្តប់មេរៀន',
+        ),
         const SizedBox(height: 10),
         Card(
           child: Padding(
@@ -67,11 +169,26 @@ class ProfileScreen extends StatelessWidget {
                 const SizedBox(height: 14),
                 Row(
                   children: [
-                    Expanded(child: StatBox(value: kh(app.progress.history.length), label: 'វគ្គប្រឡងរួច')),
+                    Expanded(
+                      child: StatBox(
+                        value: kh(app.progress.history.length),
+                        label: 'វគ្គប្រឡងរួច',
+                      ),
+                    ),
                     const SizedBox(width: 8),
-                    Expanded(child: StatBox(value: kh(progress.totalAnswered), label: 'សំណួរបានឆ្លើយ')),
+                    Expanded(
+                      child: StatBox(
+                        value: kh(progress.totalAnswered),
+                        label: 'សំណួរបានឆ្លើយ',
+                      ),
+                    ),
                     const SizedBox(width: 8),
-                    Expanded(child: StatBox(value: khPercent((progress.overallAccuracy * 100)), label: 'ភាពត្រឹមត្រូវ')),
+                    Expanded(
+                      child: StatBox(
+                        value: khPercent((progress.overallAccuracy * 100)),
+                        label: 'ភាពត្រឹមត្រូវ',
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -79,7 +196,10 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 22),
-        const SectionHeader(title: 'សមត្ថភាពតាមមុខវិជ្ជា', subtitle: 'ស្គាល់ចំណុចខ្លាំង និងចំណុចត្រូវពង្រឹង'),
+        const SectionHeader(
+          title: 'សមត្ថភាពតាមមុខវិជ្ជា',
+          subtitle: 'ស្គាល់ចំណុចខ្លាំង និងចំណុចត្រូវពង្រឹង',
+        ),
         const SizedBox(height: 10),
         Card(
           child: Padding(
@@ -87,7 +207,10 @@ class ProfileScreen extends StatelessWidget {
             child: Column(
               children: [
                 for (final part in partsWithData) ...[
-                  _CompetencyRow(title: part.titleKm, stat: progress.statFor(part.id)),
+                  _CompetencyRow(
+                    title: part.titleKm,
+                    stat: progress.statFor(part.id),
+                  ),
                   if (part != partsWithData.last) const SizedBox(height: 14),
                 ],
               ],
@@ -95,16 +218,31 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 22),
-        const SectionHeader(title: 'អំពីទិន្នន័យ', subtitle: 'ប្រភពសំណួរ និងកំណែកម្មវិធី'),
+        const SectionHeader(
+          title: 'អំពីទិន្នន័យ',
+          subtitle: 'ប្រភពសំណួរ និងកំណែកម្មវិធី',
+        ),
         const SizedBox(height: 10),
         Card(
           child: Column(
             children: [
-              _infoRow(Icons.menu_book_rounded, 'ធនាគារសំណួរ', '${kh(app.repo.totalQuestionCount)} សំណួរ • ១៣ ផ្នែក'),
+              _infoRow(
+                Icons.menu_book_rounded,
+                'ធនាគារសំណួរ',
+                '${kh(app.repo.totalQuestionCount)} សំណួរ • ១៣ ផ្នែក',
+              ),
               const Divider(height: 1),
-              _infoRow(Icons.storage_rounded, 'ការផ្ទុកទិន្នន័យ', 'រក្សាទុកនៅលើឧបករណ៍ ក្នុងទម្រង់ Offline'),
+              _infoRow(
+                Icons.storage_rounded,
+                'ការផ្ទុកទិន្នន័យ',
+                'រក្សាទុកនៅលើឧបករណ៍ ក្នុងទម្រង់ Offline',
+              ),
               const Divider(height: 1),
-              _infoRow(Icons.info_outline_rounded, 'កំណែកម្មវិធី', 'Rabbit v1.0.0'),
+              _infoRow(
+                Icons.info_outline_rounded,
+                'កំណែកម្មវិធី',
+                'Rabbit v1.0.0',
+              ),
             ],
           ),
         ),
@@ -120,7 +258,10 @@ class ProfileScreen extends StatelessWidget {
           Container(
             width: 38,
             height: 38,
-            decoration: BoxDecoration(color: AppColors.mint, borderRadius: BorderRadius.circular(12)),
+            decoration: BoxDecoration(
+              color: AppColors.mint,
+              borderRadius: BorderRadius.circular(12),
+            ),
             alignment: Alignment.center,
             child: Icon(icon, color: AppColors.emerald, size: 18),
           ),
@@ -129,9 +270,18 @@ class ProfileScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700)),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 12.5,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
                 const SizedBox(height: 2),
-                Text(sub, style: const TextStyle(fontSize: 10.5, color: AppColors.slate)),
+                Text(
+                  sub,
+                  style: TextStyle(fontSize: 10.5, color: AppColors.slate),
+                ),
               ],
             ),
           ),
@@ -154,21 +304,33 @@ class _CompetencyRow extends StatelessWidget {
     final color = answered == 0
         ? AppColors.muted
         : accuracy >= 0.75
-            ? AppColors.emerald
-            : accuracy >= 0.5
-                ? AppColors.amber
-                : AppColors.red;
+        ? AppColors.emerald
+        : accuracy >= 0.5
+        ? AppColors.amber
+        : AppColors.red;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
             Expanded(
-              child: Text(title, style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700), maxLines: 1, overflow: TextOverflow.ellipsis),
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 12.5,
+                  fontWeight: FontWeight.w700,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
             Text(
               answered == 0 ? 'មិនទាន់ហ្វឹកហាត់' : '${kh(pct)}%',
-              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: color),
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w800,
+                color: color,
+              ),
             ),
           ],
         ),
@@ -178,7 +340,7 @@ class _CompetencyRow extends StatelessWidget {
           child: LinearProgressIndicator(
             value: answered == 0 ? 0 : accuracy,
             minHeight: 8,
-            backgroundColor: const Color(0xFFE7EEEA),
+            backgroundColor: AppColors.line,
             color: color,
           ),
         ),

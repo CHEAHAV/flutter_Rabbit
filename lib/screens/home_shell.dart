@@ -30,21 +30,27 @@ class _HomeShellState extends State<HomeShell> {
         bottom: false,
         child: IndexedStack(index: _index, children: _screens),
       ),
-      bottomNavigationBar: NavigationBarTheme(
-        data: const NavigationBarThemeData(
-          height: 68,
-          labelTextStyle: WidgetStatePropertyAll(TextStyle(fontSize: 10.5, fontWeight: FontWeight.w700)),
-        ),
-        child: NavigationBar(
-          selectedIndex: _index,
-          onDestinationSelected: (i) => setState(() => _index = i),
-          destinations: const [
-            NavigationDestination(icon: Icon(Icons.grid_view_rounded), label: 'វិញ្ញាសា'),
-            NavigationDestination(icon: Icon(Icons.timer_outlined), label: 'ប្រឡងសាកល្បង'),
-            NavigationDestination(icon: Icon(Icons.menu_book_rounded), label: 'សៀវភៅកត់ត្រា'),
-            NavigationDestination(icon: Icon(Icons.person_outline_rounded), label: 'គណនី'),
-          ],
-        ),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _index,
+        onDestinationSelected: (i) => setState(() => _index = i),
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.grid_view_rounded),
+            label: 'វិញ្ញាសា',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.timer_outlined),
+            label: 'ប្រឡងសាកល្បង',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.menu_book_rounded),
+            label: 'សៀវភៅកត់ត្រា',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.person_outline_rounded),
+            label: 'គណនី',
+          ),
+        ],
       ),
     );
   }

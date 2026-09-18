@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
 
@@ -22,7 +23,7 @@ class ReadinessGauge extends StatelessWidget {
             child: CircularProgressIndicator(
               value: 1,
               strokeWidth: 12,
-              color: const Color(0xFFE5ECE8),
+              color: AppColors.line,
             ),
           ),
           SizedBox(
@@ -46,9 +47,16 @@ class ReadinessGauge extends StatelessWidget {
             children: [
               Text(
                 '${kh(value.round())}%',
-                style: const TextStyle(fontSize: 27, fontWeight: FontWeight.w800, color: AppColors.emerald),
+                style: TextStyle(
+                  fontSize: 27,
+                  fontWeight: FontWeight.w800,
+                  color: AppColors.emerald,
+                ),
               ),
-              const Text('ត្រៀមខ្លួន', style: TextStyle(fontSize: 10.5, color: AppColors.slate)),
+              Text(
+                'ត្រៀមខ្លួន',
+                style: TextStyle(fontSize: 10.5, color: AppColors.slate),
+              ),
             ],
           ),
         ],

@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 
 import '../models/exam_config.dart';
@@ -19,7 +20,7 @@ class ExamSession extends ChangeNotifier {
   Timer? _timer;
 
   ExamSession({required this.config, required List<Question> questions})
-      : attempts = questions.map((q) => QuestionAttempt(question: q)).toList() {
+    : attempts = questions.map((q) => QuestionAttempt(question: q)).toList() {
     remaining = config.timeLimit;
     _timer = Timer.periodic(const Duration(seconds: 1), _tick);
   }
@@ -32,7 +33,9 @@ class ExamSession extends ChangeNotifier {
   bool get isFirst => currentIndex == 0;
 
   bool get lowTime =>
-      remaining != null && remaining!.inSeconds > 0 && remaining!.inSeconds <= 5 * 60;
+      remaining != null &&
+      remaining!.inSeconds > 0 &&
+      remaining!.inSeconds <= 5 * 60;
 
   void _tick(Timer t) {
     elapsed += const Duration(seconds: 1);

@@ -15,7 +15,13 @@ class _Preset {
   final int count;
   final Duration? time;
   final bool instantFeedback;
-  const _Preset(this.label, this.sub, this.count, this.time, this.instantFeedback);
+  const _Preset(
+    this.label,
+    this.sub,
+    this.count,
+    this.time,
+    this.instantFeedback,
+  );
 }
 
 const _practicePresets = [
@@ -49,7 +55,8 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
   int _presetIndex = 1;
   bool _initialized = false;
 
-  List<_Preset> get _presets => widget.mode == ExamMode.mock ? _mockPresets : _practicePresets;
+  List<_Preset> get _presets =>
+      widget.mode == ExamMode.mock ? _mockPresets : _practicePresets;
 
   @override
   Widget build(BuildContext context) {
@@ -71,21 +78,33 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
     }
 
     final selectedCount = _selected.length;
-    final maxQuestions =
-        parts.where((p) => _selected.contains(p.id)).fold<int>(0, (s, p) => s + p.count);
-    final effectiveCount = _count.clamp(0, maxQuestions == 0 ? 0 : maxQuestions);
+    final maxQuestions = parts
+        .where((p) => _selected.contains(p.id))
+        .fold<int>(0, (s, p) => s + p.count);
+    final effectiveCount = _count.clamp(
+      0,
+      maxQuestions == 0 ? 0 : maxQuestions,
+    );
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.mode == ExamMode.mock ? 'កំណត់ Mock Exam' : 'កំណត់ការប្រឡង'),
+        title: Text(
+          widget.mode == ExamMode.mock ? 'កំណត់ Mock Exam' : 'កំណត់ការប្រឡង',
+        ),
         actions: [
-          IconButton(onPressed: () => Navigator.of(context).pop(), icon: const Icon(Icons.close_rounded)),
+          IconButton(
+            onPressed: () => Navigator.of(context).pop(),
+            icon: const Icon(Icons.close_rounded),
+          ),
         ],
       ),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(18, 8, 18, 8),
         children: [
-          const SectionHeader(title: 'Preset ប្រើឆាប់', subtitle: 'ចាប់ផ្ដើមលឿនជាមួយការកំណត់ស្រាប់'),
+          const SectionHeader(
+            title: 'Preset ប្រើឆាប់',
+            subtitle: 'ចាប់ផ្ដើមលឿនជាមួយការកំណត់ស្រាប់',
+          ),
           const SizedBox(height: 10),
           Row(
             children: List.generate(_presets.length, (i) {
@@ -93,7 +112,9 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
               final active = _presetIndex == i;
               return Expanded(
                 child: Padding(
-                  padding: EdgeInsets.only(right: i == _presets.length - 1 ? 0 : 8),
+                  padding: EdgeInsets.only(
+                    right: i == _presets.length - 1 ? 0 : 8,
+                  ),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(16),
                     onTap: () => setState(() {
@@ -103,17 +124,36 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
                       _instantFeedback = p.instantFeedback;
                     }),
                     child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 12,
+                        horizontal: 8,
+                      ),
                       decoration: BoxDecoration(
-                        color: active ? AppColors.mintSoft : Colors.white,
+                        color: active ? AppColors.mintSoft : AppColors.card,
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: active ? AppColors.emerald : AppColors.line, width: active ? 2 : 1),
+                        border: Border.all(
+                          color: active ? AppColors.emerald : AppColors.line,
+                          width: active ? 2 : 1,
+                        ),
                       ),
                       child: Column(
                         children: [
-                          Text(p.label, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 12.5)),
+                          Text(
+                            p.label,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 12.5,
+                            ),
+                          ),
                           const SizedBox(height: 4),
-                          Text(p.sub, style: const TextStyle(fontSize: 9.5, color: AppColors.slate), textAlign: TextAlign.center),
+                          Text(
+                            p.sub,
+                            style: TextStyle(
+                              fontSize: 9.5,
+                              color: AppColors.slate,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
                         ],
                       ),
                     ),
@@ -128,9 +168,15 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
             subtitle: 'ជ្រើសផ្នែកមេរៀនចង់បញ្ចូល',
             trailing: TextButton(
               onPressed: () => setState(() {
-                _selected = _selected.length == available.length ? {} : available.map((p) => p.id).toSet();
+                _selected = _selected.length == available.length
+                    ? {}
+                    : available.map((p) => p.id).toSet();
               }),
-              child: Text(_selected.length == available.length ? 'ដកចេញទាំងអស់' : 'ជ្រើសទាំងអស់'),
+              child: Text(
+                _selected.length == available.length
+                    ? 'ដកចេញទាំងអស់'
+                    : 'ជ្រើសទាំងអស់',
+              ),
             ),
           ),
           const SizedBox(height: 10),
@@ -160,15 +206,25 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
           Container(
             margin: const EdgeInsets.only(top: 10),
             padding: const EdgeInsets.symmetric(vertical: 11),
-            decoration: BoxDecoration(color: AppColors.mint, borderRadius: BorderRadius.circular(14)),
+            decoration: BoxDecoration(
+              color: AppColors.mint,
+              borderRadius: BorderRadius.circular(14),
+            ),
             alignment: Alignment.center,
             child: Text(
               'បានជ្រើសរើស ${kh(selectedCount)} មុខវិជ្ជា • សរុប ${kh(maxQuestions)} សំណួរ',
-              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.emerald),
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w700,
+                color: AppColors.emerald,
+              ),
             ),
           ),
           const SizedBox(height: 22),
-          const SectionHeader(title: 'រយៈពេល', subtitle: 'កំណត់ពេលវេលាសម្រាប់វគ្គប្រឡង'),
+          const SectionHeader(
+            title: 'រយៈពេល',
+            subtitle: 'កំណត់ពេលវេលាសម្រាប់វគ្គប្រឡង',
+          ),
           const SizedBox(height: 10),
           Wrap(
             spacing: 8,
@@ -182,7 +238,10 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
             ],
           ),
           const SizedBox(height: 22),
-          const SectionHeader(title: 'ចំនួនសំណួរ', subtitle: 'ទំហំក្រុមសំណួរសម្រាប់វគ្គនេះ'),
+          const SectionHeader(
+            title: 'ចំនួនសំណួរ',
+            subtitle: 'ទំហំក្រុមសំណួរសម្រាប់វគ្គនេះ',
+          ),
           const SizedBox(height: 10),
           Wrap(
             spacing: 8,
@@ -197,23 +256,43 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
             }).toList(),
           ),
           const SizedBox(height: 22),
-          const SectionHeader(title: 'លក្ខខណ្ឌប្រឡង', subtitle: 'កំណត់ឥរិយាបថក្នុងពេលធ្វើតេស្ត'),
+          const SectionHeader(
+            title: 'លក្ខខណ្ឌប្រឡង',
+            subtitle: 'កំណត់ឥរិយាបថក្នុងពេលធ្វើតេស្ត',
+          ),
           const SizedBox(height: 10),
           Card(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 14),
               child: Column(
                 children: [
-                  _toggleRow('ច្របល់លំដាប់សំណួរ', 'Shuffle Questions', _shuffle, (v) => setState(() => _shuffle = v)),
+                  _toggleRow(
+                    'ច្របល់លំដាប់សំណួរ',
+                    'Shuffle Questions',
+                    _shuffle,
+                    (v) => setState(() => _shuffle = v),
+                  ),
                   const Divider(height: 1),
-                  _toggleRow('បង្ហាញចម្លើយភ្លាមៗ', 'Instant Feedback (មុខវិជ្ជាហ្វឹកហាត់)', _instantFeedback,
-                      (v) => setState(() => _instantFeedback = v)),
+                  _toggleRow(
+                    'បង្ហាញចម្លើយភ្លាមៗ',
+                    'Instant Feedback (មុខវិជ្ជាហ្វឹកហាត់)',
+                    _instantFeedback,
+                    (v) => setState(() => _instantFeedback = v),
+                  ),
                   const Divider(height: 1),
-                  _toggleRow('ដកពិន្ទុពេលឆ្លើយខុស', 'Negative Marking', _negativeMarking,
-                      (v) => setState(() => _negativeMarking = v)),
+                  _toggleRow(
+                    'ដកពិន្ទុពេលឆ្លើយខុស',
+                    'Negative Marking',
+                    _negativeMarking,
+                    (v) => setState(() => _negativeMarking = v),
+                  ),
                   const Divider(height: 1),
-                  _toggleRow('ប្រកាសព្រមានសល់ ៥ នាទី', 'End-time alert', _endAlert,
-                      (v) => setState(() => _endAlert = v)),
+                  _toggleRow(
+                    'ប្រកាសព្រមានសល់ ៥ នាទី',
+                    'End-time alert',
+                    _endAlert,
+                    (v) => setState(() => _endAlert = v),
+                  ),
                 ],
               ),
             ),
@@ -224,8 +303,8 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
       bottomNavigationBar: SafeArea(
         child: Container(
           padding: const EdgeInsets.fromLTRB(18, 12, 18, 14),
-          decoration: const BoxDecoration(
-            color: Colors.white,
+          decoration: BoxDecoration(
+            color: AppColors.card,
             border: Border(top: BorderSide(color: AppColors.line)),
           ),
           child: Column(
@@ -233,7 +312,7 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
             children: [
               Text(
                 '${_time == null ? "គ្មានកំណត់ពេល" : "${kh(_time!.inMinutes)} នាទី"} • ${kh(effectiveCount)} សំណួរ • ${kh(selectedCount)} មុខវិជ្ជា',
-                style: const TextStyle(fontSize: 11, color: AppColors.slate),
+                style: TextStyle(fontSize: 11, color: AppColors.slate),
               ),
               const SizedBox(height: 8),
               SizedBox(
@@ -246,7 +325,9 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
                           final config = ExamConfig(
                             mode: widget.mode,
                             partIds: _selected,
-                            questionCount: effectiveCount == 0 ? maxQuestions : effectiveCount,
+                            questionCount: effectiveCount == 0
+                                ? maxQuestions
+                                : effectiveCount,
                             timeLimit: _time,
                             shuffleQuestions: _shuffle,
                             instantFeedback: _instantFeedback,
@@ -255,7 +336,9 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
                             presetLabel: _presets[_presetIndex].label,
                           );
                           Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (_) => QuizSessionScreen(config: config)),
+                            MaterialPageRoute(
+                              builder: (_) => QuizSessionScreen(config: config),
+                            ),
                           );
                         },
                   child: const Text('រក្សាទុក និងចាប់ផ្ដើម →'),
@@ -276,7 +359,12 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
     );
   }
 
-  Widget _toggleRow(String title, String sub, bool value, ValueChanged<bool> onChanged) {
+  Widget _toggleRow(
+    String title,
+    String sub,
+    bool value,
+    ValueChanged<bool> onChanged,
+  ) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
@@ -285,9 +373,18 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700)),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
                 const SizedBox(height: 3),
-                Text(sub, style: const TextStyle(fontSize: 10.5, color: AppColors.slate)),
+                Text(
+                  sub,
+                  style: TextStyle(fontSize: 10.5, color: AppColors.slate),
+                ),
               ],
             ),
           ),

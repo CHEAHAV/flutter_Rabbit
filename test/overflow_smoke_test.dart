@@ -10,11 +10,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:rabbit/data/question_repository.dart';
 import 'package:rabbit/models/exam_config.dart';
 import 'package:rabbit/models/exam_result.dart';
 import 'package:rabbit/models/question_attempt.dart';
-import 'package:rabbit/services/progress_service.dart';
 import 'package:rabbit/state/app_state.dart';
 import 'package:rabbit/theme/app_theme.dart';
 import 'package:rabbit/screens/exam_config_screen.dart';
@@ -52,17 +50,21 @@ void main() {
     _overflowErrors.clear();
   });
 
-  Future<AppState> buildBootstrappedAppState() async {
+  Future<AppState> buildBootstrappedAppState(WidgetTester tester) async {
     SharedPreferences.setMockInitialValues({});
     final app = AppState();
-    await app.bootstrap();
+    await tester.runAsync(app.bootstrap);
     return app;
   }
 
   /// Wraps [child] the same way app.dart wires the real app, at a narrow
   /// 320x640 viewport (smaller than an iPhone SE) — the worst case for
   /// horizontal overflow with long Khmer subject titles.
-  Future<void> pumpNarrow(WidgetTester tester, AppState app, Widget child) async {
+  Future<void> pumpNarrow(
+    WidgetTester tester,
+    AppState app,
+    Widget child,
+  ) async {
     tester.view.physicalSize = const Size(320, 640);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(() {
@@ -74,7 +76,7 @@ void main() {
         value: app,
         child: MaterialApp(
           theme: AppTheme.light(),
-          home: child,
+          home: Scaffold(body: child),
         ),
       ),
     );
@@ -85,47 +87,62 @@ void main() {
     expect(
       _overflowErrors,
       isEmpty,
-      reason: '$screenName overflowed:\n'
+      reason:
+          '$screenName overflowed:\n'
           '${_overflowErrors.map((d) => d.exceptionAsString()).join('\n---\n')}',
     );
   }
 
   testWidgets('Splash screen does not overflow', (tester) async {
-    final app = await buildBootstrappedAppState();
+    final app = await buildBootstrappedAppState(tester);
     await pumpNarrow(tester, app, const SplashScreen());
     expectNoOverflow('SplashScreen');
   });
 
-  testWidgets('Home shell tabs (Practice/Mock/Notebook/Profile) do not overflow',
-      (tester) async {
-    final app = await buildBootstrappedAppState();
-    await pumpNarrow(tester, app, const HomeShell());
-    expectNoOverflow('HomeShell (Practice tab)');
+  testWidgets(
+    'Home shell tabs (Practice/Mock/Notebook/Profile) do not overflow',
+    (tester) async {
+      final app = await buildBootstrappedAppState(tester);
+      await pumpNarrow(tester, app, const HomeShell());
+      expectNoOverflow('HomeShell (Practice tab)');
 
-    // Tap through the other 3 bottom-nav tabs.
-    for (final label in ['ប្រឡងសាកល្បង', 'សៀវភៅកត់ត្រា', 'គណនី']) {
-      await tester.tap(find.text(label));
-      await tester.pump(const Duration(milliseconds: 50));
-      expectNoOverflow('HomeShell ($label tab)');
-    }
-  });
+      // Tap through the other 3 bottom-nav tabs.
+      for (final label in ['ប្រឡងសាកល្បង', 'សៀវភៅកត់ត្រា', 'គណនី']) {
+        await tester.tap(find.text(label));
+        await tester.pump(const Duration(milliseconds: 50));
+        expectNoOverflow('HomeShell ($label tab)');
+      }
+    },
+  );
 
   testWidgets('Practice screen standalone does not overflow', (tester) async {
-    final app = await buildBootstrappedAppState();
+    final app = await buildBootstrappedAppState(tester);
     await pumpNarrow(tester, app, const PracticeScreen());
     expectNoOverflow('PracticeScreen');
   });
 
-  testWidgets('Mock screen with populated history does not overflow', (tester) async {
-    final app = await buildBootstrappedAppState();
+  testWidgets('Mock screen with populated history does not overflow', (
+    tester,
+  ) async {
+    final app = await buildBootstrappedAppState(tester);
     // Seed a couple of history entries so _HistoryRow renders.
     final part = app.repo.parts.firstWhere((p) => p.count >= 4);
     final questions = part.questions.take(4).toList();
     final attempts = [
-      QuestionAttempt(question: questions[0], selectedIndex: questions[0].answerIndex),
-      QuestionAttempt(question: questions[1], selectedIndex: (questions[1].answerIndex + 1) % 4),
+      QuestionAttempt(
+        question: questions[0],
+        selectedIndex: questions[0].answerIndex,
+      ),
+      QuestionAttempt(
+        question: questions[1],
+        selectedIndex: (questions[1].answerIndex + 1) % 4,
+      ),
       QuestionAttempt(question: questions[2], selectedIndex: null),
-      QuestionAttempt(question: questions[3], selectedIndex: questions[3].answerIndex, flagged: true),
+      QuestionAttempt(
+        question: questions[3],
+        selectedIndex: questions[3].answerIndex,
+        flagged: true,
+      ),
     ];
     final result = ExamResult(
       completedAt: DateTime.now(),
@@ -146,12 +163,15 @@ void main() {
     expectNoOverflow('MockScreen (with history)');
   });
 
-  testWidgets('Notebook screen with mistakes & bookmarks does not overflow', (tester) async {
-    final app = await buildBootstrappedAppState();
+  testWidgets('Notebook screen with mistakes & bookmarks does not overflow', (
+    tester,
+  ) async {
+    final app = await buildBootstrappedAppState(tester);
     // Use the part with the longest title (Science/Tech/Innovation) — the
     // worst case for the subject-name pill badge.
-    final longTitlePart =
-        app.repo.parts.reduce((a, b) => a.titleKm.length >= b.titleKm.length ? a : b);
+    final longTitlePart = app.repo.parts.reduce(
+      (a, b) => a.titleKm.length >= b.titleKm.length ? a : b,
+    );
     for (final q in longTitlePart.questions.take(3)) {
       await app.progress.toggleBookmark(q.uid);
     }
@@ -182,66 +202,82 @@ void main() {
   });
 
   testWidgets('Profile screen does not overflow', (tester) async {
-    final app = await buildBootstrappedAppState();
+    final app = await buildBootstrappedAppState(tester);
     await pumpNarrow(tester, app, const ProfileScreen());
     expectNoOverflow('ProfileScreen');
   });
 
-  testWidgets('Exam config screen (practice & mock) does not overflow', (tester) async {
-    final app = await buildBootstrappedAppState();
-    await pumpNarrow(tester, app, const ExamConfigScreen(mode: ExamMode.practice));
+  testWidgets('Exam config screen (practice & mock) does not overflow', (
+    tester,
+  ) async {
+    final app = await buildBootstrappedAppState(tester);
+    await pumpNarrow(
+      tester,
+      app,
+      const ExamConfigScreen(mode: ExamMode.practice),
+    );
     expectNoOverflow('ExamConfigScreen (practice)');
 
     await pumpNarrow(tester, app, const ExamConfigScreen(mode: ExamMode.mock));
     expectNoOverflow('ExamConfigScreen (mock)');
   });
 
-  testWidgets('Quiz session screen does not overflow, incl. long subject title header',
-      (tester) async {
-    final app = await buildBootstrappedAppState();
-    // Longest subject title = worst case for the header pill.
-    final longTitlePart =
-        app.repo.parts.reduce((a, b) => a.titleKm.length >= b.titleKm.length ? a : b);
-    final config = ExamConfig(
-      mode: ExamMode.practice,
-      partIds: {longTitlePart.id},
-      questionCount: longTitlePart.count,
-      timeLimit: const Duration(hours: 1, minutes: 5),
-      instantFeedback: true,
-      presetLabel: 'តេស្ត',
-    );
+  testWidgets(
+    'Quiz session screen does not overflow, incl. long subject title header',
+    (tester) async {
+      final app = await buildBootstrappedAppState(tester);
+      // Longest subject title = worst case for the header pill.
+      final longTitlePart = app.repo.parts.reduce(
+        (a, b) => a.titleKm.length >= b.titleKm.length ? a : b,
+      );
+      final config = ExamConfig(
+        mode: ExamMode.practice,
+        partIds: {longTitlePart.id},
+        questionCount: longTitlePart.count,
+        timeLimit: const Duration(hours: 1, minutes: 5),
+        instantFeedback: true,
+        presetLabel: 'តេស្ត',
+      );
 
-    await pumpNarrow(tester, app, QuizSessionScreen(config: config));
-    expectNoOverflow('QuizSessionScreen (header, longest subject title)');
+      await pumpNarrow(tester, app, QuizSessionScreen(config: config));
+      expectNoOverflow('QuizSessionScreen (header, longest subject title)');
 
-    // Answer the current question to exercise the instant-feedback state.
-    final optionFinder = find.byIcon(Icons.outlined_flag_rounded);
-    if (optionFinder.evaluate().isNotEmpty) {
-      await tester.tap(find.text('ចំណាំទុក'));
-      await tester.pump(const Duration(milliseconds: 50));
-      expectNoOverflow('QuizSessionScreen (flagged)');
-    }
+      // Answer the current question to exercise the instant-feedback state.
+      final optionFinder = find.byIcon(Icons.outlined_flag_rounded);
+      if (optionFinder.evaluate().isNotEmpty) {
+        await tester.tap(find.text('ចំណាំទុក'));
+        await tester.pump(const Duration(milliseconds: 50));
+        expectNoOverflow('QuizSessionScreen (flagged)');
+      }
 
-    // Open the quick-navigator question grid bottom sheet.
-    await tester.tap(find.byIcon(Icons.grid_view_rounded));
-    await tester.pumpAndSettle();
-    expectNoOverflow('QuizSessionScreen (question grid sheet)');
+      // Open the quick-navigator question grid bottom sheet. Note: this screen
+      // keeps a Timer.periodic(1s) ticking for the countdown, so pumpAndSettle()
+      // would spin until its 10-minute timeout — use bounded pumps instead.
+      await tester.tap(find.byIcon(Icons.grid_view_rounded));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 350));
+      expectNoOverflow('QuizSessionScreen (question grid sheet)');
 
-    // Unmount to cancel the internal countdown Timer before the test ends.
-    await tester.pumpWidget(const SizedBox.shrink());
-  });
+      // Unmount to cancel the internal countdown Timer before the test ends.
+      await tester.pumpWidget(const SizedBox.shrink());
+    },
+  );
 
   testWidgets('Result & review screens do not overflow', (tester) async {
-    final app = await buildBootstrappedAppState();
+    final app = await buildBootstrappedAppState(tester);
     final parts = app.repo.parts.where((p) => p.count > 0).take(3).toList();
     final attempts = <QuestionAttempt>[];
     for (final part in parts) {
       for (final q in part.questions.take(2)) {
-        attempts.add(QuestionAttempt(
-          question: q,
-          selectedIndex: attempts.length.isEven ? q.answerIndex : (q.answerIndex + 1) % 4,
-          flagged: attempts.length.isOdd,
-        ));
+        attempts.add(
+          QuestionAttempt(
+            question: q,
+            selectedIndex: attempts.length.isEven
+                ? q.answerIndex
+                : (q.answerIndex + 1) % 4,
+            flagged: attempts.length.isOdd,
+          ),
+        );
       }
     }
     final result = ExamResult(

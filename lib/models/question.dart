@@ -14,7 +14,10 @@ class Question {
     required this.text,
     required this.options,
     required this.answerIndex,
-  }) : assert(options.length == 4, 'Every question must have exactly 4 options');
+  }) : assert(
+         options.length == 4,
+         'Every question must have exactly 4 options',
+       );
 
   /// Globally unique key across all parts, used for progress tracking.
   String get uid => '$partId-$id';
