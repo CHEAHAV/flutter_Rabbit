@@ -24,14 +24,22 @@ class MockScreen extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(18, 18, 18, 110),
       children: [
-        const Text(
+        Text(
           'ប្រឡងសាកល្បង',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w800,
+            color: AppColors.ink,
+          ),
         ),
         const SizedBox(height: 3),
         Text(
           'សាកល្បងក្រោមលក្ខខណ្ឌនិងពេលវេលាដូចការប្រឡងពិត',
-          style: TextStyle(fontSize: 12, color: AppColors.slate),
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
+            color: AppColors.slate,
+          ),
         ),
         const SizedBox(height: 18),
         Container(
@@ -61,11 +69,12 @@ class MockScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        Text(
                           'សម្រង់លក្ខខណ្ឌប្រឡងស្តង់ដារ',
                           style: TextStyle(
                             fontWeight: FontWeight.w800,
                             fontSize: 14,
+                            color: AppColors.ink,
                           ),
                         ),
                         const SizedBox(height: 3),
@@ -124,9 +133,13 @@ class MockScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   'រៀបចំវគ្គប្រឡងផ្ទាល់ខ្លួនរបស់អ្នក',
-                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.ink,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(

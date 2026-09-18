@@ -25,16 +25,21 @@ class SectionHeader extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w800,
+                  color: AppColors.ink,
                 ),
               ),
               if (subtitle case final s?) ...[
                 const SizedBox(height: 3),
                 Text(
                   s,
-                  style: TextStyle(fontSize: 11.5, color: AppColors.slate),
+                  style: TextStyle(
+                    fontSize: 11.5,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.slate,
+                  ),
                 ),
               ],
             ],

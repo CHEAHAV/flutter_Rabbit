@@ -280,10 +280,11 @@ class _QuestionPreviewCard extends StatelessWidget {
               const SizedBox(height: 6),
               Text(
                 question.text,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 13.5,
                   fontWeight: FontWeight.w700,
                   height: 1.55,
+                  color: AppColors.ink,
                 ),
               ),
               const SizedBox(height: 10),

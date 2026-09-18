@@ -177,10 +177,11 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
                                   const SizedBox(height: 14),
                                   Text(
                                     session.current.question.text,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontSize: 17.5,
                                       fontWeight: FontWeight.w700,
                                       height: 1.75,
+                                      color: AppColors.ink,
                                     ),
                                   ),
                                   const SizedBox(height: 4),

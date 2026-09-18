@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import '../state/app_state.dart';
@@ -51,9 +52,10 @@ class ProfileScreen extends StatelessWidget {
                 const SizedBox(height: 12),
                 Text(
                   progress.displayName,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w800,
+                    color: AppColors.ink,
                   ),
                 ),
                 const SizedBox(height: 4),
@@ -93,64 +95,86 @@ class ProfileScreen extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         Card(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-            child: Row(
-              children: [
-                Container(
-                  width: 38,
-                  height: 38,
-                  decoration: BoxDecoration(
-                    color: AppColors.mint,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  alignment: Alignment.center,
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 220),
-                    child: Icon(
-                      app.isDarkMode
-                          ? Icons.dark_mode_rounded
-                          : Icons.light_mode_rounded,
-                      key: ValueKey(app.isDarkMode),
-                      color: AppColors.emerald,
-                      size: 18,
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            onTap: () {
+              HapticFeedback.selectionClick();
+              app.setDarkMode(!app.isDarkMode);
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Row(
+                children: [
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 250),
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: app.isDarkMode
+                          ? AppColors.mint
+                          : AppColors.amberBg,
+                      borderRadius: BorderRadius.circular(13),
+                      border: Border.all(
+                        color: app.isDarkMode
+                            ? AppColors.line
+                            : AppColors.amberBorder,
+                        width: 1,
+                      ),
+                    ),
+                    alignment: Alignment.center,
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 220),
+                      transitionBuilder: (child, anim) =>
+                          ScaleTransition(scale: anim, child: child),
+                      child: Icon(
+                        app.isDarkMode
+                            ? Icons.dark_mode_rounded
+                            : Icons.light_mode_rounded,
+                        key: ValueKey(app.isDarkMode),
+                        color: app.isDarkMode
+                            ? AppColors.emerald
+                            : AppColors.amber,
+                        size: 20,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'ម៉ូដងងឹត (Dark Mode)',
-                        style: TextStyle(
-                          fontSize: 12.5,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const SizedBox(height: 2),
-                      AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 220),
-                        child: Text(
-                          app.isDarkMode
-                              ? 'កំពុងប្រើប្រាស់'
-                              : 'បិទ — កំពុងប្រើពន្លឺធម្មតា',
-                          key: ValueKey(app.isDarkMode),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'ម៉ូដងងឹត (Dark Mode)',
                           style: TextStyle(
-                            fontSize: 10.5,
-                            color: AppColors.slate,
+                            fontSize: 13.5,
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.ink,
                           ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(height: 2),
+                        AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 220),
+                          child: Text(
+                            app.isDarkMode
+                                ? 'កំពុងបើក — ងាយស្រួលមើលពេលយប់'
+                                : 'បិទ — កំពុងប្រើពន្លឺធម្មតា',
+                            key: ValueKey(app.isDarkMode),
+                            style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.slate,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Switch(
-                  value: app.isDarkMode,
-                  onChanged: (v) => app.setDarkMode(v),
-                ),
-              ],
+                  _SmoothSwitchPill(
+                    value: app.isDarkMode,
+                    onChanged: (v) => app.setDarkMode(v),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -272,9 +296,10 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 12.5,
                     fontWeight: FontWeight.w700,
+                    color: AppColors.ink,
                   ),
                 ),
                 const SizedBox(height: 2),
@@ -316,9 +341,10 @@ class _CompetencyRow extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 12.5,
                   fontWeight: FontWeight.w700,
+                  color: AppColors.ink,
                 ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -345,6 +371,73 @@ class _CompetencyRow extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _SmoothSwitchPill extends StatelessWidget {
+  final bool value;
+  final ValueChanged<bool> onChanged;
+
+  const _SmoothSwitchPill({required this.value, required this.onChanged});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        HapticFeedback.selectionClick();
+        onChanged(!value);
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeInOutCubic,
+        width: 52,
+        height: 30,
+        padding: const EdgeInsets.all(3),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(999),
+          color: value
+              ? AppColors.emerald
+              : (AppColors.isDark
+                    ? const Color(0xFF23342B)
+                    : const Color(0xFFE2EBE5)),
+          border: Border.all(
+            color: value ? AppColors.emerald : AppColors.line,
+            width: 1.2,
+          ),
+        ),
+        child: AnimatedAlign(
+          duration: const Duration(milliseconds: 250),
+          curve: Curves.easeInOutCubic,
+          alignment: value ? Alignment.centerRight : Alignment.centerLeft,
+          child: Container(
+            width: 22,
+            height: 22,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.18),
+                  blurRadius: 4,
+                  offset: const Offset(0, 1.5),
+                ),
+              ],
+            ),
+            child: Center(
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 200),
+                child: Icon(
+                  value ? Icons.dark_mode_rounded : Icons.light_mode_rounded,
+                  key: ValueKey(value),
+                  size: 13,
+                  color: value ? AppColors.emeraldDeep : AppColors.amber,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

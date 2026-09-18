@@ -53,7 +53,7 @@ class AppColors {
   static Color get bg => _current.bg;
   static Color get card => _current.card;
   static Color get onEmerald => isDark ? _current.emeraldDeep : Colors.white;
-  static Color get onRed => isDark ? _current.redBg : Colors.white;
+  static Color get onRed => Colors.white;
 }
 
 class _Palette {
@@ -123,44 +123,44 @@ class _Palette {
 
 const _light = _Palette(
   emerald: Color(0xFF0D5C3A),
-  emeraldDeep: Color(0xFF0A3F28),
+  emeraldDeep: Color(0xFF073822),
   emeraldLight: Color(0xFF137A4D),
-  mint: Color(0xFFEAF6EF),
-  mintSoft: Color(0xFFF4FAF6),
-  gold: Color(0xFFC9972A),
-  amber: Color(0xFFF3A51D),
-  amberBg: Color(0xFFFFF7E7),
-  amberBorder: Color(0xFFF0D18F),
-  red: Color(0xFFC83C3C),
-  redBg: Color(0xFFFFF1F1),
-  redBorder: Color(0xFFF0AFAF),
-  ink: Color(0xFF16251D),
-  slate: Color(0xFF5F6E66),
-  muted: Color(0xFF66766D),
-  line: Color(0xFFDCE6E0),
-  bg: Color(0xFFF5F7F6),
+  mint: Color(0xFFE8F5EE),
+  mintSoft: Color(0xFFF3F9F5),
+  gold: Color(0xFFC69224),
+  amber: Color(0xFFD97706),
+  amberBg: Color(0xFFFEF3C7),
+  amberBorder: Color(0xFFFDE68A),
+  red: Color(0xFFDC2626),
+  redBg: Color(0xFFFEE2E2),
+  redBorder: Color(0xFFFECACA),
+  ink: Color(0xFF111D16),
+  slate: Color(0xFF384E42),
+  muted: Color(0xFF52685B),
+  line: Color(0xFFD8E4DC),
+  bg: Color(0xFFF4F7F5),
   card: Color(0xFFFFFFFF),
 );
 
 const _dark = _Palette(
-  emerald: Color(0xFF1FAF74),
-  emeraldDeep: Color(0xFF0A2C1C),
-  emeraldLight: Color(0xFF29C98A),
-  mint: Color(0xFF15291F),
-  mintSoft: Color(0xFF101A15),
-  gold: Color(0xFFE8B657),
-  amber: Color(0xFFFFC24D),
-  amberBg: Color(0xFF2B2110),
-  amberBorder: Color(0xFF6B551F),
-  red: Color(0xFFFF6B6B),
-  redBg: Color(0xFF2E1616),
-  redBorder: Color(0xFF7A3B3B),
-  ink: Color(0xFFEAF3ED),
-  slate: Color(0xFF9FB3A7),
-  muted: Color(0xFFA0B3A7),
-  line: Color(0xFF263229),
-  bg: Color(0xFF0E1512),
-  card: Color(0xFF171F1A),
+  emerald: Color(0xFF1CB576),
+  emeraldDeep: Color(0xFF082618),
+  emeraldLight: Color(0xFF2FD991),
+  mint: Color(0xFF142B20),
+  mintSoft: Color(0xFF102018),
+  gold: Color(0xFFE5B558),
+  amber: Color(0xFFFBBF24),
+  amberBg: Color(0xFF231A0C),
+  amberBorder: Color(0xFF4D3815),
+  red: Color(0xFFF87171),
+  redBg: Color(0xFF261212),
+  redBorder: Color(0xFF532424),
+  ink: Color(0xFFFFFFFF),
+  slate: Color(0xFFB4C8BD),
+  muted: Color(0xFF7E9A8B),
+  line: Color(0xFF283830),
+  bg: Color(0xFF0F1613),
+  card: Color(0xFF18221D),
 );
 
 class AppTheme {
@@ -191,18 +191,19 @@ class AppTheme {
 
   static ThemeData _themeData(Brightness brightness) {
     final dark = brightness == Brightness.dark;
+    final p = dark ? _dark : _light;
     final scheme =
         ColorScheme.fromSeed(
-          seedColor: AppColors.emerald,
+          seedColor: p.emerald,
           brightness: brightness,
-          primary: AppColors.emerald,
-          secondary: AppColors.gold,
-          surface: AppColors.card,
+          primary: p.emerald,
+          secondary: p.gold,
+          surface: p.card,
         ).copyWith(
-          onPrimary: dark ? AppColors.emeraldDeep : Colors.white,
-          onSurface: AppColors.ink,
-          onSurfaceVariant: AppColors.slate,
-          outline: AppColors.line,
+          onPrimary: dark ? p.emeraldDeep : Colors.white,
+          onSurface: p.ink,
+          onSurfaceVariant: p.slate,
+          outline: p.line,
         );
 
     return ThemeData(
@@ -210,89 +211,82 @@ class AppTheme {
       brightness: brightness,
       fontFamily: fontFamily,
       colorScheme: scheme,
-      scaffoldBackgroundColor: AppColors.bg,
+      scaffoldBackgroundColor: p.bg,
       splashFactory: InkRipple.splashFactory,
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.bg,
-        foregroundColor: AppColors.ink,
+        backgroundColor: p.bg,
+        foregroundColor: p.ink,
         elevation: 0,
         centerTitle: false,
         surfaceTintColor: Colors.transparent,
       ),
       textTheme: TextTheme(
-        displayLarge: TextStyle(
-          fontWeight: FontWeight.w800,
-          color: AppColors.ink,
-        ),
+        displayLarge: TextStyle(fontWeight: FontWeight.w800, color: p.ink),
         headlineMedium: TextStyle(
           fontWeight: FontWeight.w800,
-          color: AppColors.ink,
+          color: p.ink,
           height: 1.3,
         ),
         headlineSmall: TextStyle(
           fontWeight: FontWeight.w800,
-          color: AppColors.ink,
+          color: p.ink,
           height: 1.3,
         ),
         titleLarge: TextStyle(
           fontWeight: FontWeight.w800,
-          color: AppColors.ink,
+          color: p.ink,
           height: 1.3,
         ),
         titleMedium: TextStyle(
           fontWeight: FontWeight.w700,
-          color: AppColors.ink,
+          color: p.ink,
           height: 1.35,
         ),
         titleSmall: TextStyle(
           fontWeight: FontWeight.w700,
-          color: AppColors.ink,
+          color: p.ink,
           height: 1.35,
         ),
         bodyLarge: TextStyle(
           fontWeight: FontWeight.w500,
-          color: AppColors.ink,
+          color: p.ink,
           height: 1.7,
           fontSize: 16,
         ),
         bodyMedium: TextStyle(
           fontWeight: FontWeight.w500,
-          color: AppColors.ink,
+          color: p.ink,
           height: 1.65,
           fontSize: 14,
         ),
         bodySmall: TextStyle(
           fontWeight: FontWeight.w500,
-          color: AppColors.slate,
+          color: p.slate,
           height: 1.55,
           fontSize: 12.5,
         ),
         labelLarge: TextStyle(
           fontWeight: FontWeight.w700,
-          color: AppColors.ink,
+          color: p.ink,
           height: 1.3,
         ),
       ),
       cardTheme: CardThemeData(
-        color: AppColors.card,
+        color: p.card,
         elevation: 0,
         surfaceTintColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(22),
-          side: BorderSide(color: AppColors.line, width: 1),
+          side: BorderSide(color: p.line, width: 1),
         ),
         margin: EdgeInsets.zero,
       ),
-      dividerTheme: DividerThemeData(
-        color: AppColors.line,
-        thickness: 1,
-        space: 1,
-      ),
+      dividerTheme: DividerThemeData(color: p.line, thickness: 1, space: 1),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.emerald,
+          backgroundColor: p.emerald,
           foregroundColor: scheme.onPrimary,
-          disabledBackgroundColor: AppColors.emerald.withValues(alpha: 0.4),
+          disabledBackgroundColor: p.emerald.withValues(alpha: 0.4),
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 18),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
@@ -303,8 +297,8 @@ class AppTheme {
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor: AppColors.emerald,
-          side: BorderSide(color: AppColors.line, width: 1.2),
+          foregroundColor: p.emerald,
+          side: BorderSide(color: p.line, width: 1.2),
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 18),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
@@ -314,18 +308,18 @@ class AppTheme {
       ),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
-          foregroundColor: AppColors.emerald,
+          foregroundColor: p.emerald,
           textStyle: const TextStyle(fontWeight: FontWeight.w700, fontSize: 13),
         ),
       ),
       chipTheme: ChipThemeData(
-        backgroundColor: AppColors.card,
-        selectedColor: AppColors.emerald,
-        side: BorderSide(color: AppColors.line),
+        backgroundColor: p.card,
+        selectedColor: p.emerald,
+        side: BorderSide(color: p.line),
         labelStyle: TextStyle(
           fontWeight: FontWeight.w700,
           fontSize: 12.5,
-          color: AppColors.slate,
+          color: p.slate,
         ),
         secondaryLabelStyle: TextStyle(
           fontWeight: FontWeight.w700,
@@ -336,53 +330,58 @@ class AppTheme {
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       ),
       switchTheme: SwitchThemeData(
-        thumbColor: WidgetStatePropertyAll(AppColors.card),
+        thumbColor: WidgetStateProperty.resolveWith(
+          (states) => states.contains(WidgetState.selected)
+              ? Colors.white
+              : (dark ? const Color(0xFFC5D6CC) : Colors.white),
+        ),
         trackColor: WidgetStateProperty.resolveWith(
           (states) => states.contains(WidgetState.selected)
-              ? AppColors.emerald
-              : AppColors.line,
+              ? p.emerald
+              : (dark ? const Color(0xFF24342B) : const Color(0xFFE2EBE5)),
         ),
-        trackOutlineColor: WidgetStatePropertyAll(AppColors.slate),
+        trackOutlineColor: WidgetStateProperty.resolveWith(
+          (states) => states.contains(WidgetState.selected)
+              ? Colors.transparent
+              : p.line,
+        ),
+        trackOutlineWidth: const WidgetStatePropertyAll(1.0),
       ),
       navigationBarTheme: NavigationBarThemeData(
         height: 68,
-        backgroundColor: AppColors.card,
-        indicatorColor: AppColors.mint,
+        backgroundColor: p.card,
+        indicatorColor: p.mint,
         iconTheme: WidgetStateProperty.resolveWith(
           (states) => IconThemeData(
-            color: states.contains(WidgetState.selected)
-                ? AppColors.emerald
-                : AppColors.slate,
+            color: states.contains(WidgetState.selected) ? p.emerald : p.slate,
           ),
         ),
         labelTextStyle: WidgetStateProperty.resolveWith(
           (states) => TextStyle(
-            color: states.contains(WidgetState.selected)
-                ? AppColors.ink
-                : AppColors.slate,
+            color: states.contains(WidgetState.selected) ? p.ink : p.slate,
             fontSize: 10.5,
             fontWeight: FontWeight.w700,
           ),
         ),
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
-        color: AppColors.emerald,
-        linearTrackColor: AppColors.line,
+        color: p.emerald,
+        linearTrackColor: p.line,
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: AppColors.card,
-        selectedItemColor: AppColors.emerald,
-        unselectedItemColor: AppColors.slate,
+        backgroundColor: p.card,
+        selectedItemColor: p.emerald,
+        unselectedItemColor: p.slate,
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
         elevation: 0,
       ),
       dialogTheme: DialogThemeData(
-        backgroundColor: AppColors.card,
+        backgroundColor: p.card,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       ),
       snackBarTheme: SnackBarThemeData(
-        backgroundColor: AppColors.emeraldDeep,
+        backgroundColor: p.emeraldDeep,
         contentTextStyle: const TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.w600,

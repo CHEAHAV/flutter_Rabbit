@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import '../data/question_repository.dart';
 import '../models/exam_part.dart';
 import '../services/progress_service.dart';
+import '../theme/app_theme.dart';
 
 /// Root application state: bootstraps the question bank + local progress
 /// store, and exposes them to the widget tree via Provider.
@@ -31,6 +32,7 @@ class AppState extends ChangeNotifier {
     try {
       await Future.wait([repo.load(), progress.init()]);
       _isDarkMode = progress.isDarkMode;
+      AppColors.setBlend(_isDarkMode ? 1.0 : 0.0);
     } catch (e) {
       _bootError = e.toString();
     } finally {
@@ -44,6 +46,7 @@ class AppState extends ChangeNotifier {
   Future<void> setDarkMode(bool value) async {
     if (_isDarkMode == value) return;
     _isDarkMode = value;
+    AppColors.setBlend(value ? 1.0 : 0.0);
     notifyListeners();
     await progress.setDarkMode(value);
   }

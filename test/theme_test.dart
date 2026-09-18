@@ -37,4 +37,17 @@ void main() {
     expect(AppTheme.animated().brightness, Brightness.dark);
     AppColors.setBlend(0);
   });
+
+  test('dark mode text colors are crystal clear and high contrast', () {
+    AppTheme.dark();
+    expect(AppColors.ink, const Color(0xFFFFFFFF));
+    expect(AppColors.slate, const Color(0xFFB4C8BD));
+    expect(contrast(AppColors.ink, AppColors.card), greaterThan(12.0));
+    expect(contrast(AppColors.slate, AppColors.card), greaterThan(8.0));
+    AppTheme.light();
+    expect(AppColors.ink, const Color(0xFF111D16));
+    expect(AppColors.slate, const Color(0xFF384E42));
+    expect(contrast(AppColors.ink, AppColors.card), greaterThan(12.0));
+    expect(contrast(AppColors.slate, AppColors.card), greaterThan(8.0));
+  });
 }

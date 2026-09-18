@@ -103,7 +103,11 @@ class OptionTile extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 4),
                     child: Text(
                       text,
-                      style: const TextStyle(fontSize: 14, height: 1.55),
+                      style: TextStyle(
+                        fontSize: 14,
+                        height: 1.55,
+                        color: AppColors.ink,
+                      ),
                     ),
                   ),
                 ),

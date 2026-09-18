@@ -62,13 +62,21 @@ class _PracticeScreenState extends State<PracticeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     'Rabbit',
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w800,
+                      color: AppColors.ink,
+                    ),
                   ),
                   Text(
                     'ត្រៀមប្រឡងមន្ត្រីរាជការកម្ពុជា',
-                    style: TextStyle(fontSize: 10.5, color: AppColors.slate),
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.slate,
+                    ),
                   ),
                 ],
               ),
