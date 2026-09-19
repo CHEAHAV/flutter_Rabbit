@@ -54,7 +54,7 @@ class SplashScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 const Text(
-                  'ត្រៀមប្រឡងមន្ត្រីរាជការឲ្យលឿន និងច្បាស់',
+                  'ត្រៀមប្រឡងចំណេះដឹងទូទៅឲ្យលឿន និងច្បាស់',
                   style: TextStyle(
                     color: Color(0xFFDCEEE3),
                     fontSize: 13,

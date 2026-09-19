@@ -60,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'សិស្សត្រៀមប្រឡងមន្ត្រីរាជការ',
+                  'ចំណេះដឹងទូទៅ',
                   style: TextStyle(fontSize: 11.5, color: AppColors.slate),
                 ),
                 const SizedBox(height: 10),

@@ -117,52 +117,57 @@ class _CelebrationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 16),
-      decoration: BoxDecoration(
-        color: AppColors.card,
-        borderRadius: BorderRadius.circular(22),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.emerald.withValues(alpha: 0.25),
-            blurRadius: 24,
-            offset: const Offset(0, 10),
-          ),
-        ],
-        border: Border.all(color: AppColors.mint, width: 1.5),
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            width: 54,
-            height: 54,
-            decoration: BoxDecoration(
-              color: AppColors.emerald,
-              shape: BoxShape.circle,
+    // Overlay entries sit outside any Scaffold/Material, so Text would fall
+    // back to the yellow double-underline debug style without this.
+    return Material(
+      type: MaterialType.transparency,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 16),
+        decoration: BoxDecoration(
+          color: AppColors.card,
+          borderRadius: BorderRadius.circular(22),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.emerald.withValues(alpha: 0.25),
+              blurRadius: 24,
+              offset: const Offset(0, 10),
             ),
-            alignment: Alignment.center,
-            child: const Icon(
-              Icons.check_rounded,
-              color: Colors.white,
-              size: 32,
+          ],
+          border: Border.all(color: AppColors.mint, width: 1.5),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 54,
+              height: 54,
+              decoration: BoxDecoration(
+                color: AppColors.emerald,
+                shape: BoxShape.circle,
+              ),
+              alignment: Alignment.center,
+              child: const Icon(
+                Icons.check_rounded,
+                color: Colors.white,
+                size: 32,
+              ),
             ),
-          ),
-          const SizedBox(height: 10),
-          Text(
-            'ត្រឹមត្រូវ!',
-            style: TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.w800,
-              color: AppColors.emerald,
+            const SizedBox(height: 10),
+            Text(
+              'ត្រឹមត្រូវ!',
+              style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w800,
+                color: AppColors.emerald,
+              ),
             ),
-          ),
-          const SizedBox(height: 2),
-          Text(
-            'ធ្វើបានល្អ បន្តទៅមុខទៀត',
-            style: TextStyle(fontSize: 11.5, color: AppColors.slate),
-          ),
-        ],
+            const SizedBox(height: 2),
+            Text(
+              'ធ្វើបានល្អ បន្តទៅមុខទៀត',
+              style: TextStyle(fontSize: 11.5, color: AppColors.slate),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -92,7 +92,7 @@ class ProgressService {
 
   // ---- Profile --------------------------------------------------------
   String get displayName =>
-      _prefs.getString(_kDisplayName) ?? 'សិស្សត្រៀមប្រឡង';
+      _prefs.getString(_kDisplayName) ?? 'ត្រៀមប្រឡងចំណេះដឹងទូទៅ';
   Future<void> setDisplayName(String name) =>
       _prefs.setString(_kDisplayName, name);
 

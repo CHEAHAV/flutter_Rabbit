@@ -72,7 +72,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
                     ),
                   ),
                   Text(
-                    'ត្រៀមប្រឡងមន្ត្រីរាជការកម្ពុជា',
+                    'ចំណេះដឹងទូទៅ',
                     style: TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.w500,
