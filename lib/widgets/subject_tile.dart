@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/exam_part.dart';
+import '../services/sound_service.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
 
@@ -22,7 +23,12 @@ class SubjectTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final disabled = part.count == 0;
     return InkWell(
-      onTap: disabled ? null : () => onChanged(!selected),
+      onTap: disabled
+          ? null
+          : () {
+              sfx.toggle(!selected);
+              onChanged(!selected);
+            },
       borderRadius: BorderRadius.circular(16),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
@@ -69,7 +75,12 @@ class SubjectTile extends StatelessWidget {
             ],
             Switch(
               value: selected && !disabled,
-              onChanged: disabled ? null : onChanged,
+              onChanged: disabled
+                  ? null
+                  : (v) {
+                      sfx.toggle(v);
+                      onChanged(v);
+                    },
             ),
           ],
         ),

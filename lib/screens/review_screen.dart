@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../models/exam_result.dart';
 import '../models/question_attempt.dart';
+import '../services/sound_service.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
@@ -94,7 +95,10 @@ class _ReviewScreenState extends State<ReviewScreen> {
   Widget _filterChip(String label, _ReviewFilter value) {
     final active = _filter == value;
     return InkWell(
-      onTap: () => setState(() => _filter = value),
+      onTap: () {
+        if (_filter != value) sfx.select();
+        setState(() => _filter = value);
+      },
       borderRadius: BorderRadius.circular(12),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10),

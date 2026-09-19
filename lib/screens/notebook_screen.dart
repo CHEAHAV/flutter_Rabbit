@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../models/exam_config.dart';
 import '../models/question.dart';
+import '../services/sound_service.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
@@ -172,7 +173,10 @@ class _NotebookScreenState extends State<NotebookScreen> {
 
   Widget _tab(String label, bool active, VoidCallback onTap) {
     return InkWell(
-      onTap: onTap,
+      onTap: () {
+        if (!active) sfx.select();
+        onTap();
+      },
       borderRadius: BorderRadius.circular(12),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10),
@@ -197,6 +201,7 @@ class _NotebookScreenState extends State<NotebookScreen> {
   }
 
   void _practiceMistakes(BuildContext context, List<Question> questions) {
+    sfx.tap();
     final config = ExamConfig(
       mode: ExamMode.practice,
       partIds: questions.map((q) => q.partId).toSet(),
@@ -264,6 +269,7 @@ class _QuestionPreviewCard extends StatelessWidget {
                   IconButton(
                     visualDensity: VisualDensity.compact,
                     onPressed: () async {
+                      sfx.tap();
                       await app.progress.toggleBookmark(question.uid);
                       app.refresh();
                     },

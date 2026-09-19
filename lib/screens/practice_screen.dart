@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/exam_config.dart';
+import '../services/sound_service.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
@@ -82,7 +83,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
               ),
             ),
             IconButton.filledTonal(
-              onPressed: () {},
+              onPressed: () => sfx.tap(),
               icon: const Icon(Icons.notifications_none_rounded),
             ),
           ],
@@ -140,12 +141,15 @@ class _PracticeScreenState extends State<PracticeScreen> {
                         foregroundColor: AppColors.emerald,
                         side: BorderSide.none,
                       ),
-                      onPressed: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              const ExamConfigScreen(mode: ExamMode.practice),
-                        ),
-                      ),
+                      onPressed: () {
+                        sfx.tap();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) =>
+                                const ExamConfigScreen(mode: ExamMode.practice),
+                          ),
+                        );
+                      },
                       icon: const Icon(Icons.tune_rounded, size: 18),
                       label: const Text('កំណត់ការប្រឡង'),
                     ),
@@ -174,11 +178,14 @@ class _PracticeScreenState extends State<PracticeScreen> {
           title: 'មុខវិជ្ជាសម្រាប់ហ្វឹកហាត់',
           subtitle: 'ជ្រើសមុខវិជ្ជាច្រើនក្នុងពេលតែមួយ',
           trailing: TextButton(
-            onPressed: () => setState(() {
-              _selected = _selected.length == available.length
-                  ? {}
-                  : available.map((p) => p.id).toSet();
-            }),
+            onPressed: () {
+              sfx.tap();
+              setState(() {
+                _selected = _selected.length == available.length
+                    ? {}
+                    : available.map((p) => p.id).toSet();
+              });
+            },
             child: Text(
               _selected.length == available.length
                   ? 'ដកចេញទាំងអស់'
@@ -248,7 +255,10 @@ class _PracticeScreenState extends State<PracticeScreen> {
                 return ChoiceChip(
                   label: Text(label),
                   selected: active,
-                  onSelected: (_) => setState(() => _count = n),
+                  onSelected: (_) {
+                    sfx.select();
+                    setState(() => _count = n);
+                  },
                 );
               }).toList(),
             ),
@@ -271,6 +281,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
   }
 
   void _launch(BuildContext context, AppState app, int totalQuestions) {
+    sfx.tap();
     final count = _count == 0 ? totalQuestions : _count;
     final config = ExamConfig(
       mode: ExamMode.practice,

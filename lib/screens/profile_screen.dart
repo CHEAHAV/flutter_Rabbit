@@ -99,6 +99,7 @@ class ProfileScreen extends StatelessWidget {
           child: InkWell(
             onTap: () {
               HapticFeedback.selectionClick();
+              app.sound.toggle(!app.isDarkMode);
               app.setDarkMode(!app.isDarkMode);
             },
             child: Padding(
@@ -171,13 +172,27 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   _SmoothSwitchPill(
                     value: app.isDarkMode,
-                    onChanged: (v) => app.setDarkMode(v),
+                    onIcon: Icons.dark_mode_rounded,
+                    offIcon: Icons.light_mode_rounded,
+                    onIconColor: AppColors.emeraldDeep,
+                    offIconColor: AppColors.amber,
+                    onChanged: (v) {
+                      app.sound.toggle(v);
+                      app.setDarkMode(v);
+                    },
                   ),
                 ],
               ),
             ),
           ),
         ),
+        const SizedBox(height: 22),
+        SectionHeader(
+          title: 'សំឡេង',
+          subtitle: 'សំឡេងពេលចុចប៊ូតុង ឆ្លើយត្រូវ និងឆ្លើយខុស',
+        ),
+        const SizedBox(height: 10),
+        _SoundCard(app: app),
         const SizedBox(height: 22),
         SectionHeader(
           title: 'សន្ទស្សន៍ត្រៀមប្រឡង',
@@ -375,11 +390,185 @@ class _CompetencyRow extends StatelessWidget {
   }
 }
 
+/// Sound settings: master on/off switch plus a volume slider with a mute
+/// button and live percentage - the layout used by phone OS volume controls.
+/// Not instantiated with `const` because it reads [AppColors].
+class _SoundCard extends StatelessWidget {
+  final AppState app;
+  const _SoundCard({required this.app});
+
+  @override
+  Widget build(BuildContext context) {
+    final muted = app.soundMuted;
+    final volume = app.soundVolume;
+    final percent = (volume * 100).round();
+    final accent = muted ? AppColors.muted : AppColors.emerald;
+    final icon = muted
+        ? Icons.volume_off_rounded
+        : volume < 0.34
+        ? Icons.volume_mute_rounded
+        : volume < 0.67
+        ? Icons.volume_down_rounded
+        : Icons.volume_up_rounded;
+
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: [
+          InkWell(
+            onTap: () {
+              HapticFeedback.selectionClick();
+              app.setSoundEnabled(muted);
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Row(
+                children: [
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 250),
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: muted ? AppColors.line : AppColors.mint,
+                      borderRadius: BorderRadius.circular(13),
+                    ),
+                    alignment: Alignment.center,
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 220),
+                      transitionBuilder: (child, anim) =>
+                          ScaleTransition(scale: anim, child: child),
+                      child: Icon(
+                        icon,
+                        key: ValueKey(icon),
+                        color: accent,
+                        size: 21,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'សំឡេងកម្មវិធី (Sound)',
+                          style: TextStyle(
+                            fontSize: 13.5,
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.ink,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 220),
+                          child: Text(
+                            muted
+                                ? 'បិទ — គ្មានសំឡេង'
+                                : 'កំពុងបើក — កម្រិត ${khPercent(percent)}',
+                            key: ValueKey(muted ? -1 : percent),
+                            style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.slate,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  _SmoothSwitchPill(
+                    value: !muted,
+                    onIcon: Icons.volume_up_rounded,
+                    offIcon: Icons.volume_off_rounded,
+                    onIconColor: AppColors.emeraldDeep,
+                    offIconColor: AppColors.slate,
+                    onChanged: (on) => app.setSoundEnabled(on),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Divider(height: 1, color: AppColors.line),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 6, 16, 8),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Icon(
+                    Icons.volume_mute_rounded,
+                    size: 20,
+                    color: AppColors.slate,
+                  ),
+                ),
+                Expanded(
+                  child: SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                      trackHeight: 6,
+                      activeTrackColor: accent,
+                      inactiveTrackColor: AppColors.line,
+                      thumbColor: accent,
+                      overlayColor: accent.withValues(alpha: 0.14),
+                      thumbShape: const RoundSliderThumbShape(
+                        enabledThumbRadius: 11,
+                        elevation: 2,
+                      ),
+                    ),
+                    child: Slider(
+                      value: volume,
+                      divisions: 20,
+                      semanticFormatterCallback: (v) =>
+                          'កម្រិតសំឡេង ${(v * 100).round()} ភាគរយ',
+                      onChanged: (v) {
+                        HapticFeedback.selectionClick();
+                        app.setSoundVolume(v, persist: false);
+                      },
+                      onChangeEnd: (v) {
+                        app.setSoundVolume(v);
+                        // Let the user hear the new level (like iOS/Android).
+                        app.sound.select();
+                      },
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 4),
+                SizedBox(
+                  width: 44,
+                  child: Text(
+                    khPercent(percent),
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w800,
+                      color: muted ? AppColors.muted : AppColors.ink,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _SmoothSwitchPill extends StatelessWidget {
   final bool value;
   final ValueChanged<bool> onChanged;
+  final IconData onIcon;
+  final IconData offIcon;
+  final Color onIconColor;
+  final Color offIconColor;
 
-  const _SmoothSwitchPill({required this.value, required this.onChanged});
+  const _SmoothSwitchPill({
+    required this.value,
+    required this.onChanged,
+    required this.onIcon,
+    required this.offIcon,
+    required this.onIconColor,
+    required this.offIconColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -428,10 +617,10 @@ class _SmoothSwitchPill extends StatelessWidget {
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 200),
                 child: Icon(
-                  value ? Icons.dark_mode_rounded : Icons.light_mode_rounded,
+                  value ? onIcon : offIcon,
                   key: ValueKey(value),
                   size: 13,
-                  color: value ? AppColors.emeraldDeep : AppColors.amber,
+                  color: value ? onIconColor : offIconColor,
                 ),
               ),
             ),

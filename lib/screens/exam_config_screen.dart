@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/exam_config.dart';
+import '../services/sound_service.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
@@ -93,7 +94,10 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () {
+              sfx.tap();
+              Navigator.of(context).pop();
+            },
             icon: const Icon(Icons.close_rounded),
           ),
         ],
@@ -117,12 +121,15 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
                   ),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(16),
-                    onTap: () => setState(() {
-                      _presetIndex = i;
-                      _count = p.count;
-                      _time = p.time;
-                      _instantFeedback = p.instantFeedback;
-                    }),
+                    onTap: () {
+                      sfx.select();
+                      setState(() {
+                        _presetIndex = i;
+                        _count = p.count;
+                        _time = p.time;
+                        _instantFeedback = p.instantFeedback;
+                      });
+                    },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
                         vertical: 12,
@@ -167,11 +174,14 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
             title: 'ជ្រើសមុខវិជ្ជា',
             subtitle: 'ជ្រើសផ្នែកមេរៀនចង់បញ្ចូល',
             trailing: TextButton(
-              onPressed: () => setState(() {
-                _selected = _selected.length == available.length
-                    ? {}
-                    : available.map((p) => p.id).toSet();
-              }),
+              onPressed: () {
+                sfx.tap();
+                setState(() {
+                  _selected = _selected.length == available.length
+                      ? {}
+                      : available.map((p) => p.id).toSet();
+                });
+              },
               child: Text(
                 _selected.length == available.length
                     ? 'ដកចេញទាំងអស់'
@@ -251,7 +261,10 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
               return ChoiceChip(
                 label: Text(label),
                 selected: _count == n,
-                onSelected: (_) => setState(() => _count = n),
+                onSelected: (_) {
+                  sfx.select();
+                  setState(() => _count = n);
+                },
               );
             }).toList(),
           ),
@@ -322,6 +335,7 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
                   onPressed: selectedCount == 0 || maxQuestions == 0
                       ? null
                       : () {
+                          sfx.tap();
                           final config = ExamConfig(
                             mode: widget.mode,
                             partIds: _selected,
@@ -355,7 +369,10 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
     return ChoiceChip(
       label: Text(label),
       selected: _time == value,
-      onSelected: (_) => setState(() => _time = value),
+      onSelected: (_) {
+        sfx.select();
+        setState(() => _time = value);
+      },
     );
   }
 
@@ -388,7 +405,13 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
               ],
             ),
           ),
-          Switch(value: value, onChanged: onChanged),
+          Switch(
+            value: value,
+            onChanged: (v) {
+              sfx.toggle(v);
+              onChanged(v);
+            },
+          ),
         ],
       ),
     );

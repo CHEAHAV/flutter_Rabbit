@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../models/exam_config.dart';
 import '../models/exam_result.dart';
+import '../services/sound_service.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
@@ -11,9 +12,25 @@ import '../widgets/stat_box.dart';
 import 'quiz_session_screen.dart';
 import 'review_screen.dart';
 
-class ResultScreen extends StatelessWidget {
+class ResultScreen extends StatefulWidget {
   final ExamResult result;
   const ResultScreen({super.key, required this.result});
+
+  @override
+  State<ResultScreen> createState() => _ResultScreenState();
+}
+
+class _ResultScreenState extends State<ResultScreen> {
+  ExamResult get result => widget.result;
+
+  @override
+  void initState() {
+    super.initState();
+    // Fanfare (or an encouraging tone) once the result is on screen.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) sfx.result(passed: result.passed);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -140,11 +157,14 @@ class ResultScreen extends StatelessWidget {
               width: double.infinity,
               height: 52,
               child: ElevatedButton.icon(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => ReviewScreen(result: result),
-                  ),
-                ),
+                onPressed: () {
+                  sfx.tap();
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => ReviewScreen(result: result),
+                    ),
+                  );
+                },
                 icon: const Icon(Icons.fact_check_outlined),
                 label: const Text('ពិនិត្យមើលចម្លើយទាំងអស់'),
               ),
@@ -156,6 +176,7 @@ class ResultScreen extends StatelessWidget {
                 height: 52,
                 child: OutlinedButton.icon(
                   onPressed: () {
+                    sfx.tap();
                     final wrongQuestions = result.mistakes
                         .map((a) => a.question)
                         .toList();
@@ -187,8 +208,10 @@ class ResultScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: TextButton(
-                onPressed: () =>
-                    Navigator.of(context).popUntil((route) => route.isFirst),
+                onPressed: () {
+                  sfx.tap();
+                  Navigator.of(context).popUntil((route) => route.isFirst);
+                },
                 child: const Text('ត្រឡប់ទៅទំព័រដើម'),
               ),
             ),

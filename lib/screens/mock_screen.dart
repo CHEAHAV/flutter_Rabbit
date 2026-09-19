@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../models/exam_config.dart';
 import '../models/exam_part.dart';
 import '../models/history_entry.dart';
+import '../services/sound_service.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
@@ -150,12 +151,15 @@ class MockScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton.icon(
-                    onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            const ExamConfigScreen(mode: ExamMode.mock),
-                      ),
-                    ),
+                    onPressed: () {
+                      sfx.tap();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) =>
+                              const ExamConfigScreen(mode: ExamMode.mock),
+                        ),
+                      );
+                    },
                     icon: const Icon(Icons.tune_rounded, size: 18),
                     label: const Text('កំណត់ Mock Exam'),
                   ),
@@ -207,6 +211,7 @@ class MockScreen extends StatelessWidget {
   }
 
   void _startStandardMock(BuildContext context, AppState app) {
+    sfx.tap();
     final available = app.parts
         .where((p) => p.count > 0)
         .map((p) => p.id)

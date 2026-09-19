@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/exam_result.dart';
@@ -22,6 +23,8 @@ class ProgressService {
   static const _kDisplayName = 'rabbit.displayName';
   static const _kGoalPartId = 'rabbit.goalPartId';
   static const _kDarkMode = 'rabbit.darkMode';
+  static const _kSoundEnabled = 'rabbit.soundEnabled';
+  static const _kSoundVolume = 'rabbit.soundVolume';
 
   late SharedPreferences _prefs;
   bool _ready = false;
@@ -30,6 +33,11 @@ class ProgressService {
   Set<String> _bookmarks = {};
   List<HistoryEntry> _history = [];
   Map<int, PartStat> _partStats = {};
+
+  /// Forces the next [init] to re-read storage. Tests only: the service is a
+  /// singleton, so without this one test's saved settings leak into the next.
+  @visibleForTesting
+  void resetForTesting() => _ready = false;
 
   Future<void> init() async {
     if (_ready) return;
@@ -100,6 +108,16 @@ class ProgressService {
   // ---- Appearance -------------------------------------------------------
   bool get isDarkMode => _prefs.getBool(_kDarkMode) ?? false;
   Future<void> setDarkMode(bool value) => _prefs.setBool(_kDarkMode, value);
+
+  // ---- Sound ------------------------------------------------------------
+  bool get soundEnabled => _prefs.getBool(_kSoundEnabled) ?? true;
+  Future<void> setSoundEnabled(bool value) =>
+      _prefs.setBool(_kSoundEnabled, value);
+
+  double get soundVolume =>
+      (_prefs.getDouble(_kSoundVolume) ?? 0.7).clamp(0.0, 1.0).toDouble();
+  Future<void> setSoundVolume(double value) =>
+      _prefs.setDouble(_kSoundVolume, value);
 
   // ---- Mistakes notebook ----------------------------------------------
   Set<String> get mistakeUids => _mistakes;

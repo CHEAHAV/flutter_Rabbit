@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import '../models/exam_config.dart';
 import '../models/question.dart';
+import '../services/sound_service.dart';
 import '../state/app_state.dart';
 import '../state/exam_session.dart';
 import '../theme/app_theme.dart';
@@ -62,6 +63,7 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
 
   void _handleLowTime() {
     if (!mounted) return;
+    sfx.warning();
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('⏰ សល់ពេលត្រឹមតែ ៥ នាទីទៀតប៉ុណ្ណោះ!')),
     );
@@ -69,6 +71,7 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
 
   void _handleTimeExpired() {
     if (!mounted) return;
+    sfx.warning();
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('ពេលវេលាអស់ហើយ — កំពុងដាក់ស្នើចម្លើយស្វ័យប្រវត្តិ'),
@@ -150,7 +153,10 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
                                       ),
                                       const SizedBox(width: 8),
                                       TextButton.icon(
-                                        onPressed: session.toggleFlag,
+                                        onPressed: () {
+                                          sfx.tap();
+                                          session.toggleFlag();
+                                        },
                                         icon: Icon(
                                           session.current.flagged
                                               ? Icons.flag_rounded
@@ -234,7 +240,11 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
   void _handleSelect(ExamSession session, int index) {
     final correct = index == session.current.question.answerIndex;
     session.selectOption(index);
-    if (!widget.config.instantFeedback) return;
+    if (!widget.config.instantFeedback) {
+      sfx.select();
+      return;
+    }
+    sfx.answer(correct: correct);
     if (correct) {
       HapticFeedback.lightImpact();
       showCelebrationOverlay(context);
@@ -275,7 +285,10 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
               children: [
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: () => Navigator.of(ctx).pop(false),
+                    onPressed: () {
+                      sfx.tap();
+                      Navigator.of(ctx).pop(false);
+                    },
                     child: const Text('បន្តប្រឡង'),
                   ),
                 ),
@@ -285,7 +298,10 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.red,
                     ),
-                    onPressed: () => Navigator.of(ctx).pop(true),
+                    onPressed: () {
+                      sfx.tap();
+                      Navigator.of(ctx).pop(true);
+                    },
                     child: const Text('ចាកចេញ'),
                   ),
                 ),
@@ -332,7 +348,10 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () => Navigator.of(ctx).pop(),
+                    onPressed: () {
+                      sfx.tap();
+                      Navigator.of(ctx).pop();
+                    },
                     icon: const Icon(Icons.close_rounded),
                   ),
                 ],
@@ -376,6 +395,7 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
                     return InkWell(
                       borderRadius: BorderRadius.circular(12),
                       onTap: () {
+                        sfx.tap();
                         session.goTo(i);
                         Navigator.of(ctx).pop();
                       },
@@ -457,14 +477,20 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
               children: [
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: () => Navigator.of(ctx).pop(false),
+                    onPressed: () {
+                      sfx.tap();
+                      Navigator.of(ctx).pop(false);
+                    },
                     child: const Text('ពិនិត្យមើលទៀត'),
                   ),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () => Navigator.of(ctx).pop(true),
+                    onPressed: () {
+                      sfx.tap();
+                      Navigator.of(ctx).pop(true);
+                    },
                     child: const Text('ដាក់ស្នើ'),
                   ),
                 ),
@@ -510,61 +536,73 @@ class _Header extends StatelessWidget {
           Row(
             children: [
               IconButton(
-                onPressed: onExit,
+                onPressed: () {
+                  sfx.tap();
+                  onExit();
+                },
                 icon: const Icon(Icons.close_rounded),
               ),
               Expanded(
                 child: Center(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14,
-                      vertical: 8,
-                    ),
-                    decoration: BoxDecoration(
-                      color: session.lowTime
-                          ? AppColors.redBg
-                          : AppColors.amberBg,
-                      border: Border.all(
-                        color: session.lowTime
-                            ? AppColors.redBorder
-                            : AppColors.amberBorder,
+                  // Shrinks (never overflows) on very narrow screens.
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 14,
+                        vertical: 8,
                       ),
-                      borderRadius: BorderRadius.circular(999),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.timer_outlined,
-                          size: 15,
+                      decoration: BoxDecoration(
+                        color: session.lowTime
+                            ? AppColors.redBg
+                            : AppColors.amberBg,
+                        border: Border.all(
                           color: session.lowTime
-                              ? AppColors.red
-                              : (AppColors.isDark
-                                    ? AppColors.amber
-                                    : const Color(0xFF875500)),
+                              ? AppColors.redBorder
+                              : AppColors.amberBorder,
                         ),
-                        const SizedBox(width: 6),
-                        Text(
-                          session.remaining == null
-                              ? khDuration(session.elapsed)
-                              : khDuration(session.remaining!),
-                          style: TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 14,
+                        borderRadius: BorderRadius.circular(999),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.timer_outlined,
+                            size: 15,
                             color: session.lowTime
                                 ? AppColors.red
                                 : (AppColors.isDark
                                       ? AppColors.amber
                                       : const Color(0xFF875500)),
                           ),
-                        ),
-                      ],
+                          const SizedBox(width: 6),
+                          Text(
+                            session.remaining == null
+                                ? khDuration(session.elapsed)
+                                : khDuration(session.remaining!),
+                            style: TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 14,
+                              color: session.lowTime
+                                  ? AppColors.red
+                                  : (AppColors.isDark
+                                        ? AppColors.amber
+                                        : const Color(0xFF875500)),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
+              // No `const`: its build() reads AppColors.
+              _SoundButton(),
               IconButton(
-                onPressed: onGrid,
+                onPressed: () {
+                  sfx.tap();
+                  onGrid();
+                },
                 icon: const Icon(Icons.grid_view_rounded),
               ),
             ],
@@ -584,6 +622,30 @@ class _Header extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// Quick mute / unmute speaker in the quiz header, so sound can be switched
+/// off mid-exam without leaving the session.
+class _SoundButton extends StatelessWidget {
+  const _SoundButton();
+
+  @override
+  Widget build(BuildContext context) {
+    final app = context.watch<AppState>();
+    final muted = app.soundMuted;
+    return IconButton(
+      visualDensity: VisualDensity.compact,
+      tooltip: muted ? 'បើកសំឡេង' : 'បិទសំឡេង',
+      onPressed: () {
+        HapticFeedback.selectionClick();
+        app.setSoundEnabled(muted);
+      },
+      icon: Icon(
+        muted ? Icons.volume_off_rounded : Icons.volume_up_rounded,
+        color: muted ? AppColors.muted : null,
       ),
     );
   }
@@ -626,7 +688,10 @@ class _QuickNavigator extends StatelessWidget {
               }
               return InkWell(
                 borderRadius: BorderRadius.circular(11),
-                onTap: () => session.goTo(i),
+                onTap: () {
+                  sfx.tap();
+                  session.goTo(i);
+                },
                 child: Container(
                   width: 36,
                   height: 36,
@@ -673,7 +738,12 @@ class _Footer extends StatelessWidget {
           children: [
             Expanded(
               child: OutlinedButton(
-                onPressed: session.isFirst ? null : session.prev,
+                onPressed: session.isFirst
+                    ? null
+                    : () {
+                        sfx.tap();
+                        session.prev();
+                      },
                 child: const Text('← សំណួរមុន'),
               ),
             ),
@@ -697,7 +767,14 @@ class _Footer extends StatelessWidget {
             ),
             Expanded(
               child: ElevatedButton(
-                onPressed: session.isLast ? onSubmit : session.next,
+                onPressed: () {
+                  sfx.tap();
+                  if (session.isLast) {
+                    onSubmit();
+                  } else {
+                    session.next();
+                  }
+                },
                 child: Text(session.isLast ? 'ដាក់ស្នើ →' : 'បន្ទាប់ →'),
               ),
             ),
@@ -732,7 +809,13 @@ class _EmptyPool extends StatelessWidget {
               style: TextStyle(fontSize: 12, color: AppColors.slate),
             ),
             const SizedBox(height: 18),
-            ElevatedButton(onPressed: onBack, child: const Text('ត្រឡប់ក្រោយ')),
+            ElevatedButton(
+              onPressed: () {
+                sfx.tap();
+                onBack();
+              },
+              child: const Text('ត្រឡប់ក្រោយ'),
+            ),
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../services/sound_service.dart';
 import 'mock_screen.dart';
 import 'notebook_screen.dart';
 import 'practice_screen.dart';
@@ -32,7 +33,10 @@ class _HomeShellState extends State<HomeShell> {
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _index,
-        onDestinationSelected: (i) => setState(() => _index = i),
+        onDestinationSelected: (i) {
+          if (i != _index) sfx.tap();
+          setState(() => _index = i);
+        },
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.grid_view_rounded),
