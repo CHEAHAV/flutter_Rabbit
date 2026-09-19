@@ -1,0 +1,4503 @@
+[
+    {
+        "id": 1,
+        "q": "Find the synonym of the following words written in capitals. It was the voice of a born ORATOR.",
+        "o": [
+            "addressee",
+            "speaker",
+            "talker",
+            "order",
+            "chatter box"
+        ],
+        "a": 1
+    },
+    {
+        "id": 2,
+        "q": "Find the synonym of the following words written in capitals. Boxing was his PROFESSION, people came and paid money to see the fight.",
+        "o": [
+            "subject",
+            "wish",
+            "trade",
+            "life",
+            "interest"
+        ],
+        "a": 2
+    },
+    {
+        "id": 3,
+        "q": "Find the synonym of the following words written in capitals. There was something CRUEL in his voice.",
+        "o": [
+            "strange",
+            "severe",
+            "funny",
+            "fresh",
+            "worry"
+        ],
+        "a": 1
+    },
+    {
+        "id": 4,
+        "q": "Find the synonym of the following words written in capitals. The whole excursion took APPROXIMATELY ten hours",
+        "o": [
+            "exactly",
+            "about",
+            "precisely",
+            "apparently",
+            "respectively"
+        ],
+        "a": 1
+    },
+    {
+        "id": 5,
+        "q": "Find the synonym of the following words written in capitals. All the local residents spent that AWFUL night in a school.",
+        "o": [
+            "awkward",
+            "average",
+            "terrible",
+            "insignificant",
+            "authentic"
+        ],
+        "a": 2
+    },
+    {
+        "id": 6,
+        "q": "Find the synonym of the following words written in capitals. The man was staring at him, and the boy began to TREMBLE.",
+        "o": [
+            "find",
+            "move",
+            "shiver",
+            "share",
+            "escape"
+        ],
+        "a": 2
+    },
+    {
+        "id": 7,
+        "q": "Find the synonym of the following words written in capitals. The restaurant was SUPERB, and the prices were very low, we enjoyed our holidays.",
+        "o": [
+            "superficial",
+            "excellent",
+            "superior",
+            "supersonic",
+            "expensive"
+        ],
+        "a": 1
+    },
+    {
+        "id": 8,
+        "q": "Find the synonym of the following words written in capitals. Airline business is INCREASING nowadays.",
+        "o": [
+            "enlarging",
+            "consuming",
+            "ratifying",
+            "consenting",
+            "investing"
+        ],
+        "a": 0
+    },
+    {
+        "id": 9,
+        "q": "Find the synonym of the following words written in capitals. At last things began to IMPROVE.",
+        "o": [
+            "injure",
+            "get better",
+            "become worse",
+            "collect",
+            "change"
+        ],
+        "a": 1
+    },
+    {
+        "id": 10,
+        "q": "Find the synonym of the following words written in capitals. Everybody PROTESTED to be examined again.",
+        "o": [
+            "were for",
+            "were against",
+            "were after",
+            "were before",
+            "were like"
+        ],
+        "a": 1
+    },
+    {
+        "id": 11,
+        "q": "Find the synonym of the following words written in capitals. Small children sometimes FEAR the dark.",
+        "o": [
+            "are afraid of",
+            "are terrible",
+            "are angry",
+            "are in love",
+            "are fond"
+        ],
+        "a": 0
+    },
+    {
+        "id": 12,
+        "q": "Find the synonym of the following words written in capitals. She thought that he was BRAVE.",
+        "o": [
+            "coward",
+            "courageous",
+            "strong",
+            "quiet",
+            "powerful"
+        ],
+        "a": 1
+    },
+    {
+        "id": 13,
+        "q": "Find the synonym of the following words written in capitals. The great Russian poet Pushkin was a REMARKABLE man.",
+        "o": [
+            "careless",
+            "clever",
+            "hard",
+            "kind",
+            "extraordinary"
+        ],
+        "a": 4
+    },
+    {
+        "id": 14,
+        "q": "Find the synonym of the following words written in capitals. The time will come, no doubt, when a man will BE ALLOWED to be very angry only on special days.",
+        "o": [
+            "be passed",
+            "be settled",
+            "be permitted",
+            "be taken",
+            "be given"
+        ],
+        "a": 2
+    },
+    {
+        "id": 15,
+        "q": "Find the synonym of the following words written in capitals. I want you to accept the invitation of your English DOCTOR friend.",
+        "o": [
+            "boy",
+            "physician",
+            "physicist",
+            "girl",
+            "doctrine"
+        ],
+        "a": 1
+    },
+    {
+        "id": 16,
+        "q": "Find the synonym of the following words written in capitals. When I met my friend she WAS VERY ANXIOUS about something.",
+        "o": [
+            "took care of",
+            "was troubled",
+            "got angry",
+            "looked for",
+            "was glad"
+        ],
+        "a": 1
+    },
+    {
+        "id": 17,
+        "q": "Find the synonym of the following words written in capitals. She was AWFULLY sorry for her.",
+        "o": [
+            "respectfully",
+            "politely",
+            "terribly",
+            "cordially",
+            "correctly"
+        ],
+        "a": 2
+    },
+    {
+        "id": 18,
+        "q": "Find the synonym of the following words written in capitals. Don't paint IN A HURRY.",
+        "o": [
+            "exactly",
+            "irritably",
+            "hastily",
+            "specially",
+            "really"
+        ],
+        "a": 2
+    },
+    {
+        "id": 19,
+        "q": "Find the synonym of the following words written in capitals. An old man was their CONSTANT buyer.",
+        "o": [
+            "popular",
+            "capable",
+            "clever",
+            "permanent",
+            "attentive"
+        ],
+        "a": 3
+    },
+    {
+        "id": 20,
+        "q": "Find the synonym of the following words written in capitals. GRADUALLY that illness had broken me down.",
+        "o": [
+            "steps",
+            "inch by inch",
+            "now and then",
+            "little by little",
+            "time after time"
+        ],
+        "a": 3
+    },
+    {
+        "id": 21,
+        "q": "Find the synonym of the following words written in capitals. The achievements of science and technology of recent years have influenced the CAREERS of many people.",
+        "o": [
+            "marketing",
+            "trading",
+            "professions",
+            "hands",
+            "works"
+        ],
+        "a": 2
+    },
+    {
+        "id": 22,
+        "q": "Find the synonym of the following words written in capitals. Somebody TAPPED ON the door at night.",
+        "o": [
+            "knocked at",
+            "closed",
+            "looked through",
+            "came up",
+            "took care of"
+        ],
+        "a": 0
+    },
+    {
+        "id": 23,
+        "q": "Find the synonym of the following words written in capitals. When the police arrived the thieves TOOK TO FLIGHT leaving all the stolen things behind.",
+        "o": [
+            "ran away",
+            "take away",
+            "did away",
+            "got up",
+            "climbed on"
+        ],
+        "a": 0
+    },
+    {
+        "id": 24,
+        "q": "Find the synonym of the following words written in capitals. Please, you are so nervous, do try to CONTAIN your anger.",
+        "o": [
+            "hold back",
+            "consume",
+            "contact",
+            "consult",
+            "come back"
+        ],
+        "a": 0
+    },
+    {
+        "id": 25,
+        "q": "Find the synonym of the following words written in capitals. It's high time for the child TO GO TO BYE-BYES.",
+        "o": [
+            "to say good bye",
+            "to play with toys",
+            "to go to sleep",
+            "to part with his parents",
+            "to see his friends off"
+        ],
+        "a": 2
+    },
+    {
+        "id": 26,
+        "q": "Find the synonym of the following words written in capitals. I wonder how many similar days I should BE FORCED to spend there.",
+        "o": [
+            "be heard",
+            "be sent",
+            "be made",
+            "be continued",
+            "be rich"
+        ],
+        "a": 2
+    },
+    {
+        "id": 27,
+        "q": "Find the synonym of the following words written in capitals. Shakespeare is sometimes called the BARD-of-the middle age.",
+        "o": [
+            "poet",
+            "writer",
+            "poem",
+            "banner",
+            "song"
+        ],
+        "a": 0
+    },
+    {
+        "id": 28,
+        "q": "Find the synonym of the following words written in capitals. After Columbus's first voyage in 1492, the news of his DISCOVERY spread across Europe.",
+        "o": [
+            "death",
+            "treason",
+            "exploration",
+            "recovery",
+            "victory"
+        ],
+        "a": 2
+    },
+    {
+        "id": 29,
+        "q": "Find the synonym of the following words written in capitals. The Endeavour ANCHORED in a wide bay to take water and food.",
+        "o": [
+            "sailed",
+            "started",
+            "was seen",
+            "was on fire",
+            "attached"
+        ],
+        "a": 4
+    },
+    {
+        "id": 30,
+        "q": "Find the synonym of the following words written in capitals. Columbus was CONVINCED that the earth was round.",
+        "o": [
+            "reluctant",
+            "happy",
+            "hesitant",
+            "assured",
+            "told"
+        ],
+        "a": 3
+    },
+    {
+        "id": 31,
+        "q": "Find the synonym of the following words written in capitals. The Greeks and other ancient Mediterranean people thought that the earth was FLAT.",
+        "o": [
+            "unlimited",
+            "oval",
+            "plane",
+            "bumpy",
+            "round"
+        ],
+        "a": 2
+    },
+    {
+        "id": 32,
+        "q": "Find the synonym of the following words written in capitals. Arbuthnot's work is HARDLY ever real today, but, J.Bull, whom he created, is very much alive.",
+        "o": [
+            "barely",
+            "always",
+            "constantly",
+            "happily",
+            "cheerfully"
+        ],
+        "a": 0
+    },
+    {
+        "id": 33,
+        "q": "Find the synonym of the following words written in capitals. John Bull, the nickname for the English nation, was INVENTED by a Scotsman, John Arbuthnot.",
+        "o": [
+            "made up",
+            "given up",
+            "borrowed",
+            "shared",
+            "removed"
+        ],
+        "a": 0
+    },
+    {
+        "id": 34,
+        "q": "Find the synonym of the following words written in capitals. Don't try to BUTTER me. This trick of yours won't work with me.",
+        "o": [
+            "spread",
+            "flatter",
+            "press",
+            "ban",
+            "frighten"
+        ],
+        "a": 1
+    },
+    {
+        "id": 35,
+        "q": "Find the synonym of the following words written in capitals. The company asked for ADDITIONAL information.",
+        "o": [
+            "emphatic",
+            "careful",
+            "certain",
+            "further",
+            "unusual"
+        ],
+        "a": 3
+    },
+    {
+        "id": 36,
+        "q": "Find the synonym of the following words written in capitals. The traffic rules must be OBSERVED by everybody.",
+        "o": [
+            "seen",
+            "heard",
+            "followed",
+            "taken",
+            "learnt"
+        ],
+        "a": 2
+    },
+    {
+        "id": 37,
+        "q": "Find the synonym of the following words written in capitals. Children need some RELAXATION after all those hard exams.",
+        "o": [
+            "vacation",
+            "holidays",
+            "time",
+            "period",
+            "rest"
+        ],
+        "a": 4
+    },
+    {
+        "id": 38,
+        "q": "Find the synonym of the following words written in capitals. -Who's that man you spoke to just now? -I don't know, he is completely UNFAMILIAR to me.",
+        "o": [
+            "foreign",
+            "strange",
+            "unknown",
+            "new",
+            "for"
+        ],
+        "a": 1
+    },
+    {
+        "id": 39,
+        "q": "Find the synonym of the following words written in capitals. Grey's going TO GET a splendid job.",
+        "o": [
+            "to go",
+            "to put",
+            "to obtain",
+            "to receive",
+            "to win"
+        ],
+        "a": 2
+    },
+    {
+        "id": 40,
+        "q": "Find the synonym of the following words written in capitals. He is a person who understands his OBLIGATIONS and attends to them.",
+        "o": [
+            "restrictions",
+            "annoyances",
+            "observations",
+            "hardship",
+            "duties"
+        ],
+        "a": 4
+    },
+    {
+        "id": 41,
+        "q": "Find the synonym of the following words written in capitals. Mount Cook, THE CROWN of the New Zealand Southern Alps, rises to 3756 meters above the surface.",
+        "o": [
+            "summit",
+            "foot",
+            "beauty",
+            "rock",
+            "earth"
+        ],
+        "a": 0
+    },
+    {
+        "id": 42,
+        "q": "Find the synonym of the following words written in capitals. He was PUT TO DEATH 2 days go.",
+        "o": [
+            "released",
+            "left",
+            "executed",
+            "found",
+            "disappeared"
+        ],
+        "a": 2
+    },
+    {
+        "id": 43,
+        "q": "Find the synonym of the following words written in capitals. What EXCUSE have you got this time?",
+        "o": [
+            "matter",
+            "problem",
+            "factor",
+            "reason",
+            "explanation"
+        ],
+        "a": 4
+    },
+    {
+        "id": 44,
+        "q": "Find the synonym of the following words written in capitals. The professor's INTRODUCTORY remarks concerned the development of culture in that region.",
+        "o": [
+            "preliminary",
+            "final",
+            "next",
+            "supplementary",
+            "useful"
+        ],
+        "a": 0
+    },
+    {
+        "id": 45,
+        "q": "Find the synonym of the following words written in capitals. The captain of the ship LEFT his town.",
+        "o": [
+            "abandoned",
+            "sought",
+            "visited",
+            "looked for",
+            "left for"
+        ],
+        "a": 0
+    },
+    {
+        "id": 46,
+        "q": "Find the synonym of the following words written in capitals. When I opened the box at home I FOUND that the shoes were not mine.",
+        "o": [
+            "talked",
+            "sent",
+            "recognized",
+            "discovered",
+            "called"
+        ],
+        "a": 3
+    },
+    {
+        "id": 47,
+        "q": "Find the synonym of the following words written in capitals. I offered him a cup of coffee, which he REFUSED politely.",
+        "o": [
+            "rejected",
+            "took",
+            "gave",
+            "finished",
+            "obtained"
+        ],
+        "a": 0
+    },
+    {
+        "id": 48,
+        "q": "Find the synonym of the following words written in capitals. It was a lucky CHANCE that he could do it.",
+        "o": [
+            "business",
+            "opportunity",
+            "matter",
+            "manager",
+            "pension"
+        ],
+        "a": 1
+    },
+    {
+        "id": 49,
+        "q": "Find the synonym of the following words written in capitals. I want a set of books for someone who is KEEN ON reading.",
+        "o": [
+            "severe on",
+            "quick at",
+            "fond of",
+            "sharp at",
+            "afraid of"
+        ],
+        "a": 2
+    },
+    {
+        "id": 50,
+        "q": "Find the synonym of the following words written in capitals. In Sydney, William Westwood was turned over to a cruel settler as AN UNPAID laborer.",
+        "o": [
+            "a paid",
+            "a free",
+            "an illegal",
+            "an unnoticed",
+            "a permanent"
+        ],
+        "a": 1
+    },
+    {
+        "id": 51,
+        "q": "Find the synonym of the following words written in capitals. Our classmates often take part in different sport COMPETITIONS.",
+        "o": [
+            "events",
+            "races",
+            "meetings",
+            "news",
+            "things"
+        ],
+        "a": 0
+    },
+    {
+        "id": 52,
+        "q": "Find the synonym of the following words written in capitals. A SMOOTHFACED man of forty faced me.",
+        "o": [
+            "graceful",
+            "shaven",
+            "beautiful",
+            "famous",
+            "handsome"
+        ],
+        "a": 1
+    },
+    {
+        "id": 53,
+        "q": "Find the synonym of the following words written in capitals. He carried a BUNCH of flowers in his hands.",
+        "o": [
+            "bouquet",
+            "bundle",
+            "packet",
+            "bucket",
+            "flock"
+        ],
+        "a": 0
+    },
+    {
+        "id": 54,
+        "q": "Find the synonym of the following words written in capitals. Tom is an INDUSTRIOUS boy.",
+        "o": [
+            "hard working",
+            "gracious",
+            "graceful",
+            "huge",
+            "lazy"
+        ],
+        "a": 0
+    },
+    {
+        "id": 55,
+        "q": "Find the synonym of the following words written in capitals. Oh, my dear! I'll be back BEFORE YOU SAY JOHN ROBINSON.",
+        "o": [
+            "in an hour",
+            "hardly",
+            "very soon",
+            "at sunset",
+            "in some time"
+        ],
+        "a": 2
+    },
+    {
+        "id": 56,
+        "q": "Find the synonym of the following words written in capitals. What DIARY PRODUCTS do you like to eat?",
+        "o": [
+            "creamery",
+            "meals",
+            "animal",
+            "first course",
+            "desserts"
+        ],
+        "a": 0
+    },
+    {
+        "id": 57,
+        "q": "Find the synonym of the following words written in capitals. Puppies lived in a DOG-HOUSE.",
+        "o": [
+            "kennel",
+            "barn",
+            "cave",
+            "box",
+            "garage"
+        ],
+        "a": 0
+    },
+    {
+        "id": 58,
+        "q": "Find the synonym of the following words written in capitals. The tickets to the theatre will be booked IN ADVANCE.",
+        "o": [
+            "later",
+            "soon",
+            "the next day",
+            "earlier",
+            "beforehand"
+        ],
+        "a": 4
+    },
+    {
+        "id": 59,
+        "q": "Find the synonym of the following words written in capitals. I have no idea where the relatives on my father's side live, LET ALONE visiting them.",
+        "o": [
+            "not a single",
+            "leave alone",
+            "only one of",
+            "not speaking of",
+            "lonely one"
+        ],
+        "a": 3
+    },
+    {
+        "id": 60,
+        "q": "Find the synonym of the following words written in capitals. Vasco da Gama was a Portuguese EXPLORER born around 1460.",
+        "o": [
+            "traveler",
+            "scientist",
+            "king",
+            "ruler",
+            "conqueror"
+        ],
+        "a": 0
+    },
+    {
+        "id": 61,
+        "q": "Find the synonym of the following words written in capitals. The Vikings liked to make up long tales about their BRAVE deeds.",
+        "o": [
+            "timid",
+            "fearless",
+            "past",
+            "strong",
+            "stupid"
+        ],
+        "a": 1
+    },
+    {
+        "id": 62,
+        "q": "Find the synonym of the following words written in capitals. The daily performance was killingly DULL.",
+        "o": [
+            "unforgettable",
+            "dutiful",
+            "dynamic",
+            "boring",
+            "bright"
+        ],
+        "a": 3
+    },
+    {
+        "id": 63,
+        "q": "Find the synonym of the following words written in capitals. Doctor Manson CURED a lot of miners that's why he won great popularity and respect with them.",
+        "o": [
+            "treated",
+            "recovered",
+            "gave",
+            "took",
+            "rescued"
+        ],
+        "a": 0
+    },
+    {
+        "id": 64,
+        "q": "Find the synonym of the following words written in capitals. Australian aborigines are dark skinned people whose DESCENDANTS came to the continent from Asia about 25,000 years ago.",
+        "o": [
+            "predecessors",
+            "relatives",
+            "offsprings",
+            "colonists",
+            "supporters"
+        ],
+        "a": 2
+    },
+    {
+        "id": 65,
+        "q": "Find the synonym of the following words written in capitals. I LIKE collecting stamps.",
+        "o": [
+            "am ill",
+            "am good at",
+            "am fond of",
+            "am afraid of",
+            "am proud of"
+        ],
+        "a": 2
+    },
+    {
+        "id": 66,
+        "q": "Find the synonym of the following words written in capitals. I am a BIG FISH IN A SMALL COMPANY.",
+        "o": [
+            "to be important in a big company",
+            "to be respected everywhere",
+            "to be important in a small company",
+            "to be estimated everywhere",
+            "not to be important in a small company"
+        ],
+        "a": 2
+    },
+    {
+        "id": 67,
+        "q": "Find the synonym of the following words written in capitals. Nobody believed his VOW because it wasn't for the first time.",
+        "o": [
+            "belief",
+            "idea",
+            "view",
+            "oath",
+            "opinion"
+        ],
+        "a": 3
+    },
+    {
+        "id": 68,
+        "q": "Find the synonym of the following words written in capitals. The first colonists from England made new homes and began TO WIDEN industrial towns.",
+        "o": [
+            "establish",
+            "waste",
+            "broaden",
+            "burden",
+            "steal"
+        ],
+        "a": 2
+    },
+    {
+        "id": 69,
+        "q": "Find the synonym of the following words written in capitals. He STUDIED the document for a long time.",
+        "o": [
+            "read carefully",
+            "taught",
+            "looked at",
+            "examined carefully",
+            "looked through"
+        ],
+        "a": 3
+    },
+    {
+        "id": 70,
+        "q": "Find the synonym of the following words written in capitals. Did you manage to stop the FIGHT between those two boys?",
+        "o": [
+            "show",
+            "stage",
+            "picture",
+            "talk",
+            "struggle"
+        ],
+        "a": 4
+    },
+    {
+        "id": 71,
+        "q": "Find the synonym of the following words written in capitals. The woman adds water to UNITE the flour and the milk.",
+        "o": [
+            "connect",
+            "make",
+            "join",
+            "complex",
+            "combine"
+        ],
+        "a": 4
+    },
+    {
+        "id": 72,
+        "q": "Find the synonym of the following words written in capitals. I can call back the faint ODORS of the wild flowers.",
+        "o": [
+            "orders",
+            "ado",
+            "fits",
+            "harmony",
+            "fragrances"
+        ],
+        "a": 4
+    },
+    {
+        "id": 73,
+        "q": "Find the synonym of the following words written in capitals. If the shops were not so CROWDED, the clerks would not be so tired.",
+        "o": [
+            "cold",
+            "full",
+            "old",
+            "fresh",
+            "fast"
+        ],
+        "a": 1
+    },
+    {
+        "id": 74,
+        "q": "Find the synonym of the following words written in capitals. Her interest in people and other animals was warm, personal and FRIENDLY.",
+        "o": [
+            "cordial",
+            "antagonistic",
+            "harmful",
+            "cool",
+            "hostile"
+        ],
+        "a": 0
+    },
+    {
+        "id": 75,
+        "q": "Find the synonym of the following words written in capitals. A dolphin asks for HELP.",
+        "o": [
+            "assistance",
+            "assistant",
+            "support",
+            "provision",
+            "sponsor"
+        ],
+        "a": 0
+    },
+    {
+        "id": 76,
+        "q": "Find the synonym of the following words written in capitals. Edison's idea was TO CHECK the mistakes of his son.",
+        "o": [
+            "to rise",
+            "to develop",
+            "to verify",
+            "to close",
+            "to renew"
+        ],
+        "a": 2
+    },
+    {
+        "id": 77,
+        "q": "Find the synonym of the following words written in capitals. Important",
+        "o": [
+            "complex",
+            "secondary",
+            "detailed",
+            "significant"
+        ],
+        "a": 3
+    },
+    {
+        "id": 78,
+        "q": "Find the synonym of the following words written in capitals. Stubborn",
+        "o": [
+            "shy",
+            "obstinate",
+            "pliable",
+            "yielding"
+        ],
+        "a": 1
+    },
+    {
+        "id": 79,
+        "q": "Find the synonym of the following words written in capitals. Accustomed",
+        "o": [
+            "flexible",
+            "limp",
+            "stiff",
+            "used to"
+        ],
+        "a": 3
+    },
+    {
+        "id": 80,
+        "q": "Find the synonym of the following words written in capitals. Stare",
+        "o": [
+            "peep",
+            "pry",
+            "gaze",
+            "pause"
+        ],
+        "a": 2
+    },
+    {
+        "id": 81,
+        "q": "Find the synonym of the following words written in capitals. Overdue",
+        "o": [
+            "impending",
+            "punctual",
+            "prompt",
+            "delayed"
+        ],
+        "a": 3
+    },
+    {
+        "id": 82,
+        "q": "Find the synonym of the following words written in capitals. Keen",
+        "o": [
+            "slow",
+            "enthusiastic",
+            "reluctant",
+            "apathetic"
+        ],
+        "a": 1
+    },
+    {
+        "id": 83,
+        "q": "Find the synonym of the following words written in capitals. Duty",
+        "o": [
+            "obligation",
+            "shade",
+            "period",
+            "native"
+        ],
+        "a": 0
+    },
+    {
+        "id": 84,
+        "q": "Find the synonym of the following words written in capitals. Shorten",
+        "o": [
+            "shrink",
+            "thrust",
+            "fling",
+            "shove"
+        ],
+        "a": 0
+    },
+    {
+        "id": 85,
+        "q": "Find the synonym of the following words written in capitals. Firm",
+        "o": [
+            "soft",
+            "solid",
+            "uneven",
+            "loose"
+        ],
+        "a": 1
+    },
+    {
+        "id": 86,
+        "q": "Find the synonym of the following words written in capitals. Rubbish",
+        "o": [
+            "scrap",
+            "crump",
+            "stone",
+            "litter"
+        ],
+        "a": 3
+    },
+    {
+        "id": 87,
+        "q": "Find the synonym of the following words written in capitals. Peril",
+        "o": [
+            "danger",
+            "secure",
+            "hole",
+            "safe"
+        ],
+        "a": 0
+    },
+    {
+        "id": 88,
+        "q": "Find the synonym of the following words written in capitals. Flush",
+        "o": [
+            "bruise",
+            "blush",
+            "rush",
+            "brush"
+        ],
+        "a": 1
+    },
+    {
+        "id": 89,
+        "q": "Find the synonym of the following words written in capitals. Bring round",
+        "o": [
+            "persuade",
+            "bring back",
+            "bring on",
+            "bring down"
+        ],
+        "a": 0
+    },
+    {
+        "id": 90,
+        "q": "Find the synonym of the following words written in capitals. Bring forward",
+        "o": [
+            "bring down",
+            "bring up",
+            "bring round",
+            "suggest"
+        ],
+        "a": 3
+    },
+    {
+        "id": 91,
+        "q": "Find the synonym of the following words written in capitals. Unattended",
+        "o": [
+            "sluggish",
+            "heedless",
+            "alone",
+            "empty"
+        ],
+        "a": 2
+    },
+    {
+        "id": 92,
+        "q": "Find the synonym of the following words written in capitals. Group",
+        "o": [
+            "parcel",
+            "party",
+            "package",
+            "present"
+        ],
+        "a": 0
+    },
+    {
+        "id": 93,
+        "q": "Find the synonym of the following words written in capitals. Task",
+        "o": [
+            "lead",
+            "donation",
+            "summit",
+            "mission"
+        ],
+        "a": 3
+    },
+    {
+        "id": 94,
+        "q": "Find the synonym of the following words written in capitals. Peak",
+        "o": [
+            "bottom",
+            "summit",
+            "rear",
+            "front"
+        ],
+        "a": 1
+    },
+    {
+        "id": 95,
+        "q": "Find the synonym of the following words written in capitals. Bump",
+        "o": [
+            "jolt",
+            "piece",
+            "lump",
+            "handle"
+        ],
+        "a": 0
+    },
+    {
+        "id": 96,
+        "q": "Find the synonym of the following words written in capitals. Command",
+        "o": [
+            "urge",
+            "force",
+            "order",
+            "seize"
+        ],
+        "a": 2
+    },
+    {
+        "id": 97,
+        "q": "Find the synonym of the following words written in capitals. Enterprise",
+        "o": [
+            "hospitality",
+            "immunity",
+            "imagination",
+            "undertaking"
+        ],
+        "a": 3
+    },
+    {
+        "id": 98,
+        "q": "Find the synonym of the following words written in capitals. Resident",
+        "o": [
+            "confident",
+            "hesitant",
+            "incident",
+            "inhabitant"
+        ],
+        "a": 3
+    },
+    {
+        "id": 99,
+        "q": "Find the synonym of the following words written in capitals. Identify",
+        "o": [
+            "bump",
+            "throw in",
+            "catch",
+            "recognize"
+        ],
+        "a": 3
+    },
+    {
+        "id": 100,
+        "q": "Find the synonym of the following words written in capitals. Beg",
+        "o": [
+            "predict",
+            "implore",
+            "guess",
+            "oblige"
+        ],
+        "a": 1
+    },
+    {
+        "id": 101,
+        "q": "Find the synonym of the following words written in capitals. Spell",
+        "o": [
+            "native",
+            "period",
+            "shade",
+            "obligation"
+        ],
+        "a": 1
+    },
+    {
+        "id": 102,
+        "q": "Find the synonym of the following words written in capitals. Delight",
+        "o": [
+            "sadness",
+            "joy",
+            "calmness",
+            "gloom"
+        ],
+        "a": 1
+    },
+    {
+        "id": 103,
+        "q": "Find the synonym of the following words written in capitals. Genuine",
+        "o": [
+            "fake",
+            "counterfeit",
+            "false",
+            "authentic"
+        ],
+        "a": 3
+    },
+    {
+        "id": 104,
+        "q": "Find the synonym of the following words written in capitals. Damage",
+        "o": [
+            "mend",
+            "fix",
+            "incite",
+            "ravage"
+        ],
+        "a": 3
+    },
+    {
+        "id": 105,
+        "q": "Find the synonym of the following words written in capitals. Use up",
+        "o": [
+            "consume",
+            "stack",
+            "draw up",
+            "put by"
+        ],
+        "a": 0
+    },
+    {
+        "id": 106,
+        "q": "Find the synonym of the following words written in capitals. Behavior",
+        "o": [
+            "business",
+            "conduct",
+            "connection",
+            "container"
+        ],
+        "a": 1
+    },
+    {
+        "id": 107,
+        "q": "Find the synonym of the following words written in capitals. Stationary",
+        "o": [
+            "stationery",
+            "portable",
+            "mobile",
+            "still"
+        ],
+        "a": 3
+    },
+    {
+        "id": 108,
+        "q": "Find the synonym of the following words written in capitals. Walk over",
+        "o": [
+            "wash up",
+            "defeat",
+            "keep away",
+            "waver"
+        ],
+        "a": 1
+    },
+    {
+        "id": 109,
+        "q": "Find the synonym of the following words written in capitals. Praise",
+        "o": [
+            "blame",
+            "commend",
+            "censure",
+            "criticize"
+        ],
+        "a": 1
+    },
+    {
+        "id": 110,
+        "q": "Find the synonym of the following words written in capitals. Mystery",
+        "o": [
+            "coherent",
+            "enigma",
+            "curious",
+            "reverse"
+        ],
+        "a": 1
+    },
+    {
+        "id": 111,
+        "q": "Find the synonym of the following words written in capitals. Stop",
+        "o": [
+            "cease",
+            "eliminate",
+            "commence",
+            "commend"
+        ],
+        "a": 0
+    },
+    {
+        "id": 112,
+        "q": "Find the synonym of the following words written in capitals. Respect",
+        "o": [
+            "esteem",
+            "belief",
+            "scorn",
+            "contempt"
+        ],
+        "a": 0
+    },
+    {
+        "id": 113,
+        "q": "Find the synonym of the following words written in capitals. Splendid",
+        "o": [
+            "terrible",
+            "dreadful",
+            "awful",
+            "marvelous"
+        ],
+        "a": 3
+    },
+    {
+        "id": 114,
+        "q": "Find the synonym of the following words written in capitals. Exhausted",
+        "o": [
+            "anxious",
+            "worn-out",
+            "cheerful",
+            "vigorous"
+        ],
+        "a": 1
+    },
+    {
+        "id": 115,
+        "q": "Find the synonym of the following words written in capitals. Sway",
+        "o": [
+            "river",
+            "shudder",
+            "ruin",
+            "swing"
+        ],
+        "a": 3
+    },
+    {
+        "id": 116,
+        "q": "Find the synonym of the following words written in capitals. Widespread",
+        "o": [
+            "Infrequent",
+            "scarce",
+            "prevalent",
+            "rare"
+        ],
+        "a": 2
+    },
+    {
+        "id": 117,
+        "q": "Find the synonym of the following words written in capitals. Defect",
+        "o": [
+            "advantage",
+            "clash",
+            "decay",
+            "drawback"
+        ],
+        "a": 3
+    },
+    {
+        "id": 118,
+        "q": "Find the synonym of the following words written in capitals. Force",
+        "o": [
+            "oblige",
+            "eliminate",
+            "halt",
+            "liberate"
+        ],
+        "a": 0
+    },
+    {
+        "id": 119,
+        "q": "Find the synonym of the following words written in capitals. Talkative",
+        "o": [
+            "Know-all",
+            "scrupulous",
+            "chatty",
+            "fastidious"
+        ],
+        "a": 2
+    },
+    {
+        "id": 120,
+        "q": "Find the synonym of the following words written in capitals. Precious",
+        "o": [
+            "Enormous",
+            "vigorous",
+            "gorgeous",
+            "valuable"
+        ],
+        "a": 3
+    },
+    {
+        "id": 121,
+        "q": "Find the synonym of the following words written in capitals. Profession",
+        "o": [
+            "celebration",
+            "restoration",
+            "attention",
+            "occupation"
+        ],
+        "a": 3
+    },
+    {
+        "id": 122,
+        "q": "Find the synonym of the following words written in capitals. Contrary",
+        "o": [
+            "customary",
+            "conflict",
+            "common",
+            "opposite"
+        ],
+        "a": 3
+    },
+    {
+        "id": 123,
+        "q": "Find the synonym of the following words written in capitals. Unpredictable",
+        "o": [
+            "constant",
+            "steady",
+            "dense",
+            "volatile"
+        ],
+        "a": 3
+    },
+    {
+        "id": 124,
+        "q": "Find the synonym of the following words written in capitals. Row",
+        "o": [
+            "contest",
+            "argument",
+            "chat",
+            "quiz"
+        ],
+        "a": 1
+    },
+    {
+        "id": 125,
+        "q": "Find the synonym of the following words written in capitals. Hug",
+        "o": [
+            "embrace",
+            "push",
+            "stab",
+            "poke"
+        ],
+        "a": 0
+    },
+    {
+        "id": 126,
+        "q": "Find the synonym of the following words written in capitals. Ban",
+        "o": [
+            "prohibit",
+            "produce",
+            "create",
+            "happen"
+        ],
+        "a": 0
+    },
+    {
+        "id": 127,
+        "q": "Find the synonym of the following words written in capitals. Sign",
+        "o": [
+            "truth",
+            "trace",
+            "truce",
+            "trunk"
+        ],
+        "a": 1
+    },
+    {
+        "id": 128,
+        "q": "Find the synonym of the following words written in capitals. Brag",
+        "o": [
+            "enrage",
+            "boast",
+            "madden",
+            "infuriate"
+        ],
+        "a": 1
+    },
+    {
+        "id": 129,
+        "q": "Find the synonym of the following words written in capitals. Disagreement",
+        "o": [
+            "poise",
+            "conflict",
+            "harmony",
+            "stamina"
+        ],
+        "a": 1
+    },
+    {
+        "id": 130,
+        "q": "Find the synonym of the following words written in capitals. Enormous",
+        "o": [
+            "tidy",
+            "shoddy",
+            "mini",
+            "huge"
+        ],
+        "a": 3
+    },
+    {
+        "id": 131,
+        "q": "Find the synonym of the following words written in capitals. Hang on",
+        "o": [
+            "rely on",
+            "hold on",
+            "keep on",
+            "count on"
+        ],
+        "a": 3
+    },
+    {
+        "id": 132,
+        "q": "Find the synonym of the following words written in capitals. Take away",
+        "o": [
+            "spread",
+            "distribute",
+            "hand over",
+            "remove"
+        ],
+        "a": 3
+    },
+    {
+        "id": 133,
+        "q": "Find the synonym of the following words written in capitals. Outcome",
+        "o": [
+            "arrival",
+            "exit",
+            "result",
+            "commence"
+        ],
+        "a": 2
+    },
+    {
+        "id": 134,
+        "q": "Find the synonym of the following words written in capitals. Sufficient",
+        "o": [
+            "fake",
+            "unreal",
+            "adequate",
+            "rare"
+        ],
+        "a": 2
+    },
+    {
+        "id": 135,
+        "q": "Find the synonym of the following words written in capitals. Maintenance",
+        "o": [
+            "heritage",
+            "racket",
+            "alimony",
+            "extortion"
+        ],
+        "a": 2
+    },
+    {
+        "id": 136,
+        "q": "Find the synonym of the following words written in capitals. Material",
+        "o": [
+            "supervision",
+            "substance",
+            "superstition",
+            "surface"
+        ],
+        "a": 1
+    },
+    {
+        "id": 137,
+        "q": "Find the synonym of the following words written in capitals. Run down",
+        "o": [
+            "turn over",
+            "run over",
+            "find out",
+            "criticize"
+        ],
+        "a": 1
+    },
+    {
+        "id": 138,
+        "q": "Find the synonym of the following words written in capitals. Fling",
+        "o": [
+            "let in",
+            "hold",
+            "hurl",
+            "seize"
+        ],
+        "a": 2
+    },
+    {
+        "id": 139,
+        "q": "Find the synonym of the following words written in capitals. Temporary",
+        "o": [
+            "provisional",
+            "permanent",
+            "constant",
+            "enduring"
+        ],
+        "a": 0
+    },
+    {
+        "id": 140,
+        "q": "Find the synonym of the following words written in capitals. Go off",
+        "o": [
+            "spoil",
+            "break",
+            "clear up",
+            "rest"
+        ],
+        "a": 0
+    },
+    {
+        "id": 141,
+        "q": "Find the synonym of the following words written in capitals. Remedy",
+        "o": [
+            "gift",
+            "argument",
+            "reward",
+            "cure"
+        ],
+        "a": 3
+    },
+    {
+        "id": 142,
+        "q": "Find the synonym of the following words written in capitals. Seldom",
+        "o": [
+            "rarely",
+            "frequently",
+            "regularly",
+            "often"
+        ],
+        "a": 3
+    },
+    {
+        "id": 143,
+        "q": "Find the synonym of the following words written in capitals. Raw",
+        "o": [
+            "rotten",
+            "tough",
+            "moldy",
+            "uncooked"
+        ],
+        "a": 3
+    },
+    {
+        "id": 144,
+        "q": "Find the synonym of the following words written in capitals. Lucrative",
+        "o": [
+            "crucial",
+            "fragile",
+            "profitable",
+            "decisive"
+        ],
+        "a": 2
+    },
+    {
+        "id": 145,
+        "q": "Find the synonym of the following words written in capitals. Discover",
+        "o": [
+            "carry out",
+            "sort out",
+            "find out",
+            "bring out"
+        ],
+        "a": 2
+    },
+    {
+        "id": 146,
+        "q": "Find the synonym of the following words written in capitals. Simply",
+        "o": [
+            "merely",
+            "actually",
+            "usually",
+            "frequently"
+        ],
+        "a": 0
+    },
+    {
+        "id": 147,
+        "q": "Find the synonym of the following words written in capitals. Classify",
+        "o": [
+            "tie up",
+            "sort out",
+            "stir up",
+            "tear up"
+        ],
+        "a": 1
+    },
+    {
+        "id": 148,
+        "q": "Find the synonym of the following words written in capitals. Devious",
+        "o": [
+            "scornful",
+            "liberal",
+            "honest",
+            "crooked"
+        ],
+        "a": 3
+    },
+    {
+        "id": 149,
+        "q": "Find the synonym of the following words written in capitals. Stress",
+        "o": [
+            "omit",
+            "emphasize",
+            "leave out",
+            "ignore"
+        ],
+        "a": 1
+    },
+    {
+        "id": 150,
+        "q": "Find the synonym of the following words written in capitals. Contaminate",
+        "o": [
+            "renovate",
+            "mend",
+            "purify",
+            "pollute"
+        ],
+        "a": 3
+    },
+    {
+        "id": 151,
+        "q": "Find the synonym of the following words written in capitals. Timetable",
+        "o": [
+            "scheme",
+            "plot",
+            "schedule",
+            "minutes"
+        ],
+        "a": 2
+    },
+    {
+        "id": 152,
+        "q": "Find the synonym of the following words written in capitals. Slowly",
+        "o": [
+            "briefly",
+            "gradually",
+            "deeply",
+            "mainly"
+        ],
+        "a": 1
+    },
+    {
+        "id": 153,
+        "q": "Find the synonym of the following words written in capitals. Harm",
+        "o": [
+            "Peril",
+            "trouble",
+            "damage",
+            "rush"
+        ],
+        "a": 2
+    },
+    {
+        "id": 154,
+        "q": "Find the synonym of the following words written in capitals. Incidentally",
+        "o": [
+            "far away",
+            "in any case",
+            "by the way",
+            "in my opinion"
+        ],
+        "a": 2
+    },
+    {
+        "id": 155,
+        "q": "Find the synonym of the following words written in capitals. Summit",
+        "o": [
+            "rear",
+            "bottom",
+            "peak",
+            "front"
+        ],
+        "a": 2
+    },
+    {
+        "id": 156,
+        "q": "Find the synonym of the following words written in capitals. Skin",
+        "o": [
+            "peel",
+            "pip",
+            "seed",
+            "stone"
+        ],
+        "a": 0
+    },
+    {
+        "id": 157,
+        "q": "Find the synonym of the following words written in capitals. Walk out",
+        "o": [
+            "leave",
+            "lay out",
+            "work out",
+            "burst out"
+        ],
+        "a": 0
+    },
+    {
+        "id": 158,
+        "q": "Find the synonym of the following words written in capitals. Glimmer",
+        "o": [
+            "darken",
+            "shimmer",
+            "slit",
+            "shelter"
+        ],
+        "a": 1
+    },
+    {
+        "id": 159,
+        "q": "Find the synonym of the following words written in capitals. Goods",
+        "o": [
+            "legacy",
+            "heritage",
+            "possessions",
+            "patrimony"
+        ],
+        "a": 2
+    },
+    {
+        "id": 160,
+        "q": "Find the antonym of the following words written in capitals. He was an HONEST man.",
+        "o": [
+            "liar",
+            "good",
+            "bad",
+            "truthful",
+            "wonderful"
+        ],
+        "a": 0
+    },
+    {
+        "id": 161,
+        "q": "Find the antonym of the following words written in capitals. The climate of Great Britain is MILD.",
+        "o": [
+            "difficult",
+            "strong",
+            "severe",
+            "bad",
+            "good"
+        ],
+        "a": 2
+    },
+    {
+        "id": 162,
+        "q": "Find the antonym of the following words written in capitals. She was afraid to walk FARTHER as she knew her life was in danger.",
+        "o": [
+            "mother",
+            "out near",
+            "near",
+            "nearer",
+            "away"
+        ],
+        "a": 3
+    },
+    {
+        "id": 163,
+        "q": "Find the antonym of the following words written in capitals. If you know one FOREIGN language it will be easier for you to learn the second one.",
+        "o": [
+            "local",
+            "modern",
+            "popular",
+            "old",
+            "native"
+        ],
+        "a": 4
+    },
+    {
+        "id": 164,
+        "q": "Find the antonym of the following words written in capitals. Tom's father was a CRUEL man.",
+        "o": [
+            "honest",
+            "kind",
+            "funny",
+            "serious",
+            "light"
+        ],
+        "a": 1
+    },
+    {
+        "id": 165,
+        "q": "Find the antonym of the following words written in capitals. It seemed to her that he was very DECENT.",
+        "o": [
+            "dishonest",
+            "be tired of",
+            "fat",
+            "handsome",
+            "unhealthy"
+        ],
+        "a": 0
+    },
+    {
+        "id": 166,
+        "q": "Find the antonym of the following words written in capitals. I opened the door and saw a DECEASED man.",
+        "o": [
+            "weak",
+            "sick",
+            "invisible",
+            "new born",
+            "old"
+        ],
+        "a": 3
+    },
+    {
+        "id": 167,
+        "q": "Find the antonym of the following words written in capitals. Tom is very LAZY. He doesn't like to do anything.",
+        "o": [
+            "modest",
+            "modern",
+            "clever",
+            "energetic",
+            "nervous"
+        ],
+        "a": 3
+    },
+    {
+        "id": 168,
+        "q": "Find the antonym of the following words written in capitals. My sister is very SERIOUS.",
+        "o": [
+            "energetic",
+            "polite",
+            "kind",
+            "intelligent",
+            "light-minded"
+        ],
+        "a": 4
+    },
+    {
+        "id": 169,
+        "q": "Find the antonym of the following words written in capitals. Mr. Brown decided TO PROTECT that young man.",
+        "o": [
+            "to help",
+            "to accuse",
+            "to care",
+            "to shout",
+            "to criticize"
+        ],
+        "a": 1
+    },
+    {
+        "id": 170,
+        "q": "Find the antonym of the following words written in capitals. He lives A LONG WAY FROM his school.",
+        "o": [
+            "far",
+            "near",
+            "late",
+            "behind",
+            "in front of"
+        ],
+        "a": 1
+    },
+    {
+        "id": 171,
+        "q": "Find the antonym of the following words written in capitals. Such trees grow only in the countries the climate of which is hot and DAMP.",
+        "o": [
+            "cold",
+            "cool",
+            "dry",
+            "sunny",
+            "windy"
+        ],
+        "a": 2
+    },
+    {
+        "id": 172,
+        "q": "Find the antonym of the following words written in capitals. The boy was PUNISHED and he couldn't go to play with his friends.",
+        "o": [
+            "encouraged",
+            "beaten",
+            "defended",
+            "invited",
+            "overcome"
+        ],
+        "a": 0
+    },
+    {
+        "id": 173,
+        "q": "Find the antonym of the following words written in capitals. In the 18th century England SEIZED many colonies in the old and new word.",
+        "o": [
+            "captured",
+            "freed",
+            "occupied",
+            "lost",
+            "gained"
+        ],
+        "a": 1
+    },
+    {
+        "id": 174,
+        "q": "Find the antonym of the following words written in capitals. Father said that he could STAY AT home and work in the garden.",
+        "o": [
+            "leave",
+            "live",
+            "be",
+            "leave for",
+            "go into"
+        ],
+        "a": 0
+    },
+    {
+        "id": 175,
+        "q": "Find the antonym of the following words written in capitals. At present all kinds of specialists need FOREIGN languages for their work.",
+        "o": [
+            "old",
+            "different",
+            "native",
+            "several",
+            "many"
+        ],
+        "a": 2
+    },
+    {
+        "id": 176,
+        "q": "Find the antonym of the following words written in capitals. I wish you PROSPERITY.",
+        "o": [
+            "success",
+            "good luck",
+            "happiness",
+            "poverty",
+            "riches"
+        ],
+        "a": 3
+    },
+    {
+        "id": 177,
+        "q": "Find the antonym of the following words written in capitals. She was quite ALONE among them.",
+        "o": [
+            "single",
+            "only",
+            "adapted",
+            "distant",
+            "separate"
+        ],
+        "a": 2
+    },
+    {
+        "id": 178,
+        "q": "Find the antonym of the following words written in capitals. The FOREIGNERS were very amused when they saw this palace.",
+        "o": [
+            "guests",
+            "farmers",
+            "natives",
+            "neighbors",
+            "reporters"
+        ],
+        "a": 2
+    },
+    {
+        "id": 179,
+        "q": "Find the antonym of the following words written in capitals. Emily was in BAD temper.",
+        "o": [
+            "large",
+            "great",
+            "excellent",
+            "narrow",
+            "miserable"
+        ],
+        "a": 2
+    },
+    {
+        "id": 180,
+        "q": "Find the antonym of the following words written in capitals. The day before yesterday I WENT TO SEE my sick grandmother.",
+        "o": [
+            "came in",
+            "visited",
+            "left",
+            "called on",
+            "invited"
+        ],
+        "a": 4
+    },
+    {
+        "id": 181,
+        "q": "Find the antonym of the following words written in capitals. Her character is very MILD.",
+        "o": [
+            "gentle",
+            "angry",
+            "difficult",
+            "rude",
+            "bad"
+        ],
+        "a": 3
+    },
+    {
+        "id": 182,
+        "q": "Find the antonym of the following words written in capitals. The British seem to like their weather as it is ISLAND weather.",
+        "o": [
+            "isolated",
+            "light",
+            "mild",
+            "difficult",
+            "continental"
+        ],
+        "a": 4
+    },
+    {
+        "id": 183,
+        "q": "Find the antonym of the following words written in capitals. I think it is a LEGAL party as it has been functioning for a long time.",
+        "o": [
+            "lawful",
+            "possible",
+            "illegal",
+            "illiterate",
+            "important"
+        ],
+        "a": 2
+    },
+    {
+        "id": 184,
+        "q": "Find the antonym of the following words written in capitals. My mother was a KIND person.",
+        "o": [
+            "cruel",
+            "good-natured",
+            "nice",
+            "bad",
+            "merry"
+        ],
+        "a": 0
+    },
+    {
+        "id": 185,
+        "q": "Find the antonym of the following words written in capitals. About one million Welshmen still speak NATIVE language.",
+        "o": [
+            "original",
+            "natural",
+            "folk",
+            "other",
+            "foreign"
+        ],
+        "a": 4
+    },
+    {
+        "id": 186,
+        "q": "Find the antonym of the following words written in capitals. MODERN factories have sprung up around the city.",
+        "o": [
+            "small",
+            "new",
+            "out of date",
+            "fresh",
+            "bad"
+        ],
+        "a": 2
+    },
+    {
+        "id": 187,
+        "q": "Find the antonym of the following words written in capitals. The Welsh ARE FULL OF idealism and good humor.",
+        "o": [
+            "complete",
+            "whole",
+            "weak",
+            "lack",
+            "empty"
+        ],
+        "a": 3
+    },
+    {
+        "id": 188,
+        "q": "Find the antonym of the following words written in capitals. When he was nine, he ENTERED the gymnasium and became an excellent student.",
+        "o": [
+            "finished",
+            "got",
+            "went away",
+            "came",
+            "completed"
+        ],
+        "a": 0
+    },
+    {
+        "id": 189,
+        "q": "Find the antonym of the following words written in capitals. She likes GETTING letters but dislikes writing them.",
+        "o": [
+            "receiving",
+            "taking",
+            "sending",
+            "reading",
+            "finding"
+        ],
+        "a": 2
+    },
+    {
+        "id": 190,
+        "q": "Find the antonym of the following words written in capitals. There are many ANCIENT cities in Turkey.",
+        "o": [
+            "big",
+            "old",
+            "fashionable",
+            "modern",
+            "beautiful"
+        ],
+        "a": 3
+    },
+    {
+        "id": 191,
+        "q": "Find the antonym of the following words written in capitals. There's a DEEP lake between these two villages.",
+        "o": [
+            "shallow",
+            "charming",
+            "good-looking",
+            "handsome",
+            "unpleasant"
+        ],
+        "a": 0
+    },
+    {
+        "id": 192,
+        "q": "Find the antonym of the following words written in capitals. Our traditions are very ANCIENT and our people are proud of them.",
+        "o": [
+            "present",
+            "old",
+            "modern",
+            "real",
+            "young"
+        ],
+        "a": 2
+    },
+    {
+        "id": 193,
+        "q": "Find the antonym of the following words written in capitals. I didn't know she was so LEARNED.",
+        "o": [
+            "well read",
+            "bookish",
+            "accomplished",
+            "plain",
+            "ignorant"
+        ],
+        "a": 4
+    },
+    {
+        "id": 194,
+        "q": "Find the antonym of the following words written in capitals. One day my brother told the story to one of his FRIENDS.",
+        "o": [
+            "advisers",
+            "enemies",
+            "assistants",
+            "backers",
+            "patrons"
+        ],
+        "a": 1
+    },
+    {
+        "id": 195,
+        "q": "Find the antonym of the following words written in capitals. Nobody knew he was leaving the country; only Anne knew the",
+        "o": [
+            "loyalty",
+            "honor",
+            "belief",
+            "lie",
+            "light"
+        ],
+        "a": 3
+    },
+    {
+        "id": 196,
+        "q": "Find the antonym of the following words written in capitals. Why did they TURN him OUT?",
+        "o": [
+            "dismiss",
+            "employ",
+            "refuse",
+            "free",
+            "examine"
+        ],
+        "a": 1
+    },
+    {
+        "id": 197,
+        "q": "Find the antonym of the following words written in capitals. This is a SHARP knife.",
+        "o": [
+            "new",
+            "slow",
+            "blue",
+            "dull",
+            "old"
+        ],
+        "a": 3
+    },
+    {
+        "id": 198,
+        "q": "Find the antonym of the following words written in capitals. The train LEAVES ON TIME.",
+        "o": [
+            "is late",
+            "is slow",
+            "is fast",
+            "express train",
+            "is before time"
+        ],
+        "a": 0
+    },
+    {
+        "id": 199,
+        "q": "Find the antonym of the following words written in capitals. Tom DUG OUT his money and ran away.",
+        "o": [
+            "burned",
+            "broke",
+            "forgot",
+            "carried",
+            "buried"
+        ],
+        "a": 4
+    },
+    {
+        "id": 200,
+        "q": "Find the antonym of the following words written in capitals. I'm sorry to trouble you, but could you LEND me some sugar?",
+        "o": [
+            "take",
+            "borrow",
+            "land",
+            "buy",
+            "show"
+        ],
+        "a": 1
+    },
+    {
+        "id": 201,
+        "q": "Find the antonym of the following words written in capitals. Is service INCLUDED?",
+        "o": [
+            "involved",
+            "embraced",
+            "urged",
+            "excluded",
+            "improved"
+        ],
+        "a": 3
+    },
+    {
+        "id": 202,
+        "q": "Find the antonym of the following words written in capitals. You spoke very RUDELY to him.",
+        "o": [
+            "slowly",
+            "politely",
+            "quickly",
+            "warmly",
+            "sharply"
+        ],
+        "a": 1
+    },
+    {
+        "id": 203,
+        "q": "Find the antonym of the following words written in capitals. I told him about my plan and he at once AGREED.",
+        "o": [
+            "adored",
+            "admitted",
+            "affected",
+            "rejected",
+            "appointed"
+        ],
+        "a": 3
+    },
+    {
+        "id": 204,
+        "q": "Find the antonym of the following words written in capitals. At first he HESITATED but we insisted on his telling the truth.",
+        "o": [
+            "was in two minds",
+            "was sure",
+            "was surprised",
+            "was glad",
+            "was offended"
+        ],
+        "a": 1
+    },
+    {
+        "id": 205,
+        "q": "Find the antonym of the following words written in capitals. The number of champions in Russia is INCREASING from day to day.",
+        "o": [
+            "improving",
+            "decreasing",
+            "raising",
+            "brightening",
+            "widening"
+        ],
+        "a": 1
+    },
+    {
+        "id": 206,
+        "q": "Find the antonym of the following words written in capitals. During his long voyage Darwin studied DIFFERENT plants and animals in all parts of the world.",
+        "o": [
+            "various",
+            "all kinds of",
+            "strange",
+            "identical",
+            "other"
+        ],
+        "a": 3
+    },
+    {
+        "id": 207,
+        "q": "Find the antonym of the following words written in capitals. - Mother what is a FATHERLAND; is it the land belonging to my father?",
+        "o": [
+            "powerful state",
+            "government",
+            "native country",
+            "settlement",
+            "father's land"
+        ],
+        "a": 3
+    },
+    {
+        "id": 208,
+        "q": "Find the antonym of the following words written in capitals. They ACCEPTED the invitation.",
+        "o": [
+            "accused",
+            "admitted",
+            "refused",
+            "invited",
+            "consented"
+        ],
+        "a": 2
+    },
+    {
+        "id": 209,
+        "q": "Find the antonym of the following words written in capitals. Everything, INCLUDING herself, was black and white.",
+        "o": [
+            "comprising",
+            "embracing",
+            "entering",
+            "excluding",
+            "stimulating"
+        ],
+        "a": 3
+    },
+    {
+        "id": 210,
+        "q": "Find the antonym of the following words written in capitals. I heard him speaking but was too tired to listen to him and",
+        "o": [
+            "solve",
+            "relax",
+            "release",
+            "rebuild",
+            "resign"
+        ],
+        "a": 1
+    },
+    {
+        "id": 211,
+        "q": "Find the antonym of the following words written in capitals. He was rather RUDE to me last night.",
+        "o": [
+            "savage",
+            "brutal",
+            "violent",
+            "polite",
+            "ruthless"
+        ],
+        "a": 3
+    },
+    {
+        "id": 212,
+        "q": "Find the antonym of the following words written in capitals. They always go to school TOGETHER.",
+        "o": [
+            "with each other",
+            "separately",
+            "altogether",
+            "common",
+            "themselves"
+        ],
+        "a": 1
+    },
+    {
+        "id": 213,
+        "q": "Find the antonym of the following words written in capitals. \"Get me out of this\", was the FEEBLE reply.",
+        "o": [
+            "wise",
+            "polite",
+            "strong",
+            "weak",
+            "useful"
+        ],
+        "a": 2
+    },
+    {
+        "id": 214,
+        "q": "Find the antonym of the following words written in capitals. Mr. Mott LANDED at Harwich an hour ahead of the expedition ship in the ship's helicopter.",
+        "o": [
+            "grounded",
+            "took off",
+            "put down",
+            "speeded",
+            "lacked"
+        ],
+        "a": 1
+    },
+    {
+        "id": 215,
+        "q": "Find the antonym of the following words written in capitals. My friend stopped his car and asked me to HOP IN.",
+        "o": [
+            "jump in",
+            "get out",
+            "give in",
+            "take from",
+            "keep out"
+        ],
+        "a": 1
+    },
+    {
+        "id": 216,
+        "q": "Find the antonym of the following words written in capitals. It is said that a large army of young Canadians LONGS FOR knowledge, but it is not easy to obtain it with the heavy cost of education.",
+        "o": [
+            "dislikes",
+            "desires",
+            "craves",
+            "looks for",
+            "achieves"
+        ],
+        "a": 0
+    },
+    {
+        "id": 217,
+        "q": "Find the antonym of the following words written in capitals. Many believed that Marlborough, the English commander, was simply PROLONGING the war for his own profit and glory.",
+        "o": [
+            "shortening",
+            "continuing",
+            "extending",
+            "supporting",
+            "denying"
+        ],
+        "a": 0
+    },
+    {
+        "id": 218,
+        "q": "Find the antonym of the following words written in capitals. John Bull was described as a man of the gentleman farmer type, good natured, but easily OFFENDED.",
+        "o": [
+            "hurt",
+            "insulted",
+            "sick",
+            "understood",
+            "pleased"
+        ],
+        "a": 4
+    },
+    {
+        "id": 219,
+        "q": "Find the antonym of the following words written in capitals. Rescue workers PULLED a man, and two children FROM this cold, rushing water.",
+        "o": [
+            "saved from",
+            "took out",
+            "pushed into",
+            "removed from",
+            "lifted up"
+        ],
+        "a": 2
+    },
+    {
+        "id": 220,
+        "q": "Find the antonym of the following words written in capitals. I hope we get home before SUNSET.",
+        "o": [
+            "sunshine",
+            "sunrise",
+            "sunshade",
+            "sunburst",
+            "sunbeam"
+        ],
+        "a": 1
+    },
+    {
+        "id": 221,
+        "q": "Find the antonym of the following words written in capitals. I spent all my money on a new pair of boots. I understand it was FOOLISH but I couldn't stop myself from doing it.",
+        "o": [
+            "nice",
+            "pleasant",
+            "realistic",
+            "clever",
+            "easy"
+        ],
+        "a": 3
+    },
+    {
+        "id": 222,
+        "q": "Find the antonym of the following words written in capitals. The milk is delivered about 6 A.M so we have FRESH milk for breakfast.",
+        "o": [
+            "old",
+            "sound",
+            "specific",
+            "dirty",
+            "sour"
+        ],
+        "a": 4
+    },
+    {
+        "id": 223,
+        "q": "Find the antonym of the following words written in capitals. His work was NOT INTERESTING.",
+        "o": [
+            "dull",
+            "bright",
+            "troublesome",
+            "full",
+            "difficult"
+        ],
+        "a": 0
+    },
+    {
+        "id": 224,
+        "q": "Find the antonym of the following words written in capitals. \"Yes, yes!\", she CRIED. \"I understand you don't love me\"",
+        "o": [
+            "shouted",
+            "asked",
+            "wondered",
+            "whispered",
+            "answered"
+        ],
+        "a": 3
+    },
+    {
+        "id": 225,
+        "q": "Find the antonym of the following words written in capitals. Can you tell me how to get to the PUBLIC Library?",
+        "o": [
+            "national",
+            "wide",
+            "common",
+            "mutual",
+            "private"
+        ],
+        "a": 4
+    },
+    {
+        "id": 226,
+        "q": "Find the antonym of the following words written in capitals. All of the foreign members are OUTSTANDING people.",
+        "o": [
+            "prominent",
+            "exceptional",
+            "ordinary",
+            "proud",
+            "educated"
+        ],
+        "a": 2
+    },
+    {
+        "id": 227,
+        "q": "Find the antonym of the following words written in capitals. His brother was a BRAVE soldier.",
+        "o": [
+            "courageous",
+            "coward",
+            "heartless",
+            "clever",
+            "noble"
+        ],
+        "a": 1
+    },
+    {
+        "id": 228,
+        "q": "Find the antonym of the following words written in capitals. The INVISIBLE Man tells Dr. Camps about his adventures.",
+        "o": [
+            "Blind",
+            "Noisy",
+            "Strange",
+            "Visible",
+            "Famous"
+        ],
+        "a": 3
+    },
+    {
+        "id": 229,
+        "q": "Find the antonym of the following words written in capitals. He WENT ON smoking, though I asked him.",
+        "o": [
+            "stopped",
+            "started",
+            "liked",
+            "kept on",
+            "continued"
+        ],
+        "a": 0
+    },
+    {
+        "id": 230,
+        "q": "Find the antonym of the following words written in capitals. A great many people participated in the OPENING of the conference.",
+        "o": [
+            "closure",
+            "beginning",
+            "failure",
+            "discussion",
+            "permission"
+        ],
+        "a": 0
+    },
+    {
+        "id": 231,
+        "q": "Find the antonym of the following words written in capitals. The Thames is a short river but it is wide and DEEP.",
+        "o": [
+            "small",
+            "shallow",
+            "long",
+            "great",
+            "big"
+        ],
+        "a": 1
+    },
+    {
+        "id": 232,
+        "q": "Find the antonym of the following words written in capitals. Having PASSED his exams he began to look for a job.",
+        "o": [
+            "taken",
+            "failed in",
+            "sun burnt",
+            "fought",
+            "proved"
+        ],
+        "a": 1
+    },
+    {
+        "id": 233,
+        "q": "Find the antonym of the following words written in capitals. She was ACCEPTED as secretary for an American Company.",
+        "o": [
+            "accused",
+            "accomplished",
+            "acquired",
+            "announced",
+            "rejected"
+        ],
+        "a": 4
+    },
+    {
+        "id": 234,
+        "q": "Find the antonym of the following words written in capitals. Percy Dixon's face turned RED with anger.",
+        "o": [
+            "mad",
+            "black",
+            "ashamed",
+            "tortured",
+            "pale"
+        ],
+        "a": 4
+    },
+    {
+        "id": 235,
+        "q": "Find the antonym of the following words written in capitals. All the students INCLUDING Duncan will take part in coming football match.",
+        "o": [
+            "from",
+            "besides",
+            "except",
+            "within",
+            "with"
+        ],
+        "a": 2
+    },
+    {
+        "id": 236,
+        "q": "Find the antonym of the following words written in capitals. Money which is spent on education and health now is an investment for the FUTURE.",
+        "o": [
+            "tuition",
+            "present",
+            "delight",
+            "past",
+            "world"
+        ],
+        "a": 3
+    },
+    {
+        "id": 237,
+        "q": "Find the antonym of the following words written in capitals. His parents were DIVORCED before his birth.",
+        "o": [
+            "engaged",
+            "married",
+            "accused",
+            "accustomed",
+            "used"
+        ],
+        "a": 1
+    },
+    {
+        "id": 238,
+        "q": "Find the antonym of the following words written in capitals. His parents were very RELIGIOUS and the boy had to sing at church services.",
+        "o": [
+            "devoted",
+            "faithful",
+            "reluctant",
+            "atheistic",
+            "competent"
+        ],
+        "a": 3
+    },
+    {
+        "id": 239,
+        "q": "Find the antonym of the following words written in capitals. The airport is A LONG WAY FROM the centre of the city.",
+        "o": [
+            "far from",
+            "not far from",
+            "in the distance",
+            "remote",
+            "distant"
+        ],
+        "a": 1
+    },
+    {
+        "id": 240,
+        "q": "Find the antonym of the following words written in capitals. Blunt",
+        "o": [
+            "dismal",
+            "sharp",
+            "sullen",
+            "dull"
+        ],
+        "a": 1
+    },
+    {
+        "id": 241,
+        "q": "Find the antonym of the following words written in capitals. Prohibit",
+        "o": [
+            "permit",
+            "forbid",
+            "ban",
+            "prevent"
+        ],
+        "a": 0
+    },
+    {
+        "id": 242,
+        "q": "Find the antonym of the following words written in capitals. Shove",
+        "o": [
+            "press",
+            "drag",
+            "move",
+            "thrust"
+        ],
+        "a": 1
+    },
+    {
+        "id": 243,
+        "q": "Find the antonym of the following words written in capitals. Compulsory",
+        "o": [
+            "optional",
+            "essential",
+            "obligatory",
+            "necessary"
+        ],
+        "a": 0
+    },
+    {
+        "id": 244,
+        "q": "Find the antonym of the following words written in capitals. Profit",
+        "o": [
+            "toss",
+            "benefit",
+            "gain",
+            "loss"
+        ],
+        "a": 3
+    },
+    {
+        "id": 245,
+        "q": "Find the antonym of the following words written in capitals. Liberate",
+        "o": [
+            "rescue",
+            "confine",
+            "deliver",
+            "divorce"
+        ],
+        "a": 1
+    },
+    {
+        "id": 246,
+        "q": "Find the antonym of the following words written in capitals. Stiff",
+        "o": [
+            "hard",
+            "rigid",
+            "limp",
+            "firm"
+        ],
+        "a": 2
+    },
+    {
+        "id": 247,
+        "q": "Find the antonym of the following words written in capitals. Barren",
+        "o": [
+            "fertile",
+            "dry",
+            "arid",
+            "fruitless"
+        ],
+        "a": 0
+    },
+    {
+        "id": 248,
+        "q": "Find the antonym of the following words written in capitals. Tough",
+        "o": [
+            "hard",
+            "tender",
+            "cruel",
+            "violent"
+        ],
+        "a": 1
+    },
+    {
+        "id": 249,
+        "q": "Find the antonym of the following words written in capitals. Rebel",
+        "o": [
+            "mutiny",
+            "suppress",
+            "fight",
+            "rise up"
+        ],
+        "a": 1
+    },
+    {
+        "id": 250,
+        "q": "Find the antonym of the following words written in capitals. Kick off",
+        "o": [
+            "steer",
+            "conclude",
+            "commence",
+            "start"
+        ],
+        "a": 1
+    },
+    {
+        "id": 251,
+        "q": "Find the antonym of the following words written in capitals. Innocent",
+        "o": [
+            "criminal",
+            "patient",
+            "naive",
+            "persistent"
+        ],
+        "a": 0
+    },
+    {
+        "id": 252,
+        "q": "Find the antonym of the following words written in capitals. Fine",
+        "o": [
+            "lank",
+            "skinny",
+            "thick",
+            "slim"
+        ],
+        "a": 2
+    },
+    {
+        "id": 253,
+        "q": "Find the antonym of the following words written in capitals. Tug",
+        "o": [
+            "drag",
+            "draw",
+            "jerk",
+            "thrust"
+        ],
+        "a": 3
+    },
+    {
+        "id": 254,
+        "q": "Find the antonym of the following words written in capitals. Agitate",
+        "o": [
+            "sooth",
+            "stir up",
+            "poke",
+            "provoke"
+        ],
+        "a": 0
+    },
+    {
+        "id": 255,
+        "q": "Find the antonym of the following words written in capitals. On purpose",
+        "o": [
+            "permanently",
+            "crucially",
+            "intentionally",
+            "inadvertently"
+        ],
+        "a": 3
+    },
+    {
+        "id": 256,
+        "q": "Find the antonym of the following words written in capitals. Trivial",
+        "o": [
+            "everyday",
+            "significant",
+            "worthless",
+            "minor"
+        ],
+        "a": 1
+    },
+    {
+        "id": 257,
+        "q": "Find the antonym of the following words written in capitals. Sparse",
+        "o": [
+            "rough",
+            "scanty",
+            "rare",
+            "dense"
+        ],
+        "a": 3
+    },
+    {
+        "id": 258,
+        "q": "Find the antonym of the following words written in capitals. Dismiss",
+        "o": [
+            "sack",
+            "discharge",
+            "appoint",
+            "fire"
+        ],
+        "a": 2
+    },
+    {
+        "id": 259,
+        "q": "Find the antonym of the following words written in capitals. Do up",
+        "o": [
+            "tie",
+            "bind",
+            "loosen",
+            "fasten"
+        ],
+        "a": 2
+    },
+    {
+        "id": 260,
+        "q": "Find the antonym of the following words written in capitals. Immense",
+        "o": [
+            "tight",
+            "tiny",
+            "enormous",
+            "huge"
+        ],
+        "a": 1
+    },
+    {
+        "id": 261,
+        "q": "Find the antonym of the following words written in capitals. Wholesale",
+        "o": [
+            "mortgage",
+            "pawn",
+            "retail",
+            "barter"
+        ],
+        "a": 2
+    },
+    {
+        "id": 262,
+        "q": "Find the antonym of the following words written in capitals. Overcast",
+        "o": [
+            "muddy",
+            "misty",
+            "level",
+            "clear"
+        ],
+        "a": 3
+    },
+    {
+        "id": 263,
+        "q": "Find the antonym of the following words written in capitals. Take on",
+        "o": [
+            "sack",
+            "convey",
+            "release",
+            "shift"
+        ],
+        "a": 0
+    },
+    {
+        "id": 264,
+        "q": "Find the antonym of the following words written in capitals. Thorough",
+        "o": [
+            "crooked",
+            "careless",
+            "dejected",
+            "cheerful"
+        ],
+        "a": 1
+    },
+    {
+        "id": 265,
+        "q": "Find the antonym of the following words written in capitals. Oppose",
+        "o": [
+            "combat",
+            "resist",
+            "support",
+            "fight"
+        ],
+        "a": 2
+    },
+    {
+        "id": 266,
+        "q": "Find the antonym of the following words written in capitals. Neglect",
+        "o": [
+            "care",
+            "reflect",
+            "overlook",
+            "dare"
+        ],
+        "a": 2
+    },
+    {
+        "id": 267,
+        "q": "Find the antonym of the following words written in capitals. Rise up",
+        "o": [
+            "run down",
+            "shut down",
+            "break down",
+            "put down"
+        ],
+        "a": 3
+    },
+    {
+        "id": 268,
+        "q": "Find the antonym of the following words written in capitals. Absurd",
+        "o": [
+            "silly",
+            "foolish",
+            "ridiculous",
+            "sensible"
+        ],
+        "a": 3
+    },
+    {
+        "id": 269,
+        "q": "Find the antonym of the following words written in capitals. Flimsy",
+        "o": [
+            "strong",
+            "evil",
+            "weak",
+            "minute"
+        ],
+        "a": 0
+    },
+    {
+        "id": 270,
+        "q": "Find the antonym of the following words written in capitals. Abbreviate",
+        "o": [
+            "lengthen",
+            "shorten",
+            "reduce",
+            "cut"
+        ],
+        "a": 0
+    },
+    {
+        "id": 271,
+        "q": "Find the antonym of the following words written in capitals. Consume",
+        "o": [
+            "hoard",
+            "use up",
+            "sell",
+            "exhaust"
+        ],
+        "a": 0
+    },
+    {
+        "id": 272,
+        "q": "Find the antonym of the following words written in capitals. Marvelous",
+        "o": [
+            "splendid",
+            "awful",
+            "wonderful",
+            "magnificent"
+        ],
+        "a": 1
+    },
+    {
+        "id": 273,
+        "q": "Find the antonym of the following words written in capitals. Smooth",
+        "o": [
+            "reckless",
+            "savage",
+            "solid",
+            "rough"
+        ],
+        "a": 3
+    },
+    {
+        "id": 274,
+        "q": "Find the antonym of the following words written in capitals. Certain",
+        "o": [
+            "doubtful",
+            "generous",
+            "hazardous",
+            "tedious"
+        ],
+        "a": 0
+    },
+    {
+        "id": 275,
+        "q": "Find the antonym of the following words written in capitals. Conceal",
+        "o": [
+            "hide",
+            "dream",
+            "ban",
+            "exhibit"
+        ],
+        "a": 3
+    },
+    {
+        "id": 276,
+        "q": "Find the antonym of the following words written in capitals. Retain",
+        "o": [
+            "engage",
+            "block",
+            "hinder",
+            "release"
+        ],
+        "a": 3
+    },
+    {
+        "id": 277,
+        "q": "Find the antonym of the following words written in capitals. Poverty",
+        "o": [
+            "wealth",
+            "lack",
+            "need",
+            "destitution"
+        ],
+        "a": 0
+    },
+    {
+        "id": 278,
+        "q": "Find the antonym of the following words written in capitals. Deliberate",
+        "o": [
+            "accidental",
+            "planned",
+            "calculated",
+            "intentional"
+        ],
+        "a": 0
+    },
+    {
+        "id": 279,
+        "q": "Find the antonym of the following words written in capitals. Sadness",
+        "o": [
+            "sorrow",
+            "glee",
+            "depression",
+            "bleakness"
+        ],
+        "a": 1
+    },
+    {
+        "id": 280,
+        "q": "Find the antonym of the following words written in capitals. Sober",
+        "o": [
+            "drunk",
+            "cheeky",
+            "solemn",
+            "moderate"
+        ],
+        "a": 0
+    },
+    {
+        "id": 281,
+        "q": "Find the antonym of the following words written in capitals. Vacant",
+        "o": [
+            "obscure",
+            "occupied",
+            "worthless",
+            "bright"
+        ],
+        "a": 1
+    },
+    {
+        "id": 282,
+        "q": "Find the antonym of the following words written in capitals. Modest",
+        "o": [
+            "humble",
+            "big-headed",
+            "passionate",
+            "fussy"
+        ],
+        "a": 1
+    },
+    {
+        "id": 283,
+        "q": "Find the antonym of the following words written in capitals. Vague",
+        "o": [
+            "indefinite",
+            "distinct",
+            "uncertain",
+            "obscure"
+        ],
+        "a": 1
+    },
+    {
+        "id": 284,
+        "q": "Find the antonym of the following words written in capitals. Miserable",
+        "o": [
+            "Gloomy",
+            "competitive",
+            "sorrowful",
+            "joyful"
+        ],
+        "a": 3
+    },
+    {
+        "id": 285,
+        "q": "Find the antonym of the following words written in capitals. Ally",
+        "o": [
+            "adversary",
+            "partner",
+            "friend",
+            "associate"
+        ],
+        "a": 0
+    },
+    {
+        "id": 286,
+        "q": "Find the antonym of the following words written in capitals. Stingy",
+        "o": [
+            "rude",
+            "generous",
+            "gaunt",
+            "ignorant"
+        ],
+        "a": 1
+    },
+    {
+        "id": 287,
+        "q": "Find the antonym of the following words written in capitals. Adjacent",
+        "o": [
+            "apart",
+            "void",
+            "bleak",
+            "blank"
+        ],
+        "a": 0
+    },
+    {
+        "id": 288,
+        "q": "Find the antonym of the following words written in capitals. Flat",
+        "o": [
+            "icy",
+            "even",
+            "bumpy",
+            "slippery"
+        ],
+        "a": 2
+    },
+    {
+        "id": 289,
+        "q": "Find the antonym of the following words written in capitals. Impartial",
+        "o": [
+            "fair",
+            "dishonest",
+            "wicked",
+            "biased"
+        ],
+        "a": 3
+    },
+    {
+        "id": 290,
+        "q": "Find the antonym of the following words written in capitals. Put down",
+        "o": [
+            "patronize",
+            "celebrate",
+            "commend",
+            "refuse"
+        ],
+        "a": 2
+    },
+    {
+        "id": 291,
+        "q": "Find the antonym of the following words written in capitals. Tame",
+        "o": [
+            "docile",
+            "mild",
+            "wild",
+            "primitive"
+        ],
+        "a": 2
+    },
+    {
+        "id": 292,
+        "q": "Find the antonym of the following words written in capitals. Curious",
+        "o": [
+            "furious",
+            "indifferent",
+            "decisive",
+            "determined"
+        ],
+        "a": 1
+    },
+    {
+        "id": 293,
+        "q": "Find the antonym of the following words written in capitals. Offensive",
+        "o": [
+            "boring",
+            "pleasing",
+            "disgusting",
+            "revolting"
+        ],
+        "a": 1
+    },
+    {
+        "id": 294,
+        "q": "Find the antonym of the following words written in capitals. Generous",
+        "o": [
+            "eager",
+            "clumsy",
+            "clever",
+            "mean"
+        ],
+        "a": 3
+    },
+    {
+        "id": 295,
+        "q": "Find the antonym of the following words written in capitals. Arrogant",
+        "o": [
+            "modest",
+            "ignorant",
+            "rude",
+            "illiterate"
+        ],
+        "a": 0
+    },
+    {
+        "id": 296,
+        "q": "Find the antonym of the following words written in capitals. Chubby",
+        "o": [
+            "stout",
+            "fat",
+            "skinny",
+            "gross"
+        ],
+        "a": 2
+    },
+    {
+        "id": 297,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "scour",
+            "voyage",
+            "trip",
+            "journey"
+        ],
+        "a": 0
+    },
+    {
+        "id": 298,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "resign",
+            "step down",
+            "quit",
+            "swap"
+        ],
+        "a": 3
+    },
+    {
+        "id": 299,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "scatter",
+            "squash",
+            "crush",
+            "squeeze"
+        ],
+        "a": 0
+    },
+    {
+        "id": 300,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "thick",
+            "enormous",
+            "immense",
+            "huge"
+        ],
+        "a": 0
+    },
+    {
+        "id": 301,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "drought",
+            "harvest",
+            "mow",
+            "crop"
+        ],
+        "a": 0
+    },
+    {
+        "id": 302,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "rescue",
+            "slaughter",
+            "kill",
+            "murder"
+        ],
+        "a": 0
+    },
+    {
+        "id": 303,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "suggest",
+            "reiterate",
+            "advice",
+            "recommend"
+        ],
+        "a": 1
+    },
+    {
+        "id": 304,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "soup",
+            "chop",
+            "mince",
+            "steak"
+        ],
+        "a": 0
+    },
+    {
+        "id": 305,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "choice",
+            "prediction",
+            "decision",
+            "preference"
+        ],
+        "a": 1
+    },
+    {
+        "id": 306,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "hold over",
+            "slate",
+            "run down",
+            "slag off"
+        ],
+        "a": 0
+    },
+    {
+        "id": 307,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "nude",
+            "bare",
+            "bashful",
+            "unclothed"
+        ],
+        "a": 2
+    },
+    {
+        "id": 308,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "proficient",
+            "clumsy",
+            "skilful",
+            "expert"
+        ],
+        "a": 1
+    },
+    {
+        "id": 309,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "shortage",
+            "riches",
+            "wealth",
+            "affluence"
+        ],
+        "a": 0
+    },
+    {
+        "id": 310,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "battle",
+            "fight",
+            "settlement",
+            "combat"
+        ],
+        "a": 2
+    },
+    {
+        "id": 311,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "wealthy",
+            "penniless",
+            "broke",
+            "needy"
+        ],
+        "a": 0
+    },
+    {
+        "id": 312,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "conclude",
+            "question",
+            "ask",
+            "inquire"
+        ],
+        "a": 0
+    },
+    {
+        "id": 313,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "entirely",
+            "partly",
+            "quite",
+            "completely"
+        ],
+        "a": 1
+    },
+    {
+        "id": 314,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "expect",
+            "await",
+            "disappoint",
+            "wait for"
+        ],
+        "a": 2
+    },
+    {
+        "id": 315,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "crease",
+            "wrinkle",
+            "crumple",
+            "smooth"
+        ],
+        "a": 3
+    },
+    {
+        "id": 316,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "entire",
+            "accurate",
+            "true",
+            "exact"
+        ],
+        "a": 0
+    },
+    {
+        "id": 317,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "imitation",
+            "fake",
+            "genuine",
+            "counterfeit"
+        ],
+        "a": 2
+    },
+    {
+        "id": 318,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "screw",
+            "jug",
+            "pliers",
+            "hammer"
+        ],
+        "a": 1
+    },
+    {
+        "id": 319,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "success",
+            "feat",
+            "effort",
+            "victory"
+        ],
+        "a": 2
+    },
+    {
+        "id": 320,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "laborer",
+            "executive",
+            "administrator",
+            "manager"
+        ],
+        "a": 0
+    },
+    {
+        "id": 321,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "enthusiastic",
+            "eager",
+            "reluctant",
+            "zealous"
+        ],
+        "a": 2
+    },
+    {
+        "id": 322,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "boycott",
+            "ban",
+            "embargo",
+            "complaint"
+        ],
+        "a": 3
+    },
+    {
+        "id": 323,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "shout",
+            "cheer",
+            "clap",
+            "chant"
+        ],
+        "a": 2
+    },
+    {
+        "id": 324,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "indifferent",
+            "solemn",
+            "serious",
+            "grave"
+        ],
+        "a": 0
+    },
+    {
+        "id": 325,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "touchy",
+            "irritable",
+            "nervous",
+            "weary"
+        ],
+        "a": 3
+    },
+    {
+        "id": 326,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "obscurity",
+            "interval",
+            "gap",
+            "space"
+        ],
+        "a": 0
+    },
+    {
+        "id": 327,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "in spite of",
+            "owing to",
+            "because of",
+            "caused by"
+        ],
+        "a": 0
+    },
+    {
+        "id": 328,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "follow",
+            "track",
+            "interrogate",
+            "purse"
+        ],
+        "a": 2
+    },
+    {
+        "id": 329,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "perform",
+            "fail",
+            "achieve",
+            "accomplish"
+        ],
+        "a": 1
+    },
+    {
+        "id": 330,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "hail",
+            "sleet",
+            "pond",
+            "drizzle"
+        ],
+        "a": 2
+    },
+    {
+        "id": 331,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "question",
+            "conclude",
+            "inquire",
+            "interrogate"
+        ],
+        "a": 1
+    },
+    {
+        "id": 332,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "innocent",
+            "lawbreaker",
+            "criminal",
+            "culprit"
+        ],
+        "a": 0
+    },
+    {
+        "id": 333,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "acquittal",
+            "accusation",
+            "allegation",
+            "charge"
+        ],
+        "a": 0
+    },
+    {
+        "id": 334,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "tired",
+            "injured",
+            "run down",
+            "exhausted"
+        ],
+        "a": 1
+    },
+    {
+        "id": 335,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "austere",
+            "moderate",
+            "severe",
+            "harsh"
+        ],
+        "a": 1
+    },
+    {
+        "id": 336,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "teapot",
+            "cup",
+            "tap",
+            "kettle"
+        ],
+        "a": 2
+    },
+    {
+        "id": 337,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "difficulty",
+            "ease",
+            "impediment",
+            "obstacle"
+        ],
+        "a": 1
+    },
+    {
+        "id": 338,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "rob",
+            "smuggle",
+            "strike",
+            "hijack"
+        ],
+        "a": 2
+    },
+    {
+        "id": 339,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "hazard",
+            "security",
+            "danger",
+            "jeopardy"
+        ],
+        "a": 1
+    },
+    {
+        "id": 340,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "apparent",
+            "obscure",
+            "obvious",
+            "clear"
+        ],
+        "a": 1
+    },
+    {
+        "id": 341,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "terminate",
+            "end",
+            "stop",
+            "initiate"
+        ],
+        "a": 3
+    },
+    {
+        "id": 342,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "unimportant",
+            "trivial",
+            "vital",
+            "insignificant"
+        ],
+        "a": 2
+    },
+    {
+        "id": 343,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "pinch",
+            "swindle",
+            "steal",
+            "whim"
+        ],
+        "a": 3
+    },
+    {
+        "id": 344,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "skip",
+            "bounce",
+            "bound",
+            "kneel"
+        ],
+        "a": 3
+    },
+    {
+        "id": 345,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "compress",
+            "squeeze",
+            "scatter",
+            "crush"
+        ],
+        "a": 2
+    },
+    {
+        "id": 346,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "interest",
+            "profit",
+            "advantage",
+            "confidence"
+        ],
+        "a": 3
+    },
+    {
+        "id": 347,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "perfume",
+            "fragrance",
+            "flavor",
+            "odor"
+        ],
+        "a": 2
+    },
+    {
+        "id": 348,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "slap",
+            "wave",
+            "point",
+            "wink"
+        ],
+        "a": 0
+    },
+    {
+        "id": 349,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "book",
+            "leaflet",
+            "reality show",
+            "journal"
+        ],
+        "a": 2
+    },
+    {
+        "id": 350,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "solely",
+            "pack",
+            "heap",
+            "flock"
+        ],
+        "a": 0
+    },
+    {
+        "id": 351,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "simply",
+            "only",
+            "regularly",
+            "merely"
+        ],
+        "a": 2
+    },
+    {
+        "id": 352,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "thief",
+            "spy",
+            "robber",
+            "burglar"
+        ],
+        "a": 1
+    },
+    {
+        "id": 353,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "leave",
+            "join",
+            "quit",
+            "abandon"
+        ],
+        "a": 1
+    },
+    {
+        "id": 354,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "kick off",
+            "begin",
+            "reveal",
+            "commence"
+        ],
+        "a": 2
+    },
+    {
+        "id": 355,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "skin",
+            "seed",
+            "rind",
+            "shell"
+        ],
+        "a": 1
+    },
+    {
+        "id": 356,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "principal",
+            "secondary",
+            "chief",
+            "main"
+        ],
+        "a": 1
+    },
+    {
+        "id": 357,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "halt",
+            "hold",
+            "maintain",
+            "retain"
+        ],
+        "a": 2
+    },
+    {
+        "id": 358,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "task",
+            "duration",
+            "interval",
+            "term"
+        ],
+        "a": 0
+    },
+    {
+        "id": 359,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "brief",
+            "extensive",
+            "short",
+            "summary"
+        ],
+        "a": 1
+    },
+    {
+        "id": 360,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "vote",
+            "coalition",
+            "issue",
+            "party"
+        ],
+        "a": 2
+    },
+    {
+        "id": 361,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "fair",
+            "unbiased",
+            "impartial",
+            "bigoted"
+        ],
+        "a": 3
+    },
+    {
+        "id": 362,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "impress",
+            "astonish",
+            "stun",
+            "astound"
+        ],
+        "a": 0
+    },
+    {
+        "id": 363,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "entire",
+            "exact",
+            "right",
+            "accurate"
+        ],
+        "a": 0
+    },
+    {
+        "id": 364,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "outset",
+            "phase",
+            "step",
+            "period"
+        ],
+        "a": 0
+    },
+    {
+        "id": 365,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "open",
+            "candid",
+            "sincere",
+            "arrogant"
+        ],
+        "a": 3
+    },
+    {
+        "id": 366,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "plainly",
+            "evidently",
+            "rapidly",
+            "obviously"
+        ],
+        "a": 2
+    },
+    {
+        "id": 367,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "shrimp",
+            "lobster",
+            "mussel",
+            "pigeon"
+        ],
+        "a": 3
+    },
+    {
+        "id": 368,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "snowy",
+            "minty",
+            "sunny",
+            "cloudy"
+        ],
+        "a": 1
+    },
+    {
+        "id": 369,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "beautiful",
+            "shabby",
+            "dainty",
+            "exquisite"
+        ],
+        "a": 1
+    },
+    {
+        "id": 370,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "ownership",
+            "place",
+            "position",
+            "locality"
+        ],
+        "a": 0
+    },
+    {
+        "id": 371,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "speedy",
+            "rapid",
+            "delayed",
+            "hasty"
+        ],
+        "a": 2
+    },
+    {
+        "id": 372,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "forbid",
+            "prohibit",
+            "bewilder",
+            "hinder"
+        ],
+        "a": 2
+    },
+    {
+        "id": 373,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "neat",
+            "untidy",
+            "disorderly",
+            "sloppy"
+        ],
+        "a": 0
+    },
+    {
+        "id": 374,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "content",
+            "satisfied",
+            "gloomy",
+            "pleased"
+        ],
+        "a": 2
+    },
+    {
+        "id": 375,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "chum",
+            "ally",
+            "opponent",
+            "friend"
+        ],
+        "a": 2
+    },
+    {
+        "id": 376,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "extreme",
+            "excessive",
+            "rare",
+            "exorbitant"
+        ],
+        "a": 2
+    },
+    {
+        "id": 377,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "settlement",
+            "combat",
+            "war",
+            "battle"
+        ],
+        "a": 0
+    },
+    {
+        "id": 378,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "chant",
+            "yell",
+            "clap",
+            "shout"
+        ],
+        "a": 2
+    },
+    {
+        "id": 379,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "outcome",
+            "consequence",
+            "gap",
+            "result"
+        ],
+        "a": 2
+    },
+    {
+        "id": 380,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "hurt",
+            "injure",
+            "damage",
+            "split"
+        ],
+        "a": 3
+    },
+    {
+        "id": 381,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "placard",
+            "brochure",
+            "leaflet",
+            "catalogue"
+        ],
+        "a": 0
+    },
+    {
+        "id": 382,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "shock",
+            "bewilder",
+            "astonish",
+            "enlighten"
+        ],
+        "a": 3
+    },
+    {
+        "id": 383,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "tremble",
+            "quake",
+            "squat",
+            "quiver"
+        ],
+        "a": 2
+    },
+    {
+        "id": 384,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "face",
+            "crouch",
+            "come across",
+            "encounter"
+        ],
+        "a": 1
+    },
+    {
+        "id": 385,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "hazard",
+            "security",
+            "danger",
+            "peril"
+        ],
+        "a": 1
+    },
+    {
+        "id": 386,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "alert",
+            "heedless",
+            "imprudent",
+            "reckless"
+        ],
+        "a": 0
+    },
+    {
+        "id": 387,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "stick",
+            "cuddle",
+            "attach",
+            "adhere"
+        ],
+        "a": 1
+    },
+    {
+        "id": 388,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "silent",
+            "clamor",
+            "racket",
+            "noise"
+        ],
+        "a": 0
+    },
+    {
+        "id": 389,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "decisive",
+            "intelligent",
+            "clever",
+            "bright"
+        ],
+        "a": 0
+    },
+    {
+        "id": 390,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "adoration",
+            "report",
+            "explanation",
+            "description"
+        ],
+        "a": 0
+    },
+    {
+        "id": 391,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "little",
+            "wide",
+            "tiny",
+            "minute"
+        ],
+        "a": 1
+    },
+    {
+        "id": 392,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "sluggish",
+            "watchful",
+            "attentive",
+            "vigilant"
+        ],
+        "a": 0
+    },
+    {
+        "id": 393,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "indebted",
+            "fickle",
+            "thankful",
+            "grateful"
+        ],
+        "a": 1
+    },
+    {
+        "id": 394,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "parade",
+            "battle",
+            "demonstration",
+            "meeting"
+        ],
+        "a": 1
+    },
+    {
+        "id": 395,
+        "q": "Find the word which is out of the logic list. ",
+        "o": [
+            "tomb",
+            "cradle",
+            "grave",
+            "cemetery Analogies 1 - Find the Appropriate Match"
+        ],
+        "a": 1
+    }
+]

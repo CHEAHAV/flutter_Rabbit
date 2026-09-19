@@ -1,0 +1,7939 @@
+[
+    {
+        "id": 1,
+        "q": "We pick things up with our _____.",
+        "o": [
+            "arms",
+            "hands",
+            "hair",
+            "heads"
+        ],
+        "a": 1
+    },
+    {
+        "id": 2,
+        "q": "I lick an ice-cream with my _____.",
+        "o": [
+            "knee",
+            "chest",
+            "lips",
+            "tongue"
+        ],
+        "a": 3
+    },
+    {
+        "id": 3,
+        "q": "To eat something I put it in my _____.",
+        "o": [
+            "mouth",
+            "elbow",
+            "nose",
+            "neck"
+        ],
+        "a": 0
+    },
+    {
+        "id": 4,
+        "q": "We comb and brush our _____.",
+        "o": [
+            "fingers",
+            "shoulder",
+            "hair",
+            "sole"
+        ],
+        "a": 2
+    },
+    {
+        "id": 5,
+        "q": "I brush my _____ regularly, especially after eating.",
+        "o": [
+            "waist",
+            "lips",
+            "teeth",
+            "thumb"
+        ],
+        "a": 2
+    },
+    {
+        "id": 6,
+        "q": "I sometimes go to school _____ bus.",
+        "o": [
+            "in",
+            "at",
+            "to",
+            "by"
+        ],
+        "a": 3
+    },
+    {
+        "id": 7,
+        "q": "She waited _____ the bus in the bus stop.",
+        "o": [
+            "for",
+            "to",
+            "with",
+            "of"
+        ],
+        "a": 0
+    },
+    {
+        "id": 8,
+        "q": "She has got a yellow dress _____.",
+        "o": [
+            "on",
+            "in",
+            "with",
+            "to"
+        ],
+        "a": 0
+    },
+    {
+        "id": 9,
+        "q": "Who is the man _____ the red tie?",
+        "o": [
+            "in",
+            "with",
+            "on",
+            "off"
+        ],
+        "a": 1
+    },
+    {
+        "id": 10,
+        "q": "I remember her. She was the one _____ green shoes.",
+        "o": [
+            "on",
+            "at",
+            "with",
+            "by"
+        ],
+        "a": 2
+    },
+    {
+        "id": 11,
+        "q": "I watch _____ while I am sitting on the sofa.",
+        "o": [
+            "television",
+            "picture",
+            "radio",
+            "tape"
+        ],
+        "a": 0
+    },
+    {
+        "id": 12,
+        "q": "I sometimes listen to the _____.",
+        "o": [
+            "television",
+            "radio",
+            "type",
+            "film"
+        ],
+        "a": 1
+    },
+    {
+        "id": 13,
+        "q": "I keep my books in a / an _____.",
+        "o": [
+            "shelter",
+            "bookcase",
+            "armchair",
+            "carpet"
+        ],
+        "a": 1
+    },
+    {
+        "id": 14,
+        "q": "We stand in a bus _____ to wait for a bus.",
+        "o": [
+            "station",
+            "road",
+            "stop",
+            "corner"
+        ],
+        "a": 2
+    },
+    {
+        "id": 15,
+        "q": "The cars wait until the traffic _____ turn green.",
+        "o": [
+            "railings",
+            "signs",
+            "crossing",
+            "lights"
+        ],
+        "a": 3
+    },
+    {
+        "id": 16,
+        "q": "You can cross the road at a _____.",
+        "o": [
+            "cross-road",
+            "crossing",
+            "crosser",
+            "road"
+        ],
+        "a": 1
+    },
+    {
+        "id": 17,
+        "q": "We should put waste paper in a _____.",
+        "o": [
+            "box",
+            "park",
+            "litter-bin",
+            "pavement"
+        ],
+        "a": 2
+    },
+    {
+        "id": 18,
+        "q": "We get wet when it _____.",
+        "o": [
+            "freezes",
+            "blows",
+            "shines",
+            "rains"
+        ],
+        "a": 3
+    },
+    {
+        "id": 19,
+        "q": "When it is very cold, everything _____.",
+        "o": [
+            "rains",
+            "freezes",
+            "blows",
+            "snows"
+        ],
+        "a": 1
+    },
+    {
+        "id": 20,
+        "q": "Children enjoy playing games when it _____.",
+        "o": [
+            "snows",
+            "blows",
+            "freezes",
+            "is cold"
+        ],
+        "a": 0
+    },
+    {
+        "id": 21,
+        "q": "It is cold in England when a north wind _____.",
+        "o": [
+            "goes",
+            "blows",
+            "covers",
+            "passes"
+        ],
+        "a": 1
+    },
+    {
+        "id": 22,
+        "q": "It is warm and pleasant when the sun _____.",
+        "o": [
+            "pours",
+            "lights",
+            "shines",
+            "comes"
+        ],
+        "a": 2
+    },
+    {
+        "id": 23,
+        "q": "When it rains very heavily, it _____.",
+        "o": [
+            "waters",
+            "pours",
+            "snows",
+            "freezes"
+        ],
+        "a": 1
+    },
+    {
+        "id": 24,
+        "q": "My friends say I like to _____ money.",
+        "o": [
+            "find",
+            "spend",
+            "see",
+            "gain"
+        ],
+        "a": 1
+    },
+    {
+        "id": 25,
+        "q": "They have everything you _____ for your house.",
+        "o": [
+            "have",
+            "like",
+            "need",
+            "adore"
+        ],
+        "a": 2
+    },
+    {
+        "id": 26,
+        "q": "If you cannot _____ your watch, buy a new one.",
+        "o": [
+            "find",
+            "do",
+            "get",
+            "sell"
+        ],
+        "a": 0
+    },
+    {
+        "id": 27,
+        "q": "I am _____ my glasses. Where can it be?",
+        "o": [
+            "using",
+            "seeing",
+            "looking for",
+            "finding"
+        ],
+        "a": 2
+    },
+    {
+        "id": 28,
+        "q": "My father _____ shoes in a store.",
+        "o": [
+            "sells",
+            "makes",
+            "wears",
+            "gives"
+        ],
+        "a": 0
+    },
+    {
+        "id": 29,
+        "q": "I forget to _____ for goods that I buy every time.",
+        "o": [
+            "sell",
+            "buy",
+            "give",
+            "pay"
+        ],
+        "a": 3
+    },
+    {
+        "id": 30,
+        "q": "I must buy things _____ my house.",
+        "o": [
+            "in",
+            "of",
+            "for",
+            "with"
+        ],
+        "a": 2
+    },
+    {
+        "id": 31,
+        "q": "Can I try this _____ on?",
+        "o": [
+            "jacket",
+            "bottle",
+            "paper",
+            "shoes"
+        ],
+        "a": 0
+    },
+    {
+        "id": 32,
+        "q": "Can I have my _____ back?",
+        "o": [
+            "pay",
+            "cash",
+            "money",
+            "cost"
+        ],
+        "a": 2
+    },
+    {
+        "id": 33,
+        "q": "I took some biscuits from the _____ in the supermarket?",
+        "o": [
+            "tin",
+            "shelf",
+            "bin",
+            "bottle"
+        ],
+        "a": 1
+    },
+    {
+        "id": 34,
+        "q": "We give the money to the _____ in the market?",
+        "o": [
+            "queue",
+            "manager",
+            "cashier",
+            "customer"
+        ],
+        "a": 2
+    },
+    {
+        "id": 35,
+        "q": "What is the money you get, usually weekly or hourly?",
+        "o": [
+            "salary",
+            "pay",
+            "wages",
+            "cash"
+        ],
+        "a": 2
+    },
+    {
+        "id": 36,
+        "q": "We call abilities you can do as _____",
+        "o": [
+            "skills",
+            "experience",
+            "job",
+            "quality"
+        ],
+        "a": 0
+    },
+    {
+        "id": 37,
+        "q": "Work of the same type you have done before is called _____",
+        "o": [
+            "job",
+            "work",
+            "experience",
+            "duty"
+        ],
+        "a": 2
+    },
+    {
+        "id": 38,
+        "q": "Certificates and exams passed mean _____?",
+        "o": [
+            "job",
+            "experience",
+            "skills",
+            "qualifications"
+        ],
+        "a": 3
+    },
+    {
+        "id": 39,
+        "q": "What is a talk with a company about a possible job?",
+        "o": [
+            "speaking",
+            "interview",
+            "experience",
+            "talk"
+        ],
+        "a": 1
+    },
+    {
+        "id": 40,
+        "q": "Points in your character are called _____",
+        "o": [
+            "ex-skills",
+            "personal level",
+            "ex-hobbies",
+            "personal qualities"
+        ],
+        "a": 3
+    },
+    {
+        "id": 41,
+        "q": "My parents decided to send me to a _____ when I was three.",
+        "o": [
+            "nursery- school",
+            "private school",
+            "primary school",
+            "secondary school"
+        ],
+        "a": 0
+    },
+    {
+        "id": 42,
+        "q": "Education is _____ after the age of 7. Every child should be sent to school.",
+        "o": [
+            "optional",
+            "compulsory",
+            "easy",
+            "strict"
+        ],
+        "a": 1
+    },
+    {
+        "id": 43,
+        "q": "There are four _____ in an education year in many countries.",
+        "o": [
+            "terms",
+            "semesters",
+            "parts",
+            "sections"
+        ],
+        "a": 0
+    },
+    {
+        "id": 44,
+        "q": "Some parents pay to send their children to a _____ school.",
+        "o": [
+            "private",
+            "special",
+            "strict",
+            "secondary"
+        ],
+        "a": 0
+    },
+    {
+        "id": 45,
+        "q": "My friend _____ his exams. He is sad.",
+        "o": [
+            "stayed",
+            "passed",
+            "won",
+            "failed"
+        ],
+        "a": 3
+    },
+    {
+        "id": 46,
+        "q": "A good education _____ will get you a good job.",
+        "o": [
+            "work",
+            "degree",
+            "history",
+            "year"
+        ],
+        "a": 1
+    },
+    {
+        "id": 47,
+        "q": "John receives a _____ from the state to help him pay the university fees.",
+        "o": [
+            "wages",
+            "salary",
+            "grant",
+            "check"
+        ],
+        "a": 2
+    },
+    {
+        "id": 48,
+        "q": "He is a _____ of Harward University. He is working in NASA now.",
+        "o": [
+            "finisher",
+            "completion",
+            "graduate",
+            "pupil"
+        ],
+        "a": 2
+    },
+    {
+        "id": 49,
+        "q": "Students of this class are very _____ on their subjects.",
+        "o": [
+            "keen",
+            "enjoy",
+            "useful",
+            "good"
+        ],
+        "a": 0
+    },
+    {
+        "id": 50,
+        "q": "My brother is _____ a book.",
+        "o": [
+            "riding",
+            "reading",
+            "speaking",
+            "playing"
+        ],
+        "a": 1
+    },
+    {
+        "id": 51,
+        "q": "Do you want to _____ biscuit?",
+        "o": [
+            "eat",
+            "see",
+            "play",
+            "read"
+        ],
+        "a": 0
+    },
+    {
+        "id": 52,
+        "q": "My answer was _____, not wrong.",
+        "o": [
+            "write",
+            "ride",
+            "light",
+            "right"
+        ],
+        "a": 3
+    },
+    {
+        "id": 53,
+        "q": "Who are you _____ for?",
+        "o": [
+            "seeing",
+            "meeting",
+            "waiting",
+            "doing"
+        ],
+        "a": 2
+    },
+    {
+        "id": 54,
+        "q": "Where do we go to buy things?",
+        "o": [
+            "bank",
+            "shop",
+            "bath",
+            "shore"
+        ],
+        "a": 1
+    },
+    {
+        "id": 55,
+        "q": "When I saw him, he was _____ bicycle.",
+        "o": [
+            "riding",
+            "driving",
+            "playing",
+            "lying"
+        ],
+        "a": 0
+    },
+    {
+        "id": 56,
+        "q": "What is the antonym of \"white\"?",
+        "o": [
+            "wait",
+            "light",
+            "lack",
+            "black"
+        ],
+        "a": 3
+    },
+    {
+        "id": 57,
+        "q": "Go straight, then turn to right, not _____.",
+        "o": [
+            "side",
+            "near",
+            "left",
+            "write"
+        ],
+        "a": 2
+    },
+    {
+        "id": 58,
+        "q": "Continue the logic list. Red, green, brown, _____.",
+        "o": [
+            "poor",
+            "long",
+            "good",
+            "yellow"
+        ],
+        "a": 3
+    },
+    {
+        "id": 59,
+        "q": "Choose the word which is out of the logic list.",
+        "o": [
+            "read",
+            "write",
+            "speak",
+            "cry"
+        ],
+        "a": 3
+    },
+    {
+        "id": 60,
+        "q": "Thieves _____ things.",
+        "o": [
+            "steal",
+            "still",
+            "steel",
+            "skill"
+        ],
+        "a": 0
+    },
+    {
+        "id": 61,
+        "q": "I have a curly _____.",
+        "o": [
+            "here",
+            "hear",
+            "heir",
+            "hair"
+        ],
+        "a": 3
+    },
+    {
+        "id": 62,
+        "q": "This is a _____ coat, not cotton.",
+        "o": [
+            "fair",
+            "fur",
+            "fare",
+            "fear"
+        ],
+        "a": 1
+    },
+    {
+        "id": 63,
+        "q": "Come _____ and sit down!",
+        "o": [
+            "here",
+            "her",
+            "hair",
+            "heir"
+        ],
+        "a": 0
+    },
+    {
+        "id": 64,
+        "q": "Large amount of _____ is grown in China.",
+        "o": [
+            "white",
+            "weight",
+            "wheat",
+            "wait"
+        ],
+        "a": 2
+    },
+    {
+        "id": 65,
+        "q": "I can't hear the music. Could you turn on the _____?",
+        "o": [
+            "speakers",
+            "mouse",
+            "monitor",
+            "case"
+        ],
+        "a": 0
+    },
+    {
+        "id": 66,
+        "q": "We have no money to buy a _____ for the train to London.",
+        "o": [
+            "price",
+            "ticket",
+            "seat",
+            "place"
+        ],
+        "a": 1
+    },
+    {
+        "id": 67,
+        "q": "I lost my _____, so I cannot open the door.",
+        "o": [
+            "key",
+            "passport",
+            "wallet",
+            "money"
+        ],
+        "a": 0
+    },
+    {
+        "id": 68,
+        "q": "She _____ the class history.",
+        "o": [
+            "learns",
+            "shows",
+            "teaches",
+            "says"
+        ],
+        "a": 2
+    },
+    {
+        "id": 69,
+        "q": "He _____ in the war.",
+        "o": [
+            "bought",
+            "fought",
+            "lost",
+            "taught"
+        ],
+        "a": 1
+    },
+    {
+        "id": 70,
+        "q": "They always _____ stones at the dog.",
+        "o": [
+            "give",
+            "put",
+            "throw",
+            "leave"
+        ],
+        "a": 2
+    },
+    {
+        "id": 71,
+        "q": "The river _____ every winter because of cold weather.",
+        "o": [
+            "stops",
+            "flows",
+            "opens",
+            "freezes"
+        ],
+        "a": 3
+    },
+    {
+        "id": 72,
+        "q": "He drinks _____ quickly.",
+        "o": [
+            "bear",
+            "beer",
+            "bare",
+            "bar"
+        ],
+        "a": 1
+    },
+    {
+        "id": 73,
+        "q": "She _____ to stay at home.",
+        "o": [
+            "uses",
+            "prefers",
+            "like",
+            "rathers"
+        ],
+        "a": 1
+    },
+    {
+        "id": 74,
+        "q": "Choose the word which is out of the logic list.",
+        "o": [
+            "jacket",
+            "shirt",
+            "trousers",
+            "pocket"
+        ],
+        "a": 3
+    },
+    {
+        "id": 75,
+        "q": "Choose the word which is out of the logic list.",
+        "o": [
+            "son",
+            "aunt",
+            "daughter",
+            "chlld"
+        ],
+        "a": 1
+    },
+    {
+        "id": 76,
+        "q": "Choose the word which is out of the logic list.",
+        "o": [
+            "arm",
+            "leg",
+            "watch",
+            "head"
+        ],
+        "a": 2
+    },
+    {
+        "id": 77,
+        "q": "Choose the word which is out of the logic list.",
+        "o": [
+            "uncle",
+            "aunt",
+            "nephew",
+            "friend"
+        ],
+        "a": 3
+    },
+    {
+        "id": 78,
+        "q": "Continue the logic list. Sweater, boots, T-shirt, _____.",
+        "o": [
+            "hair",
+            "face",
+            "jeans",
+            "clothes"
+        ],
+        "a": 2
+    },
+    {
+        "id": 79,
+        "q": "We hang trousers, jackets, and dresses in the _____.",
+        "o": [
+            "hanger",
+            "stool",
+            "mirror",
+            "door"
+        ],
+        "a": 0
+    },
+    {
+        "id": 80,
+        "q": "We keep shirts and underwear in the _____.",
+        "o": [
+            "bed",
+            "wash-basin",
+            "wardrobe",
+            "tiles"
+        ],
+        "a": 2
+    },
+    {
+        "id": 81,
+        "q": "I sleep with my head on the _____.",
+        "o": [
+            "sheets",
+            "blanket",
+            "bath",
+            "pillow"
+        ],
+        "a": 3
+    },
+    {
+        "id": 82,
+        "q": "I wash my hands in the _____.",
+        "o": [
+            "bed",
+            "sink",
+            "bath",
+            "toilet"
+        ],
+        "a": 1
+    },
+    {
+        "id": 83,
+        "q": "I take my _____ off before I go to bed.",
+        "o": [
+            "blanket",
+            "clothes",
+            "watch",
+            "light"
+        ],
+        "a": 1
+    },
+    {
+        "id": 84,
+        "q": "I put an extra _____ on my bed.",
+        "o": [
+            "blanket",
+            "clothes",
+            "bed",
+            "households"
+        ],
+        "a": 0
+    },
+    {
+        "id": 85,
+        "q": "I go to _____ at midnight.",
+        "o": [
+            "school",
+            "breakfast",
+            "bed",
+            "sofa"
+        ],
+        "a": 2
+    },
+    {
+        "id": 86,
+        "q": "He sat on the _____ in the cafe.",
+        "o": [
+            "bed",
+            "desk",
+            "window",
+            "stool"
+        ],
+        "a": 3
+    },
+    {
+        "id": 87,
+        "q": "Choose the word which is out of the logic list.",
+        "o": [
+            "stool",
+            "armchair",
+            "sofa",
+            "vase"
+        ],
+        "a": 3
+    },
+    {
+        "id": 88,
+        "q": "We always _____ at the hotel when we go abroad.",
+        "o": [
+            "be",
+            "leave",
+            "stay",
+            "go"
+        ],
+        "a": 2
+    },
+    {
+        "id": 89,
+        "q": "Bob passes over the _____ on his way to school.",
+        "o": [
+            "road",
+            "bridge",
+            "waterfall",
+            "farm"
+        ],
+        "a": 1
+    },
+    {
+        "id": 90,
+        "q": "Continue the logic list. Valley, forest, mountain, _____.",
+        "o": [
+            "lake",
+            "picture",
+            "weather",
+            "man"
+        ],
+        "a": 0
+    },
+    {
+        "id": 91,
+        "q": "I can see the sunshine behind the _____.",
+        "o": [
+            "picture",
+            "wall",
+            "sofa",
+            "curtains"
+        ],
+        "a": 3
+    },
+    {
+        "id": 92,
+        "q": "The picture is on the _____.",
+        "o": [
+            "vase",
+            "wall",
+            "door",
+            "curtain"
+        ],
+        "a": 1
+    },
+    {
+        "id": 93,
+        "q": "The _____ is cloudy today.",
+        "o": [
+            "air",
+            "world",
+            "day",
+            "sky"
+        ],
+        "a": 3
+    },
+    {
+        "id": 94,
+        "q": "It is always cold in _____.",
+        "o": [
+            "winter",
+            "spring",
+            "fall",
+            "summer"
+        ],
+        "a": 0
+    },
+    {
+        "id": 95,
+        "q": "The longest holiday for students is in _____.",
+        "o": [
+            "winter",
+            "spring",
+            "fall",
+            "summer"
+        ],
+        "a": 3
+    },
+    {
+        "id": 96,
+        "q": "Do you want to drink _____?",
+        "o": [
+            "meal",
+            "ice-cream",
+            "fruit juice",
+            "marmalade"
+        ],
+        "a": 2
+    },
+    {
+        "id": 97,
+        "q": "I haven't got even a _____ on me.",
+        "o": [
+            "money",
+            "penny",
+            "treasure",
+            "nothing"
+        ],
+        "a": 1
+    },
+    {
+        "id": 98,
+        "q": "The more you _____, the more you earn.",
+        "o": [
+            "work",
+            "read",
+            "write",
+            "understand"
+        ],
+        "a": 0
+    },
+    {
+        "id": 99,
+        "q": "_____ the door, so that no one can enter.",
+        "o": [
+            "shut",
+            "close",
+            "lock",
+            "hit"
+        ],
+        "a": 2
+    },
+    {
+        "id": 100,
+        "q": "Which _____ do you come from?",
+        "o": [
+            "nation",
+            "year",
+            "country",
+            "date"
+        ],
+        "a": 2
+    },
+    {
+        "id": 101,
+        "q": "Fiat cars are quite _____. You can afford them easily.",
+        "o": [
+            "bad",
+            "expensive",
+            "easy",
+            "cheap"
+        ],
+        "a": 3
+    },
+    {
+        "id": 102,
+        "q": "They often eat _____ for breakfast.",
+        "o": [
+            "cheese",
+            "chest",
+            "cheer",
+            "chief"
+        ],
+        "a": 0
+    },
+    {
+        "id": 103,
+        "q": "Would you like to have a _____ soup or fish?",
+        "o": [
+            "chicken",
+            "drink",
+            "breakfast",
+            "meal"
+        ],
+        "a": 0
+    },
+    {
+        "id": 104,
+        "q": "If you do not know this word why don't you look up the _____?",
+        "o": [
+            "newspaper",
+            "internet",
+            "computer",
+            "dictionary"
+        ],
+        "a": 3
+    },
+    {
+        "id": 105,
+        "q": "Would you like to drink a _____ of tea?",
+        "o": [
+            "bottle",
+            "piece",
+            "slice",
+            "cup"
+        ],
+        "a": 3
+    },
+    {
+        "id": 106,
+        "q": "The question is really _____. You do not even need to think on it.",
+        "o": [
+            "complete",
+            "different",
+            "difficult",
+            "easy"
+        ],
+        "a": 3
+    },
+    {
+        "id": 107,
+        "q": "There are four people in my _____, mother, father, sister and me.",
+        "o": [
+            "group",
+            "class",
+            "family",
+            "side"
+        ],
+        "a": 2
+    },
+    {
+        "id": 108,
+        "q": "Let's buy something to eat! What does the underlined word refer to?",
+        "o": [
+            "food",
+            "money",
+            "drinks",
+            "souvenirs"
+        ],
+        "a": 0
+    },
+    {
+        "id": 109,
+        "q": "Last _____ the dinner was really awful.",
+        "o": [
+            "midnight",
+            "noon",
+            "evening",
+            "morning"
+        ],
+        "a": 2
+    },
+    {
+        "id": 110,
+        "q": "This is the first question and that is the _____.",
+        "o": [
+            "two",
+            "second",
+            "twice",
+            "later"
+        ],
+        "a": 1
+    },
+    {
+        "id": 111,
+        "q": "My friend has got a/an _____ in London. It's on the 9th floor.",
+        "o": [
+            "room",
+            "apartment",
+            "flat",
+            "city"
+        ],
+        "a": 2
+    },
+    {
+        "id": 112,
+        "q": "Choose the word which is out of the logic list.",
+        "o": [
+            "hut",
+            "house",
+            "flat",
+            "car"
+        ],
+        "a": 3
+    },
+    {
+        "id": 113,
+        "q": "_____ companies are growing very fast nowadays. The country doesn't need foreign companies.",
+        "o": [
+            "local",
+            "multinational",
+            "large",
+            "international"
+        ],
+        "a": 0
+    },
+    {
+        "id": 114,
+        "q": "What is your _____?",
+        "o": [
+            "occupation",
+            "time",
+            "busy",
+            "do"
+        ],
+        "a": 0
+    },
+    {
+        "id": 115,
+        "q": "How many _____ can you speak?",
+        "o": [
+            "tongues",
+            "languages",
+            "nations",
+            "vocabulary"
+        ],
+        "a": 1
+    },
+    {
+        "id": 116,
+        "q": "My friend sent me a _____ last week.",
+        "o": [
+            "writing",
+            "ladder",
+            "letter",
+            "later"
+        ],
+        "a": 2
+    },
+    {
+        "id": 117,
+        "q": "Choose the word which is out of the logic list.",
+        "o": [
+            "magazine",
+            "brochure",
+            "newspaper",
+            "news"
+        ],
+        "a": 3
+    },
+    {
+        "id": 118,
+        "q": "Our geography teacher brings _____ to the lesson.",
+        "o": [
+            "cap",
+            "map",
+            "tap",
+            "cup"
+        ],
+        "a": 1
+    },
+    {
+        "id": 119,
+        "q": "All of my friends are _____. Even some of them have children.",
+        "o": [
+            "single",
+            "alone",
+            "lonely",
+            "married"
+        ],
+        "a": 3
+    },
+    {
+        "id": 120,
+        "q": "What is the singular form of people?",
+        "o": [
+            "man",
+            "single",
+            "human",
+            "person"
+        ],
+        "a": 3
+    },
+    {
+        "id": 121,
+        "q": "Jane likes _____ stamps. She has got already 75.",
+        "o": [
+            "collecting",
+            "taking",
+            "delivering",
+            "using"
+        ],
+        "a": 0
+    },
+    {
+        "id": 122,
+        "q": "Can you help me carry my _____.",
+        "o": [
+            "body",
+            "suitcase",
+            "picture",
+            "language"
+        ],
+        "a": 1
+    },
+    {
+        "id": 123,
+        "q": "My mother's sister is my _____.",
+        "o": [
+            "uncle",
+            "cousin",
+            "nephew",
+            "aunt"
+        ],
+        "a": 3
+    },
+    {
+        "id": 124,
+        "q": "You are very _____ today. What's up?",
+        "o": [
+            "sad",
+            "attractive",
+            "ugly",
+            "thin"
+        ],
+        "a": 0
+    },
+    {
+        "id": 125,
+        "q": "They bought a _____ house in London. It has more than 12 rooms.",
+        "o": [
+            "small",
+            "cool",
+            "large",
+            "heavy"
+        ],
+        "a": 2
+    },
+    {
+        "id": 126,
+        "q": "Don't worry, be _____!",
+        "o": [
+            "happy",
+            "nice",
+            "different",
+            "sorry"
+        ],
+        "a": 0
+    },
+    {
+        "id": 127,
+        "q": "The film shown in the cinema was _____.",
+        "o": [
+            "difficult",
+            "horrified",
+            "heavy",
+            "horrible"
+        ],
+        "a": 3
+    },
+    {
+        "id": 128,
+        "q": "Mary is John's wife and John is her _____.",
+        "o": [
+            "friend",
+            "husband",
+            "relative",
+            "mate"
+        ],
+        "a": 1
+    },
+    {
+        "id": 129,
+        "q": "Bob gets up at 7.00 o'clock in the _____.",
+        "o": [
+            "evening",
+            "afternoon",
+            "morning",
+            "night"
+        ],
+        "a": 2
+    },
+    {
+        "id": 130,
+        "q": "Choose the antonym of the underlined word. I am going to buy a pair of new shoes next week.",
+        "o": [
+            "cheap",
+            "old",
+            "bad",
+            "small"
+        ],
+        "a": 1
+    },
+    {
+        "id": 131,
+        "q": "My mother and father are my _____.",
+        "o": [
+            "owners",
+            "friends",
+            "relatives",
+            "parents"
+        ],
+        "a": 3
+    },
+    {
+        "id": 132,
+        "q": "What is the synonym of urban?",
+        "o": [
+            "city",
+            "village",
+            "country",
+            "park"
+        ],
+        "a": 0
+    },
+    {
+        "id": 133,
+        "q": "My father's brother is my _____.",
+        "o": [
+            "brother",
+            "grandfather",
+            "uncle",
+            "aunt"
+        ],
+        "a": 2
+    },
+    {
+        "id": 134,
+        "q": "When Mr. Richard explains the lesson, I can _____ easily.",
+        "o": [
+            "know",
+            "memorize",
+            "understand",
+            "see"
+        ],
+        "a": 2
+    },
+    {
+        "id": 135,
+        "q": "The _____ is sunny today.",
+        "o": [
+            "weather",
+            "leather",
+            "whether",
+            "air"
+        ],
+        "a": 0
+    },
+    {
+        "id": 136,
+        "q": "Choose the antonym of the underlined word. The old man was standing near the bus stop.",
+        "o": [
+            "new",
+            "young",
+            "modest",
+            "gentle"
+        ],
+        "a": 1
+    },
+    {
+        "id": 137,
+        "q": "When we got to the airport, he was there. What does the underlined word mean here?",
+        "o": [
+            "went",
+            "were in",
+            "saw",
+            "arrived at"
+        ],
+        "a": 3
+    },
+    {
+        "id": 138,
+        "q": "The _____ makes bread.",
+        "o": [
+            "cook",
+            "shopkeeper",
+            "baker",
+            "actor"
+        ],
+        "a": 2
+    },
+    {
+        "id": 139,
+        "q": "It is time we left. Otherwise, we will miss the train. Choose the antonym of the underlined word.",
+        "o": [
+            "catch",
+            "keep",
+            "regret",
+            "leave"
+        ],
+        "a": 0
+    },
+    {
+        "id": 140,
+        "q": "How much does it cost? above. Choose the sentence that has a different meaning with the sentence",
+        "o": [
+            "How much is it?",
+            "What is its price?",
+            "How much do I have to pay for it?",
+            "How much money is there in it?"
+        ],
+        "a": 3
+    },
+    {
+        "id": 141,
+        "q": "Choose the synonym of the underlined word. I am planning to go to hairdresser at the weekend.",
+        "o": [
+            "barber",
+            "tailor",
+            "clerk",
+            "dentist"
+        ],
+        "a": 0
+    },
+    {
+        "id": 142,
+        "q": "Exactly half of the students were absent. word. Which of the following words is not the antonym of the underlined",
+        "o": [
+            "nearly",
+            "approximately",
+            "obviously",
+            "about"
+        ],
+        "a": 2
+    },
+    {
+        "id": 143,
+        "q": "Continue the logic list. Hospital, doctor, nurse, _____.",
+        "o": [
+            "vaccine",
+            "cock",
+            "cool",
+            "officer"
+        ],
+        "a": 0
+    },
+    {
+        "id": 144,
+        "q": "I am so _____. I want to sleep.",
+        "o": [
+            "asleep",
+            "tired",
+            "easy",
+            "hard"
+        ],
+        "a": 1
+    },
+    {
+        "id": 145,
+        "q": "He likes mending old radios. Choose the synonym of the underlined word.",
+        "o": [
+            "repairing",
+            "making",
+            "using",
+            "buying"
+        ],
+        "a": 0
+    },
+    {
+        "id": 146,
+        "q": "Which of the followings is not a transport?",
+        "o": [
+            "helicopter",
+            "ship",
+            "train",
+            "wheel"
+        ],
+        "a": 3
+    },
+    {
+        "id": 147,
+        "q": "Continue the logic list. Day, week, month, year _____, century.",
+        "o": [
+            "decade",
+            "minute",
+            "time",
+            "period"
+        ],
+        "a": 0
+    },
+    {
+        "id": 148,
+        "q": "Which of the followings is not sports?",
+        "o": [
+            "rugby",
+            "baseball",
+            "hockey",
+            "cards"
+        ],
+        "a": 3
+    },
+    {
+        "id": 149,
+        "q": "-What is the _____ of your car?",
+        "o": [
+            "height",
+            "date",
+            "color",
+            "speed"
+        ],
+        "a": 2
+    },
+    {
+        "id": 150,
+        "q": "The meal is awful! Who is the _____?",
+        "o": [
+            "cooker",
+            "cook",
+            "cock",
+            "cocky"
+        ],
+        "a": 1
+    },
+    {
+        "id": 151,
+        "q": "Choose the antonym of the underlined word. This game is really exciting.",
+        "o": [
+            "terrible",
+            "difficult",
+            "different",
+            "boring"
+        ],
+        "a": 3
+    },
+    {
+        "id": 152,
+        "q": "I _____ play cards. I hate it.",
+        "o": [
+            "always",
+            "often",
+            "never",
+            "nothing"
+        ],
+        "a": 2
+    },
+    {
+        "id": 153,
+        "q": "Mars is a/an _____.",
+        "o": [
+            "place",
+            "space",
+            "planet",
+            "universe"
+        ],
+        "a": 2
+    },
+    {
+        "id": 154,
+        "q": "Deserts are often _____ regions.",
+        "o": [
+            "dry",
+            "wet",
+            "cold",
+            "small"
+        ],
+        "a": 0
+    },
+    {
+        "id": 155,
+        "q": "The pain was _____.",
+        "o": [
+            "necessary",
+            "unbearable",
+            "large",
+            "incredible"
+        ],
+        "a": 1
+    },
+    {
+        "id": 156,
+        "q": "Water is _____ for life.",
+        "o": [
+            "harmful",
+            "necessary",
+            "problem",
+            "matter"
+        ],
+        "a": 1
+    },
+    {
+        "id": 157,
+        "q": "Gold is a _____ .",
+        "o": [
+            "metal",
+            "liquid",
+            "gas",
+            "mixture"
+        ],
+        "a": 0
+    },
+    {
+        "id": 158,
+        "q": "The machine is out of _____.",
+        "o": [
+            "work",
+            "order",
+            "place",
+            "condition"
+        ],
+        "a": 1
+    },
+    {
+        "id": 159,
+        "q": "He was ill last week, but now he is in good _____.",
+        "o": [
+            "health",
+            "place",
+            "area",
+            "position"
+        ],
+        "a": 0
+    },
+    {
+        "id": 160,
+        "q": "Hats are out of _____.",
+        "o": [
+            "modern",
+            "public",
+            "fashion",
+            "mode"
+        ],
+        "a": 2
+    },
+    {
+        "id": 161,
+        "q": "When children saw him, they were all in deep _____.",
+        "o": [
+            "horror",
+            "afraid",
+            "terror",
+            "shock"
+        ],
+        "a": 3
+    },
+    {
+        "id": 162,
+        "q": "The firm is in _____ difficulty.",
+        "o": [
+            "natural",
+            "oral",
+            "financial",
+            "mental"
+        ],
+        "a": 2
+    },
+    {
+        "id": 163,
+        "q": "He is on a student grant. What does this sentence mean?",
+        "o": [
+            "He is on duty.",
+            "He takes money for his tuition.",
+            "He will be a university student.",
+            "He is undergraduate student."
+        ],
+        "a": 1
+    },
+    {
+        "id": 164,
+        "q": "The heart is about the size of a _____.",
+        "o": [
+            "head",
+            "leg",
+            "arm",
+            "fist"
+        ],
+        "a": 3
+    },
+    {
+        "id": 165,
+        "q": "It was a rude _____.",
+        "o": [
+            "politeness",
+            "film",
+            "day",
+            "joke"
+        ],
+        "a": 3
+    },
+    {
+        "id": 166,
+        "q": "I am a Beatles _____.",
+        "o": [
+            "side",
+            "support",
+            "lovely",
+            "fan"
+        ],
+        "a": 3
+    },
+    {
+        "id": 167,
+        "q": "Bill is a man of _____.",
+        "o": [
+            "good",
+            "principle",
+            "obligatory",
+            "worth"
+        ],
+        "a": 1
+    },
+    {
+        "id": 168,
+        "q": "It was not my _____. He broke the window",
+        "o": [
+            "fault",
+            "joke",
+            "rules",
+            "incorrect"
+        ],
+        "a": 0
+    },
+    {
+        "id": 169,
+        "q": "The pillow is _____.",
+        "o": [
+            "boring",
+            "interesting",
+            "soft",
+            "hardly"
+        ],
+        "a": 2
+    },
+    {
+        "id": 170,
+        "q": "Lora is _____ in Spanish.",
+        "o": [
+            "good",
+            "bad",
+            "fluent",
+            "middle"
+        ],
+        "a": 2
+    },
+    {
+        "id": 171,
+        "q": "He was not _____ of my plan.",
+        "o": [
+            "know",
+            "course",
+            "aware",
+            "wisdom"
+        ],
+        "a": 2
+    },
+    {
+        "id": 172,
+        "q": "Some of the students of this college stay in the _____.",
+        "o": [
+            "house",
+            "dormitory",
+            "flat",
+            "country"
+        ],
+        "a": 1
+    },
+    {
+        "id": 173,
+        "q": "He is _____ Linguistics at the University of Oxford.",
+        "o": [
+            "working",
+            "reading",
+            "knowing",
+            "studying"
+        ],
+        "a": 3
+    },
+    {
+        "id": 174,
+        "q": "There won't be a _____ for that film.",
+        "o": [
+            "queue",
+            "sequence",
+            "wait",
+            "group"
+        ],
+        "a": 0
+    },
+    {
+        "id": 175,
+        "q": "Each teacher _____ the contract.",
+        "o": [
+            "wrote",
+            "agreed",
+            "pointed",
+            "signed"
+        ],
+        "a": 3
+    },
+    {
+        "id": 176,
+        "q": "He has no _____ for music.",
+        "o": [
+            "face",
+            "ear",
+            "eye",
+            "nose"
+        ],
+        "a": 1
+    },
+    {
+        "id": 177,
+        "q": "She has got a _____ over her head.",
+        "o": [
+            "belt",
+            "tie",
+            "blanket",
+            "scarf"
+        ],
+        "a": 3
+    },
+    {
+        "id": 178,
+        "q": "Their documents are _____.",
+        "o": [
+            "ready",
+            "finish",
+            "absolute",
+            "modern"
+        ],
+        "a": 0
+    },
+    {
+        "id": 179,
+        "q": "His mother's illness is _____.",
+        "o": [
+            "significant",
+            "serious",
+            "ignoring",
+            "impatient"
+        ],
+        "a": 1
+    },
+    {
+        "id": 180,
+        "q": "I took her _____ and it was 40ºC.",
+        "o": [
+            "heat",
+            "body",
+            "temperature",
+            "cool"
+        ],
+        "a": 2
+    },
+    {
+        "id": 181,
+        "q": "Can you _____ a computer.",
+        "o": [
+            "use",
+            "work",
+            "study",
+            "write"
+        ],
+        "a": 0
+    },
+    {
+        "id": 182,
+        "q": "Please, take a _____!",
+        "o": [
+            "sit",
+            "place",
+            "down",
+            "seat"
+        ],
+        "a": 3
+    },
+    {
+        "id": 183,
+        "q": "I think the job will _____ me very well.",
+        "o": [
+            "do",
+            "match",
+            "suit",
+            "equalize"
+        ],
+        "a": 2
+    },
+    {
+        "id": 184,
+        "q": "The boss wasn't there so I left a message to the _____.",
+        "o": [
+            "deputy",
+            "secretary",
+            "assistant",
+            "helper"
+        ],
+        "a": 1
+    },
+    {
+        "id": 185,
+        "q": "His father is a/an _____. He works for New York Times.",
+        "o": [
+            "journalist",
+            "actor",
+            "writer",
+            "scientist"
+        ],
+        "a": 0
+    },
+    {
+        "id": 186,
+        "q": "English will be very _____ for you in the future.",
+        "o": [
+            "harmful",
+            "horrible",
+            "useful",
+            "nonsense"
+        ],
+        "a": 2
+    },
+    {
+        "id": 187,
+        "q": "Between what _____ is education compulsory?",
+        "o": [
+            "years",
+            "periods",
+            "ages",
+            "times"
+        ],
+        "a": 2
+    },
+    {
+        "id": 188,
+        "q": "What are the _____ of your exam?",
+        "o": [
+            "reasons",
+            "finals",
+            "results",
+            "ends"
+        ],
+        "a": 2
+    },
+    {
+        "id": 189,
+        "q": "I _____ 200$ a week from my job.",
+        "o": [
+            "take",
+            "earn",
+            "pay",
+            "borrow"
+        ],
+        "a": 1
+    },
+    {
+        "id": 190,
+        "q": "If you have financial difficulties, I can _____ you some money.",
+        "o": [
+            "lend",
+            "borrow",
+            "rent",
+            "pay"
+        ],
+        "a": 0
+    },
+    {
+        "id": 191,
+        "q": "Why don't you _____ a bank account?",
+        "o": [
+            "make",
+            "open",
+            "do",
+            "pay"
+        ],
+        "a": 1
+    },
+    {
+        "id": 192,
+        "q": "I don't like to be in _____.",
+        "o": [
+            "owe",
+            "borrow",
+            "lend",
+            "debt"
+        ],
+        "a": 3
+    },
+    {
+        "id": 193,
+        "q": "She earns a lot of money. She is very _____.",
+        "o": [
+            "cruel",
+            "tolerant",
+            "well-off",
+            "large"
+        ],
+        "a": 2
+    },
+    {
+        "id": 194,
+        "q": "He can't _____ luxuries. He is poor.",
+        "o": [
+            "stay",
+            "make",
+            "owe",
+            "afford"
+        ],
+        "a": 3
+    },
+    {
+        "id": 195,
+        "q": "I will have to get a (an) _____ job in the evenings.",
+        "o": [
+            "plus",
+            "extra",
+            "high",
+            "further"
+        ],
+        "a": 1
+    },
+    {
+        "id": 196,
+        "q": "Part of income paid to government is _____.",
+        "o": [
+            "taxes",
+            "bills",
+            "pay",
+            "account"
+        ],
+        "a": 0
+    },
+    {
+        "id": 197,
+        "q": "_____ is money for transport.",
+        "o": [
+            "pension",
+            "fare",
+            "interest",
+            "salary"
+        ],
+        "a": 1
+    },
+    {
+        "id": 198,
+        "q": "Money parents give children every week is called _____.",
+        "o": [
+            "part-money",
+            "pocket money",
+            "interest",
+            "rent"
+        ],
+        "a": 1
+    },
+    {
+        "id": 199,
+        "q": "_____ is money from work, usually hourly or weekly.",
+        "o": [
+            "wages",
+            "salary",
+            "rent",
+            "interest"
+        ],
+        "a": 0
+    },
+    {
+        "id": 200,
+        "q": "Money from work, usually monthly, is called _____.",
+        "o": [
+            "wages",
+            "salary",
+            "fee",
+            "pay"
+        ],
+        "a": 1
+    },
+    {
+        "id": 201,
+        "q": "I live in the _____, not the town.",
+        "o": [
+            "area",
+            "farm",
+            "apartment",
+            "country"
+        ],
+        "a": 3
+    },
+    {
+        "id": 202,
+        "q": "To be a soldier, you join the _____.",
+        "o": [
+            "force",
+            "army",
+            "group",
+            "government"
+        ],
+        "a": 1
+    },
+    {
+        "id": 203,
+        "q": "Person who controls a game is _____.",
+        "o": [
+            "referee",
+            "score",
+            "spectator",
+            "player"
+        ],
+        "a": 0
+    },
+    {
+        "id": 204,
+        "q": "We're just _____, not professionals.",
+        "o": [
+            "players",
+            "crowd",
+            "team",
+            "amateurs"
+        ],
+        "a": 3
+    },
+    {
+        "id": 205,
+        "q": "There are sometimes more players than _____.",
+        "o": [
+            "spectators",
+            "referees",
+            "teams",
+            "scores"
+        ],
+        "a": 0
+    },
+    {
+        "id": 206,
+        "q": "She sunbathes at the _____.",
+        "o": [
+            "sea",
+            "desert",
+            "mountain",
+            "beach"
+        ],
+        "a": 3
+    },
+    {
+        "id": 207,
+        "q": "They are very _____ on music.",
+        "o": [
+            "keen",
+            "fan",
+            "like",
+            "respect"
+        ],
+        "a": 0
+    },
+    {
+        "id": 208,
+        "q": "I _____ a lot of time at the concert.",
+        "o": [
+            "use",
+            "waste",
+            "spend",
+            "fill"
+        ],
+        "a": 2
+    },
+    {
+        "id": 209,
+        "q": "We prefer to live _____ to nature.",
+        "o": [
+            "through",
+            "close",
+            "near",
+            "with"
+        ],
+        "a": 1
+    },
+    {
+        "id": 210,
+        "q": "I like visiting museums and art _____.",
+        "o": [
+            "shops",
+            "stores",
+            "galleries",
+            "markets"
+        ],
+        "a": 2
+    },
+    {
+        "id": 211,
+        "q": "Students get bored with visiting historical _____.",
+        "o": [
+            "areas",
+            "fields",
+            "points",
+            "places"
+        ],
+        "a": 3
+    },
+    {
+        "id": 212,
+        "q": "She enjoys swimming and _____ at the beach.",
+        "o": [
+            "sunbathing",
+            "speaking",
+            "eating",
+            "drinking"
+        ],
+        "a": 0
+    },
+    {
+        "id": 213,
+        "q": "Helen loves being in the _____.",
+        "o": [
+            "sky",
+            "beach",
+            "countryside",
+            "work"
+        ],
+        "a": 2
+    },
+    {
+        "id": 214,
+        "q": "He is a family doctor, he has a _____ to help.",
+        "o": [
+            "receptionist",
+            "nurse",
+            "waiter",
+            "translator"
+        ],
+        "a": 1
+    },
+    {
+        "id": 215,
+        "q": "Operator doctor sees his patients in the _____.",
+        "o": [
+            "house",
+            "room",
+            "hall",
+            "surgery"
+        ],
+        "a": 3
+    },
+    {
+        "id": 216,
+        "q": "Some patients have _____ throats.",
+        "o": [
+            "bad",
+            "low",
+            "sore",
+            "down"
+        ],
+        "a": 2
+    },
+    {
+        "id": 217,
+        "q": "Doctors give patients _____ to take to the chemist.",
+        "o": [
+            "prescription",
+            "description",
+            "check",
+            "cash"
+        ],
+        "a": 0
+    },
+    {
+        "id": 218,
+        "q": "Choose the word which is out of the logic list.",
+        "o": [
+            "cricket",
+            "target",
+            "golf",
+            "rugby"
+        ],
+        "a": 1
+    },
+    {
+        "id": 219,
+        "q": "We have to send the patients to hospital for _____.",
+        "o": [
+            "treatment",
+            "nurse",
+            "stomach-ache",
+            "regular"
+        ],
+        "a": 0
+    },
+    {
+        "id": 220,
+        "q": "If you always feel tired, get more _____.",
+        "o": [
+            "exercise",
+            "cure",
+            "suffer",
+            "drug"
+        ],
+        "a": 0
+    },
+    {
+        "id": 221,
+        "q": "Have a good _____, if you want to be healthy.",
+        "o": [
+            "dinner",
+            "drug",
+            "diet",
+            "ache"
+        ],
+        "a": 2
+    },
+    {
+        "id": 222,
+        "q": "We saw the doctor in his _____ while operating his patients.",
+        "o": [
+            "van",
+            "hut",
+            "cabinet",
+            "surgery"
+        ],
+        "a": 3
+    },
+    {
+        "id": 223,
+        "q": "He listened to my _____.",
+        "o": [
+            "problems",
+            "differences",
+            "life",
+            "condition"
+        ],
+        "a": 0
+    },
+    {
+        "id": 224,
+        "q": "I have lost my _____. I don't want to eat anything.",
+        "o": [
+            "hungry",
+            "appetite",
+            "happiness",
+            "life"
+        ],
+        "a": 1
+    },
+    {
+        "id": 225,
+        "q": "He always _____ his teeth.",
+        "o": [
+            "washes",
+            "waters",
+            "brushes",
+            "tidies"
+        ],
+        "a": 2
+    },
+    {
+        "id": 226,
+        "q": "Policemen wear _____ so everyone knows who they are.",
+        "o": [
+            "clothes",
+            "shoes",
+            "dresses",
+            "uniforms"
+        ],
+        "a": 3
+    },
+    {
+        "id": 227,
+        "q": "The man on the phone wanted me to _____ a moment.",
+        "o": [
+            "stay calm",
+            "hold on",
+            "take on",
+            "put off"
+        ],
+        "a": 1
+    },
+    {
+        "id": 228,
+        "q": "To make tea, first _____ the water in a kettle.",
+        "o": [
+            "liquid",
+            "flow",
+            "make",
+            "boil"
+        ],
+        "a": 3
+    },
+    {
+        "id": 229,
+        "q": "You should _____ tea with a spoon.",
+        "o": [
+            "stir",
+            "boil",
+            "fix",
+            "clear"
+        ],
+        "a": 0
+    },
+    {
+        "id": 230,
+        "q": "_____ your hands above your head.",
+        "o": [
+            "raise",
+            "rise",
+            "rice",
+            "rays"
+        ],
+        "a": 0
+    },
+    {
+        "id": 231,
+        "q": "Please, do not _____ the sides of the chair.",
+        "o": [
+            "bend",
+            "sit",
+            "lean",
+            "stand"
+        ],
+        "a": 2
+    },
+    {
+        "id": 232,
+        "q": "Put a cassette in the machine and _____ the 'start' button.",
+        "o": [
+            "block",
+            "tick",
+            "click",
+            "press"
+        ],
+        "a": 3
+    },
+    {
+        "id": 233,
+        "q": "You can _____ the quality of the sound by using the other controls.",
+        "o": [
+            "adapt",
+            "adjust",
+            "adore",
+            "alarm"
+        ],
+        "a": 1
+    },
+    {
+        "id": 234,
+        "q": "What a (an) _____ street! Two cars can't pass through together.",
+        "o": [
+            "easy",
+            "ugly",
+            "large",
+            "narrow"
+        ],
+        "a": 3
+    },
+    {
+        "id": 235,
+        "q": "I have had a _____ day.",
+        "o": [
+            "red",
+            "light",
+            "complete",
+            "wonderful"
+        ],
+        "a": 3
+    },
+    {
+        "id": 236,
+        "q": "The wood was very _____.",
+        "o": [
+            "tidy",
+            "sad",
+            "empty",
+            "rough"
+        ],
+        "a": 3
+    },
+    {
+        "id": 237,
+        "q": "The paper is very _____.",
+        "o": [
+            "thin",
+            "weak",
+            "guilty",
+            "easy"
+        ],
+        "a": 0
+    },
+    {
+        "id": 238,
+        "q": "She wore _____ clothes at the party.",
+        "o": [
+            "difficult",
+            "huge",
+            "formal",
+            "sad"
+        ],
+        "a": 2
+    },
+    {
+        "id": 239,
+        "q": "She felt _____ about her exam.",
+        "o": [
+            "interested",
+            "ignorant",
+            "ugly",
+            "nervous"
+        ],
+        "a": 3
+    },
+    {
+        "id": 240,
+        "q": "It was a (an) _____ meal.",
+        "o": [
+            "powerful",
+            "tolerant",
+            "light",
+            "white"
+        ],
+        "a": 2
+    },
+    {
+        "id": 241,
+        "q": "The knife was very _____. I cut my finger.",
+        "o": [
+            "huge",
+            "dirty",
+            "ordinary",
+            "sharp"
+        ],
+        "a": 3
+    },
+    {
+        "id": 242,
+        "q": "It is a _____ place. Do not come here!",
+        "o": [
+            "nice",
+            "dangerous",
+            "tight",
+            "dry"
+        ],
+        "a": 1
+    },
+    {
+        "id": 243,
+        "q": "That is a (an) _____ meeting.",
+        "o": [
+            "own",
+            "private",
+            "strict",
+            "safe"
+        ],
+        "a": 1
+    },
+    {
+        "id": 244,
+        "q": "It was _____ news. I couldn't stand.",
+        "o": [
+            "terrible",
+            "wonderful",
+            "clean",
+            "short"
+        ],
+        "a": 0
+    },
+    {
+        "id": 245,
+        "q": "The bottle is _____. Throw it away.",
+        "o": [
+            "necessary",
+            "flexible",
+            "tiny",
+            "empty"
+        ],
+        "a": 3
+    },
+    {
+        "id": 246,
+        "q": "He was _____. He wasn't set free.",
+        "o": [
+            "guilty",
+            "easy",
+            "cheap",
+            "weak"
+        ],
+        "a": 0
+    },
+    {
+        "id": 247,
+        "q": "My belt is too _____. I couldn't loose it.",
+        "o": [
+            "hard",
+            "soft",
+            "useful",
+            "tight"
+        ],
+        "a": 3
+    },
+    {
+        "id": 248,
+        "q": "The weather was _____. I hated it.",
+        "o": [
+            "beautiful",
+            "wet",
+            "dry",
+            "nasty"
+        ],
+        "a": 3
+    },
+    {
+        "id": 249,
+        "q": "He is a _____ man. I do not want to speak to him.",
+        "o": [
+            "clever",
+            "gently",
+            "stupid",
+            "handsome"
+        ],
+        "a": 2
+    },
+    {
+        "id": 250,
+        "q": "Mark is a _____ boy. Everyone likes him.",
+        "o": [
+            "hard",
+            "polite",
+            "rude",
+            "bad"
+        ],
+        "a": 1
+    },
+    {
+        "id": 251,
+        "q": "The music was too _____.",
+        "o": [
+            "loud",
+            "small",
+            "wrong",
+            "incorrect"
+        ],
+        "a": 0
+    },
+    {
+        "id": 252,
+        "q": "She loves meeting people and going to parties. She is a very _____ person.",
+        "o": [
+            "shy",
+            "ignorant",
+            "learned",
+            "sociable"
+        ],
+        "a": 3
+    },
+    {
+        "id": 253,
+        "q": "He likes new things and new places, even if they are difficult or dangerous. She is _____.",
+        "o": [
+            "adventurous",
+            "selfish",
+            "clever",
+            "mean"
+        ],
+        "a": 0
+    },
+    {
+        "id": 254,
+        "q": "Peter never gets upset or annoyed when things go wrong. He is a very _____ man.",
+        "o": [
+            "hard-working",
+            "attractive",
+            "easy-going",
+            "mad"
+        ],
+        "a": 2
+    },
+    {
+        "id": 255,
+        "q": "My friend loves to talk to people and tell them what he thinks. He is _____.",
+        "o": [
+            "ugly",
+            "talkative",
+            "strong",
+            "sad"
+        ],
+        "a": 1
+    },
+    {
+        "id": 256,
+        "q": "My brother wants to get an important job in a high position. He is very _____.",
+        "o": [
+            "stubborn",
+            "learned",
+            "ambitious",
+            "talkative"
+        ],
+        "a": 2
+    },
+    {
+        "id": 257,
+        "q": "Madison doesn't like work. He is _____.",
+        "o": [
+            "happy",
+            "poor",
+            "rich",
+            "lazy"
+        ],
+        "a": 3
+    },
+    {
+        "id": 258,
+        "q": "He is always happy and smiling. He is very _____.",
+        "o": [
+            "cheerful",
+            "hard-headed",
+            "funny",
+            "intelligent"
+        ],
+        "a": 0
+    },
+    {
+        "id": 259,
+        "q": "Lora only thinks about herself. She is _____.",
+        "o": [
+            "naughty",
+            "selfish",
+            "patient",
+            "genius"
+        ],
+        "a": 1
+    },
+    {
+        "id": 260,
+        "q": "Jake has a lot of common sense. He always knows correct thing to do. He is a _____ boy.",
+        "o": [
+            "sensitive",
+            "sensual",
+            "sensible",
+            "nonsense"
+        ],
+        "a": 2
+    },
+    {
+        "id": 261,
+        "q": "He always has good hopes for the future. He thinks everything will be fine. He is very _____.",
+        "o": [
+            "rude",
+            "pessimist",
+            "optimist",
+            "quiet"
+        ],
+        "a": 2
+    },
+    {
+        "id": 262,
+        "q": "My sister is very careful about her appearance and how she arranges her desk and her room. She is a/an _____ lady.",
+        "o": [
+            "tidy",
+            "silly",
+            "unsociable",
+            "cautious"
+        ],
+        "a": 0
+    },
+    {
+        "id": 263,
+        "q": "His father always remembers to say 'please' and 'thank you'. He is very _____.",
+        "o": [
+            "impolite",
+            "polite",
+            "rude",
+            "talkative"
+        ],
+        "a": 1
+    },
+    {
+        "id": 264,
+        "q": "Shoes are usually made of _____.",
+        "o": [
+            "leather",
+            "wool",
+            "paper",
+            "iron"
+        ],
+        "a": 0
+    },
+    {
+        "id": 265,
+        "q": "The Sahara is a _____.",
+        "o": [
+            "river",
+            "continent",
+            "desert",
+            "canal"
+        ],
+        "a": 2
+    },
+    {
+        "id": 266,
+        "q": "Thank you for the books. They will be very _____ for my studies.",
+        "o": [
+            "harmful",
+            "useful",
+            "tasteful",
+            "hopeful"
+        ],
+        "a": 1
+    },
+    {
+        "id": 267,
+        "q": "The government is trying to help _____ families.",
+        "o": [
+            "rich",
+            "social",
+            "small",
+            "homeless"
+        ],
+        "a": 3
+    },
+    {
+        "id": 268,
+        "q": "Thanks to modern technology, a visit to dentist is now often quite _____.",
+        "o": [
+            "harmless",
+            "helpful",
+            "painless",
+            "tasty"
+        ],
+        "a": 2
+    },
+    {
+        "id": 269,
+        "q": "It was a very _____ football match.",
+        "o": [
+            "silly",
+            "exciting",
+            "bored",
+            "deep"
+        ],
+        "a": 1
+    },
+    {
+        "id": 270,
+        "q": "We felt very _____ on holiday.",
+        "o": [
+            "relaxed",
+            "relaxing",
+            "rest",
+            "unrest"
+        ],
+        "a": 0
+    },
+    {
+        "id": 271,
+        "q": "It was a (an) _____ film. I nearly fell asleep.",
+        "o": [
+            "interesting",
+            "boring",
+            "exciting",
+            "relaxing"
+        ],
+        "a": 1
+    },
+    {
+        "id": 272,
+        "q": "You look rather _____. Why don't you see a doctor?",
+        "o": [
+            "unhealthy",
+            "tired",
+            "unpleasant",
+            "fair"
+        ],
+        "a": 0
+    },
+    {
+        "id": 273,
+        "q": "Will you take the job? We must have a quick _____.",
+        "o": [
+            "mind",
+            "decision",
+            "deciding",
+            "manner"
+        ],
+        "a": 1
+    },
+    {
+        "id": 274,
+        "q": "I'd like to _____ you on passing your exam.",
+        "o": [
+            "congratulate",
+            "thank",
+            "excuse",
+            "let"
+        ],
+        "a": 0
+    },
+    {
+        "id": 275,
+        "q": "We cannot _____ children under 14 to go to movies without their parents.",
+        "o": [
+            "let",
+            "make",
+            "have",
+            "permit"
+        ],
+        "a": 3
+    },
+    {
+        "id": 276,
+        "q": "The _____ of train will be 15 minutes late.",
+        "o": [
+            "coming",
+            "use",
+            "departure",
+            "time"
+        ],
+        "a": 2
+    },
+    {
+        "id": 277,
+        "q": "I think I will _____ about this bad service.",
+        "o": [
+            "complain",
+            "think",
+            "consider",
+            "explain"
+        ],
+        "a": 0
+    },
+    {
+        "id": 278,
+        "q": "They don't get on well. They are having a(an) _____ now.",
+        "o": [
+            "talking",
+            "war",
+            "fighting",
+            "argument"
+        ],
+        "a": 3
+    },
+    {
+        "id": 279,
+        "q": "It is very difficult to _____ this machine.",
+        "o": [
+            "make",
+            "do",
+            "operate",
+            "work"
+        ],
+        "a": 2
+    },
+    {
+        "id": 280,
+        "q": "It doesn't matter. It is of no _____.",
+        "o": [
+            "learning",
+            "importance",
+            "significant",
+            "work"
+        ],
+        "a": 1
+    },
+    {
+        "id": 281,
+        "q": "I don't like the _____ of the furniture in this room.",
+        "o": [
+            "way",
+            "staying",
+            "compliment",
+            "arrangement"
+        ],
+        "a": 3
+    },
+    {
+        "id": 282,
+        "q": "He gave the police the _____ of the stolen goods.",
+        "o": [
+            "shape",
+            "shadow",
+            "description",
+            "explanation"
+        ],
+        "a": 2
+    },
+    {
+        "id": 283,
+        "q": "My boss needs my _____ on that paper.",
+        "o": [
+            "mark",
+            "signature",
+            "acceptation",
+            "refuse"
+        ],
+        "a": 1
+    },
+    {
+        "id": 284,
+        "q": "I do not know which one to _____.",
+        "o": [
+            "choice",
+            "choose",
+            "chose",
+            "choosy"
+        ],
+        "a": 1
+    },
+    {
+        "id": 285,
+        "q": "This documentation is not _____. You might be arrested for this.",
+        "o": [
+            "criminal",
+            "legal",
+            "formal",
+            "incorrect"
+        ],
+        "a": 1
+    },
+    {
+        "id": 286,
+        "q": "My kitchen is very old. I am going to _____ it.",
+        "o": [
+            "new",
+            "clean",
+            "paint",
+            "modernize"
+        ],
+        "a": 3
+    },
+    {
+        "id": 287,
+        "q": "The people demonstrated for more _____.",
+        "o": [
+            "government",
+            "freedom",
+            "oppression",
+            "life"
+        ],
+        "a": 1
+    },
+    {
+        "id": 288,
+        "q": "My brother _____ 65 kilos.",
+        "o": [
+            "weighs",
+            "masses",
+            "makes",
+            "pulls"
+        ],
+        "a": 0
+    },
+    {
+        "id": 289,
+        "q": "I am worried about the children's _____ on the street.",
+        "o": [
+            "freedom",
+            "sanction",
+            "safety",
+            "noise"
+        ],
+        "a": 2
+    },
+    {
+        "id": 290,
+        "q": "You will find all the _____ you want here. It is good place to stay.",
+        "o": [
+            "law",
+            "peace",
+            "war",
+            "argument"
+        ],
+        "a": 1
+    },
+    {
+        "id": 291,
+        "q": "There are pictures of _____ in the newspapers everyday. I really don't want to see them.",
+        "o": [
+            "peace",
+            "freedom",
+            "people",
+            "violence"
+        ],
+        "a": 3
+    },
+    {
+        "id": 292,
+        "q": "How long is it? The _____ must be very exact.",
+        "o": [
+            "side",
+            "longing",
+            "area",
+            "measurement"
+        ],
+        "a": 3
+    },
+    {
+        "id": 293,
+        "q": "The film was a great _____. It made 75 million dollars.",
+        "o": [
+            "hope",
+            "money",
+            "success",
+            "bank"
+        ],
+        "a": 2
+    },
+    {
+        "id": 294,
+        "q": "What about six o'clock. Will that time _____ you?",
+        "o": [
+            "match",
+            "suit",
+            "approve",
+            "agree"
+        ],
+        "a": 1
+    },
+    {
+        "id": 295,
+        "q": "Excuse me. Could you _____ me the way to the town hall?",
+        "o": [
+            "let",
+            "put",
+            "talk",
+            "tell"
+        ],
+        "a": 3
+    },
+    {
+        "id": 296,
+        "q": "Not more books! There aren't enough _____ to put them on.",
+        "o": [
+            "leaves",
+            "cases",
+            "spaces",
+            "shelves"
+        ],
+        "a": 3
+    },
+    {
+        "id": 297,
+        "q": "Don't forget your _____. It's very cold outside.",
+        "o": [
+            "gloves",
+            "underwear",
+            "umbrella",
+            "scissors"
+        ],
+        "a": 0
+    },
+    {
+        "id": 298,
+        "q": "There are eleven players in a football _____.",
+        "o": [
+            "game",
+            "pitch",
+            "team",
+            "group"
+        ],
+        "a": 2
+    },
+    {
+        "id": 299,
+        "q": "What's wrong with your foot? - One of my _____ hurts.",
+        "o": [
+            "fingers",
+            "heels",
+            "wrists",
+            "toes"
+        ],
+        "a": 3
+    },
+    {
+        "id": 300,
+        "q": "Bill's a _____ so he travels all over the world.",
+        "o": [
+            "baker",
+            "butcher",
+            "sailor",
+            "driver"
+        ],
+        "a": 2
+    },
+    {
+        "id": 301,
+        "q": "The _____ will help you if you can't find the book you want.",
+        "o": [
+            "porter",
+            "agent",
+            "librarian",
+            "operator"
+        ],
+        "a": 2
+    },
+    {
+        "id": 302,
+        "q": "I must book a _____ for our game of tennis tomorrow.",
+        "o": [
+            "field",
+            "court",
+            "green",
+            "team"
+        ],
+        "a": 1
+    },
+    {
+        "id": 303,
+        "q": "My car won't start. Could you give me a _____ to town?",
+        "o": [
+            "bus",
+            "car",
+            "hand",
+            "lift"
+        ],
+        "a": 3
+    },
+    {
+        "id": 304,
+        "q": "Do you take _____ in your tea?",
+        "o": [
+            "spoon",
+            "pepper",
+            "salt",
+            "sugar"
+        ],
+        "a": 3
+    },
+    {
+        "id": 305,
+        "q": "This doll is a present for my _____. I hope she likes it.",
+        "o": [
+            "husband",
+            "nephew",
+            "niece",
+            "uncle"
+        ],
+        "a": 2
+    },
+    {
+        "id": 306,
+        "q": "What kind of fruit would you like?",
+        "o": [
+            "carrot",
+            "mushroom",
+            "pear",
+            "turnip"
+        ],
+        "a": 2
+    },
+    {
+        "id": 307,
+        "q": "I'll look in my _____ and see if I'm free on Wednesday.",
+        "o": [
+            "diary",
+            "dictionary",
+            "briefcase",
+            "calendar"
+        ],
+        "a": 0
+    },
+    {
+        "id": 308,
+        "q": "You don't have to _____! We're not late!",
+        "o": [
+            "dream",
+            "laugh",
+            "rush",
+            "wait"
+        ],
+        "a": 2
+    },
+    {
+        "id": 309,
+        "q": "Which do you _____ cream or milk?",
+        "o": [
+            "rather",
+            "eat",
+            "prefer",
+            "wear"
+        ],
+        "a": 2
+    },
+    {
+        "id": 310,
+        "q": "You can hang your jacket in the _____.",
+        "o": [
+            "bedspread",
+            "chest of drawers",
+            "hanger",
+            "wardrobe"
+        ],
+        "a": 3
+    },
+    {
+        "id": 311,
+        "q": "The shopping centre is now a pedestrian _____.",
+        "o": [
+            "arrival",
+            "palace",
+            "pavement",
+            "precinct"
+        ],
+        "a": 3
+    },
+    {
+        "id": 312,
+        "q": "Could you _____ a photo of me in front of this building?",
+        "o": [
+            "check",
+            "make",
+            "paint",
+            "take"
+        ],
+        "a": 3
+    },
+    {
+        "id": 313,
+        "q": "The ice is very _____ so don't walk on it.",
+        "o": [
+            "high",
+            "low",
+            "thick",
+            "thin"
+        ],
+        "a": 3
+    },
+    {
+        "id": 314,
+        "q": "Carol speaks so fast that it's _____ to understand her.",
+        "o": [
+            "difficult",
+            "easy",
+            "slow",
+            "wrong"
+        ],
+        "a": 0
+    },
+    {
+        "id": 315,
+        "q": "The mechanic hopes to _____ our car by this evening.",
+        "o": [
+            "make",
+            "renew",
+            "repair",
+            "wander"
+        ],
+        "a": 2
+    },
+    {
+        "id": 316,
+        "q": "My _____ says I need stronger glasses.",
+        "o": [
+            "chemist",
+            "conductor",
+            "keeper",
+            "optician"
+        ],
+        "a": 3
+    },
+    {
+        "id": 317,
+        "q": "Are you ready to go?",
+        "o": [
+            "for me",
+            "very much",
+            "very many",
+            "yet"
+        ],
+        "a": 3
+    },
+    {
+        "id": 318,
+        "q": "How much does she earn?",
+        "o": [
+            "business",
+            "decision",
+            "information",
+            "role"
+        ],
+        "a": 0
+    },
+    {
+        "id": 319,
+        "q": "The police are looking for the _____ of a red Ford.",
+        "o": [
+            "detective",
+            "instructor",
+            "owner",
+            "rider"
+        ],
+        "a": 2
+    },
+    {
+        "id": 320,
+        "q": "I've already got a _____ at a hotel in the town centre.",
+        "o": [
+            "prescription",
+            "property",
+            "reserve",
+            "reservation"
+        ],
+        "a": 3
+    },
+    {
+        "id": 321,
+        "q": "The next _____ of the show is at seven thirty.",
+        "o": [
+            "event",
+            "performance",
+            "stall",
+            "game"
+        ],
+        "a": 1
+    },
+    {
+        "id": 322,
+        "q": "You can't eat that pear. It isn't _____ yet.",
+        "o": [
+            "best",
+            "pale",
+            "ripe",
+            "mature"
+        ],
+        "a": 2
+    },
+    {
+        "id": 323,
+        "q": "Can you _____ the coffee and I'll get the biscuits.",
+        "o": [
+            "depart",
+            "disturb",
+            "feed",
+            "pour"
+        ],
+        "a": 3
+    },
+    {
+        "id": 324,
+        "q": "Should I wear my sandals or my _____?",
+        "o": [
+            "cardigan",
+            "shorts",
+            "trainers",
+            "scarves"
+        ],
+        "a": 2
+    },
+    {
+        "id": 325,
+        "q": "Shirley tried to stop the car but the _____ didn't work.",
+        "o": [
+            "brakes",
+            "crossroads",
+            "tires",
+            "controls"
+        ],
+        "a": 0
+    },
+    {
+        "id": 326,
+        "q": "The referee and the two teams ran out onto the _____.",
+        "o": [
+            "circus",
+            "course",
+            "observatory",
+            "pitch"
+        ],
+        "a": 3
+    },
+    {
+        "id": 327,
+        "q": "You need some _____ coffee to wake you up.",
+        "o": [
+            "awake",
+            "hard",
+            "brown",
+            "strong"
+        ],
+        "a": 3
+    },
+    {
+        "id": 328,
+        "q": "His suitcase was quite _____ so I could easily carry it.",
+        "o": [
+            "cheap",
+            "heavy",
+            "light",
+            "short"
+        ],
+        "a": 2
+    },
+    {
+        "id": 329,
+        "q": "When did you _____ smoking?",
+        "o": [
+            "cut off",
+            "give up",
+            "make up",
+            "throw away"
+        ],
+        "a": 1
+    },
+    {
+        "id": 330,
+        "q": "The plane _____ late because of the terrible weather.",
+        "o": [
+            "blew up",
+            "grew up",
+            "went on",
+            "took off"
+        ],
+        "a": 3
+    },
+    {
+        "id": 331,
+        "q": "The _____ at the hospital told me not to worry about my leg.",
+        "o": [
+            "accountant",
+            "director",
+            "lodger",
+            "specialist"
+        ],
+        "a": 3
+    },
+    {
+        "id": 332,
+        "q": "The President is a very _____ man. Everyone does what he says.",
+        "o": [
+            "circular",
+            "direct",
+            "painful",
+            "powerful"
+        ],
+        "a": 3
+    },
+    {
+        "id": 333,
+        "q": "We had to _____ the match because of the bad weather.",
+        "o": [
+            "call back",
+            "call off",
+            "think over",
+            "find out"
+        ],
+        "a": 1
+    },
+    {
+        "id": 334,
+        "q": "Pat was surprised when her boss didn't _____ the meal.",
+        "o": [
+            "buy",
+            "pay",
+            "pay for",
+            "spend"
+        ],
+        "a": 2
+    },
+    {
+        "id": 335,
+        "q": "All Michael ate was two thin _____ of bread.",
+        "o": [
+            "rolls",
+            "loaves",
+            "slices",
+            "snacks"
+        ],
+        "a": 2
+    },
+    {
+        "id": 336,
+        "q": "With this _____ I can get to the windows on the first floor.",
+        "o": [
+            "index",
+            "ladder",
+            "lager",
+            "step"
+        ],
+        "a": 1
+    },
+    {
+        "id": 337,
+        "q": "You can _____ a bus just outside the station.",
+        "o": [
+            "beat",
+            "catch",
+            "keep",
+            "meet"
+        ],
+        "a": 1
+    },
+    {
+        "id": 338,
+        "q": "Take your overcoat with you _____ it gets cold.",
+        "o": [
+            "although",
+            "in case",
+            "unless",
+            "until"
+        ],
+        "a": 1
+    },
+    {
+        "id": 339,
+        "q": "I'd like to _____ this cheque, please.",
+        "o": [
+            "cash",
+            "change",
+            "pay for",
+            "spend"
+        ],
+        "a": 0
+    },
+    {
+        "id": 340,
+        "q": "The police put _____ on the robbers to stop them getting away.",
+        "o": [
+            "handcuffs",
+            "make-up",
+            "saddles",
+            "stretchers"
+        ],
+        "a": 0
+    },
+    {
+        "id": 341,
+        "q": "Jimmy sent his mother a _____ of flowers for her birthday.",
+        "o": [
+            "bar",
+            "bunch",
+            "pack",
+            "packet"
+        ],
+        "a": 1
+    },
+    {
+        "id": 342,
+        "q": "It's raining. _____ take your umbrella with you.",
+        "o": [
+            "Are you going",
+            "Let's",
+            "You'd better",
+            "Would you like"
+        ],
+        "a": 2
+    },
+    {
+        "id": 343,
+        "q": "There's nothing good on television. Let's _____ a video.",
+        "o": [
+            "carry",
+            "hire",
+            "invite",
+            "phone"
+        ],
+        "a": 1
+    },
+    {
+        "id": 344,
+        "q": "Make sure the knife is really _____ before you cut the meat.",
+        "o": [
+            "flat",
+            "sharp",
+            "sliced",
+            "thick"
+        ],
+        "a": 1
+    },
+    {
+        "id": 345,
+        "q": "Thanks very much! I'm very _____ for your help.",
+        "o": [
+            "generous",
+            "grateful",
+            "full",
+            "sorry"
+        ],
+        "a": 1
+    },
+    {
+        "id": 346,
+        "q": "I like the color of the jacket but the _____ are too short.",
+        "o": [
+            "buttons",
+            "heels",
+            "collars",
+            "sleeves"
+        ],
+        "a": 3
+    },
+    {
+        "id": 347,
+        "q": "Can you just _____ that all the windows are shut?",
+        "o": [
+            "catch",
+            "check",
+            "control",
+            "reclaim"
+        ],
+        "a": 1
+    },
+    {
+        "id": 348,
+        "q": "Which _____ does our flight leave from?",
+        "o": [
+            "carriageway",
+            "exit",
+            "gate",
+            "ground"
+        ],
+        "a": 2
+    },
+    {
+        "id": 349,
+        "q": "Look at my sweater! It _____ when I washed it.",
+        "o": [
+            "boiled",
+            "cut",
+            "missed",
+            "stretched"
+        ],
+        "a": 3
+    },
+    {
+        "id": 350,
+        "q": "Wear a _____ to protect your head in case there's an accident.",
+        "o": [
+            "brooch",
+            "crash helmet",
+            "glove",
+            "cap"
+        ],
+        "a": 1
+    },
+    {
+        "id": 351,
+        "q": "Could you _____ your name at the bottom of the letter?",
+        "o": [
+            "answer",
+            "cross",
+            "lay",
+            "sign"
+        ],
+        "a": 3
+    },
+    {
+        "id": 352,
+        "q": "James is a terrible cook. He can't even _____ an egg!",
+        "o": [
+            "blow",
+            "boil",
+            "lay",
+            "smoke"
+        ],
+        "a": 1
+    },
+    {
+        "id": 353,
+        "q": "Surely they aren't _____ enough to buy such a large car!",
+        "o": [
+            "cautious",
+            "well",
+            "poor",
+            "wealthy"
+        ],
+        "a": 3
+    },
+    {
+        "id": 354,
+        "q": "There isn't any water coming out of this _____.",
+        "o": [
+            "heel",
+            "lock",
+            "shelf",
+            "tap"
+        ],
+        "a": 1
+    },
+    {
+        "id": 355,
+        "q": "I've put on _____. I eat too many cakes.",
+        "o": [
+            "gloves",
+            "mixture",
+            "waist",
+            "weight"
+        ],
+        "a": 3
+    },
+    {
+        "id": 356,
+        "q": "Put your suitcase up on the luggage _____.",
+        "o": [
+            "lounge",
+            "park",
+            "rack",
+            "store"
+        ],
+        "a": 2
+    },
+    {
+        "id": 357,
+        "q": "You could hear the crowd shouting in the local football _____.",
+        "o": [
+            "ground",
+            "park",
+            "pool",
+            "station"
+        ],
+        "a": 0
+    },
+    {
+        "id": 358,
+        "q": "That'll _____ children! Stop shouting!",
+        "o": [
+            "do",
+            "fit",
+            "help",
+            "make"
+        ],
+        "a": 0
+    },
+    {
+        "id": 359,
+        "q": "I can't tell you now. I'll _____ you know later.",
+        "o": [
+            "get",
+            "let",
+            "make",
+            "tell"
+        ],
+        "a": 1
+    },
+    {
+        "id": 360,
+        "q": "Give me a _____ some time. You know my phone number.",
+        "o": [
+            "date",
+            "line",
+            "post",
+            "ring"
+        ],
+        "a": 3
+    },
+    {
+        "id": 361,
+        "q": "The bus was so _____ that we couldn't all get on.",
+        "o": [
+            "crowded",
+            "deep",
+            "thick",
+            "various"
+        ],
+        "a": 0
+    },
+    {
+        "id": 362,
+        "q": "We have a _____ climate so the winters are never very cold.",
+        "o": [
+            "bright",
+            "fair",
+            "high",
+            "mild"
+        ],
+        "a": 3
+    },
+    {
+        "id": 363,
+        "q": "It's so _____ in here. Don't you ever clean this room?",
+        "o": [
+            "cloudy",
+            "dark",
+            "dusty",
+            "misty"
+        ],
+        "a": 2
+    },
+    {
+        "id": 364,
+        "q": "If you ask a _____ price for your car. I'm sure you'll sell it.",
+        "o": [
+            "helpful",
+            "mild",
+            "reasonable",
+            "shiny"
+        ],
+        "a": 2
+    },
+    {
+        "id": 365,
+        "q": "No, don't wear blue. It doesn't _____ you.",
+        "o": [
+            "fit",
+            "notice",
+            "suit",
+            "take"
+        ],
+        "a": 2
+    },
+    {
+        "id": 366,
+        "q": "The _____ climbed up the tree and we couldn't see it any more.",
+        "o": [
+            "deer",
+            "rabbit",
+            "squirrel",
+            "tortoise"
+        ],
+        "a": 2
+    },
+    {
+        "id": 367,
+        "q": "Can you _____ me the time, please?",
+        "o": [
+            "say",
+            "tell",
+            "speak",
+            "talk"
+        ],
+        "a": 1
+    },
+    {
+        "id": 368,
+        "q": "Do you know how _____ it is from Ashgabat to Mary? It's 370 km.",
+        "o": [
+            "many",
+            "much",
+            "far",
+            "often"
+        ],
+        "a": 2
+    },
+    {
+        "id": 369,
+        "q": "Can I _____ your phone, please? I must call my parents.",
+        "o": [
+            "borrow",
+            "use",
+            "take",
+            "lend"
+        ],
+        "a": 1
+    },
+    {
+        "id": 370,
+        "q": "Don't go. I'm going to _____ some coffee.",
+        "o": [
+            "make",
+            "cook",
+            "boil",
+            "prepare"
+        ],
+        "a": 0
+    },
+    {
+        "id": 371,
+        "q": "I am _____ my wife to drive a car.",
+        "o": [
+            "learning",
+            "showing",
+            "practising",
+            "teaching"
+        ],
+        "a": 3
+    },
+    {
+        "id": 372,
+        "q": "I had to keep my son home from school today because he had a _____ of 38.",
+        "o": [
+            "fever",
+            "headache",
+            "temperature",
+            "heat"
+        ],
+        "a": 2
+    },
+    {
+        "id": 373,
+        "q": "When we were in Spain last year we _____ at a wonderful hotel overlooking the beach.",
+        "o": [
+            "stayed",
+            "stopped",
+            "lived",
+            "left"
+        ],
+        "a": 0
+    },
+    {
+        "id": 374,
+        "q": "Is there anything _____ you'd like me to get you?",
+        "o": [
+            "else",
+            "more",
+            "extra",
+            "much"
+        ],
+        "a": 0
+    },
+    {
+        "id": 375,
+        "q": "Most banks will _____ people money to buy a house.",
+        "o": [
+            "lend",
+            "borrow",
+            "give",
+            "take"
+        ],
+        "a": 0
+    },
+    {
+        "id": 376,
+        "q": "My friend has a _____ job at a chemist's.",
+        "o": [
+            "half-time",
+            "spare-time",
+            "empty-time",
+            "part-time"
+        ],
+        "a": 3
+    },
+    {
+        "id": 377,
+        "q": "_____ have you been learning English?",
+        "o": [
+            "For how long time",
+            "How long",
+            "How long time",
+            "How many time"
+        ],
+        "a": 1
+    },
+    {
+        "id": 378,
+        "q": "I hate doing the _____ especially cleaning the windows.",
+        "o": [
+            "homework",
+            "housework",
+            "jobs",
+            "house-jobs"
+        ],
+        "a": 1
+    },
+    {
+        "id": 379,
+        "q": "You mustn't be angry with her. It wasn't her _____ that she was late.",
+        "o": [
+            "blame",
+            "error",
+            "mistake",
+            "fault"
+        ],
+        "a": 3
+    },
+    {
+        "id": 380,
+        "q": "She _____ to take her neighbor to court if he didn't stop making so much noise.",
+        "o": [
+            "promised",
+            "threatened",
+            "offered",
+            "suggested"
+        ],
+        "a": 1
+    },
+    {
+        "id": 381,
+        "q": "You can count _____ me if you ever want any help.",
+        "o": [
+            "in",
+            "on",
+            "up",
+            "by"
+        ],
+        "a": 1
+    },
+    {
+        "id": 382,
+        "q": "Each _____ of the family had to take it in turns to do the washing- up.",
+        "o": [
+            "individual",
+            "character",
+            "member",
+            "person"
+        ],
+        "a": 2
+    },
+    {
+        "id": 383,
+        "q": "Don't _____ my speech when I am talking.",
+        "o": [
+            "cut",
+            "interrupt",
+            "divide",
+            "separate"
+        ],
+        "a": 1
+    },
+    {
+        "id": 384,
+        "q": "You can borrow money this time but don't make _____ of it.",
+        "o": [
+            "habit",
+            "feeling",
+            "help",
+            "learning"
+        ],
+        "a": 0
+    },
+    {
+        "id": 385,
+        "q": "I always write my daily activities on my _____.",
+        "o": [
+            "weekly",
+            "daily",
+            "diary",
+            "minutely"
+        ],
+        "a": 2
+    },
+    {
+        "id": 386,
+        "q": "James and Jim are twins. They were _____ at birth and they didn't meet until they were both thirty nine.",
+        "o": [
+            "left",
+            "deserted",
+            "separated",
+            "abandoned"
+        ],
+        "a": 2
+    },
+    {
+        "id": 387,
+        "q": "What do we call someone whose job is to repair taps and baths?",
+        "o": [
+            "tailor",
+            "carpenter",
+            "bricklayer",
+            "plumber"
+        ],
+        "a": 3
+    },
+    {
+        "id": 388,
+        "q": "When I was away on business, my neighbors looked after my home. Which of the followings is the synonym of the underlined word?",
+        "o": [
+            "pick out",
+            "give up",
+            "take care of",
+            "settle down"
+        ],
+        "a": 2
+    },
+    {
+        "id": 389,
+        "q": "When you say that you will do something for somebody, you _____.",
+        "o": [
+            "shout",
+            "promise",
+            "ask",
+            "tell"
+        ],
+        "a": 1
+    },
+    {
+        "id": 390,
+        "q": "When you say something to someone's ear quietly and secretly, you _____.",
+        "o": [
+            "say again",
+            "whisper",
+            "discuss",
+            "cry out"
+        ],
+        "a": 1
+    },
+    {
+        "id": 391,
+        "q": "_____ it was difficult, they managed to find somewhere they all liked.",
+        "o": [
+            "Although",
+            "Before",
+            "Since",
+            "As soon as"
+        ],
+        "a": 0
+    },
+    {
+        "id": 392,
+        "q": "Anyone who gets free rides in other people's cars as a way of travelling cheaply is called _____.",
+        "o": [
+            "passenger",
+            "traveller",
+            "goner",
+            "hitchhiker"
+        ],
+        "a": 3
+    },
+    {
+        "id": 393,
+        "q": "When you pay no attention to anybody or to act as if you don't see him/her, you _____ him/her.",
+        "o": [
+            "ignore",
+            "veiw",
+            "notice",
+            "watch"
+        ],
+        "a": 0
+    },
+    {
+        "id": 394,
+        "q": "He was bitten by mosquito, but he made things worse by _____ the bite all the time.",
+        "o": [
+            "stoking",
+            "scratching",
+            "rubbing",
+            "scraping"
+        ],
+        "a": 1
+    },
+    {
+        "id": 395,
+        "q": "Find the synonym of the following words written in capitals. He LOOKS at himself in the glass.",
+        "o": [
+            "puts",
+            "likes",
+            "sees",
+            "stares",
+            "stands"
+        ],
+        "a": 3
+    },
+    {
+        "id": 396,
+        "q": "Find the synonym of the following words written in capitals. Ships and AIRCRAFTS are often equipped with radio telephones.",
+        "o": [
+            "planes",
+            "trains",
+            "railroads",
+            "highways",
+            "boats"
+        ],
+        "a": 0
+    },
+    {
+        "id": 397,
+        "q": "Find the synonym of the following words written in capitals. Hemingway is a FAMOUS writer.",
+        "o": [
+            "well-known",
+            "unknown",
+            "good",
+            "interesting",
+            "loved"
+        ],
+        "a": 0
+    },
+    {
+        "id": 398,
+        "q": "Find the synonym of the following words written in capitals. The children know that the sun RISES in the east.",
+        "o": [
+            "wakes up",
+            "reaches",
+            "appears",
+            "sets",
+            "watches"
+        ],
+        "a": 2
+    },
+    {
+        "id": 399,
+        "q": "Find the synonym of the following words written in capitals. The teacher ASKED why he had missed so many classes.",
+        "o": [
+            "replied",
+            "informed",
+            "wondered",
+            "answered",
+            "said"
+        ],
+        "a": 2
+    },
+    {
+        "id": 400,
+        "q": "Find the synonym of the following words written in capitals. I don't want to know what they are TALKING about.",
+        "o": [
+            "taking",
+            "speaking",
+            "coming",
+            "leaving",
+            "saying"
+        ],
+        "a": 1
+    },
+    {
+        "id": 401,
+        "q": "Find the synonym of the following words written in capitals. The game they LIKED best was writing short stories of their own.",
+        "o": [
+            "found",
+            "did",
+            "enjoyed",
+            "wanted",
+            "wished"
+        ],
+        "a": 2
+    },
+    {
+        "id": 402,
+        "q": "Find the synonym of the following words written in capitals. My friend was sorry as his father was DEAD.",
+        "o": [
+            "killed",
+            "living",
+            "came",
+            "was ill",
+            "was alive"
+        ],
+        "a": 0
+    },
+    {
+        "id": 403,
+        "q": "Find the synonym of the following words written in capitals. My friends can use my notes when they are ILL.",
+        "o": [
+            "sick",
+            "hard",
+            "fresh",
+            "fine",
+            "fear"
+        ],
+        "a": 0
+    },
+    {
+        "id": 404,
+        "q": "Find the synonym of the following words written in capitals. Our classes usually ARE OVER at 7 in the evening.",
+        "o": [
+            "go on",
+            "continue",
+            "finish",
+            "begin",
+            "succeed"
+        ],
+        "a": 2
+    },
+    {
+        "id": 405,
+        "q": "Find the synonym of the following words written in capitals. She said that she WAS GOING to live in London.",
+        "o": [
+            "intended",
+            "came",
+            "planned",
+            "went",
+            "left"
+        ],
+        "a": 2
+    },
+    {
+        "id": 406,
+        "q": "Find the synonym of the following words written in capitals. He thought that he was very SILLY.",
+        "o": [
+            "clever",
+            "foolish",
+            "bright",
+            "wise",
+            "strong"
+        ],
+        "a": 1
+    },
+    {
+        "id": 407,
+        "q": "Find the synonym of the following words written in capitals. They had a big house and AT THE BACK OF it there was a small lake.",
+        "o": [
+            "behind",
+            "in front of",
+            "between",
+            "over",
+            "near"
+        ],
+        "a": 0
+    },
+    {
+        "id": 408,
+        "q": "Find the synonym of the following words written in capitals. TWO HUNDRED YEARS ago the square yard was very clean.",
+        "o": [
+            "many years",
+            "two week",
+            "two centuries",
+            "a fortnight",
+            "two months"
+        ],
+        "a": 2
+    },
+    {
+        "id": 409,
+        "q": "Find the synonym of the following words written in capitals. I am not going to write any more NOW.",
+        "o": [
+            "then",
+            "at the moment",
+            "after that",
+            "early",
+            "before"
+        ],
+        "a": 1
+    },
+    {
+        "id": 410,
+        "q": "Find the synonym of the following words written in capitals. We shall be REACHING the station in 15 minutes.",
+        "o": [
+            "moving to",
+            "leaving for",
+            "staying at",
+            "getting to",
+            "taking from"
+        ],
+        "a": 3
+    },
+    {
+        "id": 411,
+        "q": "Find the synonym of the following words written in capitals. She saw at once that something terrible had HAPPENED.",
+        "o": [
+            "solved",
+            "decided",
+            "understood",
+            "heard",
+            "taken place"
+        ],
+        "a": 4
+    },
+    {
+        "id": 412,
+        "q": "Find the synonym of the following words written in capitals. She became angry and BEGAN to shout at them.",
+        "o": [
+            "finished",
+            "stopped",
+            "started",
+            "set",
+            "was over"
+        ],
+        "a": 2
+    },
+    {
+        "id": 413,
+        "q": "Find the synonym of the following words written in capitals. They BEGAN to work together twenty years ago.",
+        "o": [
+            "finished",
+            "stayed",
+            "continued",
+            "started",
+            "gave up"
+        ],
+        "a": 3
+    },
+    {
+        "id": 414,
+        "q": "Find the synonym of the following words written in capitals. We took the book last week and now we must GIVE it back.",
+        "o": [
+            "take",
+            "return",
+            "revise",
+            "copy",
+            "hold"
+        ],
+        "a": 1
+    },
+    {
+        "id": 415,
+        "q": "Find the synonym of the following words written in capitals. Switzerland helps developing countries to TRAIN their skilled personnel.",
+        "o": [
+            "inform",
+            "prepare",
+            "learn",
+            "give",
+            "study"
+        ],
+        "a": 1
+    },
+    {
+        "id": 416,
+        "q": "Find the synonym of the following words written in capitals. The girl was so ATTRACTIVE that I constantly looked at her.",
+        "o": [
+            "simple",
+            "plain",
+            "ugly",
+            "pretty",
+            "quick"
+        ],
+        "a": 3
+    },
+    {
+        "id": 417,
+        "q": "Find the synonym of the following words written in capitals. My parents WENT TO Moscow in May and they will come back in June.",
+        "o": [
+            "started",
+            "set out",
+            "visited",
+            "left for",
+            "left"
+        ],
+        "a": 3
+    },
+    {
+        "id": 418,
+        "q": "Find the synonym of the following words written in capitals. If your friend is seriously ill you should GO TO SEE him.",
+        "o": [
+            "ask about",
+            "leave",
+            "see",
+            "visit",
+            "approach"
+        ],
+        "a": 3
+    },
+    {
+        "id": 419,
+        "q": "Find the synonym of the following words written in capitals. I would like to speak to you IMMEDIATELY.",
+        "o": [
+            "right now",
+            "just once",
+            "once",
+            "later",
+            "in 2 days"
+        ],
+        "a": 0
+    },
+    {
+        "id": 420,
+        "q": "Find the synonym of the following words written in capitals. That wasn't pronounced CORRECTLY.",
+        "o": [
+            "wrongly",
+            "exactly",
+            "badly",
+            "good",
+            "well"
+        ],
+        "a": 1
+    },
+    {
+        "id": 421,
+        "q": "Find the synonym of the following words written in capitals. \"Will you GO ON, Ashley?\" said the teacher.",
+        "o": [
+            "start",
+            "finish",
+            "stop",
+            "continue",
+            "begin"
+        ],
+        "a": 3
+    },
+    {
+        "id": 422,
+        "q": "Find the synonym of the following words written in capitals. What HAPPENED to you?",
+        "o": [
+            "was result of",
+            "came",
+            "was the matter with",
+            "made",
+            "was glad"
+        ],
+        "a": 2
+    },
+    {
+        "id": 423,
+        "q": "Find the synonym of the following words written in capitals. I ENJOYED the trip very much.",
+        "o": [
+            "was happy",
+            "interested in",
+            "liked",
+            "was surprised",
+            "was glad"
+        ],
+        "a": 2
+    },
+    {
+        "id": 424,
+        "q": "Find the synonym of the following words written in capitals. She is a doctor and ALSO a student.",
+        "o": [
+            "else",
+            "too",
+            "either",
+            "neither",
+            "so"
+        ],
+        "a": 1
+    },
+    {
+        "id": 425,
+        "q": "Find the synonym of the following words written in capitals. His HOLIDAY by the sea was like a dream.",
+        "o": [
+            "rest",
+            "rested",
+            "walk",
+            "stay",
+            "life"
+        ],
+        "a": 0
+    },
+    {
+        "id": 426,
+        "q": "Find the synonym of the following words written in capitals. The housewife TASTED the soup and said it was delicious.",
+        "o": [
+            "cooked",
+            "tried",
+            "tried on",
+            "took",
+            "gave"
+        ],
+        "a": 1
+    },
+    {
+        "id": 427,
+        "q": "Find the synonym of the following words written in capitals. The child couldn't find his ball because he had PUT it under the bed.",
+        "o": [
+            "take",
+            "took",
+            "carried",
+            "place",
+            "placed"
+        ],
+        "a": 4
+    },
+    {
+        "id": 428,
+        "q": "Find the synonym of the following words written in capitals. The streets of Tashkent are WIDE and straight.",
+        "o": [
+            "broad",
+            "beautiful",
+            "narrow",
+            "long",
+            "plain"
+        ],
+        "a": 0
+    },
+    {
+        "id": 429,
+        "q": "Find the synonym of the following words written in capitals. The school he goes to is NEAR his house.",
+        "o": [
+            "closed",
+            "far",
+            "not far from",
+            "about",
+            "by"
+        ],
+        "a": 2
+    },
+    {
+        "id": 430,
+        "q": "Find the synonym of the following words written in capitals. There was an old man in a barge, whose nose was exceedingly LARGE.",
+        "o": [
+            "tiny",
+            "huge",
+            "minute",
+            "wide",
+            "small"
+        ],
+        "a": 1
+    },
+    {
+        "id": 431,
+        "q": "Find the synonym of the following words written in capitals. At the age of 17 he LEFT school and went to work at the factory.",
+        "o": [
+            "graduated",
+            "went out",
+            "entered",
+            "stopped",
+            "quitted"
+        ],
+        "a": 4
+    },
+    {
+        "id": 432,
+        "q": "Find the synonym of the following words written in capitals. I'll LEND you my book if you return it to me.",
+        "o": [
+            "take",
+            "show",
+            "give",
+            "send",
+            "get"
+        ],
+        "a": 2
+    },
+    {
+        "id": 433,
+        "q": "Find the synonym of the following words written in capitals. The festival STARTED in Berlin.",
+        "o": [
+            "began",
+            "go on",
+            "went on",
+            "was held",
+            "opened"
+        ],
+        "a": 0
+    },
+    {
+        "id": 434,
+        "q": "Find the synonym of the following words written in capitals. I like to CLEAN my room.",
+        "o": [
+            "wash",
+            "white - wash",
+            "paint",
+            "tidy up",
+            "sweep"
+        ],
+        "a": 3
+    },
+    {
+        "id": 435,
+        "q": "Find the synonym of the following words written in capitals. This film IS ON at the \"Friendship\" cinema.",
+        "o": [
+            "is shown",
+            "performs",
+            "runs",
+            "goes",
+            "does"
+        ],
+        "a": 0
+    },
+    {
+        "id": 436,
+        "q": "Find the synonym of the following words written in capitals. Mr. Brown was very happy as he HAD RETURNED from his hometown.",
+        "o": [
+            "had come back",
+            "had seen",
+            "had received",
+            "had asked",
+            "had gone"
+        ],
+        "a": 0
+    },
+    {
+        "id": 437,
+        "q": "Find the synonym of the following words written in capitals. He ENTERED the shop and wanted to buy a shirt, but it was too expensive.",
+        "o": [
+            "wanted",
+            "arrived",
+            "came into",
+            "got",
+            "reached"
+        ],
+        "a": 2
+    },
+    {
+        "id": 438,
+        "q": "Find the synonym of the following words written in capitals. I WISH I hadn't gone to the pictures.",
+        "o": [
+            "take",
+            "stay",
+            "desire",
+            "argue",
+            "spend"
+        ],
+        "a": 2
+    },
+    {
+        "id": 439,
+        "q": "Find the synonym of the following words written in capitals. Why don't they ANSWER my question?",
+        "o": [
+            "say",
+            "ask",
+            "reply",
+            "reform",
+            "report"
+        ],
+        "a": 2
+    },
+    {
+        "id": 440,
+        "q": "Find the synonym of the following words written in capitals. Mark Twain VISITED the Crimea in 1867.",
+        "o": [
+            "went to",
+            "returned",
+            "ran",
+            "started",
+            "left"
+        ],
+        "a": 0
+    },
+    {
+        "id": 441,
+        "q": "Find the synonym of the following words written in capitals. I have been to Tashkent A NUMBER OF TIMES.",
+        "o": [
+            "several times",
+            "some time",
+            "the same time",
+            "any time",
+            "in no time"
+        ],
+        "a": 0
+    },
+    {
+        "id": 442,
+        "q": "Find the synonym of the following words written in capitals. Soon I FOUND OUT that she had left for Italy.",
+        "o": [
+            "saw",
+            "learned",
+            "heard",
+            "knew",
+            "recognized"
+        ],
+        "a": 1
+    },
+    {
+        "id": 443,
+        "q": "Find the synonym of the following words written in capitals. Argentina is LARGER than Great Britain.",
+        "o": [
+            "wider",
+            "older",
+            "better",
+            "bigger",
+            "richer"
+        ],
+        "a": 3
+    },
+    {
+        "id": 444,
+        "q": "Find the synonym of the following words written in capitals. Pete promised to take our PICTURE but didn't keep his word.",
+        "o": [
+            "give",
+            "bring",
+            "photograph",
+            "paint",
+            "draw"
+        ],
+        "a": 2
+    },
+    {
+        "id": 445,
+        "q": "Find the synonym of the following words written in capitals. Every spring the school leavers HAVE their diplomas.",
+        "o": [
+            "fail",
+            "carry",
+            "bring",
+            "organize",
+            "take"
+        ],
+        "a": 4
+    },
+    {
+        "id": 446,
+        "q": "Find the synonym of the following words written in capitals. If you can type 100 words a minute and you would like more responsibility, please CALL 01-722.",
+        "o": [
+            "shout",
+            "explain",
+            "cry",
+            "utter",
+            "phone"
+        ],
+        "a": 4
+    },
+    {
+        "id": 447,
+        "q": "Find the synonym of the following words written in capitals. Samuel told me that they were PLANNING to see the gallery in a few days.",
+        "o": [
+            "staying",
+            "playing",
+            "going",
+            "starting",
+            "coming"
+        ],
+        "a": 2
+    },
+    {
+        "id": 448,
+        "q": "Find the synonym of the following words written in capitals. I liked to read books about TRAVELS in my holiday.",
+        "o": [
+            "rests",
+            "walks",
+            "plays",
+            "journeys",
+            "balls"
+        ],
+        "a": 3
+    },
+    {
+        "id": 449,
+        "q": "Find the synonym of the following words written in capitals. He WENT ON sleeping while we took him into our house.",
+        "o": [
+            "continued",
+            "spoke",
+            "stopped",
+            "went",
+            "finished"
+        ],
+        "a": 0
+    },
+    {
+        "id": 450,
+        "q": "Find the synonym of the following words written in capitals. There is a SMALL boat with a man in it.",
+        "o": [
+            "stout",
+            "large",
+            "little",
+            "tidy",
+            "thin"
+        ],
+        "a": 2
+    },
+    {
+        "id": 451,
+        "q": "Find the synonym of the following words written in capitals. Investigation",
+        "o": [
+            "option",
+            "question",
+            "expression",
+            "search"
+        ],
+        "a": 3
+    },
+    {
+        "id": 452,
+        "q": "Find the synonym of the following words written in capitals. Explain",
+        "o": [
+            "Mix",
+            "define",
+            "protest",
+            "train"
+        ],
+        "a": 1
+    },
+    {
+        "id": 453,
+        "q": "Find the synonym of the following words written in capitals. Fine",
+        "o": [
+            "poor",
+            "excellent",
+            "inferior",
+            "bad"
+        ],
+        "a": 1
+    },
+    {
+        "id": 454,
+        "q": "Find the synonym of the following words written in capitals. Private",
+        "o": [
+            "general",
+            "personal",
+            "community",
+            "public"
+        ],
+        "a": 1
+    },
+    {
+        "id": 455,
+        "q": "Find the synonym of the following words written in capitals. Large",
+        "o": [
+            "thin",
+            "great",
+            "long",
+            "soft"
+        ],
+        "a": 1
+    },
+    {
+        "id": 456,
+        "q": "Find the synonym of the following words written in capitals. Crazy",
+        "o": [
+            "cruel",
+            "chubby",
+            "wild",
+            "mad"
+        ],
+        "a": 3
+    },
+    {
+        "id": 457,
+        "q": "Find the synonym of the following words written in capitals. Fundamental",
+        "o": [
+            "awful",
+            "absurd",
+            "vain",
+            "basic"
+        ],
+        "a": 3
+    },
+    {
+        "id": 458,
+        "q": "Find the synonym of the following words written in capitals. Famous",
+        "o": [
+            "well off",
+            "needy",
+            "rich",
+            "well-known"
+        ],
+        "a": 3
+    },
+    {
+        "id": 459,
+        "q": "Find the synonym of the following words written in capitals. Take off",
+        "o": [
+            "put on",
+            "dress",
+            "wear",
+            "remove"
+        ],
+        "a": 3
+    },
+    {
+        "id": 460,
+        "q": "Find the synonym of the following words written in capitals. Annual",
+        "o": [
+            "yearly",
+            "daily",
+            "monthly",
+            "weekly"
+        ],
+        "a": 0
+    },
+    {
+        "id": 461,
+        "q": "Find the synonym of the following words written in capitals. Region",
+        "o": [
+            "farm",
+            "area",
+            "beach",
+            "source"
+        ],
+        "a": 1
+    },
+    {
+        "id": 462,
+        "q": "Find the synonym of the following words written in capitals. Way",
+        "o": [
+            "bridge",
+            "road",
+            "railway",
+            "field"
+        ],
+        "a": 1
+    },
+    {
+        "id": 463,
+        "q": "Find the synonym of the following words written in capitals. Estimate",
+        "o": [
+            "guess",
+            "inform",
+            "miss",
+            "confuse"
+        ],
+        "a": 0
+    },
+    {
+        "id": 464,
+        "q": "Find the synonym of the following words written in capitals. Error",
+        "o": [
+            "mistake",
+            "correct",
+            "result",
+            "right"
+        ],
+        "a": 0
+    },
+    {
+        "id": 465,
+        "q": "Find the synonym of the following words written in capitals. Actually",
+        "o": [
+            "shortly",
+            "timely",
+            "briefly",
+            "really"
+        ],
+        "a": 3
+    },
+    {
+        "id": 466,
+        "q": "Find the synonym of the following words written in capitals. Define",
+        "o": [
+            "explain",
+            "protest",
+            "train",
+            "mix"
+        ],
+        "a": 0
+    },
+    {
+        "id": 467,
+        "q": "Find the synonym of the following words written in capitals. Want",
+        "o": [
+            "hesitate",
+            "detest",
+            "refuse",
+            "wish"
+        ],
+        "a": 3
+    },
+    {
+        "id": 468,
+        "q": "Find the synonym of the following words written in capitals. Fresh",
+        "o": [
+            "moldy",
+            "new",
+            "rotten",
+            "stale"
+        ],
+        "a": 1
+    },
+    {
+        "id": 469,
+        "q": "Find the synonym of the following words written in capitals. Start",
+        "o": [
+            "finish",
+            "come",
+            "begin",
+            "leave"
+        ],
+        "a": 2
+    },
+    {
+        "id": 470,
+        "q": "Find the synonym of the following words written in capitals. Mature",
+        "o": [
+            "infant",
+            "child",
+            "young",
+            "adult"
+        ],
+        "a": 3
+    },
+    {
+        "id": 471,
+        "q": "Find the synonym of the following words written in capitals. Remember",
+        "o": [
+            "offer",
+            "forget",
+            "advice",
+            "recollect"
+        ],
+        "a": 3
+    },
+    {
+        "id": 472,
+        "q": "Find the synonym of the following words written in capitals. Empty",
+        "o": [
+            "filled",
+            "vacant",
+            "full",
+            "deep"
+        ],
+        "a": 1
+    },
+    {
+        "id": 473,
+        "q": "Find the synonym of the following words written in capitals. Gift",
+        "o": [
+            "present",
+            "punishment",
+            "penalty",
+            "fine"
+        ],
+        "a": 0
+    },
+    {
+        "id": 474,
+        "q": "Find the synonym of the following words written in capitals. Area",
+        "o": [
+            "source",
+            "farm",
+            "beach",
+            "region"
+        ],
+        "a": 3
+    },
+    {
+        "id": 475,
+        "q": "Find the synonym of the following words written in capitals. Fortune",
+        "o": [
+            "luck",
+            "belief",
+            "religion",
+            "faith"
+        ],
+        "a": 0
+    },
+    {
+        "id": 476,
+        "q": "Find the synonym of the following words written in capitals. Personal",
+        "o": [
+            "public",
+            "community",
+            "general",
+            "private"
+        ],
+        "a": 3
+    },
+    {
+        "id": 477,
+        "q": "Find the synonym of the following words written in capitals. Watch",
+        "o": [
+            "look at",
+            "seek",
+            "think",
+            "read"
+        ],
+        "a": 0
+    },
+    {
+        "id": 478,
+        "q": "Find the synonym of the following words written in capitals. Far",
+        "o": [
+            "nearby",
+            "near",
+            "distant",
+            "close"
+        ],
+        "a": 2
+    },
+    {
+        "id": 479,
+        "q": "Find the synonym of the following words written in capitals. Quantity",
+        "o": [
+            "month",
+            "sound",
+            "discount",
+            "amount"
+        ],
+        "a": 3
+    },
+    {
+        "id": 480,
+        "q": "Find the synonym of the following words written in capitals. Below",
+        "o": [
+            "near",
+            "under",
+            "above",
+            "next to"
+        ],
+        "a": 1
+    },
+    {
+        "id": 481,
+        "q": "Find the synonym of the following words written in capitals. Kind",
+        "o": [
+            "rude",
+            "gentle",
+            "intelligent",
+            "brainy"
+        ],
+        "a": 1
+    },
+    {
+        "id": 482,
+        "q": "Find the synonym of the following words written in capitals. Narrow",
+        "o": [
+            "soft",
+            "long",
+            "thin",
+            "brief"
+        ],
+        "a": 2
+    },
+    {
+        "id": 483,
+        "q": "Find the synonym of the following words written in capitals. Pardon",
+        "o": [
+            "forgive",
+            "forbid",
+            "allow",
+            "promise"
+        ],
+        "a": 0
+    },
+    {
+        "id": 484,
+        "q": "Find the synonym of the following words written in capitals. Shout",
+        "o": [
+            "whisper",
+            "whistle",
+            "blow",
+            "yell"
+        ],
+        "a": 3
+    },
+    {
+        "id": 485,
+        "q": "Find the synonym of the following words written in capitals. Enter",
+        "o": [
+            "get in",
+            "desert",
+            "abandon",
+            "quit"
+        ],
+        "a": 0
+    },
+    {
+        "id": 486,
+        "q": "Find the synonym of the following words written in capitals. Pleased",
+        "o": [
+            "sad",
+            "happy",
+            "unhappy",
+            "angry"
+        ],
+        "a": 1
+    },
+    {
+        "id": 487,
+        "q": "Find the synonym of the following words written in capitals. Beautiful",
+        "o": [
+            "ugly",
+            "sorrowful",
+            "plain",
+            "pretty"
+        ],
+        "a": 3
+    },
+    {
+        "id": 488,
+        "q": "Find the synonym of the following words written in capitals. Little",
+        "o": [
+            "large",
+            "huge",
+            "small",
+            "big"
+        ],
+        "a": 2
+    },
+    {
+        "id": 489,
+        "q": "Find the synonym of the following words written in capitals. Active",
+        "o": [
+            "slow",
+            "idle",
+            "poor",
+            "energetic"
+        ],
+        "a": 3
+    },
+    {
+        "id": 490,
+        "q": "Find the synonym of the following words written in capitals. Border",
+        "o": [
+            "density",
+            "altitude",
+            "edge",
+            "surface"
+        ],
+        "a": 2
+    },
+    {
+        "id": 491,
+        "q": "Find the synonym of the following words written in capitals. End",
+        "o": [
+            "compare",
+            "start",
+            "finish",
+            "move"
+        ],
+        "a": 2
+    },
+    {
+        "id": 492,
+        "q": "Find the synonym of the following words written in capitals. Old",
+        "o": [
+            "elderly",
+            "raw",
+            "immature",
+            "young"
+        ],
+        "a": 0
+    },
+    {
+        "id": 493,
+        "q": "Find the synonym of the following words written in capitals. Ask",
+        "o": [
+            "response",
+            "reply",
+            "question",
+            "call"
+        ],
+        "a": 2
+    },
+    {
+        "id": 494,
+        "q": "Find the antonym of the following words written in capitals. I'll have to take the PUPILS into the hills.",
+        "o": [
+            "teachers",
+            "schoolchildren",
+            "kids",
+            "students",
+            "boys"
+        ],
+        "a": 0
+    },
+    {
+        "id": 495,
+        "q": "Find the antonym of the following words written in capitals. She is the WORST student in our group.",
+        "o": [
+            "good",
+            "bad",
+            "badly",
+            "best",
+            "nice"
+        ],
+        "a": 3
+    },
+    {
+        "id": 496,
+        "q": "Find the antonym of the following words written in capitals. Breakfast is the FIRST meal of the day.",
+        "o": [
+            "important",
+            "main",
+            "last but one",
+            "last",
+            "next"
+        ],
+        "a": 3
+    },
+    {
+        "id": 497,
+        "q": "Find the antonym of the following words written in capitals. He is an enemy, REMEMBER.",
+        "o": [
+            "keep in mind",
+            "remind",
+            "recall",
+            "forget",
+            "believe"
+        ],
+        "a": 3
+    },
+    {
+        "id": 498,
+        "q": "Find the antonym of the following words written in capitals. Her luggage was so HEAVY that she asked the young man to help her.",
+        "o": [
+            "easy",
+            "large",
+            "least",
+            "light",
+            "vast"
+        ],
+        "a": 3
+    },
+    {
+        "id": 499,
+        "q": "Find the antonym of the following words written in capitals. Her English is POOR.",
+        "o": [
+            "excellently",
+            "unsatisfactory",
+            "bad",
+            "good",
+            "not good"
+        ],
+        "a": 3
+    },
+    {
+        "id": 500,
+        "q": "Find the antonym of the following words written in capitals. February is the SHORTEST month in the year.",
+        "o": [
+            "largest",
+            "farthest",
+            "longest",
+            "highest",
+            "biggest"
+        ],
+        "a": 2
+    },
+    {
+        "id": 501,
+        "q": "Find the antonym of the following words written in capitals. TAKING a piece of chalk the pupil on duty began writing on the board.",
+        "o": [
+            "giving",
+            "sending",
+            "bringing",
+            "spending",
+            "belonging"
+        ],
+        "a": 0
+    },
+    {
+        "id": 502,
+        "q": "Find the antonym of the following words written in capitals. I liked the END of the story most of all.",
+        "o": [
+            "beginning",
+            "middle",
+            "starting",
+            "meaning",
+            "part"
+        ],
+        "a": 0
+    },
+    {
+        "id": 503,
+        "q": "Find the antonym of the following words written in capitals. Our farm is in the COUNTRY.",
+        "o": [
+            "street",
+            "valley",
+            "forest",
+            "town",
+            "park"
+        ],
+        "a": 3
+    },
+    {
+        "id": 504,
+        "q": "Find the antonym of the following words written in capitals. I WAS RIGHT last night, wasn't I?",
+        "o": [
+            "was over",
+            "were ill",
+            "correct",
+            "was wrong",
+            "was busy"
+        ],
+        "a": 3
+    },
+    {
+        "id": 505,
+        "q": "Find the antonym of the following words written in capitals. I don't REMEMBER where I left my umbrella.",
+        "o": [
+            "know",
+            "forget",
+            "give",
+            "notice",
+            "support"
+        ],
+        "a": 1
+    },
+    {
+        "id": 506,
+        "q": "Find the antonym of the following words written in capitals. What is it then, my SON?",
+        "o": [
+            "girl",
+            "boy",
+            "daughter",
+            "dear",
+            "friend"
+        ],
+        "a": 2
+    },
+    {
+        "id": 507,
+        "q": "Find the antonym of the following words written in capitals. Some of them BEGAN to talk to me.",
+        "o": [
+            "started",
+            "finished",
+            "was over",
+            "ended",
+            "founded"
+        ],
+        "a": 1
+    },
+    {
+        "id": 508,
+        "q": "Find the antonym of the following words written in capitals. The hall was FULL with spectators.",
+        "o": [
+            "easy",
+            "empty",
+            "vacant",
+            "ready",
+            "late"
+        ],
+        "a": 1
+    },
+    {
+        "id": 509,
+        "q": "Find the antonym of the following words written in capitals. There are many other BIG cities in Great Britain with more than a million inhabitants.",
+        "o": [
+            "large",
+            "short",
+            "small",
+            "great",
+            "low"
+        ],
+        "a": 2
+    },
+    {
+        "id": 510,
+        "q": "Find the antonym of the following words written in capitals. I can't understand why you are so BUSY at home.",
+        "o": [
+            "engaged",
+            "sleepy",
+            "afraid",
+            "free",
+            "angry"
+        ],
+        "a": 3
+    },
+    {
+        "id": 511,
+        "q": "Find the antonym of the following words written in capitals. I think your FAT cat is ill.",
+        "o": [
+            "thin",
+            "stout",
+            "big",
+            "thick",
+            "small"
+        ],
+        "a": 0
+    },
+    {
+        "id": 512,
+        "q": "Find the antonym of the following words written in capitals. The prince ran after her and saw the pretty shoe which the girl HAD",
+        "o": [
+            "had found",
+            "had left",
+            "had forgotten",
+            "had forgiven",
+            "didn't find"
+        ],
+        "a": 0
+    },
+    {
+        "id": 513,
+        "q": "Find the antonym of the following words written in capitals. It was MIDNIGHT and Cinderella ran away from the palace.",
+        "o": [
+            "early in the morning",
+            "late night",
+            "midday",
+            "early night",
+            "night"
+        ],
+        "a": 2
+    },
+    {
+        "id": 514,
+        "q": "Find the antonym of the following words written in capitals. They OFTEN stay at the college after classes.",
+        "o": [
+            "always",
+            "seldom",
+            "usually",
+            "ever",
+            "early"
+        ],
+        "a": 1
+    },
+    {
+        "id": 515,
+        "q": "Find the antonym of the following words written in capitals. Long ago the streets of this town were DIRTY.",
+        "o": [
+            "clean",
+            "narrow",
+            "wide",
+            "broad",
+            "long"
+        ],
+        "a": 0
+    },
+    {
+        "id": 516,
+        "q": "Find the antonym of the following words written in capitals. He STARTED painting at a very early age and became famous at 27.",
+        "o": [
+            "began",
+            "gave up",
+            "get up",
+            "continued",
+            "went on"
+        ],
+        "a": 1
+    },
+    {
+        "id": 517,
+        "q": "Find the antonym of the following words written in capitals. The travelers came to the hotel, LEFT their luggage there and went for a walk in the town.",
+        "o": [
+            "kept",
+            "raised",
+            "caught",
+            "took",
+            "picked out"
+        ],
+        "a": 3
+    },
+    {
+        "id": 518,
+        "q": "Find the antonym of the following words written in capitals. He began TO EARN money very early.",
+        "o": [
+            "to change",
+            "to touch",
+            "to spend",
+            "to sweep",
+            "to tear"
+        ],
+        "a": 2
+    },
+    {
+        "id": 519,
+        "q": "Find the antonym of the following words written in capitals. It was not EASY for him to find a job in such a long time.",
+        "o": [
+            "difficult",
+            "pleasant",
+            "necessary",
+            "heavy",
+            "dark"
+        ],
+        "a": 0
+    },
+    {
+        "id": 520,
+        "q": "Find the antonym of the following words written in capitals. The weather was nice and children didn't want to stay INSIDE.",
+        "o": [
+            "at home",
+            "in the country",
+            "out",
+            "outside",
+            "garden"
+        ],
+        "a": 3
+    },
+    {
+        "id": 521,
+        "q": "Find the antonym of the following words written in capitals. Let's open the window. It's very HOT here.",
+        "o": [
+            "dark",
+            "cold",
+            "stuffy",
+            "foggy",
+            "easy"
+        ],
+        "a": 1
+    },
+    {
+        "id": 522,
+        "q": "Find the antonym of the following words written in capitals. You speak so FAST that it is nearly impossible to follow what you say.",
+        "o": [
+            "weak",
+            "low",
+            "slow",
+            "quick",
+            "quite"
+        ],
+        "a": 2
+    },
+    {
+        "id": 523,
+        "q": "Find the antonym of the following words written in capitals. GO OUT OF the room, please, it's very stuffy here.",
+        "o": [
+            "come out",
+            "leave",
+            "leave for",
+            "stay in",
+            "useful"
+        ],
+        "a": 3
+    },
+    {
+        "id": 524,
+        "q": "Find the antonym of the following words written in capitals. A DARK cloud having appeared in the sky, we decided to stay at home.",
+        "o": [
+            "bright",
+            "heavy",
+            "white",
+            "cloudless",
+            "merry"
+        ],
+        "a": 2
+    },
+    {
+        "id": 525,
+        "q": "Find the antonym of the following words written in capitals. He says they will go to the TOP of the hill next",
+        "o": [
+            "near",
+            "above",
+            "bottom",
+            "under",
+            "downstairs"
+        ],
+        "a": 2
+    },
+    {
+        "id": 526,
+        "q": "Find the antonym of the following words written in capitals. They have the SHORT road and it will take them twenty minutes to get to the village.",
+        "o": [
+            "big",
+            "large",
+            "not strong",
+            "long",
+            "rising"
+        ],
+        "a": 3
+    },
+    {
+        "id": 527,
+        "q": "Find the antonym of the following words written in capitals. That will do. Your answer is quite RIGHT. Your mark is good.",
+        "o": [
+            "correct",
+            "good",
+            "bad",
+            "wrong",
+            "exact"
+        ],
+        "a": 3
+    },
+    {
+        "id": 528,
+        "q": "Find the antonym of the following words written in capitals. Suddenly we heard a HIGH thin voice.",
+        "o": [
+            "tall",
+            "small",
+            "short",
+            "low",
+            "long"
+        ],
+        "a": 3
+    },
+    {
+        "id": 529,
+        "q": "Find the antonym of the following words written in capitals. His best KNOWN paintings give a light to today's Europe.",
+        "o": [
+            "well-known",
+            "famous",
+            "unknown",
+            "bad",
+            "worst"
+        ],
+        "a": 2
+    },
+    {
+        "id": 530,
+        "q": "Find the antonym of the following words written in capitals. We must never FORGET our heroes.",
+        "o": [
+            "recognize",
+            "recite",
+            "remember",
+            "forgive",
+            "thank"
+        ],
+        "a": 2
+    },
+    {
+        "id": 531,
+        "q": "Find the antonym of the following words written in capitals. You are a GOOD swimmer.",
+        "o": [
+            "hot",
+            "bad",
+            "low",
+            "normal",
+            "not well"
+        ],
+        "a": 1
+    },
+    {
+        "id": 532,
+        "q": "Find the antonym of the following words written in capitals. I stood there admiring that BEAUTIFUL picture.",
+        "o": [
+            "bad",
+            "nice",
+            "ugly",
+            "terrible",
+            "plain"
+        ],
+        "a": 2
+    },
+    {
+        "id": 533,
+        "q": "Find the antonym of the following words written in capitals. You can tell him the TRUTH. He will help you.",
+        "o": [
+            "a form",
+            "a tale",
+            "a secret",
+            "a lie",
+            "a fable"
+        ],
+        "a": 3
+    },
+    {
+        "id": 534,
+        "q": "Find the antonym of the following words written in capitals. Adriano is a TALL man.",
+        "o": [
+            "big",
+            "little",
+            "small",
+            "short",
+            "large"
+        ],
+        "a": 3
+    },
+    {
+        "id": 535,
+        "q": "Find the antonym of the following words written in capitals. It's much QUIETER there than here - very beautiful, but no tourists.",
+        "o": [
+            "more peaceful",
+            "noisier",
+            "more essential",
+            "more uncertain",
+            "easier"
+        ],
+        "a": 1
+    },
+    {
+        "id": 536,
+        "q": "Find the antonym of the following words written in capitals. They are good boys, don't LAUGH at them!",
+        "o": [
+            "smile",
+            "shout",
+            "cry",
+            "look",
+            "speak"
+        ],
+        "a": 2
+    },
+    {
+        "id": 537,
+        "q": "Find the antonym of the following words written in capitals. I don't think he will work hard. He is very LAZY.",
+        "o": [
+            "absent-minded",
+            "good looking",
+            "good-natured",
+            "delighted",
+            "hard-working"
+        ],
+        "a": 4
+    },
+    {
+        "id": 538,
+        "q": "Find the antonym of the following words written in capitals. The mountains in Great Britain are not very HIGH.",
+        "o": [
+            "low",
+            "long",
+            "short",
+            "tall",
+            "big"
+        ],
+        "a": 0
+    },
+    {
+        "id": 539,
+        "q": "Find the antonym of the following words written in capitals. He worked MUCH and got a good mark at his",
+        "o": [
+            "a lot",
+            "many",
+            "few",
+            "little",
+            "a few"
+        ],
+        "a": 3
+    },
+    {
+        "id": 540,
+        "q": "Find the antonym of the following words written in capitals. He thinks his son has a GOOD future.",
+        "o": [
+            "nice",
+            "fine",
+            "kind",
+            "bad",
+            "wrong"
+        ],
+        "a": 3
+    },
+    {
+        "id": 541,
+        "q": "Find the antonym of the following words written in capitals. You've got WET through.",
+        "o": [
+            "warm",
+            "dry",
+            "hot",
+            "sweet",
+            "cold"
+        ],
+        "a": 1
+    },
+    {
+        "id": 542,
+        "q": "Find the antonym of the following words written in capitals. Did you come by SEA?",
+        "o": [
+            "land",
+            "bed",
+            "desk",
+            "shop",
+            "tree"
+        ],
+        "a": 0
+    },
+    {
+        "id": 543,
+        "q": "Find the antonym of the following words written in capitals. Don't speak so FAST!",
+        "o": [
+            "loudly",
+            "slowly",
+            "well",
+            "proudly",
+            "quickly"
+        ],
+        "a": 1
+    },
+    {
+        "id": 544,
+        "q": "Find the antonym of the following words written in capitals. I'm LEAVING FOR Rio tomorrow and I'll be back in a week's time.",
+        "o": [
+            "going to",
+            "coming from",
+            "living in",
+            "reaching",
+            "approaching"
+        ],
+        "a": 1
+    },
+    {
+        "id": 545,
+        "q": "Find the antonym of the following words written in capitals. My friend Cyril isn't TALL enough to dance with Natalie.",
+        "o": [
+            "good",
+            "nice",
+            "happy",
+            "long",
+            "short"
+        ],
+        "a": 4
+    },
+    {
+        "id": 546,
+        "q": "Find the antonym of the following words written in capitals. When I WOKE UP it was dark in the room.",
+        "o": [
+            "got up",
+            "awoke",
+            "fell asleep",
+            "stayed",
+            "left"
+        ],
+        "a": 2
+    },
+    {
+        "id": 547,
+        "q": "Find the antonym of the following words written in capitals. I'm glad the interest rate is not very HIGH.",
+        "o": [
+            "short",
+            "tall",
+            "long",
+            "low",
+            "huge"
+        ],
+        "a": 3
+    },
+    {
+        "id": 548,
+        "q": "Find the antonym of the following words written in capitals. We are in a hurry. PUSH the car to one side.",
+        "o": [
+            "bring",
+            "move",
+            "pull",
+            "park",
+            "break"
+        ],
+        "a": 2
+    },
+    {
+        "id": 549,
+        "q": "Find the antonym of the following words written in capitals. The old man had MORE money than sixty thousand pounds.",
+        "o": [
+            "much",
+            "larger",
+            "over",
+            "fewer",
+            "less"
+        ],
+        "a": 4
+    },
+    {
+        "id": 550,
+        "q": "Find the antonym of the following words written in capitals. We heard a LOT OF interesting things over the radio yesterday evening.",
+        "o": [
+            "little",
+            "many",
+            "tremendous",
+            "few",
+            "a great deal"
+        ],
+        "a": 3
+    },
+    {
+        "id": 551,
+        "q": "Find the antonym of the following words written in capitals. I'll BE IN tomorrow morning.",
+        "o": [
+            "stay",
+            "be out",
+            "be over",
+            "come",
+            "give"
+        ],
+        "a": 1
+    },
+    {
+        "id": 552,
+        "q": "Find the antonym of the following words written in capitals. When the Browns paint their living-room and the paint is DRY they will hang a modern picture on the wall.",
+        "o": [
+            "cold",
+            "white",
+            "wet",
+            "blue",
+            "clean"
+        ],
+        "a": 2
+    },
+    {
+        "id": 553,
+        "q": "Find the antonym of the following words written in capitals. Though the watch was very EXPENSIVE, he decided to buy it for her.",
+        "o": [
+            "dear",
+            "calm",
+            "cheap",
+            "quiet",
+            "rich"
+        ],
+        "a": 2
+    },
+    {
+        "id": 554,
+        "q": "Find the antonym of the following words written in capitals. The Thames is a short river but it is WIDE.",
+        "o": [
+            "long",
+            "shallow",
+            "narrow",
+            "nice",
+            "big"
+        ],
+        "a": 2
+    },
+    {
+        "id": 555,
+        "q": "Find the antonym of the following words written in capitals. He GAVE his friend a book last week.",
+        "o": [
+            "brought",
+            "took",
+            "bought",
+            "had",
+            "sold"
+        ],
+        "a": 1
+    },
+    {
+        "id": 556,
+        "q": "Find the antonym of the following words written in capitals. John's parents want him to study law and become President one day. They have HIGH hopes on him.",
+        "o": [
+            "tall",
+            "respectful",
+            "wise",
+            "unpleasant",
+            "small"
+        ],
+        "a": 4
+    },
+    {
+        "id": 557,
+        "q": "Find the antonym of the following words written in capitals. The MORE you read, the more you know.",
+        "o": [
+            "much",
+            "many",
+            "little",
+            "least",
+            "less"
+        ],
+        "a": 4
+    },
+    {
+        "id": 558,
+        "q": "Find the antonym of the following words written in capitals. BEFORE death he decided to leave his money to a hospital.",
+        "o": [
+            "earlier",
+            "after",
+            "above",
+            "below",
+            "over"
+        ],
+        "a": 1
+    },
+    {
+        "id": 559,
+        "q": "Find the antonym of the following words written in capitals. Nina was a small girl and not at all STRONG.",
+        "o": [
+            "seldom",
+            "forceful",
+            "weak",
+            "frozen",
+            "clever"
+        ],
+        "a": 2
+    },
+    {
+        "id": 560,
+        "q": "Find the antonym of the following words written in capitals. She runs FAST.",
+        "o": [
+            "quickly",
+            "slowly",
+            "easily",
+            "badly",
+            "well"
+        ],
+        "a": 1
+    },
+    {
+        "id": 561,
+        "q": "Find the antonym of the following words written in capitals. Tom was a TALL boy of 16.",
+        "o": [
+            "low",
+            "short",
+            "long",
+            "little",
+            "small"
+        ],
+        "a": 1
+    },
+    {
+        "id": 562,
+        "q": "Find the antonym of the following words written in capitals. I must change my jeans. They are really DIRTY.",
+        "o": [
+            "clear",
+            "short",
+            "bright",
+            "clean",
+            "yellow"
+        ],
+        "a": 3
+    },
+    {
+        "id": 563,
+        "q": "Find the antonym of the following words written in capitals. It's EASY to understand this text.",
+        "o": [
+            "hard",
+            "difficult",
+            "simple",
+            "longest",
+            "clear"
+        ],
+        "a": 1
+    },
+    {
+        "id": 564,
+        "q": "Find the antonym of the following words written in capitals. David was POOR and had TO FIND his aunt.",
+        "o": [
+            "rich / to lose",
+            "tall / to win",
+            "short / to gather",
+            "clever / to hide",
+            "rich / to look for"
+        ],
+        "a": 0
+    },
+    {
+        "id": 565,
+        "q": "Find the antonym of the following words written in capitals. He SAT thinking near the window.",
+        "o": [
+            "stood",
+            "saw",
+            "cried",
+            "flew",
+            "died"
+        ],
+        "a": 0
+    },
+    {
+        "id": 566,
+        "q": "Find the antonym of the following words written in capitals. I have been UNHAPPY since my mother died.",
+        "o": [
+            "happy",
+            "busy",
+            "tired",
+            "excited",
+            "ill"
+        ],
+        "a": 0
+    },
+    {
+        "id": 567,
+        "q": "Find the antonym of the following words written in capitals. This box is very light. The man can EASILY lift it.",
+        "o": [
+            "hardly",
+            "hurriedly",
+            "slowly",
+            "earnestly",
+            "badly"
+        ],
+        "a": 0
+    },
+    {
+        "id": 568,
+        "q": "Find the antonym of the following words written in capitals. My watch is RIGHT.",
+        "o": [
+            "wrong",
+            "left",
+            "heavy",
+            "slow",
+            "fast"
+        ],
+        "a": 0
+    },
+    {
+        "id": 569,
+        "q": "Find the antonym of the following words written in capitals. It happened long after THE NIGHT that I fell down into a pit.",
+        "o": [
+            "dark",
+            "evening",
+            "day",
+            "dawn",
+            "moonlight"
+        ],
+        "a": 2
+    },
+    {
+        "id": 570,
+        "q": "Find the antonym of the following words written in capitals. There's too MUCH crime and violence in the streets of cities nowadays.",
+        "o": [
+            "sad",
+            "few",
+            "glad",
+            "little",
+            "many"
+        ],
+        "a": 3
+    },
+    {
+        "id": 571,
+        "q": "Find the antonym of the following words written in capitals. My RIGHT hand is stronger than yours.",
+        "o": [
+            "left",
+            "wrong",
+            "dirty",
+            "pretty",
+            "crushed"
+        ],
+        "a": 0
+    },
+    {
+        "id": 572,
+        "q": "Find the antonym of the following words written in capitals. Scotland is the land of mountains, NARROW valleys and plains.",
+        "o": [
+            "wide",
+            "long",
+            "fat",
+            "thick",
+            "large"
+        ],
+        "a": 0
+    },
+    {
+        "id": 573,
+        "q": "Find the antonym of the following words written in capitals. Leave",
+        "o": [
+            "arrive",
+            "desert",
+            "separate",
+            "abandon"
+        ],
+        "a": 0
+    },
+    {
+        "id": 574,
+        "q": "Find the antonym of the following words written in capitals. Hide",
+        "o": [
+            "show",
+            "cover",
+            "spend",
+            "save"
+        ],
+        "a": 0
+    },
+    {
+        "id": 575,
+        "q": "Find the antonym of the following words written in capitals. High",
+        "o": [
+            "low",
+            "tall",
+            "important",
+            "powerful"
+        ],
+        "a": 0
+    },
+    {
+        "id": 576,
+        "q": "Find the antonym of the following words written in capitals. Brave",
+        "o": [
+            "heroic",
+            "bold",
+            "keen",
+            "cowardly"
+        ],
+        "a": 3
+    },
+    {
+        "id": 577,
+        "q": "Find the antonym of the following words written in capitals. Behind",
+        "o": [
+            "near",
+            "far",
+            "in front of",
+            "on"
+        ],
+        "a": 2
+    },
+    {
+        "id": 578,
+        "q": "Find the antonym of the following words written in capitals. Pull",
+        "o": [
+            "divide",
+            "hit",
+            "kick",
+            "push"
+        ],
+        "a": 3
+    },
+    {
+        "id": 579,
+        "q": "Find the antonym of the following words written in capitals. Horizontal",
+        "o": [
+            "flat",
+            "level",
+            "vertical",
+            "even"
+        ],
+        "a": 2
+    },
+    {
+        "id": 580,
+        "q": "Find the antonym of the following words written in capitals. Absent",
+        "o": [
+            "present",
+            "off",
+            "away",
+            "missing"
+        ],
+        "a": 0
+    },
+    {
+        "id": 581,
+        "q": "Find the antonym of the following words written in capitals. Public",
+        "o": [
+            "different",
+            "private",
+            "usual",
+            "common"
+        ],
+        "a": 1
+    },
+    {
+        "id": 582,
+        "q": "Find the antonym of the following words written in capitals. Bitter",
+        "o": [
+            "sweet",
+            "stale",
+            "rotten",
+            "moldy"
+        ],
+        "a": 0
+    },
+    {
+        "id": 583,
+        "q": "Find the antonym of the following words written in capitals. Cry",
+        "o": [
+            "blow",
+            "speak",
+            "chat",
+            "laugh"
+        ],
+        "a": 3
+    },
+    {
+        "id": 584,
+        "q": "Find the antonym of the following words written in capitals. Reduce",
+        "o": [
+            "limit",
+            "lessen",
+            "increase",
+            "decrease"
+        ],
+        "a": 2
+    },
+    {
+        "id": 585,
+        "q": "Find the antonym of the following words written in capitals. Adult",
+        "o": [
+            "disabled",
+            "aged",
+            "immature",
+            "old"
+        ],
+        "a": 2
+    },
+    {
+        "id": 586,
+        "q": "Find the antonym of the following words written in capitals. Dry",
+        "o": [
+            "barren",
+            "wet",
+            "sterile",
+            "arid"
+        ],
+        "a": 1
+    },
+    {
+        "id": 587,
+        "q": "Find the antonym of the following words written in capitals. Win",
+        "o": [
+            "earn",
+            "lose",
+            "get",
+            "gain"
+        ],
+        "a": 1
+    },
+    {
+        "id": 588,
+        "q": "Find the antonym of the following words written in capitals. Past",
+        "o": [
+            "next",
+            "future",
+            "present",
+            "before"
+        ],
+        "a": 1
+    },
+    {
+        "id": 589,
+        "q": "Find the antonym of the following words written in capitals. Sick",
+        "o": [
+            "ill",
+            "patient",
+            "sorry",
+            "well"
+        ],
+        "a": 3
+    },
+    {
+        "id": 590,
+        "q": "Find the antonym of the following words written in capitals. Cautious",
+        "o": [
+            "fussy",
+            "reckless",
+            "nervous",
+            "careful"
+        ],
+        "a": 1
+    },
+    {
+        "id": 591,
+        "q": "Find the antonym of the following words written in capitals. Clever",
+        "o": [
+            "Stupid",
+            "chubby",
+            "kind",
+            "smart"
+        ],
+        "a": 0
+    },
+    {
+        "id": 592,
+        "q": "Find the antonym of the following words written in capitals. Dangerous",
+        "o": [
+            "stormy",
+            "risky",
+            "safe",
+            "hazardous"
+        ],
+        "a": 2
+    },
+    {
+        "id": 593,
+        "q": "Find the antonym of the following words written in capitals. Increase",
+        "o": [
+            "carry off",
+            "go up",
+            "decrease",
+            "rise"
+        ],
+        "a": 2
+    },
+    {
+        "id": 594,
+        "q": "Find the antonym of the following words written in capitals. Begin",
+        "o": [
+            "continue",
+            "ban",
+            "urge",
+            "stop"
+        ],
+        "a": 3
+    },
+    {
+        "id": 595,
+        "q": "Find the antonym of the following words written in capitals. Narrow",
+        "o": [
+            "thin",
+            "tight",
+            "wide",
+            "sharp"
+        ],
+        "a": 2
+    },
+    {
+        "id": 596,
+        "q": "Find the antonym of the following words written in capitals. Great",
+        "o": [
+            "huge",
+            "big",
+            "small",
+            "heavy"
+        ],
+        "a": 2
+    },
+    {
+        "id": 597,
+        "q": "Find the antonym of the following words written in capitals. Outside",
+        "o": [
+            "above",
+            "on",
+            "inside",
+            "under"
+        ],
+        "a": 2
+    },
+    {
+        "id": 598,
+        "q": "Find the antonym of the following words written in capitals. Noisy",
+        "o": [
+            "muddy",
+            "misty",
+            "moldy",
+            "silent"
+        ],
+        "a": 3
+    },
+    {
+        "id": 599,
+        "q": "Find the antonym of the following words written in capitals. Light",
+        "o": [
+            "rainy",
+            "misty",
+            "dark",
+            "bright"
+        ],
+        "a": 2
+    },
+    {
+        "id": 600,
+        "q": "Find the antonym of the following words written in capitals. Hate",
+        "o": [
+            "praise",
+            "commend",
+            "love",
+            "detest"
+        ],
+        "a": 2
+    },
+    {
+        "id": 601,
+        "q": "Find the antonym of the following words written in capitals. Cheap",
+        "o": [
+            "expensive",
+            "inexpensive",
+            "free",
+            "low-cost"
+        ],
+        "a": 0
+    },
+    {
+        "id": 602,
+        "q": "Find the antonym of the following words written in capitals. Fresh",
+        "o": [
+            "stale",
+            "new",
+            "clean",
+            "pure"
+        ],
+        "a": 0
+    },
+    {
+        "id": 603,
+        "q": "Find the antonym of the following words written in capitals. Find",
+        "o": [
+            "lose",
+            "seek",
+            "locate",
+            "look"
+        ],
+        "a": 0
+    },
+    {
+        "id": 604,
+        "q": "Find the antonym of the following words written in capitals. Cold",
+        "o": [
+            "misty",
+            "icy",
+            "hot",
+            "warm"
+        ],
+        "a": 2
+    },
+    {
+        "id": 605,
+        "q": "Find the antonym of the following words written in capitals. Early",
+        "o": [
+            "now",
+            "quickly",
+            "before",
+            "late"
+        ],
+        "a": 3
+    },
+    {
+        "id": 606,
+        "q": "Find the antonym of the following words written in capitals. Child",
+        "o": [
+            "girl",
+            "infant",
+            "boy",
+            "adult"
+        ],
+        "a": 3
+    },
+    {
+        "id": 607,
+        "q": "Find the antonym of the following words written in capitals. Minority",
+        "o": [
+            "majority",
+            "population",
+            "mankind",
+            "people"
+        ],
+        "a": 0
+    },
+    {
+        "id": 608,
+        "q": "Find the antonym of the following words written in capitals. Better",
+        "o": [
+            "clear",
+            "calm",
+            "worse",
+            "well"
+        ],
+        "a": 2
+    },
+    {
+        "id": 609,
+        "q": "Find the antonym of the following words written in capitals. Enemy",
+        "o": [
+            "rival",
+            "opponent",
+            "friend",
+            "client"
+        ],
+        "a": 2
+    },
+    {
+        "id": 610,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "correct",
+            "accurate",
+            "right",
+            "wrong"
+        ],
+        "a": 3
+    },
+    {
+        "id": 611,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "tongue",
+            "mouth",
+            "head",
+            "lip"
+        ],
+        "a": 2
+    },
+    {
+        "id": 612,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "neck",
+            "eye",
+            "ear",
+            "nose"
+        ],
+        "a": 0
+    },
+    {
+        "id": 613,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "article",
+            "booklet",
+            "headline",
+            "column"
+        ],
+        "a": 1
+    },
+    {
+        "id": 614,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "strike",
+            "rap",
+            "pat",
+            "tap"
+        ],
+        "a": 0
+    },
+    {
+        "id": 615,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "book",
+            "magazine",
+            "newspaper",
+            "prescription"
+        ],
+        "a": 3
+    },
+    {
+        "id": 616,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "huge",
+            "large",
+            "serious",
+            "big"
+        ],
+        "a": 2
+    },
+    {
+        "id": 617,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "north",
+            "east",
+            "west",
+            "earth"
+        ],
+        "a": 3
+    },
+    {
+        "id": 618,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "bell",
+            "key",
+            "door",
+            "tenant"
+        ],
+        "a": 3
+    },
+    {
+        "id": 619,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "horse",
+            "lion",
+            "donkey",
+            "sheep"
+        ],
+        "a": 1
+    },
+    {
+        "id": 620,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "month",
+            "autumn",
+            "summer",
+            "winter"
+        ],
+        "a": 0
+    },
+    {
+        "id": 621,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "forest",
+            "moon",
+            "river",
+            "mountain"
+        ],
+        "a": 1
+    },
+    {
+        "id": 622,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "body",
+            "chest",
+            "shoulder",
+            "head"
+        ],
+        "a": 0
+    },
+    {
+        "id": 623,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "dinner",
+            "soup",
+            "supper",
+            "lunch"
+        ],
+        "a": 1
+    },
+    {
+        "id": 624,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "detergent",
+            "tap",
+            "shower",
+            "wash-basin"
+        ],
+        "a": 0
+    },
+    {
+        "id": 625,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "pencil case",
+            "ruler",
+            "class",
+            "eraser"
+        ],
+        "a": 2
+    },
+    {
+        "id": 626,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "wall",
+            "ceiling",
+            "garden",
+            "room"
+        ],
+        "a": 2
+    },
+    {
+        "id": 627,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "tiger",
+            "monkey",
+            "bear",
+            "chicken"
+        ],
+        "a": 3
+    },
+    {
+        "id": 628,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "star",
+            "moon",
+            "sun",
+            "sand"
+        ],
+        "a": 3
+    },
+    {
+        "id": 629,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "day",
+            "month",
+            "year",
+            "dawn"
+        ],
+        "a": 3
+    },
+    {
+        "id": 630,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "number",
+            "slash",
+            "comma",
+            "dot"
+        ],
+        "a": 0
+    },
+    {
+        "id": 631,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "rucksack",
+            "briefcase",
+            "purse",
+            "luggage"
+        ],
+        "a": 3
+    },
+    {
+        "id": 632,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "player",
+            "pitch",
+            "fan",
+            "referee"
+        ],
+        "a": 1
+    },
+    {
+        "id": 633,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "salad",
+            "tray",
+            "steak",
+            "soup"
+        ],
+        "a": 1
+    },
+    {
+        "id": 634,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "blanket",
+            "quilt",
+            "pillow",
+            "sofa"
+        ],
+        "a": 3
+    },
+    {
+        "id": 635,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "delicious",
+            "bitter",
+            "sour",
+            "spicy"
+        ],
+        "a": 0
+    },
+    {
+        "id": 636,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "singer",
+            "composer",
+            "leaflet",
+            "audience"
+        ],
+        "a": 2
+    },
+    {
+        "id": 637,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "heat wave",
+            "ice",
+            "winter",
+            "snow"
+        ],
+        "a": 0
+    },
+    {
+        "id": 638,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "trousers",
+            "shirt",
+            "jacket",
+            "handkerchief"
+        ],
+        "a": 3
+    },
+    {
+        "id": 639,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "fear",
+            "fright",
+            "calm",
+            "alarm"
+        ],
+        "a": 2
+    },
+    {
+        "id": 640,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "driver",
+            "bus",
+            "pedestrian",
+            "ticket"
+        ],
+        "a": 3
+    },
+    {
+        "id": 641,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "grocer",
+            "driver",
+            "baker",
+            "greengrocer"
+        ],
+        "a": 1
+    },
+    {
+        "id": 642,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "sun",
+            "sand",
+            "star",
+            "sky"
+        ],
+        "a": 1
+    },
+    {
+        "id": 643,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "ankle",
+            "kidney",
+            "liver",
+            "lung"
+        ],
+        "a": 0
+    },
+    {
+        "id": 644,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "apple",
+            "orange",
+            "garlic",
+            "peach"
+        ],
+        "a": 2
+    },
+    {
+        "id": 645,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "lake",
+            "meadow",
+            "sea",
+            "stream"
+        ],
+        "a": 1
+    },
+    {
+        "id": 646,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "wrong",
+            "true",
+            "right",
+            "correct"
+        ],
+        "a": 0
+    },
+    {
+        "id": 647,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "onion",
+            "potato",
+            "apricot",
+            "carrot"
+        ],
+        "a": 2
+    },
+    {
+        "id": 648,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "kettle",
+            "tray",
+            "teapot",
+            "curtain"
+        ],
+        "a": 3
+    },
+    {
+        "id": 649,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "minute",
+            "clock",
+            "hour",
+            "second"
+        ],
+        "a": 1
+    },
+    {
+        "id": 650,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "row",
+            "run",
+            "fish",
+            "swim"
+        ],
+        "a": 0
+    },
+    {
+        "id": 651,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "niece",
+            "sister",
+            "sister in law",
+            "brother"
+        ],
+        "a": 3
+    },
+    {
+        "id": 652,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "rain",
+            "star",
+            "cloud",
+            "thunder"
+        ],
+        "a": 1
+    },
+    {
+        "id": 653,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "bathroom",
+            "chimney",
+            "kitchen",
+            "bedroom"
+        ],
+        "a": 1
+    },
+    {
+        "id": 654,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "cook",
+            "steward",
+            "chef",
+            "waiter"
+        ],
+        "a": 1
+    },
+    {
+        "id": 655,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "harbor",
+            "station",
+            "bridge",
+            "airport"
+        ],
+        "a": 2
+    },
+    {
+        "id": 656,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "knife",
+            "pin",
+            "scissors",
+            "saw"
+        ],
+        "a": 1
+    },
+    {
+        "id": 657,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "garden",
+            "library",
+            "bank",
+            "shop"
+        ],
+        "a": 0
+    },
+    {
+        "id": 658,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "duck",
+            "hen",
+            "tiger",
+            "goose"
+        ],
+        "a": 2
+    },
+    {
+        "id": 659,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "traffic",
+            "ball",
+            "lamp",
+            "crossing",
+            "vehicle"
+        ],
+        "a": 1
+    },
+    {
+        "id": 660,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "England",
+            "Scotland",
+            "New Zealand",
+            "Northern Ireland",
+            "Wales"
+        ],
+        "a": 2
+    },
+    {
+        "id": 661,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "know",
+            "understand",
+            "break",
+            "think",
+            "remember"
+        ],
+        "a": 2
+    },
+    {
+        "id": 662,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "canteen",
+            "dining-hall",
+            "warehouse",
+            "kitchen",
+            "buffet"
+        ],
+        "a": 2
+    },
+    {
+        "id": 663,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "pane",
+            "window sill",
+            "window",
+            "pain",
+            "frame"
+        ],
+        "a": 3
+    },
+    {
+        "id": 664,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "raincoat",
+            "ticket",
+            "suit",
+            "tie",
+            "hat"
+        ],
+        "a": 1
+    },
+    {
+        "id": 665,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "beautiful",
+            "attractive",
+            "handsome",
+            "pretty",
+            "sensitive"
+        ],
+        "a": 4
+    },
+    {
+        "id": 666,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "voyage",
+            "trip",
+            "traveling",
+            "travel",
+            "athlete"
+        ],
+        "a": 4
+    },
+    {
+        "id": 667,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "to dig",
+            "to grow",
+            "to plant",
+            "to water",
+            "to tidy up"
+        ],
+        "a": 4
+    },
+    {
+        "id": 668,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "bridge",
+            "chair",
+            "table",
+            "bench",
+            "desk"
+        ],
+        "a": 0
+    },
+    {
+        "id": 669,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "performance",
+            "concert",
+            "flight",
+            "film",
+            "play"
+        ],
+        "a": 2
+    },
+    {
+        "id": 670,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "spoon",
+            "soup",
+            "fork",
+            "knife",
+            "plate"
+        ],
+        "a": 1
+    },
+    {
+        "id": 671,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "rain",
+            "umbrella",
+            "snow",
+            "storm",
+            "wind"
+        ],
+        "a": 1
+    },
+    {
+        "id": 672,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "dress",
+            "suit",
+            "shirt",
+            "tailor",
+            "skirt"
+        ],
+        "a": 3
+    },
+    {
+        "id": 673,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "carrot",
+            "potato",
+            "pigeon",
+            "cabbage",
+            "pea"
+        ],
+        "a": 2
+    },
+    {
+        "id": 674,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "cucumber",
+            "plum",
+            "orange",
+            "cherry",
+            "grapes"
+        ],
+        "a": 0
+    },
+    {
+        "id": 675,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "stone",
+            "glass",
+            "ink",
+            "wood",
+            "iron"
+        ],
+        "a": 2
+    },
+    {
+        "id": 676,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "Moscow",
+            "Rome",
+            "London",
+            "Washington",
+            "New York"
+        ],
+        "a": 4
+    },
+    {
+        "id": 677,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "gymnastics",
+            "photography",
+            "cricket",
+            "judo",
+            "football"
+        ],
+        "a": 1
+    },
+    {
+        "id": 678,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "kitchen",
+            "bedroom",
+            "garage",
+            "dining-room",
+            "hall"
+        ],
+        "a": 2
+    },
+    {
+        "id": 679,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "once",
+            "soon",
+            "past",
+            "ago",
+            "last time"
+        ],
+        "a": 1
+    },
+    {
+        "id": 680,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "beer",
+            "lemonade",
+            "gin",
+            "vodka",
+            "whiskey"
+        ],
+        "a": 1
+    },
+    {
+        "id": 681,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "duck",
+            "pheasant",
+            "chicken",
+            "goose",
+            "berry"
+        ],
+        "a": 4
+    },
+    {
+        "id": 682,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "a cat",
+            "a cake",
+            "a dog",
+            "a cow",
+            "a sheep"
+        ],
+        "a": 1
+    },
+    {
+        "id": 683,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "train",
+            "ship",
+            "boat",
+            "captain",
+            "plane"
+        ],
+        "a": 3
+    },
+    {
+        "id": 684,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "a spoon",
+            "a fork",
+            "a knife",
+            "a plate",
+            "a cupboard"
+        ],
+        "a": 4
+    },
+    {
+        "id": 685,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "beef",
+            "lamb",
+            "chop",
+            "lettuce",
+            "steak"
+        ],
+        "a": 3
+    },
+    {
+        "id": 686,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "above",
+            "that",
+            "under",
+            "into",
+            "within"
+        ],
+        "a": 1
+    },
+    {
+        "id": 687,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "go",
+            "return",
+            "mile",
+            "stay",
+            "change"
+        ],
+        "a": 2
+    },
+    {
+        "id": 688,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "fruit",
+            "grass",
+            "flower",
+            "plant",
+            "egg"
+        ],
+        "a": 4
+    },
+    {
+        "id": 689,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "cotton",
+            "butter",
+            "cheese",
+            "bread",
+            "milk"
+        ],
+        "a": 0
+    },
+    {
+        "id": 690,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "cousin",
+            "niece",
+            "aunt",
+            "nurse",
+            "uncle"
+        ],
+        "a": 3
+    },
+    {
+        "id": 691,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "a spoon",
+            "a fork",
+            "a plate",
+            "a cup",
+            "a cap"
+        ],
+        "a": 4
+    },
+    {
+        "id": 692,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "a room",
+            "a flat",
+            "a street",
+            "a house",
+            "a parlor"
+        ],
+        "a": 2
+    },
+    {
+        "id": 693,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "applicant",
+            "worker",
+            "painter",
+            "interpreter",
+            "builder"
+        ],
+        "a": 0
+    },
+    {
+        "id": 694,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "underground",
+            "box-office",
+            "bank",
+            "ministry",
+            "school"
+        ],
+        "a": 0
+    },
+    {
+        "id": 695,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "scientist",
+            "writer",
+            "bakery",
+            "interpreter",
+            "economist"
+        ],
+        "a": 2
+    },
+    {
+        "id": 696,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "go",
+            "start",
+            "arrive",
+            "come",
+            "congratulate"
+        ],
+        "a": 4
+    },
+    {
+        "id": 697,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "goldfish",
+            "horse",
+            "fox",
+            "tree",
+            "mouse"
+        ],
+        "a": 3
+    },
+    {
+        "id": 698,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "youth",
+            "farmer",
+            "adult",
+            "child",
+            "teenager"
+        ],
+        "a": 1
+    },
+    {
+        "id": 699,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "speak",
+            "say",
+            "punish",
+            "talk",
+            "tell"
+        ],
+        "a": 2
+    },
+    {
+        "id": 700,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "postman",
+            "farmer",
+            "field",
+            "reporter",
+            "surgeon"
+        ],
+        "a": 2
+    },
+    {
+        "id": 701,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "tree",
+            "flower",
+            "bush",
+            "leave",
+            "plant"
+        ],
+        "a": 3
+    },
+    {
+        "id": 702,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "field",
+            "meadow",
+            "forest",
+            "wood",
+            "wardrobe"
+        ],
+        "a": 4
+    },
+    {
+        "id": 703,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "table",
+            "bookcase",
+            "tram",
+            "sofa",
+            "furniture"
+        ],
+        "a": 2
+    },
+    {
+        "id": 704,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "feel",
+            "see",
+            "hear",
+            "lay",
+            "want"
+        ],
+        "a": 3
+    },
+    {
+        "id": 705,
+        "q": "Find the words which are out of the logic list. ",
+        "o": [
+            "suit",
+            "shoe",
+            "hat",
+            "pot",
+            "shirt"
+        ],
+        "a": 3
+    }
+]

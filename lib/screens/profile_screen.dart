@@ -268,7 +268,7 @@ class ProfileScreen extends StatelessWidget {
               _infoRow(
                 Icons.menu_book_rounded,
                 'បណ្ណាល័យសំណួរ',
-                '${kh(app.repo.totalQuestionCount)} សំណួរ • ១៣ ផ្នែក',
+                '${kh(app.repo.totalQuestionCount)} សំណួរ • ${kh(app.partsWithQuestions.length)} ផ្នែក',
               ),
               const Divider(height: 1),
               _infoRow(

@@ -11,12 +11,17 @@ class OptionTile extends StatelessWidget {
   final OptionState state;
   final VoidCallback? onTap;
 
+  /// The alphabet the option key is drawn from - ក/ខ/គ/ឃ for the Khmer parts,
+  /// A/B/C/D/E for the English ones. See [Question.optionLabels].
+  final List<String> labels;
+
   const OptionTile({
     super.key,
     required this.index,
     required this.text,
     required this.state,
     this.onTap,
+    this.labels = khmerOptionLabels,
   });
 
   @override
@@ -89,7 +94,7 @@ class OptionTile extends StatelessWidget {
                     border: Border.all(color: keyBorder),
                   ),
                   child: Text(
-                    khmerOptionLabels[index],
+                    labels[index],
                     style: TextStyle(
                       fontWeight: FontWeight.w800,
                       color: keyFg,

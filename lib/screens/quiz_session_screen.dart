@@ -192,7 +192,7 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
                                   ),
                                   const SizedBox(height: 4),
                                   ...List.generate(
-                                    4,
+                                    session.current.question.options.length,
                                     (i) => _buildOption(session, i),
                                   ),
                                 ],
@@ -233,6 +233,7 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
       index: index,
       text: attempt.question.options[index],
       state: state,
+      labels: attempt.question.optionLabels,
       onTap: locked ? null : () => _handleSelect(session, index),
     );
   }

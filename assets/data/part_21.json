@@ -1,0 +1,1619 @@
+[
+    {
+        "id": 1,
+        "q": "If the car _____ once more, I'm going to get a new one.",
+        "o": [
+            "breaks down",
+            "comes about",
+            "gives in",
+            "changes down"
+        ],
+        "a": 0
+    },
+    {
+        "id": 2,
+        "q": "Not one of the girl's teachers could _____ her poor examination results.",
+        "o": [
+            "act out",
+            "answer back",
+            "account for",
+            "ask after"
+        ],
+        "a": 2
+    },
+    {
+        "id": 3,
+        "q": "New students spend the first few days _____ themselves _____ the layout of the university.",
+        "o": [
+            "calling / out",
+            "bringing / about",
+            "acquainting / with",
+            "carrying / on"
+        ],
+        "a": 2
+    },
+    {
+        "id": 4,
+        "q": "You go now and I'll _____ you later.",
+        "o": [
+            "catch up with",
+            "back up",
+            "go back on",
+            "come about"
+        ],
+        "a": 0
+    },
+    {
+        "id": 5,
+        "q": "We certainly didn't _____ all this rain when we booked the holiday.",
+        "o": [
+            "hold out",
+            "back up",
+            "figure out",
+            "run into"
+        ],
+        "a": 2
+    },
+    {
+        "id": 6,
+        "q": "If you will just _____ me for a few moments, I'll explain the reasons behind the decision.",
+        "o": [
+            "turn over to",
+            "take up with",
+            "bear with",
+            "care for"
+        ],
+        "a": 2
+    },
+    {
+        "id": 7,
+        "q": "He was glad he had _____ the first question.",
+        "o": [
+            "took up with",
+            "disposed of",
+            "run into",
+            "got ahead"
+        ],
+        "a": 1
+    },
+    {
+        "id": 8,
+        "q": "Our advisors _____ the plan, saying that it would be too costly.",
+        "o": [
+            "got over",
+            "got through with",
+            "got out of",
+            "came out against"
+        ],
+        "a": 3
+    },
+    {
+        "id": 9,
+        "q": "His new novel _____ in the fall.",
+        "o": [
+            "shows up",
+            "takes up",
+            "sets out",
+            "comes out"
+        ],
+        "a": 3
+    },
+    {
+        "id": 10,
+        "q": "She could _____ a year's salary in a week if you let her.",
+        "o": [
+            "put up with",
+            "run through",
+            "put aside",
+            "carry out"
+        ],
+        "a": 1
+    },
+    {
+        "id": 11,
+        "q": "A row of back-to -back houses is being _____ to make way for new flats.",
+        "o": [
+            "pulled down",
+            "held up",
+            "closed down",
+            "turned up"
+        ],
+        "a": 0
+    },
+    {
+        "id": 12,
+        "q": "I always try to _____ my friends when they're ill.",
+        "o": [
+            "care for",
+            "change up",
+            "call on",
+            "live on"
+        ],
+        "a": 2
+    },
+    {
+        "id": 13,
+        "q": "How do you manage to _____ such a small salary?",
+        "o": [
+            "live on",
+            "put down",
+            "keep on",
+            "hold on to"
+        ],
+        "a": 0
+    },
+    {
+        "id": 14,
+        "q": "He often _____ his dinner so that he can get more work done.",
+        "o": [
+            "hangs on",
+            "goes without",
+            "eats away",
+            "ends up"
+        ],
+        "a": 1
+    },
+    {
+        "id": 15,
+        "q": "The river is _____ the bank _____ in several places.",
+        "o": [
+            "eating / away",
+            "embarking / on",
+            "handing / over",
+            "letting / in"
+        ],
+        "a": 0
+    },
+    {
+        "id": 16,
+        "q": "He was living in El Salvador when the war _____.",
+        "o": [
+            "broke out",
+            "broke down",
+            "broke up",
+            "broke into"
+        ],
+        "a": 0
+    },
+    {
+        "id": 17,
+        "q": "If you have any questions while I'm talking, feel free to _____.",
+        "o": [
+            "look on",
+            "come up",
+            "break in",
+            "look for"
+        ],
+        "a": 2
+    },
+    {
+        "id": 18,
+        "q": "In both physical appearance and personality, John _____ his father.",
+        "o": [
+            "takes up",
+            "looks after",
+            "takes after",
+            "looks in"
+        ],
+        "a": 2
+    },
+    {
+        "id": 19,
+        "q": "I was quite sad about my friend's death, but slowly I _____ it.",
+        "o": [
+            "got over",
+            "got out",
+            "got out of",
+            "came to"
+        ],
+        "a": 0
+    },
+    {
+        "id": 20,
+        "q": "While he was looking on at the football game he _____ an old classmate from high school days.",
+        "o": [
+            "ran over",
+            "ran after",
+            "ran across",
+            "went into"
+        ],
+        "a": 2
+    },
+    {
+        "id": 21,
+        "q": "If you _____ your promise to stop smoking, you'll feel better and live longer.",
+        "o": [
+            "go into",
+            "stick to",
+            "turn into",
+            "come to"
+        ],
+        "a": 1
+    },
+    {
+        "id": 22,
+        "q": "Many poor people in the world have to _____ life's necessities.",
+        "o": [
+            "go without",
+            "got over",
+            "come to",
+            "part with"
+        ],
+        "a": 0
+    },
+    {
+        "id": 23,
+        "q": "Because of inflation, my weekly food bill now _____ $ 25.",
+        "o": [
+            "parts with",
+            "gets over",
+            "comes to",
+            "goes through"
+        ],
+        "a": 2
+    },
+    {
+        "id": 24,
+        "q": "Save your money. Don't _____ it too quickly.",
+        "o": [
+            "go through",
+            "die down",
+            "hold on",
+            "touch on"
+        ],
+        "a": 0
+    },
+    {
+        "id": 25,
+        "q": "He had an appointment with me but he never _____.",
+        "o": [
+            "turned into",
+            "showed up",
+            "came to",
+            "look into"
+        ],
+        "a": 1
+    },
+    {
+        "id": 26,
+        "q": "You really cough too much; you should _____ smoking.",
+        "o": [
+            "cut down on",
+            "go through",
+            "get around",
+            "try for"
+        ],
+        "a": 0
+    },
+    {
+        "id": 27,
+        "q": "I didn't know you were in town. It's strange to _____ you like this.",
+        "o": [
+            "look forward to",
+            "run after",
+            "run across",
+            "put up with"
+        ],
+        "a": 2
+    },
+    {
+        "id": 28,
+        "q": "To lose weight, you have to _____ sugar and other sweet things.",
+        "o": [
+            "cut down on",
+            "look up to",
+            "come up with",
+            "be in on"
+        ],
+        "a": 0
+    },
+    {
+        "id": 29,
+        "q": "If a child does not _____ his parents, they probably are not very good to him.",
+        "o": [
+            "come up with",
+            "get rid of",
+            "look up to",
+            "get through with"
+        ],
+        "a": 2
+    },
+    {
+        "id": 30,
+        "q": "The police are trying to _____ crime, but the underworld is very strong.",
+        "o": [
+            "do away with",
+            "run around with",
+            "be in on",
+            "work up to"
+        ],
+        "a": 0
+    },
+    {
+        "id": 31,
+        "q": "If you do your homework every day, you can _____ your classmates.",
+        "o": [
+            "look forward to",
+            "live up to",
+            "run around with",
+            "keep up with"
+        ],
+        "a": 3
+    },
+    {
+        "id": 32,
+        "q": "When I _____ my college years, I'm surprised that I graduated.",
+        "o": [
+            "look forward to",
+            "look back on",
+            "look out for",
+            "do away with"
+        ],
+        "a": 1
+    },
+    {
+        "id": 33,
+        "q": "It's bad habit to _____ lies about things which you know are wrong; no one will believe you.",
+        "o": [
+            "give away",
+            "carry out",
+            "bring up",
+            "make up"
+        ],
+        "a": 3
+    },
+    {
+        "id": 34,
+        "q": "Do you ever fail to do your duties or do you always _____ them?",
+        "o": [
+            "believe in",
+            "live up to",
+            "carry out",
+            "clear up"
+        ],
+        "a": 2
+    },
+    {
+        "id": 35,
+        "q": "When the noise _____ I began to speak.",
+        "o": [
+            "died down",
+            "went without",
+            "broke in",
+            "made up"
+        ],
+        "a": 0
+    },
+    {
+        "id": 36,
+        "q": "I tried to get through to him, but I couldn't _____ his misunderstanding.",
+        "o": [
+            "catch on",
+            "clear up",
+            "work up to",
+            "catch up with"
+        ],
+        "a": 1
+    },
+    {
+        "id": 37,
+        "q": "Despite his dislike of Jack, he had always _____ him if some other boy at school attacked him.",
+        "o": [
+            "kept up with",
+            "carried out",
+            "settled down",
+            "stood up for"
+        ],
+        "a": 3
+    },
+    {
+        "id": 38,
+        "q": "Did the committee _____ the problem carefully before deciding on it?",
+        "o": [
+            "get on",
+            "touch on",
+            "clear up",
+            "talk over"
+        ],
+        "a": 3
+    },
+    {
+        "id": 39,
+        "q": "Because of inflation, salaries can't _____ the high cost of living.",
+        "o": [
+            "hold on",
+            "get ahead",
+            "keep up with",
+            "catch on"
+        ],
+        "a": 2
+    },
+    {
+        "id": 40,
+        "q": "It's difficult for a person with a broken leg to _____ .",
+        "o": [
+            "get ahead",
+            "go around",
+            "come about",
+            "stand out"
+        ],
+        "a": 1
+    },
+    {
+        "id": 41,
+        "q": "The staff meeting _____ just before lunch.",
+        "o": [
+            "broke out",
+            "broke into",
+            "broke up",
+            "brought out"
+        ],
+        "a": 2
+    },
+    {
+        "id": 42,
+        "q": "The meeting was _____ as the chairman was ill.",
+        "o": [
+            "called for",
+            "called off",
+            "called up",
+            "called out"
+        ],
+        "a": 1
+    },
+    {
+        "id": 43,
+        "q": "He's a very bright boy, he's sure to _____ in his job.",
+        "o": [
+            "get about",
+            "come out",
+            "get out",
+            "get ahead"
+        ],
+        "a": 3
+    },
+    {
+        "id": 44,
+        "q": "He _____ all the doctors in the district with medical samples.",
+        "o": [
+            "called on",
+            "was over",
+            "broke up",
+            "come into"
+        ],
+        "a": 0
+    },
+    {
+        "id": 45,
+        "q": "Don't trust her, she always _____ her word.",
+        "o": [
+            "goes back",
+            "goes back on",
+            "gets over",
+            "gets round"
+        ],
+        "a": 1
+    },
+    {
+        "id": 46,
+        "q": "Is there enough coffee to _____ or shall I make some more?",
+        "o": [
+            "put forward",
+            "make up",
+            "set in",
+            "go round"
+        ],
+        "a": 3
+    },
+    {
+        "id": 47,
+        "q": "You must _____ with the sunray treatment, it's doing you good.",
+        "o": [
+            "make up",
+            "go up",
+            "go on",
+            "put up"
+        ],
+        "a": 2
+    },
+    {
+        "id": 48,
+        "q": "He's very bright, and _____ all the competitions.",
+        "o": [
+            "goes into",
+            "gives out",
+            "gives in",
+            "goes in for"
+        ],
+        "a": 3
+    },
+    {
+        "id": 49,
+        "q": "Time's up. You must _____ your examination papers now.",
+        "o": [
+            "get in",
+            "go in for",
+            "come up",
+            "give in"
+        ],
+        "a": 3
+    },
+    {
+        "id": 50,
+        "q": "He speaks very badly, I can't _____ what he is saying.",
+        "o": [
+            "make out",
+            "put down",
+            "go over",
+            "get out"
+        ],
+        "a": 0
+    },
+    {
+        "id": 51,
+        "q": "He's a terrible liar, he's always _____ stories.",
+        "o": [
+            "getting up",
+            "putting through",
+            "making up",
+            "going over"
+        ],
+        "a": 2
+    },
+    {
+        "id": 52,
+        "q": "He _____ everything I said.",
+        "o": [
+            "put down",
+            "set out",
+            "picked up",
+            "looked to"
+        ],
+        "a": 0
+    },
+    {
+        "id": 53,
+        "q": "The chairman _____ a very controversial idea which had little chance of being accepted.",
+        "o": [
+            "got on",
+            "came up",
+            "made for",
+            "put forward"
+        ],
+        "a": 3
+    },
+    {
+        "id": 54,
+        "q": "You're very late now we'll have to work very hard to _____ lost time.",
+        "o": [
+            "put off",
+            "make up for",
+            "make up",
+            "set back"
+        ],
+        "a": 1
+    },
+    {
+        "id": 55,
+        "q": "Most girls _____ their faces.",
+        "o": [
+            "make up for",
+            "make up",
+            "make for",
+            "make off"
+        ],
+        "a": 1
+    },
+    {
+        "id": 56,
+        "q": "The meeting has been _____ until next week.",
+        "o": [
+            "put off",
+            "gone through",
+            "set out",
+            "taken off"
+        ],
+        "a": 0
+    },
+    {
+        "id": 57,
+        "q": "George _____ a difficult period shortly after his marriage broke down, but after a year or so his health and spirits picked up.",
+        "o": [
+            "went out",
+            "ran after",
+            "put back",
+            "passed through"
+        ],
+        "a": 3
+    },
+    {
+        "id": 58,
+        "q": "The hospital was near a main road so the patients had to _____ a lot of noise.",
+        "o": [
+            "made up for",
+            "went down with",
+            "put up with",
+            "got over"
+        ],
+        "a": 2
+    },
+    {
+        "id": 59,
+        "q": "She's very much fatter. I wonder how much weight she has _____.",
+        "o": [
+            "gone up",
+            "made up",
+            "put on",
+            "taken on"
+        ],
+        "a": 2
+    },
+    {
+        "id": 60,
+        "q": "The telephone operator _____ me _____ almost immediately.",
+        "o": [
+            "went / through",
+            "put / through",
+            "took / to",
+            "got / into"
+        ],
+        "a": 1
+    },
+    {
+        "id": 61,
+        "q": "When the chief surgeon suddenly announced he was going to leave, we were all _____.",
+        "o": [
+            "gone off",
+            "put through",
+            "set back",
+            "taken aback"
+        ],
+        "a": 3
+    },
+    {
+        "id": 62,
+        "q": "What do you _____ me _____ a fool?",
+        "o": [
+            "take / for",
+            "take / in",
+            "look / for",
+            "look / after"
+        ],
+        "a": 0
+    },
+    {
+        "id": 63,
+        "q": "When his father died he _____ the family business.",
+        "o": [
+            "went on",
+            "put back",
+            "turned out",
+            "took over"
+        ],
+        "a": 3
+    },
+    {
+        "id": 64,
+        "q": "I wasn't listening very attentively and suddenly realized I hadn't _____ what the doctor said.",
+        "o": [
+            "turned out",
+            "made up for",
+            "taken in",
+            "put forward"
+        ],
+        "a": 2
+    },
+    {
+        "id": 65,
+        "q": "His decision to close the factory _____ a series of protest meetings.",
+        "o": [
+            "set off",
+            "put out",
+            "put back",
+            "turned out"
+        ],
+        "a": 0
+    },
+    {
+        "id": 66,
+        "q": "When the man _____ after the operation he found himself back in bed.",
+        "o": [
+            "came on",
+            "came in",
+            "came out",
+            "came round"
+        ],
+        "a": 3
+    },
+    {
+        "id": 67,
+        "q": "Hospital doctors don't go out very often as their work _____ all their time.",
+        "o": [
+            "takes away",
+            "takes in",
+            "take on",
+            "takes up"
+        ],
+        "a": 3
+    },
+    {
+        "id": 68,
+        "q": "I'm afraid that old man won't live much longer, he seems to have _____ the struggle.",
+        "o": [
+            "given out",
+            "given up",
+            "given away",
+            "given back"
+        ],
+        "a": 1
+    },
+    {
+        "id": 69,
+        "q": "I was very _____ by the nurse's attitude, it really annoyed me.",
+        "o": [
+            "put out",
+            "put up",
+            "put by",
+            "put aside"
+        ],
+        "a": 0
+    },
+    {
+        "id": 70,
+        "q": "The secretary said she would _____ duty at seven o'clock this evening.",
+        "o": [
+            "be through",
+            "be after",
+            "be off",
+            "be over"
+        ],
+        "a": 2
+    },
+    {
+        "id": 71,
+        "q": "The old lady couldn't _____ because she had rheumatism.",
+        "o": [
+            "get about",
+            "get in",
+            "get on",
+            "get behind"
+        ],
+        "a": 0
+    },
+    {
+        "id": 72,
+        "q": "As there was a power cut in the hospital, the surgeon had to _____ the operation.",
+        "o": [
+            "call off",
+            "call up",
+            "call on",
+            "call out"
+        ],
+        "a": 0
+    },
+    {
+        "id": 73,
+        "q": "How many words _____ this sentence?",
+        "o": [
+            "go up",
+            "fill up",
+            "make up",
+            "call up"
+        ],
+        "a": 2
+    },
+    {
+        "id": 74,
+        "q": "More Turkish students should _____ a foreign language and follow it through until they know it well.",
+        "o": [
+            "take for",
+            "take after",
+            "take on",
+            "take up"
+        ],
+        "a": 3
+    },
+    {
+        "id": 75,
+        "q": "A week-old garbage usually _____ a terrible stink.",
+        "o": [
+            "give up",
+            "gives off",
+            "give on",
+            "give in"
+        ],
+        "a": 1
+    },
+    {
+        "id": 76,
+        "q": "This skirt is too long. I must _____ it_____ .",
+        "o": [
+            "take / up",
+            "turn / off",
+            "get / over",
+            "make / for"
+        ],
+        "a": 0
+    },
+    {
+        "id": 77,
+        "q": "Her dress was too wide on the waist so she _____ it _____.",
+        "o": [
+            "took / up",
+            "turned / away",
+            "got / in",
+            "took / in"
+        ],
+        "a": 3
+    },
+    {
+        "id": 78,
+        "q": "She _____ the radio before answering the phone.",
+        "o": [
+            "took in",
+            "turned down",
+            "turned back",
+            "put through"
+        ],
+        "a": 1
+    },
+    {
+        "id": 79,
+        "q": "He couldn't find his keys so he _____ his pockets _____.",
+        "o": [
+            "turned / upside down",
+            "took / out",
+            "turned / on",
+            "turned / inside out"
+        ],
+        "a": 3
+    },
+    {
+        "id": 80,
+        "q": "Why don't you _____ your proposal at the next meeting?",
+        "o": [
+            "come to",
+            "get over",
+            "call up",
+            "bring up"
+        ],
+        "a": 3
+    },
+    {
+        "id": 81,
+        "q": "The morning was wet, but _____ fine in the afternoon.",
+        "o": [
+            "turned out",
+            "came to",
+            "went into",
+            "came back"
+        ],
+        "a": 0
+    },
+    {
+        "id": 82,
+        "q": "After he got knocked down by the champion in the third round, it took him five minutes to _____.",
+        "o": [
+            "turn out",
+            "go in for",
+            "come to",
+            "get rid of"
+        ],
+        "a": 2
+    },
+    {
+        "id": 83,
+        "q": "I trusted him to pay me back but he _____ me _____.",
+        "o": [
+            "let / down",
+            "put / down",
+            "left / over",
+            "kicked / off"
+        ],
+        "a": 0
+    },
+    {
+        "id": 84,
+        "q": "We _____ at noon to have lunch.",
+        "o": [
+            "broke up",
+            "broke off",
+            "came about",
+            "went over"
+        ],
+        "a": 0
+    },
+    {
+        "id": 85,
+        "q": "I couldn't _____ all of it _____.",
+        "o": [
+            "bring / round",
+            "get / on",
+            "take / in",
+            "go / over"
+        ],
+        "a": 2
+    },
+    {
+        "id": 86,
+        "q": "Can you try to _____ what time the play starts on Saturdays?",
+        "o": [
+            "pick out",
+            "pull up",
+            "find out",
+            "hold up"
+        ],
+        "a": 2
+    },
+    {
+        "id": 87,
+        "q": "You might _____ your ideas much better if you planned what you wanted to say.",
+        "o": [
+            "get on",
+            "look up",
+            "carry out",
+            "put across"
+        ],
+        "a": 3
+    },
+    {
+        "id": 88,
+        "q": "When she heard the death of her husband, she _____ and cried.",
+        "o": [
+            "broke down",
+            "broke off",
+            "broke up",
+            "broke out"
+        ],
+        "a": 0
+    },
+    {
+        "id": 89,
+        "q": "I must _____. I'll call you again at the same time tomorrow.",
+        "o": [
+            "break off",
+            "ring off",
+            "answer back",
+            "hang about"
+        ],
+        "a": 1
+    },
+    {
+        "id": 90,
+        "q": "Let's _____ to work now.",
+        "o": [
+            "get on",
+            "get down",
+            "get off",
+            "get up"
+        ],
+        "a": 0
+    },
+    {
+        "id": 91,
+        "q": "The whole area was _____ by the storms and floods.",
+        "o": [
+            "cut off",
+            "cut down",
+            "cut through",
+            "cut into"
+        ],
+        "a": 0
+    },
+    {
+        "id": 92,
+        "q": "I wouldn't have noticed the mistake if you hadn't _____ it _____.",
+        "o": [
+            "looked /after",
+            "put / off",
+            "pointed / out",
+            "checked / out"
+        ],
+        "a": 2
+    },
+    {
+        "id": 93,
+        "q": "I can't _____ what the sign says. It is too far away.",
+        "o": [
+            "pass out",
+            "cut out",
+            "make out",
+            "stand out"
+        ],
+        "a": 2
+    },
+    {
+        "id": 94,
+        "q": "I want you to _____ the talking right now; I'm trying to read.",
+        "o": [
+            "run out",
+            "carry out",
+            "break out",
+            "cut out"
+        ],
+        "a": 3
+    },
+    {
+        "id": 95,
+        "q": "When the two of you have _____ your problems, we'll start again. I can't work with people who are arguing.",
+        "o": [
+            "drop out",
+            "iron out",
+            "dry up",
+            "eat away"
+        ],
+        "a": 1
+    },
+    {
+        "id": 96,
+        "q": "Five minutes after take off, the aircraft _____ at 30.000 feet.",
+        "o": [
+            "leveled out",
+            "lifted of",
+            "lined up",
+            "made up"
+        ],
+        "a": 0
+    },
+    {
+        "id": 97,
+        "q": "Is he telling the truth, or _____ it all _____ ?",
+        "o": [
+            "picking / up",
+            "putting / up",
+            "making / up",
+            "taking/up"
+        ],
+        "a": 2
+    },
+    {
+        "id": 98,
+        "q": "Two prisoners _____ of Midford Prison last night. They are armed and dangerous.",
+        "o": [
+            "ran out",
+            "passed out",
+            "broke out",
+            "made out"
+        ],
+        "a": 2
+    },
+    {
+        "id": 99,
+        "q": "She _____ when she heard the bad news. It must have been a terrible shock to her.",
+        "o": [
+            "passed out",
+            "worn out",
+            "called off",
+            "bottled up"
+        ],
+        "a": 0
+    },
+    {
+        "id": 100,
+        "q": "The article _____ the problem, but it did not discuss it in detail.",
+        "o": [
+            "brought on",
+            "passed on",
+            "called on",
+            "touched on"
+        ],
+        "a": 3
+    },
+    {
+        "id": 101,
+        "q": "His cold was _____ by the unexpected change in temperature.",
+        "o": [
+            "broken up",
+            "brought on",
+            "broken away",
+            "broken down"
+        ],
+        "a": 1
+    },
+    {
+        "id": 102,
+        "q": "The offer was so good that I couldn't _____ it _____.",
+        "o": [
+            "turn / down",
+            "clear / up",
+            "make / out",
+            "hand / out"
+        ],
+        "a": 0
+    },
+    {
+        "id": 103,
+        "q": "A bus crashed on the main highway this morning and _____ traffic for hours.",
+        "o": [
+            "held up",
+            "cleared up",
+            "made up",
+            "blew up"
+        ],
+        "a": 0
+    },
+    {
+        "id": 104,
+        "q": "It would be a good idea to discuss the plan. Why don't you _____ a meeting.",
+        "o": [
+            "take up",
+            "set up",
+            "make out",
+            "pick out"
+        ],
+        "a": 1
+    },
+    {
+        "id": 105,
+        "q": "You should _____ an insurance policy.",
+        "o": [
+            "take up",
+            "give up",
+            "break off",
+            "take out"
+        ],
+        "a": 3
+    },
+    {
+        "id": 106,
+        "q": "The troops easily _____ the rebellion.",
+        "o": [
+            "went in for",
+            "took over",
+            "put down",
+            "showed up"
+        ],
+        "a": 2
+    },
+    {
+        "id": 107,
+        "q": "The plane is almost taking _____ . We had better be quick.",
+        "o": [
+            "off",
+            "in",
+            "on",
+            "up"
+        ],
+        "a": 0
+    },
+    {
+        "id": 108,
+        "q": "How are you _____ with your new job? Do you like it?",
+        "o": [
+            "looking for",
+            "getting along",
+            "waiting on",
+            "taking over"
+        ],
+        "a": 1
+    },
+    {
+        "id": 109,
+        "q": "The game was _____ on account of darkness.",
+        "o": [
+            "got over",
+            "taken off",
+            "put out",
+            "called off"
+        ],
+        "a": 3
+    },
+    {
+        "id": 110,
+        "q": "I want to _____ these exercises before I give them to the teacher.",
+        "o": [
+            "keep on",
+            "count on",
+            "look over",
+            "point out"
+        ],
+        "a": 2
+    },
+    {
+        "id": 111,
+        "q": "The travel agent managed to _____ the problems about my ticket.",
+        "o": [
+            "stick to",
+            "go with",
+            "make out",
+            "sort out"
+        ],
+        "a": 3
+    },
+    {
+        "id": 112,
+        "q": "Peggy wants to _____ ceramics when she retires.",
+        "o": [
+            "look after",
+            "take up",
+            "wear out",
+            "do over"
+        ],
+        "a": 1
+    },
+    {
+        "id": 113,
+        "q": "The gun _____ while he was cleaning it; it really frightened him.",
+        "o": [
+            "went off",
+            "cut off",
+            "ran over",
+            "put up"
+        ],
+        "a": 0
+    },
+    {
+        "id": 114,
+        "q": "Susan works so hard that no one in the office can _____ her.",
+        "o": [
+            "put up with",
+            "go without",
+            "get along with",
+            "keep up with"
+        ],
+        "a": 3
+    },
+    {
+        "id": 115,
+        "q": "They _____ the old building and built a new one.",
+        "o": [
+            "tried out",
+            "put off",
+            "cut off",
+            "tore down"
+        ],
+        "a": 3
+    },
+    {
+        "id": 116,
+        "q": "So many people came that there were not enough sandwiches to _____.",
+        "o": [
+            "go around",
+            "pass for",
+            "show off",
+            "put on"
+        ],
+        "a": 0
+    },
+    {
+        "id": 117,
+        "q": "We seem to have _____ your size. Can you come back next week?",
+        "o": [
+            "sold out of",
+            "keep up with",
+            "sent out for",
+            "given away"
+        ],
+        "a": 0
+    },
+    {
+        "id": 118,
+        "q": "We had to cancel the party last week.",
+        "o": [
+            "break off",
+            "let off",
+            "put off",
+            "call off"
+        ],
+        "a": 3
+    },
+    {
+        "id": 119,
+        "q": "Let's postpone the meeting till Friday.",
+        "o": [
+            "put off",
+            "call off",
+            "hold off",
+            "carry out"
+        ],
+        "a": 0
+    },
+    {
+        "id": 120,
+        "q": "I've had flu for a week now: I just can't get rid of it.",
+        "o": [
+            "shake it off",
+            "shake it out",
+            "shake it down",
+            "shake it up"
+        ],
+        "a": 0
+    },
+    {
+        "id": 121,
+        "q": "His father often criticizes him.",
+        "o": [
+            "takes him off",
+            "runs him down",
+            "puts him off",
+            "lets him down"
+        ],
+        "a": 1
+    },
+    {
+        "id": 122,
+        "q": "My father was raised in a small village.",
+        "o": [
+            "called up",
+            "brought up",
+            "taken off",
+            "come out"
+        ],
+        "a": 1
+    },
+    {
+        "id": 123,
+        "q": "You are never too late to start a new sport.",
+        "o": [
+            "set up",
+            "take in",
+            "call up",
+            "take up"
+        ],
+        "a": 3
+    },
+    {
+        "id": 124,
+        "q": "The meeting ended in disorder.",
+        "o": [
+            "broke out",
+            "broke down",
+            "broke up",
+            "broke off"
+        ],
+        "a": 3
+    },
+    {
+        "id": 125,
+        "q": "His project has failed to be completed .",
+        "o": [
+            "fallen through",
+            "fallen behind",
+            "fallen back",
+            "fallen off"
+        ],
+        "a": 0
+    },
+    {
+        "id": 126,
+        "q": "She pretended that she couldn't swim.",
+        "o": [
+            "turned out",
+            "made out",
+            "turned up",
+            "made up"
+        ],
+        "a": 1
+    },
+    {
+        "id": 127,
+        "q": "My father has stopped smoking.",
+        "o": [
+            "taken out",
+            "turned down",
+            "given up",
+            "given back"
+        ],
+        "a": 2
+    },
+    {
+        "id": 128,
+        "q": "When you make a promise you must fulfill it.",
+        "o": [
+            "carry it out",
+            "carry it on",
+            "carry it off",
+            "carry it over"
+        ],
+        "a": 0
+    },
+    {
+        "id": 129,
+        "q": "When she got thinner she had to make her dress smaller.",
+        "o": [
+            "make for",
+            "put off",
+            "make over",
+            "take in"
+        ],
+        "a": 3
+    },
+    {
+        "id": 130,
+        "q": "He called me a liar and I told him if he didn't apologize I'd punch him on the nose.",
+        "o": [
+            "make it out",
+            "make it over",
+            "put it back",
+            "take it back"
+        ],
+        "a": 3
+    },
+    {
+        "id": 131,
+        "q": "I am getting fat; I ought to start tennis.",
+        "o": [
+            "take up",
+            "make up",
+            "put up",
+            "set out"
+        ],
+        "a": 0
+    },
+    {
+        "id": 132,
+        "q": "He was so astonished that for a moment he was lost for words.",
+        "o": [
+            "worn out",
+            "taken aback",
+            "brought up",
+            "break down"
+        ],
+        "a": 1
+    },
+    {
+        "id": 133,
+        "q": "I have so much work to do that I can't accept any more.",
+        "o": [
+            "take in",
+            "take after",
+            "take up",
+            "take on"
+        ],
+        "a": 3
+    },
+    {
+        "id": 134,
+        "q": "I didn't feel like going to the dentist's so I delayed going there until I had a really bad toothache.",
+        "o": [
+            "put off",
+            "put by",
+            "put on",
+            "put out"
+        ],
+        "a": 0
+    },
+    {
+        "id": 135,
+        "q": "I really must buy a car so I'm going to save some money every month until I can afford one.",
+        "o": [
+            "put by",
+            "put up",
+            "put off",
+            "put on"
+        ],
+        "a": 0
+    },
+    {
+        "id": 136,
+        "q": "His father died of lung cancer and the doctor attributed it to the fact that he was a heavy smoker.",
+        "o": [
+            "took it off",
+            "carried it back",
+            "thought it over",
+            "put it down"
+        ],
+        "a": 3
+    },
+    {
+        "id": 137,
+        "q": "He just seems to spend money like water these days.",
+        "o": [
+            "fall through",
+            "go through",
+            "put off",
+            "give out"
+        ],
+        "a": 1
+    },
+    {
+        "id": 138,
+        "q": "I had a wonderful idea to save money but it didn't succeed.",
+        "o": [
+            "catch up",
+            "bring out",
+            "come off",
+            "come up"
+        ],
+        "a": 2
+    },
+    {
+        "id": 139,
+        "q": "Please visit me when you come to Ankara.",
+        "o": [
+            "call me up",
+            "stand for me",
+            "look me up",
+            "look for me"
+        ],
+        "a": 0
+    },
+    {
+        "id": 140,
+        "q": "That looks a nice flat. Shall we inspect it if it is for sale?",
+        "o": [
+            "look on",
+            "look over",
+            "look to",
+            "look through"
+        ],
+        "a": 3
+    },
+    {
+        "id": 141,
+        "q": "Being the second child of three, he tends to admire his elder brother and despise his younger sister.",
+        "o": [
+            "look over / look up",
+            "make up to / make over",
+            "make for / make up to",
+            "look up to / look down on"
+        ],
+        "a": 3
+    },
+    {
+        "id": 142,
+        "q": "As we had a long way to go, we left at five in the morning.",
+        "o": [
+            "set off",
+            "put up",
+            "stood for",
+            "set about"
+        ],
+        "a": 0
+    },
+    {
+        "id": 143,
+        "q": "The Prime Minister established a committee to discuss ways of improving the Turkish economy.",
+        "o": [
+            "set up",
+            "put out",
+            "kept up",
+            "found out"
+        ],
+        "a": 0
+    },
+    {
+        "id": 144,
+        "q": "The factory has reduced its workforce by 50%.",
+        "o": [
+            "cut back",
+            "cut off",
+            "set off",
+            "taken in"
+        ],
+        "a": 0
+    },
+    {
+        "id": 145,
+        "q": "The editor had to omit several articles because of lack of space.",
+        "o": [
+            "cut down",
+            "cut out",
+            "cut off",
+            "cut away"
+        ],
+        "a": 1
+    },
+    {
+        "id": 146,
+        "q": "He gave a lift to three students outside London and dropped them off in Watford.",
+        "o": [
+            "called up",
+            "brought up",
+            "took up",
+            "picked up"
+        ],
+        "a": 3
+    },
+    {
+        "id": 147,
+        "q": "Our radio can receive the Voice of America very clearly.",
+        "o": [
+            "get on",
+            "take off",
+            "pick out",
+            "pick up"
+        ],
+        "a": 3
+    }
+]

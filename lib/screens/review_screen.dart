@@ -196,7 +196,8 @@ class _ReviewCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            for (var i = 0; i < 4; i++) _optionLine(i),
+            for (var i = 0; i < attempt.question.options.length; i++)
+              _optionLine(i),
           ],
         ),
       ),
@@ -229,7 +230,7 @@ class _ReviewCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '${khmerLabelOf(i)}. ',
+            '${attempt.question.labelAt(i)}. ',
             style: TextStyle(color: color, fontWeight: weight, fontSize: 12.5),
           ),
           Expanded(
@@ -249,5 +250,3 @@ class _ReviewCard extends StatelessWidget {
     );
   }
 }
-
-String khmerLabelOf(int i) => const ['ក', 'ខ', 'គ', 'ឃ'][i];

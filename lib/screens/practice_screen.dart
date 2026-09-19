@@ -124,7 +124,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
               ),
               const SizedBox(height: 8),
               Text(
-                'មានសំណួរសរុប ${kh(app.repo.totalQuestionCount)} សំណួរ ពី ១៣ ផ្នែកមេរៀនផ្លូវការ',
+                'មានសំណួរសរុប ${kh(app.repo.totalQuestionCount)} សំណួរ ពី ${kh(app.partsWithQuestions.length)} ផ្នែកមេរៀនផ្លូវការ',
                 style: const TextStyle(
                   color: Color(0xFFE6F1EB),
                   fontSize: 12,

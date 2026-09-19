@@ -302,7 +302,7 @@ class _QuestionPreviewCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  '✓ ចម្លើយត្រឹមត្រូវ៖ ${khmerLabel(question.answerIndex)}. ${question.correctOptionText}',
+                  '✓ ចម្លើយត្រឹមត្រូវ៖ ${question.labelAt(question.answerIndex)}. ${question.correctOptionText}',
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w700,
@@ -317,5 +317,3 @@ class _QuestionPreviewCard extends StatelessWidget {
     );
   }
 }
-
-String khmerLabel(int i) => const ['ក', 'ខ', 'គ', 'ឃ'][i];

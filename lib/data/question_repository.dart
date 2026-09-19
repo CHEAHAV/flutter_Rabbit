@@ -4,9 +4,11 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import '../models/exam_part.dart';
 import '../models/question.dart';
+import '../utils/khmer_numerals.dart';
 
-/// Loads the bundled Khmer QCM question bank (13 parts) from
-/// assets/data/part_XX.json and exposes it in memory for the rest of the app.
+/// Loads the bundled QCM question bank from assets/data/part_XX.json - one file
+/// per entry in [ExamPart.catalog] - and exposes it in memory for the rest of
+/// the app.
 class QuestionRepository {
   QuestionRepository._();
   static final QuestionRepository instance = QuestionRepository._();
@@ -41,12 +43,21 @@ class QuestionRepository {
       final meta = ExamPart.catalog[i];
       final fileName =
           'assets/data/part_${partId.toString().padLeft(2, '0')}.json';
+      final labels = meta['labels'] == 'latin'
+          ? latinOptionLabels
+          : khmerOptionLabels;
       List<Question> questions = const [];
       try {
         final raw = await rootBundle.loadString(fileName);
         final list = jsonDecode(raw) as List;
         questions = list
-            .map((e) => Question.fromJson(e as Map<String, dynamic>, partId))
+            .map(
+              (e) => Question.fromJson(
+                e as Map<String, dynamic>,
+                partId,
+                optionLabels: labels,
+              ),
+            )
             .toList();
       } catch (_) {
         // Missing/empty data file for this part — treat as not-yet-available.
