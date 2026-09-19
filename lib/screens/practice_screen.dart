@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/exam_config.dart';
+import '../models/exam_part.dart';
 import '../services/sound_service.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
@@ -19,25 +20,15 @@ class PracticeScreen extends StatefulWidget {
 }
 
 class _PracticeScreenState extends State<PracticeScreen> {
-  Set<int> _selected = {};
+  /// Questions per session; 0 means "every question in the subject".
   int _count = 20;
-  bool _initialized = false;
 
   @override
   Widget build(BuildContext context) {
     final app = context.watch<AppState>();
     final parts = app.parts;
     final available = parts.where((p) => p.count > 0).toList();
-
-    if (!_initialized) {
-      _selected = available.map((p) => p.id).toSet();
-      _initialized = true;
-    }
-
-    final selectedCount = _selected.length;
-    final totalQuestions = parts
-        .where((p) => _selected.contains(p.id))
-        .fold<int>(0, (sum, p) => sum + p.count);
+    final totalAvailable = available.fold<int>(0, (sum, p) => sum + p.count);
 
     return ListView(
       padding: const EdgeInsets.fromLTRB(18, 18, 18, 110),
@@ -161,11 +152,11 @@ class _PracticeScreenState extends State<PracticeScreen> {
                         backgroundColor: Colors.white.withValues(alpha: 0.14),
                         foregroundColor: Colors.white,
                       ),
-                      onPressed: selectedCount == 0
+                      onPressed: available.isEmpty
                           ? null
-                          : () => _launch(context, app, totalQuestions),
-                      icon: const Icon(Icons.play_arrow_rounded),
-                      label: const Text('ចាប់ផ្ដើម'),
+                          : () => _launchMixed(context, available),
+                      icon: const Icon(Icons.shuffle_rounded),
+                      label: const Text('ចម្រុះ'),
                     ),
                   ),
                 ],
@@ -175,23 +166,34 @@ class _PracticeScreenState extends State<PracticeScreen> {
         ),
         const SizedBox(height: 22),
         SectionHeader(
-          title: 'មុខវិជ្ជាសម្រាប់ហ្វឹកហាត់',
-          subtitle: 'ជ្រើសមុខវិជ្ជាច្រើនក្នុងពេលតែមួយ',
-          trailing: TextButton(
-            onPressed: () {
-              sfx.tap();
-              setState(() {
-                _selected = _selected.length == available.length
-                    ? {}
-                    : available.map((p) => p.id).toSet();
-              });
-            },
-            child: Text(
-              _selected.length == available.length
-                  ? 'ដកចេញទាំងអស់'
-                  : 'ជ្រើសទាំងអស់',
+          title: 'ចំនួនសំណួរក្នុងវគ្គ',
+          subtitle: 'អនុវត្តនៅពេលអ្នកចុចលើមុខវិជ្ជាណាមួយ',
+        ),
+        const SizedBox(height: 10),
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(14),
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [10, 20, 30, 50, 0].map((n) {
+                final label = n == 0 ? 'ទាំងអស់' : kh(n);
+                return ChoiceChip(
+                  label: Text(label),
+                  selected: _count == n,
+                  onSelected: (_) {
+                    sfx.select();
+                    setState(() => _count = n);
+                  },
+                );
+              }).toList(),
             ),
           ),
+        ),
+        const SizedBox(height: 22),
+        SectionHeader(
+          title: 'មុខវិជ្ជាសម្រាប់ហ្វឹកហាត់',
+          subtitle: 'ចុចលើមុខវិជ្ជាមួយ ដើម្បីចូលឆ្លើយសំណួរភ្លាម',
         ),
         const SizedBox(height: 10),
         Card(
@@ -202,17 +204,10 @@ class _PracticeScreenState extends State<PracticeScreen> {
                 for (var i = 0; i < parts.length; i++) ...[
                   SubjectTile(
                     part: parts[i],
-                    selected: _selected.contains(parts[i].id),
                     accuracy: app.progress.statFor(parts[i].id).answered > 0
                         ? app.progress.statFor(parts[i].id).accuracy
                         : null,
-                    onChanged: (v) => setState(() {
-                      if (v) {
-                        _selected.add(parts[i].id);
-                      } else {
-                        _selected.remove(parts[i].id);
-                      }
-                    }),
+                    onTap: () => _launchPart(context, parts[i]),
                   ),
                   if (i != parts.length - 1) const Divider(height: 1),
                 ],
@@ -229,7 +224,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
           ),
           alignment: Alignment.center,
           child: Text(
-            'បានជ្រើសរើស ${kh(selectedCount)} មុខវិជ្ជា • សរុប ${kh(totalQuestions)} សំណួរ',
+            'មាន ${kh(available.length)} មុខវិជ្ជាត្រៀមរួច • សរុប ${kh(totalAvailable)} សំណួរ',
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w700,
@@ -237,60 +232,44 @@ class _PracticeScreenState extends State<PracticeScreen> {
             ),
           ),
         ),
-        const SizedBox(height: 22),
-        SectionHeader(
-          title: 'ចំនួនសំណួរក្នុងវគ្គ',
-          subtitle: 'ជ្រើសបរិមាណសម្រាប់ការហ្វឹកហាត់លើកនេះ',
-        ),
-        const SizedBox(height: 10),
-        Card(
-          child: Padding(
-            padding: const EdgeInsets.all(14),
-            child: Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: [10, 20, 30, 50, 0].map((n) {
-                final label = n == 0 ? 'ទាំងអស់' : kh(n);
-                final active = _count == n;
-                return ChoiceChip(
-                  label: Text(label),
-                  selected: active,
-                  onSelected: (_) {
-                    sfx.select();
-                    setState(() => _count = n);
-                  },
-                );
-              }).toList(),
-            ),
-          ),
-        ),
-        const SizedBox(height: 22),
-        SizedBox(
-          height: 52,
-          child: ElevatedButton(
-            onPressed: selectedCount == 0
-                ? null
-                : () => _launch(context, app, totalQuestions),
-            child: Text(
-              'ចាប់ផ្ដើមហ្វឹកហាត់ • ${_count == 0 ? kh(totalQuestions) : kh(_count.clamp(0, totalQuestions))} សំណួរ',
-            ),
-          ),
-        ),
       ],
     );
   }
 
-  void _launch(BuildContext context, AppState app, int totalQuestions) {
+  /// Opens a single subject straight into the question screen — the one-tap
+  /// path this list is built around. [SubjectTile] already played the tap
+  /// sound and blocks subjects with no questions.
+  void _launchPart(BuildContext context, ExamPart part) {
+    _start(context, {part.id}, part.count, part.titleKm);
+  }
+
+  /// Every available subject mixed into one session.
+  void _launchMixed(BuildContext context, List<ExamPart> available) {
     sfx.tap();
-    final count = _count == 0 ? totalQuestions : _count;
+    _start(
+      context,
+      available.map((p) => p.id).toSet(),
+      available.fold<int>(0, (sum, p) => sum + p.count),
+      'ហ្វឹកហាត់ចម្រុះ',
+    );
+  }
+
+  void _start(
+    BuildContext context,
+    Set<int> partIds,
+    int poolSize,
+    String label,
+  ) {
+    if (poolSize == 0) return;
+    final count = _count == 0 ? poolSize : _count.clamp(1, poolSize);
     final config = ExamConfig(
       mode: ExamMode.practice,
-      partIds: _selected,
+      partIds: partIds,
       questionCount: count,
       timeLimit: null,
       shuffleQuestions: true,
       instantFeedback: true,
-      presetLabel: 'ហ្វឹកហាត់សេរី',
+      presetLabel: label,
     );
     Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => QuizSessionScreen(config: config)),

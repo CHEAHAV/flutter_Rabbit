@@ -172,7 +172,7 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
           const SizedBox(height: 22),
           SectionHeader(
             title: 'ជ្រើសមុខវិជ្ជា',
-            subtitle: 'ជ្រើសផ្នែកមេរៀនចង់បញ្ចូល',
+            subtitle: 'ចុចលើមុខវិជ្ជា ដើម្បីបញ្ចូល ឬដកចេញ',
             trailing: TextButton(
               onPressed: () {
                 sfx.tap();
@@ -198,12 +198,11 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
                   for (var i = 0; i < parts.length; i++) ...[
                     SubjectTile(
                       part: parts[i],
+                      mode: SubjectTileMode.select,
                       selected: _selected.contains(parts[i].id),
-                      onChanged: (v) => setState(() {
-                        if (v) {
+                      onTap: () => setState(() {
+                        if (!_selected.remove(parts[i].id)) {
                           _selected.add(parts[i].id);
-                        } else {
-                          _selected.remove(parts[i].id);
                         }
                       }),
                     ),
