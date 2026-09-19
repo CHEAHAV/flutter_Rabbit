@@ -122,7 +122,7 @@ class MockScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 22),
-        const SectionHeader(
+        SectionHeader(
           title: 'កំណត់ Mock Exam ផ្ទាល់ខ្លួន',
           subtitle: 'ជ្រើសមុខវិជ្ជា រយៈពេល និងចំនួនសំណួរដោយខ្លួនឯង',
         ),
@@ -165,7 +165,7 @@ class MockScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 22),
-        const SectionHeader(
+        SectionHeader(
           title: 'ប្រវត្តិប្រឡងរបស់ខ្ញុំ',
           subtitle: 'លទ្ធផលនៃវគ្គប្រឡងកន្លងមក',
         ),

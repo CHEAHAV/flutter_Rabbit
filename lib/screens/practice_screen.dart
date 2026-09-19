@@ -231,7 +231,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
           ),
         ),
         const SizedBox(height: 22),
-        const SectionHeader(
+        SectionHeader(
           title: 'ចំនួនសំណួរក្នុងវគ្គ',
           subtitle: 'ជ្រើសបរិមាណសម្រាប់ការហ្វឹកហាត់លើកនេះ',
         ),

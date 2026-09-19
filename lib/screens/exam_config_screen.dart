@@ -101,7 +101,7 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(18, 8, 18, 8),
         children: [
-          const SectionHeader(
+          SectionHeader(
             title: 'Preset ប្រើឆាប់',
             subtitle: 'ចាប់ផ្ដើមលឿនជាមួយការកំណត់ស្រាប់',
           ),
@@ -221,7 +221,7 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
             ),
           ),
           const SizedBox(height: 22),
-          const SectionHeader(
+          SectionHeader(
             title: 'រយៈពេល',
             subtitle: 'កំណត់ពេលវេលាសម្រាប់វគ្គប្រឡង',
           ),
@@ -238,7 +238,7 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
             ],
           ),
           const SizedBox(height: 22),
-          const SectionHeader(
+          SectionHeader(
             title: 'ចំនួនសំណួរ',
             subtitle: 'ទំហំក្រុមសំណួរសម្រាប់វគ្គនេះ',
           ),
@@ -256,7 +256,7 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
             }).toList(),
           ),
           const SizedBox(height: 22),
-          const SectionHeader(
+          SectionHeader(
             title: 'លក្ខខណ្ឌប្រឡង',
             subtitle: 'កំណត់ឥរិយាបថក្នុងពេលធ្វើតេស្ត',
           ),

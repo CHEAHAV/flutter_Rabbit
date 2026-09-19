@@ -89,7 +89,7 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 22),
-        const SectionHeader(
+        SectionHeader(
           title: 'រូបរាង',
           subtitle: 'ជ្រើសរបៀបបង្ហាញដែលអ្នកចូលចិត្ត',
         ),
@@ -179,7 +179,7 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 22),
-        const SectionHeader(
+        SectionHeader(
           title: 'សន្ទស្សន៍ត្រៀមប្រឡង',
           subtitle: 'គណនាពីភាពត្រឹមត្រូវ និងភាពគ្របដណ្តប់មេរៀន',
         ),
@@ -220,7 +220,7 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 22),
-        const SectionHeader(
+        SectionHeader(
           title: 'សមត្ថភាពតាមមុខវិជ្ជា',
           subtitle: 'ស្គាល់ចំណុចខ្លាំង និងចំណុចត្រូវពង្រឹង',
         ),
@@ -242,7 +242,7 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 22),
-        const SectionHeader(
+        SectionHeader(
           title: 'អំពីទិន្នន័យ',
           subtitle: 'ប្រភពសំណួរ និងកំណែកម្មវិធី',
         ),

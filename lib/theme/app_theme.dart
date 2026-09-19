@@ -62,7 +62,7 @@ class _Palette {
   final Color emeraldLight;
   final Color mint;
   final Color mintSoft;
-  final Color gold;
+  final Color gold; 
   final Color amber;
   final Color amberBg;
   final Color amberBorder;

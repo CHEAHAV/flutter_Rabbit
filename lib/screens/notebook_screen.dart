@@ -38,7 +38,7 @@ class _NotebookScreenState extends State<NotebookScreen> {
     return ListView(
       padding: const EdgeInsets.fromLTRB(18, 18, 18, 110),
       children: [
-        const SectionHeader(
+        SectionHeader(
           title: 'សៀវភៅកត់ត្រា',
           subtitle: 'តាមដានកំហុស និងសំណួរដែលបានរក្សាទុក',
         ),
