@@ -16,7 +16,7 @@ class RabbitApp extends StatelessWidget {
         builder: (context, app, _) {
           AppColors.setBlend(app.isDarkMode ? 1.0 : 0.0);
           return MaterialApp(
-            title: 'Rabbit — QCM Master',
+            title: 'Rabbit',
             debugShowCheckedModeBanner: false,
             theme: app.isDarkMode ? AppTheme.dark() : AppTheme.light(),
             themeAnimationDuration: const Duration(milliseconds: 280),
