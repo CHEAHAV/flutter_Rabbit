@@ -47,3 +47,37 @@ kotlin {
 flutter {
     source = "../.."
 }
+
+// Publish each built APK under the app's own name, so what gets handed round is
+// Rabbit.apk rather than app-release.apk.
+//
+// This is a copy, not a rename, on purpose: the Flutter Gradle plugin hard-codes
+// the name `app-<abi>?-<flavor>?-<mode>.apk` when it copies the APK into
+// build/app/outputs/flutter-apk, and `flutter build apk` exits with "Gradle
+// build failed to produce an .apk file" if that exact name is not there
+// afterwards. So the plugin's file is left alone and ours is written beside it.
+//
+// Only the release build takes the bare name; debug and profile keep a suffix so
+// they cannot quietly overwrite the APK meant for distribution. A split-per-abi
+// build keeps its abi in the middle (Rabbit-arm64-v8a.apk).
+val appApkName = "Rabbit"
+
+project.afterEvaluate {
+    android.applicationVariants.forEach { variant ->
+        val mode = variant.buildType.name
+        val assembleTaskName = "assemble" + variant.name.replaceFirstChar { it.uppercase() }
+        tasks.findByName(assembleTaskName)?.doLast {
+            val apkDir = layout.buildDirectory.dir("outputs/flutter-apk").get().asFile
+            val built = apkDir.listFiles { file ->
+                file.name.startsWith("app") && file.name.endsWith("-$mode.apk")
+            } ?: return@doLast
+            built.forEach { apk ->
+                val middle = apk.name.removePrefix("app").removeSuffix("-$mode.apk")
+                val suffix = if (mode == "release") "" else "-$mode"
+                val target = apkDir.resolve("$appApkName$middle$suffix.apk")
+                apk.copyTo(target, overwrite = true)
+                logger.lifecycle("Built ${target.path}")
+            }
+        }
+    }
+}

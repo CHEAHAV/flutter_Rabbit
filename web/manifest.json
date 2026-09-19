@@ -1,6 +1,6 @@
 {
-    "name": "rabbit",
-    "short_name": "rabbit",
+    "name": "Rabbit",
+    "short_name": "Rabbit",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0D5C3A",
