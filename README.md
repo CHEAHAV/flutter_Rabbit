@@ -28,7 +28,7 @@ tracking. No account or internet connection required after install.
 - **100% local persistence** via `shared_preferences` — streaks, history, mistakes,
   bookmarks, per-subject stats all survive app restarts, no server needed.
 - **Khmer-first everywhere**: all numerals rendered as Khmer glyphs (០-៩), the
-  bundled "Kh Writhand" font is used app-wide, canonical ក/ខ/គ/ឃ option labels are
+  bundled "Hanuman" font is used app-wide, canonical ក/ខ/គ/ឃ option labels are
   always rendered by the app itself (never copied from source formatting).
 
 ## 📊 Content status — please read before relying on this for real exam prep
@@ -113,7 +113,7 @@ lib/
                              # readiness gauge, section header
 assets/
   data/part_01.json … part_13.json   # question bank, one file per subject
-  fonts/Kh Writhand Regular.ttf
+  fonts/Hanuman-VariableFont_wght.ttf
 ```
 
 Everything is plain `StatefulWidget`/`ChangeNotifier` + `provider` — no code

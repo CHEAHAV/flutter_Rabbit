@@ -38,16 +38,47 @@ void main() {
     AppColors.setBlend(0);
   });
 
-  test('dark mode text colors are crystal clear and high contrast', () {
+  test('text is pure black on light and pure white on dark', () {
     AppTheme.dark();
     expect(AppColors.ink, const Color(0xFFFFFFFF));
-    expect(AppColors.slate, const Color(0xFFB4C8BD));
-    expect(contrast(AppColors.ink, AppColors.card), greaterThan(12.0));
-    expect(contrast(AppColors.slate, AppColors.card), greaterThan(8.0));
+    expect(AppColors.bg, const Color(0xFF000000));
+    expect(contrast(AppColors.ink, AppColors.card), greaterThan(15.0));
     AppTheme.light();
-    expect(AppColors.ink, const Color(0xFF111D16));
-    expect(AppColors.slate, const Color(0xFF384E42));
-    expect(contrast(AppColors.ink, AppColors.card), greaterThan(12.0));
-    expect(contrast(AppColors.slate, AppColors.card), greaterThan(8.0));
+    expect(AppColors.ink, const Color(0xFF000000));
+    expect(AppColors.card, const Color(0xFFFFFFFF));
+    expect(contrast(AppColors.ink, AppColors.card), greaterThan(15.0));
+  });
+
+  test('every text color meets WCAG AA on every surface it sits on', () {
+    for (final dark in [false, true]) {
+      dark ? AppTheme.dark() : AppTheme.light();
+      final surfaces = {
+        'card': AppColors.card,
+        'bg': AppColors.bg,
+        'mint': AppColors.mint,
+        'mintSoft': AppColors.mintSoft,
+      };
+      surfaces.forEach((name, surface) {
+        for (final text in {
+          'ink': AppColors.ink,
+          'slate': AppColors.slate,
+          'muted': AppColors.muted,
+          'emerald': AppColors.emerald,
+          'red': AppColors.red,
+          'amber': AppColors.amber,
+        }.entries) {
+          expect(
+            contrast(text.value, surface),
+            greaterThanOrEqualTo(4.5),
+            reason: '${text.key} on $name (dark=$dark)',
+          );
+        }
+      });
+      expect(contrast(AppColors.red, AppColors.redBg), greaterThan(4.5));
+      expect(contrast(AppColors.onRed, AppColors.red), greaterThan(4.5));
+      expect(contrast(AppColors.onEmerald, AppColors.emerald), greaterThan(4.5));
+      expect(contrast(AppColors.ink, AppColors.amberBg), greaterThan(7));
+    }
+    AppTheme.light();
   });
 }

@@ -1,0 +1,27 @@
+# Native/platform build output — never needed for the web deploy, and the
+# Android debug artifacts (engine .so files, APKs) blow past Vercel's 100MB
+# per-file upload limit.
+build/app/
+build/android/
+build/ios/
+build/macos/
+build/linux/
+build/windows/
+build/test_cache/
+build/*.dill.track.dill
+build/9738e365cc08389f5c920699e2341943/
+
+# Platform source trees not needed to serve the compiled web build
+android/
+ios/
+macos/
+linux/
+windows/
+
+# Flutter/Dart tooling caches
+.dart_tool/
+.pub-cache/
+.pub/
+
+# Source PDF (large, not needed at runtime — the app reads assets/data/*.json)
+QCM.pdf

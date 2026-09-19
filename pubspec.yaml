@@ -96,9 +96,9 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
   fonts:
-    - family: Kh Writhand
+    - family: Hanuman
       fonts:
-        - asset: assets/fonts/Kh Writhand Regular.ttf
+        - asset: assets/fonts/Hanuman-VariableFont_wght.ttf
 
 flutter_launcher_icons:
   android: true

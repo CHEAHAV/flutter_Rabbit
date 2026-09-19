@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// Rabbit — Sovereign Scholar visual language.
 /// A calm, confident emerald + gold palette built for long study sessions
-/// and Khmer-first typography (font: "Kh Writhand").
+/// and Khmer-first typography (font: "Hanuman").
 ///
 /// Every color below is a *getter*, not a constant: it resolves against
 /// whichever point [AppColors.setBlend] last landed on between the light
@@ -53,7 +53,7 @@ class AppColors {
   static Color get bg => _current.bg;
   static Color get card => _current.card;
   static Color get onEmerald => isDark ? _current.emeraldDeep : Colors.white;
-  static Color get onRed => Colors.white;
+  static Color get onRed => isDark ? Colors.black : Colors.white;
 }
 
 class _Palette {
@@ -128,17 +128,17 @@ const _light = _Palette(
   mint: Color(0xFFE8F5EE),
   mintSoft: Color(0xFFF3F9F5),
   gold: Color(0xFFC69224),
-  amber: Color(0xFFD97706),
+  amber: Color(0xFFA34A08),
   amberBg: Color(0xFFFEF3C7),
   amberBorder: Color(0xFFFDE68A),
-  red: Color(0xFFDC2626),
+  red: Color(0xFFB91C1C),
   redBg: Color(0xFFFEE2E2),
   redBorder: Color(0xFFFECACA),
-  ink: Color(0xFF111D16),
-  slate: Color(0xFF384E42),
-  muted: Color(0xFF52685B),
-  line: Color(0xFFD8E4DC),
-  bg: Color(0xFFF4F7F5),
+  ink: Color(0xFF000000),
+  slate: Color(0xFF262626),
+  muted: Color(0xFF555555),
+  line: Color(0xFFD4D4D4),
+  bg: Color(0xFFF5F5F5),
   card: Color(0xFFFFFFFF),
 );
 
@@ -156,17 +156,17 @@ const _dark = _Palette(
   redBg: Color(0xFF261212),
   redBorder: Color(0xFF532424),
   ink: Color(0xFFFFFFFF),
-  slate: Color(0xFFB4C8BD),
-  muted: Color(0xFF7E9A8B),
-  line: Color(0xFF283830),
-  bg: Color(0xFF0F1613),
-  card: Color(0xFF18221D),
+  slate: Color.fromARGB(255, 255, 255, 255),
+  muted: Color(0xFFB8B8B8),
+  line: Color(0xFF333333),
+  bg: Color(0xFF000000),
+  card: Color(0xFF141414),
 );
 
 class AppTheme {
   AppTheme._();
 
-  static const String fontFamily = 'Kh Writhand';
+  static const String fontFamily = 'Hanuman';
 
   /// Settles [AppColors] fully on the light palette (no crossfade) and
   /// builds its theme. Deterministic — safe for tests and one-off builds.
