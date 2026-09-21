@@ -45,15 +45,18 @@ class AppState extends ChangeNotifier {
   List<ExamPart> partsIn(PartTrack track) =>
       repo.parts.where((p) => p.track == track).toList();
 
-  /// The courses that actually have questions bundled, in catalog order. The
-  /// subject browser is built from this rather than from [PartTrack.values],
-  /// so a course whose data files are missing simply does not appear.
+  /// The courses that actually have questions bundled, in the order
+  /// [PartTrack] declares them - Khmer syllabuses first, then the English
+  /// ones. Course order cannot be taken from the catalog: that has to follow
+  /// the part numbering, which is the order the data files were *added*, so
+  /// the teacher course would trail the English ones purely because its file
+  /// is part 27. A course whose data files are missing simply does not appear.
   List<PartTrack> get tracks {
-    final seen = <PartTrack>[];
-    for (final p in repo.parts) {
-      if (p.count > 0 && !seen.contains(p.track)) seen.add(p.track);
-    }
-    return seen;
+    final stocked = repo.parts
+        .where((p) => p.count > 0)
+        .map((p) => p.track)
+        .toSet();
+    return PartTrack.values.where(stocked.contains).toList();
   }
 
   Future<void> bootstrap() async {

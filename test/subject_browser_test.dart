@@ -48,21 +48,22 @@ void main() {
   /// Drags the page to the bottom, capturing what the browser showed on the
   /// way. Rows scrolled past are disposed, so a single look at the end would
   /// miss most of them.
-  Future<({Set<String> subjects, Set<PartTrack> tracks})> browse(
-    WidgetTester tester,
-  ) async {
+  Future<({Set<String> subjects, Set<PartTrack> tracks, List<PartTrack> order})>
+  browse(WidgetTester tester) async {
     final subjects = <String>{};
-    final tracks = <PartTrack>{};
+    final order = <PartTrack>[];
     void capture() {
       for (final tile in tester.widgetList<SubjectTile>(
         find.byType(SubjectTile),
       )) {
         subjects.add(tile.part.titleKm);
       }
+      // Dragging downwards, so headings are met in the order they are laid
+      // out: keeping them in a list is what lets a test check that order.
       for (final header in tester.widgetList<TrackHeader>(
         find.byType(TrackHeader),
       )) {
-        tracks.add(header.track);
+        if (!order.contains(header.track)) order.add(header.track);
       }
     }
 
@@ -72,7 +73,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 40));
       capture();
     }
-    return (subjects: subjects, tracks: tracks);
+    return (subjects: subjects, tracks: order.toSet(), order: order);
   }
 
   /// Brings a chip into view before tapping it - the course switcher sits
@@ -105,6 +106,26 @@ void main() {
     expect(
       seen.subjects,
       containsAll(app.partsWithQuestions.map((p) => p.titleKm)),
+    );
+  });
+
+  testWidgets('the Khmer courses are listed before the English ones', (
+    tester,
+  ) async {
+    final app = await boot(tester);
+    await pump(tester, app, const Scaffold(body: PracticeScreen()));
+    final seen = await browse(tester);
+
+    expect(
+      seen.order,
+      app.tracks,
+      reason: 'the browser shows courses in the order PartTrack declares them',
+    );
+    expect(
+      seen.order.indexOf(PartTrack.teaching),
+      lessThan(seen.order.indexOf(PartTrack.grammar)),
+      reason: 'the teacher syllabus is a Khmer exam: it belongs above English, '
+          'not below it because its data file happens to be part 27',
     );
   });
 

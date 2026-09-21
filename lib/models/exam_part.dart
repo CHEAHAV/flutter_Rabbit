@@ -1,9 +1,13 @@
 import 'question.dart';
 
 /// The course a subject belongs to. Tracks are the top level of the subject
-/// browser: the bank holds a Khmer civil-service syllabus and three English
-/// courses, and showing all of them as one flat list of subjects made the two
-/// look like one syllabus.
+/// browser: the bank holds two Khmer syllabuses and three English courses, and
+/// showing all of them as one flat list of subjects made them look like one
+/// syllabus.
+///
+/// **The order they are declared in is the order they are shown in**, from the
+/// Khmer exams to the English ones - see [AppState.tracks]. It cannot be taken
+/// from [ExamPart.catalog], because that has to follow the part numbering.
 enum PartTrack {
   civilService('ចំណេះដឹងទូទៅ', 'General Knowledge', '🇰🇭'),
   teaching('វិជ្ជាជីវៈគ្រូបង្រៀន', 'Teacher Recruitment', '🎓'),
@@ -119,11 +123,14 @@ class ExamPart {
     questions: questions ?? this.questions,
   );
 
-  /// The catalog, in the order the subject browser shows it: the Khmer
-  /// syllabus first, then each English course from its easiest rung upwards.
+  /// The catalog, in part-number order: part N here is
+  /// `assets/data/part_NN.json`, so this list must stay in the same order as
+  /// the `PARTS` table in `tools/extract_grammar_pdf.py`, and a new subject
+  /// can only ever be appended.
   ///
-  /// Part N here is `assets/data/part_NN.json`, so this list must stay in the
-  /// same order as the `PARTS` table in `tools/extract_grammar_pdf.py`.
+  /// This is *not* the order the browser shows: courses are ordered by
+  /// [PartTrack], and only the subjects within one course are shown in the
+  /// order they appear here (for the English courses, easiest rung upwards).
   static const List<PartMeta> catalog = [
     PartMeta(
       titleKm: 'អំពីប្រវត្តិសាស្ត្រ',
