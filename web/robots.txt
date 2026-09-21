@@ -1,4 +1,4 @@
-# Rabbit QCM — https://rabbit-khmer-qcm.vercel.app/
+# Rabbit QCM — https://rabbit-umber-ten.vercel.app/
 # Everything is a single-page app served from /, so everything is crawlable.
 
 User-agent: *
@@ -10,4 +10,4 @@ Disallow: /assets/fonts/
 Disallow: /version.json
 Disallow: /flutter_service_worker.js
 
-Sitemap: https://rabbit-khmer-qcm.vercel.app/sitemap.xml
+Sitemap: https://rabbit-umber-ten.vercel.app/sitemap.xml

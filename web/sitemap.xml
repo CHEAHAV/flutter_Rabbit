@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rabbit-khmer-qcm.vercel.app/</loc>
-    <xhtml:link rel="alternate" hreflang="km" href="https://rabbit-khmer-qcm.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rabbit-khmer-qcm.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rabbit-khmer-qcm.vercel.app/"/>
+    <loc>https://rabbit-umber-ten.vercel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://rabbit-umber-ten.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabbit-umber-ten.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rabbit-umber-ten.vercel.app/"/>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
