@@ -1,46 +1,349 @@
 <!DOCTYPE html>
-<html>
+<html lang="km">
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+
+  <!-- ==========================================================
+       SEO. The canonical site URL appears here, in robots.txt and
+       in sitemap.xml — change all three if the domain ever moves.
+       ========================================================== -->
+  <title>Rabbit QCM — ត្រៀមប្រឡងមន្ត្រីរាជការ គ្រូបង្រៀន និងភាសាអង់គ្លេស</title>
+  <meta name="description" content="កម្មវិធីត្រៀមប្រឡងជាភាសាខ្មែរ៖ សំណួរជម្រើសច្រើនជាង ១១,៨០០ ក្នុងមុខវិជ្ជា ២៧ សម្រាប់ប្រឡងមន្ត្រីរាជការ ចំណេះដឹងទូទៅ ក្រមសីលធម៌គ្រូបង្រៀន វេយ្យាករណ៍ និងវាក្យសព្ទអង់គ្លេស។ លំហាត់ ប្រឡងសាកល្បងកំណត់ម៉ោង សៀវភៅកំហុស — ឥតគិតថ្លៃ ប្រើបានក្រៅបណ្តាញ។">
+  <meta name="keywords" content="ប្រឡងមន្ត្រីរាជការ, ត្រៀមប្រឡង, សំណួរចម្លើយ, ចំណេះដឹងទូទៅ, QCM ខ្មែរ, ប្រឡងគ្រូបង្រៀន, ក្រមសីលធម៌គ្រូ, វេយ្យាករណ៍អង់គ្លេស, វាក្យសព្ទអង់គ្លេស, តេស្តអង់គ្លេស, Khmer civil service exam, Cambodia civil service exam practice, Khmer QCM app, English grammar quiz Khmer, Cambodia teacher exam, mock exam Khmer">
+  <meta name="author" content="លោក អុិតជាហាវ (Cheahav)">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="rating" content="general">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="canonical" href="https://rabbit-khmer-qcm.vercel.app/">
+  <link rel="alternate" hreflang="km" href="https://rabbit-khmer-qcm.vercel.app/">
+  <link rel="alternate" hreflang="en" href="https://rabbit-khmer-qcm.vercel.app/">
+  <link rel="alternate" hreflang="x-default" href="https://rabbit-khmer-qcm.vercel.app/">
+
+  <!-- Open Graph — Facebook, Messenger, Telegram, LinkedIn previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rabbit QCM">
+  <meta property="og:title" content="Rabbit QCM — ត្រៀមប្រឡងមន្ត្រីរាជការ គ្រូបង្រៀន និងភាសាអង់គ្លេស">
+  <meta property="og:description" content="សំណួរ ១១,៨០០+ ក្នុងមុខវិជ្ជា ២៧ ជាភាសាខ្មែរ៖ លំហាត់ ប្រឡងសាកល្បងកំណត់ម៉ោង សៀវភៅកំហុស និងការតាមដានវឌ្ឍនភាព។ ឥតគិតថ្លៃ ឥតត្រូវការគណនី។">
+  <meta property="og:url" content="https://rabbit-khmer-qcm.vercel.app/">
+  <meta property="og:image" content="https://rabbit-khmer-qcm.vercel.app/og-image.png">
+  <meta property="og:image:secure_url" content="https://rabbit-khmer-qcm.vercel.app/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rabbit QCM — កម្មវិធីត្រៀមប្រឡងជាភាសាខ្មែរ សំណួរ ១១,៨០០+">
+  <meta property="og:locale" content="km_KH">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rabbit QCM — ត្រៀមប្រឡងមន្ត្រីរាជការ គ្រូបង្រៀន និងភាសាអង់គ្លេស">
+  <meta name="twitter:description" content="សំណួរ ១១,៨០០+ ក្នុងមុខវិជ្ជា ២៧ ជាភាសាខ្មែរ៖ លំហាត់ ប្រឡងសាកល្បងកំណត់ម៉ោង សៀវភៅកំហុស និងការតាមដានវឌ្ឍនភាព។">
+  <meta name="twitter:image" content="https://rabbit-khmer-qcm.vercel.app/og-image.png">
+  <meta name="twitter:image:alt" content="Rabbit QCM — កម្មវិធីត្រៀមប្រឡងជាភាសាខ្មែរ">
+
+  <!-- PWA / browser chrome -->
+  <meta name="application-name" content="Rabbit QCM">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0D5C3A">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#082618">
+  <meta name="msapplication-TileColor" content="#0D5C3A">
+  <meta name="msapplication-TileImage" content="icons/Icon-192.png">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Rabbit">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Rabbit QCM">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>Rabbit</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- ==========================================================
+       Structured data (schema.org): lets Google understand the page
+       as a free educational app and show FAQ rich results.
+       ========================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://rabbit-khmer-qcm.vercel.app/#website",
+        "url": "https://rabbit-khmer-qcm.vercel.app/",
+        "name": "Rabbit QCM",
+        "alternateName": "Rabbit — ត្រៀមប្រឡងចំណេះដឹងទូទៅ",
+        "description": "កម្មវិធីត្រៀមប្រឡងមន្ត្រីរាជការ គ្រូបង្រៀន និងភាសាអង់គ្លេស ជាភាសាខ្មែរ។",
+        "inLanguage": ["km", "en"],
+        "publisher": { "@id": "https://rabbit-khmer-qcm.vercel.app/#author" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rabbit-khmer-qcm.vercel.app/#author",
+        "name": "លោក អុិតជាហាវ",
+        "alternateName": "Cheahav"
+      },
+      {
+        "@type": ["SoftwareApplication", "LearningResource"],
+        "@id": "https://rabbit-khmer-qcm.vercel.app/#app",
+        "name": "Rabbit QCM",
+        "applicationCategory": "EducationalApplication",
+        "applicationSubCategory": "Exam Preparation",
+        "operatingSystem": "Web, Android, iOS, Windows",
+        "url": "https://rabbit-khmer-qcm.vercel.app/",
+        "image": "https://rabbit-khmer-qcm.vercel.app/og-image.png",
+        "screenshot": "https://rabbit-khmer-qcm.vercel.app/og-image.png",
+        "inLanguage": ["km", "en"],
+        "isAccessibleForFree": true,
+        "learningResourceType": ["Quiz", "Practice problem set", "Mock exam"],
+        "teaches": "ចំណេះដឹងទូទៅសម្រាប់ប្រឡងមន្ត្រីរាជការ ក្រមសីលធម៌វិជ្ជាជីវៈគ្រូបង្រៀន វេយ្យាករណ៍ និងវាក្យសព្ទភាសាអង់គ្លេស",
+        "description": "កម្មវិធីត្រៀមប្រឡងជាភាសាខ្មែរ មានសំណួរជម្រើសច្រើនជាង ១១,៨០០ ក្នុងមុខវិជ្ជា ២៧ និងវគ្គសិក្សា ៥។ ធ្វើលំហាត់តាមមុខវិជ្ជា ប្រឡងសាកល្បងកំណត់ម៉ោង រក្សាទុកកំហុស និងតាមដានវឌ្ឍនភាពក្នុងឧបករណ៍ផ្ទាល់។",
+        "author": { "@id": "https://rabbit-khmer-qcm.vercel.app/#author" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+          "សំណួរជម្រើសច្រើនជាង ១១,៨០០ ក្នុងមុខវិជ្ជា ២៧",
+          "លំហាត់តាមមុខវិជ្ជា ជាមួយចម្លើយត្រឹមត្រូវភ្លាមៗ",
+          "ប្រឡងសាកល្បងកំណត់ម៉ោង ដោយជ្រើសមុខវិជ្ជា រយៈពេល និងចំនួនសំណួរដោយខ្លួនឯង",
+          "សៀវភៅកំហុស — រក្សាទុកសំណួរដែលឆ្លើយខុសដោយស្វ័យប្រវត្តិ",
+          "តាមដានវឌ្ឍនភាព ភាគរយត្រឹមត្រូវ និងចំនួនថ្ងៃរៀនជាប់គ្នា",
+          "ដំណើរការក្រៅបណ្តាញ ឥតត្រូវការគណនី",
+          "អក្សរ និងលេខខ្មែរពេញលេញ (០-៩) ជាមួយពុម្ពអក្សរ Hanuman"
+        ],
+        "about": [
+          { "@type": "Thing", "name": "ប្រឡងមន្ត្រីរាជការកម្ពុជា" },
+          { "@type": "Thing", "name": "ក្រមសីលធម៌វិជ្ជាជីវៈគ្រូបង្រៀន" },
+          { "@type": "Thing", "name": "វេយ្យាករណ៍ភាសាអង់គ្លេស" },
+          { "@type": "Thing", "name": "វាក្យសព្ទភាសាអង់គ្លេស" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://rabbit-khmer-qcm.vercel.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "តើ Rabbit QCM ជាកម្មវិធីអ្វី?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rabbit QCM ជាកម្មវិធីត្រៀមប្រឡងជាភាសាខ្មែរ ដែលមានសំណួរជម្រើសច្រើនជាង ១១,៨០០ ក្នុងមុខវិជ្ជា ២៧ គ្របដណ្តប់ចំណេះដឹងទូទៅសម្រាប់ប្រឡងមន្ត្រីរាជការ ក្រមសីលធម៌វិជ្ជាជីវៈគ្រូបង្រៀន វេយ្យាករណ៍ និងវាក្យសព្ទភាសាអង់គ្លេស។"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "តើត្រូវបង់ថ្លៃ ឬបង្កើតគណនីដែរឬទេ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ទេ។ កម្មវិធីនេះឥតគិតថ្លៃទាំងស្រុង ឥតត្រូវការគណនី និងឥតមានការផ្សាយពាណិជ្ជកម្ម។ វឌ្ឍនភាពទាំងអស់រក្សាទុកក្នុងឧបករណ៍របស់អ្នកផ្ទាល់។"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "តើប្រើបានក្រៅបណ្តាញដែរឬទេ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "បាន។ សំណួរទាំងអស់ភ្ជាប់មកជាមួយកម្មវិធី។ បន្ទាប់ពីបើកលើកដំបូងរួច អ្នកអាចធ្វើលំហាត់ និងប្រឡងសាកល្បងដោយឥតត្រូវការអ៊ីនធឺណិត។"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "តើសំណួរមកពីណា?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "សំណួរចំណេះដឹងទូទៅផ្នែក ១-១៣ យកចេញពីសៀវភៅ QCM ត្រៀមប្រឡងមន្ត្រីរាជការ ហើយផ្ទៀងផ្ទាត់ជាមួយតារាងចម្លើយរបស់សៀវភៅនោះ ចំណែកផ្នែកភាសាអង់គ្លេស និងក្រមសីលធម៌គ្រូបង្រៀនយកចេញពីសៀវភៅឯកទេសរៀងៗខ្លួន។"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Branded pre-Flutter shell. Users see it for the few hundred
+       milliseconds before the Flutter view mounts; crawlers that do not
+       run the Dart bundle read its text. It is removed from the DOM as
+       soon as Flutter paints — see the observer at the end of <body>. */
+    @font-face {
+      font-family: 'Hanuman';
+      src: url('assets/assets/fonts/Hanuman-VariableFont_wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-display: swap;
+    }
+    :root { color-scheme: light dark; }
+    html, body { margin: 0; padding: 0; background: #0D5C3A; }
+    #seo-shell {
+      font-family: 'Hanuman', 'Khmer OS Battambang', 'Khmer OS', 'Noto Sans Khmer',
+                   system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color: #F3F9F5;
+      background: radial-gradient(1200px 600px at 50% -10%, #137A4D 0%, #0D5C3A 45%, #073822 100%);
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 48px 16px 64px; box-sizing: border-box;
+      transition: opacity .35s ease;
+      line-height: 1.9;
+    }
+    #seo-shell.is-hidden { opacity: 0; pointer-events: none; }
+    .seo-logo {
+      width: 92px; height: 92px; border-radius: 26px;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(229, 181, 88, .45);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 46px; line-height: 1;
+    }
+    #seo-shell h1 { font-size: 1.55rem; margin: 22px 0 6px; text-align: center; font-weight: 700; }
+    .seo-tagline { margin: 0 0 4px; color: #E5B558; text-align: center; font-size: 1.02rem; }
+    .seo-sub { margin: 0; color: rgba(243, 249, 245, .72); text-align: center; font-size: .92rem; }
+    .seo-spinner {
+      width: 26px; height: 26px; margin: 26px 0 30px;
+      border: 3px solid rgba(255, 255, 255, .22); border-top-color: #E5B558;
+      border-radius: 50%; animation: seo-spin .9s linear infinite;
+    }
+    @keyframes seo-spin { to { transform: rotate(360deg); } }
+    .seo-copy { max-width: 780px; width: 100%; }
+    .seo-copy section {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .10);
+      border-radius: 18px; padding: 20px 22px; margin-bottom: 14px;
+    }
+    .seo-copy h2 { font-size: 1.05rem; margin: 0 0 10px; color: #E5B558; }
+    .seo-copy h3 { font-size: .95rem; margin: 14px 0 4px; color: #F3F9F5; }
+    .seo-copy p { margin: 0 0 10px; font-size: .92rem; color: rgba(243, 249, 245, .86); }
+    .seo-copy ul { margin: 0; padding-inline-start: 20px; font-size: .9rem; color: rgba(243, 249, 245, .86); }
+    .seo-copy li { margin-bottom: 4px; }
+    .seo-foot { font-size: .82rem; color: rgba(243, 249, 245, .55); text-align: center; margin-top: 18px; }
+    @media (max-width: 480px) {
+      #seo-shell { padding: 34px 12px 48px; }
+      #seo-shell h1 { font-size: 1.3rem; }
+    }
+  </style>
 </head>
 <body>
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
+  <!-- Crawlable, human-readable shell. Removed once Flutter mounts. -->
+  <div id="seo-shell">
+    <div class="seo-logo" aria-hidden="true">🐇</div>
+    <h1>Rabbit QCM — ត្រៀមប្រឡងមន្ត្រីរាជការ គ្រូបង្រៀន និងភាសាអង់គ្លេស</h1>
+    <p class="seo-tagline">ត្រៀមប្រឡងចំណេះដឹងទូទៅឲ្យលឿន និងច្បាស់</p>
+    <p class="seo-sub">សំណួរ ១១,៨០០+ · មុខវិជ្ជា ២៧ · វគ្គសិក្សា ៥ · ឥតគិតថ្លៃ · ប្រើបានក្រៅបណ្តាញ</p>
+    <div class="seo-spinner" role="status" aria-label="កំពុងផ្ទុកកម្មវិធី"></div>
 
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
+    <div class="seo-copy">
+      <section>
+        <h2>អំពីកម្មវិធី</h2>
+        <p>
+          Rabbit QCM ជាកម្មវិធីត្រៀមប្រឡងជាភាសាខ្មែរ សម្រាប់បេក្ខជនប្រឡងចូលបម្រើការងារជាមន្ត្រីរាជការ
+          បេក្ខជនប្រឡងគ្រូបង្រៀន និងអ្នកដែលចង់ពង្រឹងភាសាអង់គ្លេស។ កម្មវិធីមានសំណួរជម្រើសច្រើន (MCQ)
+          ជាង ១១,៨០០ ចែកជា ២៧ មុខវិជ្ជា ក្នុងវគ្គសិក្សា ៥ ហើយចម្លើយត្រូវបានផ្ទៀងផ្ទាត់ជាមួយ
+          តារាងចម្លើយរបស់សៀវភៅប្រភពដើម។
+        </p>
+        <p>
+          A Khmer-language exam-preparation app for the Cambodian civil-service entrance exam,
+          the teacher-recruitment exam, and English grammar and vocabulary: 11,800+ multiple-choice
+          questions across 27 subjects — offline, free, no account required.
+        </p>
+      </section>
+
+      <section>
+        <h2>មុខងារសំខាន់ៗ</h2>
+        <ul>
+          <li>ធ្វើលំហាត់តាមមុខវិជ្ជា ជាមួយលទ្ធផលត្រឹមត្រូវ/ខុស ភ្លាមៗ</li>
+          <li>ប្រឡងសាកល្បងកំណត់ម៉ោង — ជ្រើសមុខវិជ្ជា រយៈពេល និងចំនួនសំណួរដោយខ្លួនឯង</li>
+          <li>សៀវភៅកំហុស — រក្សាទុកសំណួរដែលឆ្លើយខុសដោយស្វ័យប្រវត្តិ ហើយធ្វើឡើងវិញបាន</li>
+          <li>លទ្ធផលលម្អិត — ពិន្ទុតាមមុខវិជ្ជា និងការពិនិត្យចម្លើយវិញទាំងអស់</li>
+          <li>តាមដានវឌ្ឍនភាព — សន្ទស្សន៍ត្រៀមប្រឡង ភាគរយត្រឹមត្រូវ និងថ្ងៃរៀនជាប់គ្នា</li>
+          <li>ដំណើរការក្រៅបណ្តាញ ១០០% ឥតត្រូវការគណនី ឥតមានការផ្សាយពាណិជ្ជកម្ម</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>មុខវិជ្ជាទាំង ២៧</h2>
+        <h3>ចំណេះដឹងទូទៅ សម្រាប់ប្រឡងមន្ត្រីរាជការ — ១៣ មុខវិជ្ជា</h3>
+        <ul>
+          <li>ប្រវត្តិសាស្ត្រ · វប្បធម៌ និងអរិយធម៌ · ភូមិសាស្ត្រ និងប្រជាសាស្ត្រ</li>
+          <li>រដ្ឋបាលសាធារណៈ · សេដ្ឋកិច្ច ហិរញ្ញវត្ថុ និងវិនិយោគ · មុខងារសាធារណៈ និងធនធានមនុស្ស</li>
+          <li>អាស៊ាន · អន្តរជាតិ · ច្បាប់ គោលនយោបាយ និងនយោបាយ</li>
+          <li>សាសនា ក្រមសីលធម៌ និងសុភាសិត · វិទ្យាសាស្ត្រ បច្ចេកវិទ្យា និងនវានុវត្តន៍</li>
+          <li>ល្បែងប្រាជ្ញា តក្កវិទ្យា និងករណីសិក្សា · វិស័យយុត្តិធម៌</li>
+        </ul>
+        <h3>វិជ្ជាជីវៈគ្រូបង្រៀន</h3>
+        <ul><li>ក្រមសីលធម៌វិជ្ជាជីវៈគ្រូបង្រៀន</li></ul>
+        <h3>វេយ្យាករណ៍អង់គ្លេស (English Grammar)</h3>
+        <ul>
+          <li>កម្រិតដំបូង · មធ្យមដំបូង · មធ្យម · មធ្យមខ្ពស់ · ខ្ពស់</li>
+          <li>វេយ្យាករណ៍តាមប្រធានបទ · តេស្តវាយតម្លៃវេយ្យាករណ៍</li>
+        </ul>
+        <h3>វាក្យសព្ទអង់គ្លេស (English Vocabulary)</h3>
+        <ul><li>កម្រិតដំបូង · មធ្យម · មធ្យមខ្ពស់ · ខ្ពស់ · កិរិយាសព្ទឃ្លា (Phrasal Verbs)</li></ul>
+        <h3>ភាសាអង់គ្លេសអនុវត្ត (English in Use)</h3>
+        <ul><li>ភាសាអង់គ្លេសប្រើប្រាស់ក្នុងជីវភាពប្រចាំថ្ងៃ និងការងារ</li></ul>
+      </section>
+
+      <section>
+        <h2>សំណួរដែលសួរញឹកញាប់</h2>
+        <h3>តើ Rabbit QCM ជាកម្មវិធីអ្វី?</h3>
+        <p>ជាកម្មវិធីត្រៀមប្រឡងជាភាសាខ្មែរ ដែលមានសំណួរជម្រើសច្រើនជាង ១១,៨០០ ក្នុងមុខវិជ្ជា ២៧ គ្របដណ្តប់ចំណេះដឹងទូទៅសម្រាប់ប្រឡងមន្ត្រីរាជការ ក្រមសីលធម៌វិជ្ជាជីវៈគ្រូបង្រៀន វេយ្យាករណ៍ និងវាក្យសព្ទភាសាអង់គ្លេស។</p>
+        <h3>តើត្រូវបង់ថ្លៃ ឬបង្កើតគណនីដែរឬទេ?</h3>
+        <p>ទេ។ កម្មវិធីនេះឥតគិតថ្លៃទាំងស្រុង ឥតត្រូវការគណនី និងឥតមានការផ្សាយពាណិជ្ជកម្ម។ វឌ្ឍនភាពទាំងអស់រក្សាទុកក្នុងឧបករណ៍របស់អ្នកផ្ទាល់។</p>
+        <h3>តើប្រើបានក្រៅបណ្តាញដែរឬទេ?</h3>
+        <p>បាន។ សំណួរទាំងអស់ភ្ជាប់មកជាមួយកម្មវិធី។ បន្ទាប់ពីបើកលើកដំបូងរួច អ្នកអាចធ្វើលំហាត់ និងប្រឡងសាកល្បងដោយឥតត្រូវការអ៊ីនធឺណិត។</p>
+        <h3>តើសំណួរមកពីណា?</h3>
+        <p>សំណួរចំណេះដឹងទូទៅផ្នែក ១-១៣ យកចេញពីសៀវភៅ QCM ត្រៀមប្រឡងមន្ត្រីរាជការ ហើយផ្ទៀងផ្ទាត់ជាមួយតារាងចម្លើយរបស់សៀវភៅនោះ ចំណែកផ្នែកភាសាអង់គ្លេស និងក្រមសីលធម៌គ្រូបង្រៀនយកចេញពីសៀវភៅឯកទេសរៀងៗខ្លួន។</p>
+      </section>
+
+      <p class="seo-foot">រៀបចំដោយ លោក អុិតជាហាវ · Rabbit QCM</p>
+    </div>
+
+    <noscript>
+      <p style="text-align:center;color:#FDE68A">
+        កម្មវិធីនេះត្រូវការ JavaScript។ សូមបើក JavaScript ក្នុងកម្មវិធីរុករករបស់អ្នក។
+        (This app requires JavaScript to run.)
+      </p>
+    </noscript>
+  </div>
+
+  <script>
+    // Remove the SEO/loading shell as soon as the Flutter view is in the DOM.
+    (function () {
+      var shell = document.getElementById('seo-shell');
+      if (!shell) return;
+      function mounted() {
+        return document.querySelector('flutter-view, flt-glass-pane, flt-scene-host');
+      }
+      function dismiss() {
+        if (!shell || !shell.parentNode) return;
+        shell.classList.add('is-hidden');
+        setTimeout(function () {
+          if (shell && shell.parentNode) shell.parentNode.removeChild(shell);
+          shell = null;
+        }, 400);
+      }
+      if (mounted()) { dismiss(); return; }
+      var observer = new MutationObserver(function () {
+        if (mounted()) { observer.disconnect(); dismiss(); }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+      // Safety net: never let the shell outlive a slow start-up.
+      setTimeout(function () { observer.disconnect(); dismiss(); }, 20000);
+    })();
+  </script>
+
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

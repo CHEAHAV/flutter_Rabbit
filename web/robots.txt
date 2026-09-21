@@ -1,0 +1,13 @@
+# Rabbit QCM — https://rabbit-khmer-qcm.vercel.app/
+# Everything is a single-page app served from /, so everything is crawlable.
+
+User-agent: *
+Allow: /
+
+# Build artefacts that carry no content worth indexing.
+Disallow: /canvaskit/
+Disallow: /assets/fonts/
+Disallow: /version.json
+Disallow: /flutter_service_worker.js
+
+Sitemap: https://rabbit-khmer-qcm.vercel.app/sitemap.xml
