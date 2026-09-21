@@ -45,9 +45,18 @@ void main() {
     await tester.pump(const Duration(milliseconds: 350));
   }
 
-  /// Scrolls [tile] into view and taps it.
-  Future<void> tapTile(WidgetTester tester, Finder tile) async {
+  /// Scrolls [tile] into view and taps it. The subject rows sit under a
+  /// course heading well down the page, so the row has to be brought fully
+  /// into the viewport - scrollUntilVisible stops as soon as the row has been
+  /// built, which can still leave it below the fold.
+  Future<void> reveal(WidgetTester tester, Finder tile) async {
     await tester.scrollUntilVisible(tile, 120, maxScrolls: 60);
+    await tester.ensureVisible(tile);
+    await tester.pump();
+  }
+
+  Future<void> tapTile(WidgetTester tester, Finder tile) async {
+    await reveal(tester, tile);
     await tester.tap(tile);
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 500));
@@ -66,6 +75,7 @@ void main() {
   testWidgets('the practice list has no on/off switches', (tester) async {
     final app = await boot(tester);
     await pump(tester, app, const Scaffold(body: PracticeScreen()));
+    await reveal(tester, tileFor(app.partsWithQuestions.first));
 
     expect(find.byType(SubjectTile), findsWidgets);
     expect(find.byType(Switch), findsNothing);
@@ -132,7 +142,7 @@ void main() {
 
     await pump(tester, app, const Scaffold(body: PracticeScreen()));
     final tile = tileFor(empty.first);
-    await tester.scrollUntilVisible(tile, 120, maxScrolls: 60);
+    await reveal(tester, tile);
     await tester.tap(tile);
     await tester.pump(const Duration(milliseconds: 500));
 
@@ -156,7 +166,7 @@ void main() {
 
     final part = app.partsWithQuestions.first;
     final tile = tileFor(part);
-    await tester.scrollUntilVisible(tile, 120, maxScrolls: 60);
+    await reveal(tester, tile);
 
     bool isSelected() => tester.widget<SubjectTile>(tile).selected;
     expect(isSelected(), isTrue, reason: 'everything starts selected');

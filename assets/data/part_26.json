@@ -1,0 +1,2630 @@
+[
+    {
+        "id": 1,
+        "q": "Bread is not taken with fork, is it ?",
+        "o": [
+            "Yes, it is.",
+            "No, it is not.",
+            "Yes, it was.",
+            "No, it wasn't.",
+            "Yes, it does."
+        ],
+        "a": 1
+    },
+    {
+        "id": 2,
+        "q": "Who had a dictation last week?",
+        "o": [
+            "My friends do",
+            "I have",
+            "We did",
+            "You have had",
+            "Mandy has"
+        ],
+        "a": 2
+    },
+    {
+        "id": 3,
+        "q": "Your English is perfect. How long have you been studying it?",
+        "o": [
+            "All my life, since I remember myself.",
+            "Sure, English takes much time.",
+            "Quite so, I also admire her English.",
+            "No wonder, she lived in England for 5 years.",
+            "English is spoken by half of the world."
+        ],
+        "a": 0
+    },
+    {
+        "id": 4,
+        "q": "Where is your dog? I don't see it in.",
+        "o": [
+            "Our cat is very clever.",
+            "It's OK. My sister took him out for a walk.",
+            "Yes, we've bought a new lead for the dog.",
+            "Dogs don't eat much.",
+            "You are right. They lead dog's and cat's life."
+        ],
+        "a": 1
+    },
+    {
+        "id": 5,
+        "q": "Why was Jane not writing the exercise?",
+        "o": [
+            "She was ready.",
+            "She had hurt her arm.",
+            "She isn't at the lesson.",
+            "She saw the film.",
+            "She is lazy."
+        ],
+        "a": 1
+    },
+    {
+        "id": 6,
+        "q": "How long does it take you to do your homework?",
+        "o": [
+            "No, it doesn't.",
+            "Yes, it does.",
+            "It takes me an hour.",
+            "It took me an hour.",
+            "It will take me two days."
+        ],
+        "a": 2
+    },
+    {
+        "id": 7,
+        "q": "What places of interest did you visit when you were in England?",
+        "o": [
+            "I visited England.",
+            "She visited London.",
+            "I visited museums, theatres, libraries.",
+            "I went skating.",
+            "He visited New York."
+        ],
+        "a": 2
+    },
+    {
+        "id": 8,
+        "q": "My son saw him twice.",
+        "o": [
+            "So does my son.",
+            "So my son did.",
+            "So did my son.",
+            "Neither does my son.",
+            "So will my son."
+        ],
+        "a": 2
+    },
+    {
+        "id": 9,
+        "q": "Where did you stay when you went to the South?",
+        "o": [
+            "To the South.",
+            "At the seaside.",
+            "At the hotel.",
+            "For two weeks.",
+            "I stayed there a month."
+        ],
+        "a": 2
+    },
+    {
+        "id": 10,
+        "q": "Do you have to get up so early?",
+        "o": [
+            "Yes, I shall.",
+            "No, I don't, but I like to.",
+            "Yes, I have.",
+            "No, I haven't.",
+            "No, I didn't."
+        ],
+        "a": 1
+    },
+    {
+        "id": 11,
+        "q": "Why didn't Rob want to come to the cinema with you?",
+        "o": [
+            "He didn't train for a long time.",
+            "He had seen the film.",
+            "He is ill.",
+            "He didn't have one at the moment.",
+            "He is busy."
+        ],
+        "a": 1
+    },
+    {
+        "id": 12,
+        "q": "Who sent the dog to save Pinocchio?",
+        "o": [
+            "The beautiful child does.",
+            "The beautiful child do.",
+            "The beautiful child did.",
+            "The beautiful child is.",
+            "The beautiful child was."
+        ],
+        "a": 2
+    },
+    {
+        "id": 13,
+        "q": "Why didn't you answer my letter?",
+        "o": [
+            "I don't like them.",
+            "You didn't answer her.",
+            "I'll write soon.",
+            "Your answer was short.",
+            "His letter is written."
+        ],
+        "a": 2
+    },
+    {
+        "id": 14,
+        "q": "Who did you invite to your birthday party?",
+        "o": [
+            "All my friends will come.",
+            "All my friends will dance and sing.",
+            "Something is there.",
+            "Somebody is coming.",
+            "You are welcome."
+        ],
+        "a": 0
+    },
+    {
+        "id": 15,
+        "q": "Who practices law and has studied law?",
+        "o": [
+            "a doctor",
+            "a chemist",
+            "a teacher",
+            "a lawyer",
+            "a milkman"
+        ],
+        "a": 3
+    },
+    {
+        "id": 16,
+        "q": "Who fell ill?",
+        "o": [
+            "I go",
+            "My mother is",
+            "My son does",
+            "Ann did",
+            "Alice will"
+        ],
+        "a": 3
+    },
+    {
+        "id": 17,
+        "q": "I am not going to be a doctor.",
+        "o": [
+            "Neither do I",
+            "Neither did I",
+            "Neither am I",
+            "So am I",
+            "Neither will I"
+        ],
+        "a": 2
+    },
+    {
+        "id": 18,
+        "q": "Tom: My parents want to speak to you.",
+        "o": [
+            "So is she.",
+            "So do my parents.",
+            "So they do.",
+            "My parents do.",
+            "Neither they do"
+        ],
+        "a": 1
+    },
+    {
+        "id": 19,
+        "q": "Natalie will be on duty tomorrow.",
+        "o": [
+            "Neither shall I",
+            "So shall I",
+            "So do I",
+            "So I do",
+            "I too"
+        ],
+        "a": 1
+    },
+    {
+        "id": 20,
+        "q": "George is always in time for the lessons, and Ann?",
+        "o": [
+            "So does Ann.",
+            "Ann does.",
+            "So is Ann.",
+            "Neither is Ann.",
+            "So has Ann."
+        ],
+        "a": 2
+    },
+    {
+        "id": 21,
+        "q": "He passed his exam with excellent marks, didn't he?",
+        "o": [
+            "Yes, he has.",
+            "I think, he will",
+            "Yes, he did.",
+            "No, he hadn't.",
+            "Of course, he does."
+        ],
+        "a": 2
+    },
+    {
+        "id": 22,
+        "q": "Who is fond of swimming ?",
+        "o": [
+            "I was",
+            "She was",
+            "I am",
+            "He was",
+            "They were"
+        ],
+        "a": 2
+    },
+    {
+        "id": 23,
+        "q": "Do you like coffee with or without sugar?",
+        "o": [
+            "I like coffee.",
+            "I like coffee with sugar.",
+            "They don't like coffee with sugar.",
+            "You like coffee with sugar.",
+            "He likes coffee without sugar."
+        ],
+        "a": 1
+    },
+    {
+        "id": 24,
+        "q": "What's the table like?",
+        "o": [
+            "I don't like it.",
+            "It is square.",
+            "I like it.",
+            "He is like me.",
+            "He is small."
+        ],
+        "a": 1
+    },
+    {
+        "id": 25,
+        "q": "\"I shan't go to the country with you.\"",
+        "o": [
+            "Neither would he",
+            "So shall I",
+            "So did I",
+            "Neither shall I",
+            "Neither does she"
+        ],
+        "a": 3
+    },
+    {
+        "id": 26,
+        "q": "Excuse me, sir.",
+        "o": [
+            "Nice to meet you.",
+            "Are you from Berlin?",
+            "Where are you from?",
+            "Are you crazy?",
+            "Yes, what can I do for you?"
+        ],
+        "a": 4
+    },
+    {
+        "id": 27,
+        "q": "Could you pass me a scone, please?",
+        "o": [
+            "Sure, here you are.",
+            "I'm fine, thank you.",
+            "It's very tasty.",
+            "This way, please.",
+            "You are welcome, please."
+        ],
+        "a": 0
+    },
+    {
+        "id": 28,
+        "q": "Coffee, sir?",
+        "o": [
+            "Don't mention it.",
+            "Yes, please.",
+            "That's OK.",
+            "Oh, I am sorry.",
+            "You are welcome."
+        ],
+        "a": 1
+    },
+    {
+        "id": 29,
+        "q": "Who has lost my favorite book?",
+        "o": [
+            "Ann did",
+            "Nick is",
+            "They do",
+            "We did",
+            "Michael has"
+        ],
+        "a": 4
+    },
+    {
+        "id": 30,
+        "q": "I can never tell them the truth.",
+        "o": [
+            "Neither did he",
+            "So do I",
+            "So can I",
+            "Me either",
+            "Neither can I"
+        ],
+        "a": 4
+    },
+    {
+        "id": 31,
+        "q": "Which of English writers do you read?",
+        "o": [
+            "I am reading Mark Twain.",
+            "I read Jack London.",
+            "I've read Dreiser.",
+            "I had read Dickens.",
+            "He reads Dickens."
+        ],
+        "a": 1
+    },
+    {
+        "id": 32,
+        "q": "How long has she been with you?",
+        "o": [
+            "About 2 weeks.",
+            "Yes, she has.",
+            "In Tashkent.",
+            "Maybe tomorrow.",
+            "Of course!"
+        ],
+        "a": 0
+    },
+    {
+        "id": 33,
+        "q": "You go in for sports, don't you?",
+        "o": [
+            "I like football.",
+            "Yes, I do.",
+            "No, I don't.",
+            "Yes, I am.",
+            "I don't like tennis."
+        ],
+        "a": 1
+    },
+    {
+        "id": 34,
+        "q": "\"He won't learn English, and you?\"",
+        "o": [
+            "So do I",
+            "So shall I",
+            "Neither shall I",
+            "No did I",
+            "Neither did I"
+        ],
+        "a": 2
+    },
+    {
+        "id": 35,
+        "q": "\"Louise can dance beautifully, and her sister?\"",
+        "o": [
+            "So can her sister",
+            "Neither can she",
+            "Nor she",
+            "She can either",
+            "So she does"
+        ],
+        "a": 0
+    },
+    {
+        "id": 36,
+        "q": "Nick is not so stupid as you think.",
+        "o": [
+            "So is Ann.",
+            "So has Ann.",
+            "Neither is Ann.",
+            "Neither are we.",
+            "Ann did so."
+        ],
+        "a": 2
+    },
+    {
+        "id": 37,
+        "q": "\"Do you have any free time today?\"",
+        "o": [
+            "Fine!",
+            "I have a good idea.",
+            "Yes, I do.",
+            "I tried.",
+            "Yes, they have."
+        ],
+        "a": 2
+    },
+    {
+        "id": 38,
+        "q": "-Why don't you teach Bob play the piano? -_____? He can play it well.",
+        "o": [
+            "Why not",
+            "Why",
+            "How",
+            "When I",
+            "How often"
+        ],
+        "a": 1
+    },
+    {
+        "id": 39,
+        "q": "Will you please pass me the salt?",
+        "o": [
+            "I can.",
+            "Please.",
+            "I shall.",
+            "Why not?",
+            "Here it is."
+        ],
+        "a": 4
+    },
+    {
+        "id": 40,
+        "q": "- Can I borrow your map of London?",
+        "o": [
+            "Don't mention it.",
+            "That's all right.",
+            "Here you are.",
+            "You are welcome.",
+            "Please."
+        ],
+        "a": 2
+    },
+    {
+        "id": 41,
+        "q": "Ann: It looks like to rain. What will Ann's mother advise her?",
+        "o": [
+            "You'd better take an umbrella.",
+            "You'd better go for a walk.",
+            "You'd better go fishing.",
+            "You'd better take your handbag.",
+            "You'd better go to the park."
+        ],
+        "a": 0
+    },
+    {
+        "id": 42,
+        "q": "I wonder what made that gentleman run out when we came up. Who was he?",
+        "o": [
+            "He is a seaman",
+            "My brother does",
+            "A very strange young man",
+            "I think he is a thief",
+            "He is coming towards us"
+        ],
+        "a": 2
+    },
+    {
+        "id": 43,
+        "q": "What are your plans for Sunday?",
+        "o": [
+            "I worked on Sunday.",
+            "Your plans are different.",
+            "We'll rest in a moment.",
+            "Our family is going out of town.",
+            "I was reading a book on Sunday."
+        ],
+        "a": 3
+    },
+    {
+        "id": 44,
+        "q": "Do you think we'll have good weather?",
+        "o": [
+            "I hope so",
+            "Yes, he does",
+            "I hope, it does",
+            "I so hope",
+            "I did"
+        ],
+        "a": 0
+    },
+    {
+        "id": 45,
+        "q": "Why didn't you go to the circus with your friends.",
+        "o": [
+            "I wanted to go there.",
+            "I wanted to go there but I was ill.",
+            "I am very busy.",
+            "I shall be free.",
+            "No, I don't but I want to."
+        ],
+        "a": 1
+    },
+    {
+        "id": 46,
+        "q": "How did you find the play?",
+        "o": [
+            "Oh, I don't think it was a success.",
+            "I could hardly get the tickets.",
+            "My sister was also at the show.",
+            "Yes, the day is nice.",
+            "There was a sign \"sold out\"."
+        ],
+        "a": 0
+    },
+    {
+        "id": 47,
+        "q": "Ann is ill.",
+        "o": [
+            "Yes, Ann is a good singer.",
+            "Oh, I'm sorry to hear that.",
+            "Her mother's a very pleasant woman.",
+            "She studies in the second form.",
+            "Her friend's no feelings."
+        ],
+        "a": 1
+    },
+    {
+        "id": 48,
+        "q": "What do you think of \"The Three Friends\".",
+        "o": [
+            "They are friends.",
+            "It's an amusing game.",
+            "It's sad news.",
+            "They'll come soon.",
+            "It's a very interesting play"
+        ],
+        "a": 4
+    },
+    {
+        "id": 49,
+        "q": "I have already seen this film, and you?",
+        "o": [
+            "So has he.",
+            "So have I.",
+            "So did I.",
+            "So am I.",
+            "Neither have I."
+        ],
+        "a": 1
+    },
+    {
+        "id": 50,
+        "q": "What will you do on Sunday?",
+        "o": [
+            "There are many plans",
+            "We have no time for doing it",
+            "We went to the circus",
+            "They'll swim",
+            "There will be Sunday soon"
+        ],
+        "a": 0
+    },
+    {
+        "id": 51,
+        "q": "It's a nice day today, isn't it?",
+        "o": [
+            "It's not your business",
+            "I don't like her these days",
+            "Oh yes, I like it very much",
+            "I am in low spirits",
+            "Where are you going?"
+        ],
+        "a": 2
+    },
+    {
+        "id": 52,
+        "q": "Shall I read Text-1?",
+        "o": [
+            "Do, please",
+            "Yes, you did",
+            "Yes, you may",
+            "Shall, please",
+            "Yes, come along"
+        ],
+        "a": 0
+    },
+    {
+        "id": 53,
+        "q": "How long had you been there before you met your friends?",
+        "o": [
+            "It was late.",
+            "At the beginning of the lesson.",
+            "Yesterday.",
+            "For 2 hours.",
+            "I was not there."
+        ],
+        "a": 3
+    },
+    {
+        "id": 54,
+        "q": "Here is your pen. Thank you.",
+        "o": [
+            "I'm sorry",
+            "Oh, That's OK",
+            "I beg your pardon",
+            "You are welcome",
+            "No, thanks"
+        ],
+        "a": 3
+    },
+    {
+        "id": 55,
+        "q": "Why is he always late for the first lesson?",
+        "o": [
+            "He is very clever.",
+            "He likes sleeping.",
+            "He is very polite.",
+            "He is afraid of his mother.",
+            "He goes shopping every day."
+        ],
+        "a": 1
+    },
+    {
+        "id": 56,
+        "q": "I don't like rainy weather.",
+        "o": [
+            "Neither I",
+            "So don't I",
+            "Me too",
+            "I don't like too",
+            "Neither do I"
+        ],
+        "a": 4
+    },
+    {
+        "id": 57,
+        "q": "What are the things you enjoy doing in summer?",
+        "o": [
+            "I enjoy skating or skiing in cold weather",
+            "If I'm near a river it's boating or swimming",
+            "I prefer singing to dancing",
+            "There weren't many things to choose",
+            "We could do interesting things last summer"
+        ],
+        "a": 1
+    },
+    {
+        "id": 58,
+        "q": "Who is a sailor?",
+        "o": [
+            "A very good and holy person.",
+            "A man who works on a ship.",
+            "A man who looks after sheep.",
+            "A man who makes things out of metal.",
+            "Someone who secretly watches what other people are doing."
+        ],
+        "a": 1
+    },
+    {
+        "id": 59,
+        "q": "The weather is awful today, isn't it?",
+        "o": [
+            "The temperature is twenty above zero.",
+            "You should take the umbrella.",
+            "I don't have warm clothes.",
+            "Yes, much worse than yesterday.",
+            "Thanks for warning me."
+        ],
+        "a": 3
+    },
+    {
+        "id": 60,
+        "q": "I'm looking forward to showing you round the city.",
+        "o": [
+            "This is a great city.",
+            "That's certainly very nice of you.",
+            "I've read very much about your city.",
+            "It's not very cold here in winter.",
+            "There are a lot of places of interest in this city."
+        ],
+        "a": 1
+    },
+    {
+        "id": 61,
+        "q": "Tom: How long have you been living in London? Bob: _____. Tom: No wonder, London is one of the beautiful cities of the world.",
+        "o": [
+            "I stay 2 months.",
+            "For eight months and I like it very much.",
+            "I don't know.",
+            "I was 2 months ago.",
+            "One day."
+        ],
+        "a": 1
+    },
+    {
+        "id": 62,
+        "q": "What is your brother like?",
+        "o": [
+            "He likes football.",
+            "He is fond of swimming.",
+            "He is tall and handsome.",
+            "We like him very much.",
+            "He dislikes horror films."
+        ],
+        "a": 2
+    },
+    {
+        "id": 63,
+        "q": "Where is the conversation taking place? -Could you drive faster, please. -Yes, madam. But don't have the wrong idea, the faster I drive the less you pay.",
+        "o": [
+            "At a bus stop",
+            "In a café",
+            "In a taxi",
+            "In a plane",
+            "In the metro"
+        ],
+        "a": 2
+    },
+    {
+        "id": 64,
+        "q": "Where is the conversation taking place? speaking with the director.",
+        "o": [
+            "In a company",
+            "In the metro",
+            "In the lift",
+            "In the library",
+            "In the lecture hall"
+        ],
+        "a": 0
+    },
+    {
+        "id": 65,
+        "q": "Where is the conversation taking place? didn't know. alone that Black Sea.",
+        "o": [
+            "At home",
+            "In a plant",
+            "In a beauty parlor",
+            "At school",
+            "In the University"
+        ],
+        "a": 0
+    },
+    {
+        "id": 66,
+        "q": "Where is the conversation taking place? everything for taking your measure",
+        "o": [
+            "At the dentist's",
+            "At the tailor's",
+            "At the shop",
+            "In the theatre",
+            "At the hairdresser's"
+        ],
+        "a": 1
+    },
+    {
+        "id": 67,
+        "q": "Where is the conversation taking place? Oh, how nice of you to come today. I've read the manuscript and enjoyed it immensely. Yet, we can't publish it this year. I'm sorry to say.",
+        "o": [
+            "At a publishing house.",
+            "In a bookkeeping department.",
+            "In the booking office.",
+            "In a bookshop.",
+            "At a bookstall."
+        ],
+        "a": 0
+    },
+    {
+        "id": 68,
+        "q": "How long does it take you to get to school?",
+        "o": [
+            "Oh, yes, I live quite close.",
+            "It takes me twenty minutes to get to school.",
+            "I get to school by bus.",
+            "I don't take any meal to school.",
+            "I leave for school at 8 a.m."
+        ],
+        "a": 1
+    },
+    {
+        "id": 69,
+        "q": "\"Why don't you want to go to the party?\"",
+        "o": [
+            "Yes, they do.",
+            "Because I've been to London.",
+            "Yes, I do. I need money.",
+            "Because I have nothing to put on.",
+            "I don't want to play tennis."
+        ],
+        "a": 3
+    },
+    {
+        "id": 70,
+        "q": "May I take that book from you?",
+        "o": [
+            "No, everything is fine, thank you.",
+            "Yes, madam, we do.",
+            "No, take this, please.",
+            "It's very expensive.",
+            "It's my grandfather's."
+        ],
+        "a": 2
+    },
+    {
+        "id": 71,
+        "q": "Would you like some more tea?",
+        "o": [
+            "No, thanks.",
+            "No, I would not.",
+            "Yes, thank you.",
+            "No more cake, please.",
+            "Sure, I wouldn't."
+        ],
+        "a": 0
+    },
+    {
+        "id": 72,
+        "q": "How many eggs do you need?",
+        "o": [
+            "One dozen is fine, thank you.",
+            "Just one head, thank you.",
+            "No, they are thirty.",
+            "He is from England.",
+            "No, you may play after lunch."
+        ],
+        "a": 0
+    },
+    {
+        "id": 73,
+        "q": "What don't they understand?",
+        "o": [
+            "I have nothing to wear.",
+            "Yes, they do.",
+            "Yesterday's homework.",
+            "No, but I can't understand it.",
+            "I'm from Turkey."
+        ],
+        "a": 2
+    },
+    {
+        "id": 74,
+        "q": "\"How well does your classmate speak English?\"",
+        "o": [
+            "She speaks it very well.",
+            "She doesn't tell English stories.",
+            "She speaks German well.",
+            "We understand English.",
+            "They speak English well."
+        ],
+        "a": 0
+    },
+    {
+        "id": 75,
+        "q": "Who has cut the hand?",
+        "o": [
+            "I did",
+            "He has",
+            "Pete does",
+            "Ann had",
+            "The knife had"
+        ],
+        "a": 1
+    },
+    {
+        "id": 76,
+        "q": "Whom do you often write letters to?",
+        "o": [
+            "To England",
+            "To Moscow",
+            "My friends do",
+            "To my pen-friend",
+            "My pen-friend does"
+        ],
+        "a": 3
+    },
+    {
+        "id": 77,
+        "q": "Who usually has lunch at school?",
+        "o": [
+            "Pupils and teachers have",
+            "Teenagers and teachers have",
+            "Teachers and headmaster have",
+            "Teachers and children have",
+            "Teachers and pupils do"
+        ],
+        "a": 4
+    },
+    {
+        "id": 78,
+        "q": "You don't play tennis, do you?",
+        "o": [
+            "Yes, I don't",
+            "No, I don't",
+            "No, I do",
+            "No, you don't",
+            "Yes, you do"
+        ],
+        "a": 1
+    },
+    {
+        "id": 79,
+        "q": "Did you see our friends yesterday?",
+        "o": [
+            "Yes, he did it well",
+            "No, I don't know them",
+            "Mother saw him",
+            "No, I'll see them tomorrow",
+            "Yes, I have done it"
+        ],
+        "a": 3
+    },
+    {
+        "id": 80,
+        "q": "Have you read today's newspaper?",
+        "o": [
+            "No, I haven't yet",
+            "No, I didn't",
+            "Yes, I had",
+            "No, I shan't",
+            "No, I'm not"
+        ],
+        "a": 0
+    },
+    {
+        "id": 81,
+        "q": "Could you pass me the salt, please?",
+        "o": [
+            "Certainly, here you are",
+            "No, thank you",
+            "Yes, please",
+            "Neither can I",
+            "Yes, I have"
+        ],
+        "a": 0
+    },
+    {
+        "id": 82,
+        "q": "-We went to Berlin last weekend -_____.",
+        "o": [
+            "How did you get there?",
+            "Yes, last weekend was rather rainy.",
+            "And what about you?",
+            "My father says he is always tired after work.",
+            "Sure, your teachers are very good."
+        ],
+        "a": 0
+    },
+    {
+        "id": 83,
+        "q": "A: What is the best way to get to Broadway? B: By underground, I think. A: Is it the shortest way? B: _____.",
+        "o": [
+            "You can go as slowly as you like",
+            "Take the double - decked buses",
+            "The fastest one",
+            "The shortest way is traveling by train",
+            "I advise you to travel there by car"
+        ],
+        "a": 2
+    },
+    {
+        "id": 84,
+        "q": "A: I couldn't watch TV yesterday. B: Why couldn't you? A: _____.",
+        "o": [
+            "I don't like to watch TV.",
+            "I must do my lesson.",
+            "I'll stay at home and learn English.",
+            "We both, my sister and I, were punished by my father.",
+            "I could stay and watch TV with them."
+        ],
+        "a": 3
+    },
+    {
+        "id": 85,
+        "q": "Jane: Help yourselves to the cake. What sort of it would you like? Nick: Strawberry, please. Jane: Would you like some more cake? Mike: _____.",
+        "o": [
+            "Yes, ice cream please.",
+            "No, I've already caught it.",
+            "Thank you for a nice party.",
+            "Please take a piece of cake.",
+            "Thanks, I haven't eaten my first piece yet."
+        ],
+        "a": 4
+    },
+    {
+        "id": 86,
+        "q": "John: Let's play cops and robbers. Kate: I've never played cops and robbers. How do you play it? Robert: Everybody plays this game. Kate: _____.",
+        "o": [
+            "You'll be at the police station.",
+            "Work in a group of four.",
+            "Continue the game until someone catches you.",
+            "Well, will you show me what to do?",
+            "Shall I help you, sir?"
+        ],
+        "a": 3
+    },
+    {
+        "id": 87,
+        "q": "- I was told an interesting story yesterday.",
+        "o": [
+            "Neither was he.",
+            "Were they?",
+            "Didn't you?",
+            "So were we.",
+            "Either did I."
+        ],
+        "a": 3
+    },
+    {
+        "id": 88,
+        "q": "- How many times have you been in South Africa?",
+        "o": [
+            "I went last year.",
+            "Once.",
+            "2 years ago.",
+            "Yes, I've.",
+            "Next summer."
+        ],
+        "a": 1
+    },
+    {
+        "id": 89,
+        "q": "- Will you cook macaroni this year?",
+        "o": [
+            "Just a moment.",
+            "Sorry, I couldn't.",
+            "Yes, he will.",
+            "Yes, of course.",
+            "Yes, I'll cook turkey."
+        ],
+        "a": 3
+    },
+    {
+        "id": 90,
+        "q": "- Who is the best reader in your class?",
+        "o": [
+            "Pete is, but I read better than he does.",
+            "We take books from the school library.",
+            "Oh, it is very difficult to get a good book these",
+            "We never read books at math lessons.",
+            "My mother doesn't allow me to read books at library."
+        ],
+        "a": 0
+    },
+    {
+        "id": 91,
+        "q": "A: May I watch TV now? B: No you can't. A: Why? B: _____.",
+        "o": [
+            "We'll go for a walk tomorrow",
+            "You were ill",
+            "I must stay in bed",
+            "You'll disturb the kids",
+            "You can tell the truth"
+        ],
+        "a": 3
+    },
+    {
+        "id": 92,
+        "q": "A: Why are you so tired? B: _____. A: Who helped you? B: _____.",
+        "o": [
+            "I've just worked hard / nobody did",
+            "I worked much / you'll help me",
+            "So I am tired / many friends did",
+            "I prefer walking / my mother did",
+            "I shall not be tired / my wife did"
+        ],
+        "a": 0
+    },
+    {
+        "id": 93,
+        "q": "A: Mary is out now. B: _____. A: Not far away.",
+        "o": [
+            "What did she study?",
+            "Where does she come?",
+            "Where has she gone?",
+            "Where are the girls?",
+            "Where is he from?"
+        ],
+        "a": 2
+    },
+    {
+        "id": 94,
+        "q": "A: What do you usually do at your school yard? B: _____. A: What kinds of them do you prefer? B: _____.",
+        "o": [
+            "We buy vegetables/potatoes and carrot",
+            "We sell vegetables/apples and cherries",
+            "We grow fruit/wheat and cotton",
+            "We plant trees/milk and pudding",
+            "We plant flowers/roses and tulips"
+        ],
+        "a": 4
+    },
+    {
+        "id": 95,
+        "q": "A: The new film is splendid. B: _____.",
+        "o": [
+            "He is wonderful, of course",
+            "Not exactly so",
+            "He is well",
+            "Of course she is",
+            "It's cold"
+        ],
+        "a": 1
+    },
+    {
+        "id": 96,
+        "q": "A: Let's go for a walk. B: _____. A: Where can we go? B: _____.",
+        "o": [
+            "I can't / To the park",
+            "Thank you / At 5 o'clock",
+            "Certainly / Tomorrow",
+            "Agreed / As far as the bridge",
+            "Of course / With our friends"
+        ],
+        "a": 3
+    },
+    {
+        "id": 97,
+        "q": "- Where did you see The New Year in?",
+        "o": [
+            "Fishing in the river next week.",
+            "I prefer to go there by train.",
+            "As usual in the open air.",
+            "It's hard to say.",
+            "My friend and I will get to our place."
+        ],
+        "a": 2
+    },
+    {
+        "id": 98,
+        "q": "A: My brother thinks that English isn't easy. B: Why does he think so? A: _____.",
+        "o": [
+            "He learnt either English or French",
+            "Because it was too difficult for them",
+            "He has no time",
+            "Because he has to work very hard",
+            "Because it is one of the easiest languages"
+        ],
+        "a": 3
+    },
+    {
+        "id": 99,
+        "q": "- How did you _____ your stay in Nigeria?",
+        "o": [
+            "prefer",
+            "join",
+            "observe",
+            "enjoy",
+            "offer"
+        ],
+        "a": 3
+    },
+    {
+        "id": 100,
+        "q": "- Oh, it's raining heavily.",
+        "o": [
+            "I think it's 20 degrees above zero.",
+            "Cold weather has set in.",
+            "Oh, yes, it's raining cats and dogs.",
+            "The sky is so overcast.",
+            "It looks like to rain."
+        ],
+        "a": 2
+    },
+    {
+        "id": 101,
+        "q": "A: Who will you go to the country with? B: _____. A: What about your children? B: _____.",
+        "o": [
+            "I'll go with my children. / They like sea",
+            "My sister will join me. / He is at home.",
+            "I've just come. / They prefer to go with me.",
+            "I'll go alone. / They are away.",
+            "Nobody wants to. / She went there."
+        ],
+        "a": 3
+    },
+    {
+        "id": 102,
+        "q": "- She goes in for sports. She is a very good swimmer and very pretty at that.",
+        "o": [
+            "Yesterday I saw them at the swimming-pool",
+            "Her mother is not in",
+            "She is out",
+            "She is the very girl we need",
+            "Her friend doesn't study well"
+        ],
+        "a": 3
+    },
+    {
+        "id": 103,
+        "q": "- I say, Nick, let us go to the park?",
+        "o": [
+            "Let's / Yes, you can",
+            "All right / Certainly",
+            "Of course / Yes, please",
+            "O.K. / I've got a lot to do",
+            "Certainly / Yes, he can"
+        ],
+        "a": 1
+    },
+    {
+        "id": 104,
+        "q": "Kate: Have you just shot a new film? Jane: _____. Kate: Are you going to shoot another? Jane: _____.",
+        "o": [
+            "No, we haven't / I think so",
+            "It's a pity / I'm sorry",
+            "Yes, we have / Yes, next year",
+            "Yes, of course / I'm sorry",
+            "The same to you / Sorry, I'm late"
+        ],
+        "a": 2
+    },
+    {
+        "id": 105,
+        "q": "Mary: Did you pass your exam? Ann: _____. Mary: Was it difficult? Ann: _____.",
+        "o": [
+            "No, I haven't / I don't know",
+            "Yes, I did / I don't think it was",
+            "Of course, it was / I'm sorry",
+            "It's a pity / Nice to see you",
+            "How do you do / The same to you"
+        ],
+        "a": 1
+    },
+    {
+        "id": 106,
+        "q": "A: Would you like a cup of tea? B: _____. A: Would you like it with milk and sugar? B: _____.",
+        "o": [
+            "No, thank you / with lemon",
+            "With pleasure / not at all",
+            "It's a pity / I have a nice weekend",
+            "Yes, please / little sugar, no milk",
+            "I'm sorry / good - bye then"
+        ],
+        "a": 3
+    },
+    {
+        "id": 107,
+        "q": "A: Will you repair my clock? B: _____. A: Thank you. B: _____.",
+        "o": [
+            "No, I can't / Tomorrow",
+            "Isn't it? / Yes, of course",
+            "Yes, of course / You're welcome",
+            "I'm busy / I'm sorry to hear that",
+            "Oh, yes, he can / He is out"
+        ],
+        "a": 2
+    },
+    {
+        "id": 108,
+        "q": "A: May I watch what you are doing ? B: _____.",
+        "o": [
+            "Sure. You are welcome.",
+            "I am painting.",
+            "You must watch me.",
+            "I am sitting.",
+            "Why were you here ?"
+        ],
+        "a": 0
+    },
+    {
+        "id": 109,
+        "q": "A: Can I have tickets for the early morning train to Michigan tomorrow? B: _____. A: Two, please. B: Just a minute. Let me see. Well, I can let you have two seats, but in different carriages. Will that do? A: _____.",
+        "o": [
+            "How much is it? / Yes, of course.",
+            "How many? / OK.",
+            "I'm afraid not. / I'm Sorry.",
+            "What about the other one? / I can't go",
+            "Where is it? / I don't know."
+        ],
+        "a": 1
+    },
+    {
+        "id": 110,
+        "q": "A: Who is that young man? B: He is a first year student. A: _____. B: More than two weeks, I think.",
+        "o": [
+            "Where was he before?",
+            "Well, he is very interesting, but where does he come from?",
+            "How long has he been here?",
+            "Is he ill?",
+            "Did he come from Turkey?"
+        ],
+        "a": 2
+    },
+    {
+        "id": 111,
+        "q": "Pete: I'll tell you a story. Jack: _____. Pete: Well, one day, when my daughter was little...",
+        "o": [
+            "Oh, no, sir. I'm not free.",
+            "Can't you?",
+            "Was it very interesting?",
+            "Oh, yes, sir. Please, do.",
+            "No, I have to do."
+        ],
+        "a": 3
+    },
+    {
+        "id": 112,
+        "q": "A: Excuse me. Can you speak English? B: _____. A: Could you tell me how to get to Independence square? B: _____.",
+        "o": [
+            "Yes, of course / Yes, I did.",
+            "No, I won't / Fine, thanks.",
+            "Sorry, I'm late / That's all right.",
+            "Good-bye / The same to you.",
+            "Yes, I can / Yes, certainly, take trolley-bus 11."
+        ],
+        "a": 4
+    },
+    {
+        "id": 113,
+        "q": "T: Oh, I must water the plants. H: No, you needn't, _____.",
+        "o": [
+            "Do it yourself",
+            "I'll do it myself",
+            "Oh, sorry, I'm late",
+            "Hurry up",
+            "I'm sorry to hear that"
+        ],
+        "a": 1
+    },
+    {
+        "id": 114,
+        "q": "T: Please, don't tell anyone. B: _____. T: Do you promise? B: _____.",
+        "o": [
+            "Don't worry, I won't / Yes, I do",
+            "Yes, I was / I can't",
+            "I can't / Thank you",
+            "We are late / I'm afraid",
+            "Good-bye / Have a nice weekend"
+        ],
+        "a": 0
+    },
+    {
+        "id": 115,
+        "q": "- Is this seat vacant?",
+        "o": [
+            "Sorry, I was busy",
+            "It's taken",
+            "Certainly, you can",
+            "Of course, you may take it",
+            "You were right"
+        ],
+        "a": 1
+    },
+    {
+        "id": 116,
+        "q": "Mother: You can't go out skiing today, Bob. It's warm again and there is no snow. Bob: _____. Mother: Don't worry. Today is not the last day of the winter. You'll have a chance to ski.",
+        "o": [
+            "I'm very glad.",
+            "Well, that's a pity. I wanted to go skiing so much.",
+            "I don't like to ski.",
+            "I was not going to ski today.",
+            "It is a nice day."
+        ],
+        "a": 1
+    },
+    {
+        "id": 117,
+        "q": "A: I say, Sally, are you well? B: No, I am not, _____.",
+        "o": [
+            "my mother will be well",
+            "it isn't easy",
+            "it's because of the weather",
+            "it isn't, you are right",
+            "pretty well, of course"
+        ],
+        "a": 2
+    },
+    {
+        "id": 118,
+        "q": "- I'm sorry for keeping you waiting for such a long time.",
+        "o": [
+            "Please.",
+            "Certainly.",
+            "You are welcome.",
+            "That's all right.",
+            "Not at all."
+        ],
+        "a": 3
+    },
+    {
+        "id": 119,
+        "q": "- My parents have just come back from Paris. They say it's a very beautiful city. _____.?",
+        "o": [
+            "Do you go there?",
+            "Had he gone there?",
+            "Will you go there?",
+            "Were they there last year?",
+            "Have you ever been there?"
+        ],
+        "a": 4
+    },
+    {
+        "id": 120,
+        "q": "A: Excuse me, sir. B: Yes? A: _____. B: This way please.",
+        "o": [
+            "What can I do for you?",
+            "What is it?",
+            "I'm sorry to hear that.",
+            "Where do you live?",
+            "Where is the smoking room?"
+        ],
+        "a": 4
+    },
+    {
+        "id": 121,
+        "q": "The teacher said: \"Remember? It is better to give than to receive\". A small boy said: \"Yes, Miss, my father says he always uses that as his motto in business\". The teacher said: \"Oh, how good of him! What is his business?\" The small boy said: \"_____, miss\".",
+        "o": [
+            "He is a driver.",
+            "He is a boxer.",
+            "He is a cashier.",
+            "He is a son of businessman.",
+            "He is a postman."
+        ],
+        "a": 1
+    },
+    {
+        "id": 122,
+        "q": "- Can you help me with this work?",
+        "o": [
+            "Can you help me tomorrow?",
+            "Can I come a little later?",
+            "When will you be free?",
+            "When can I come?",
+            "What are you busy with?"
+        ],
+        "a": 1
+    },
+    {
+        "id": 123,
+        "q": "- We are going on an excursion tomorrow. Would you like to join us?",
+        "o": [
+            "No, I wouldn't / Oh, no",
+            "No, I don't / Yes, please",
+            "Yes / You needn't",
+            "I'd love to / Certainly",
+            "Certainly / No, you won't"
+        ],
+        "a": 3
+    },
+    {
+        "id": 124,
+        "q": "Helen: Nick, have you got anything special on tonight? Nick: _____.",
+        "o": [
+            "Oh, Helen, I'm so sorry.",
+            "Thanks God, is that you, Helen?",
+            "No, not really. Why?",
+            "No, I didn't.",
+            "Yes, I do."
+        ],
+        "a": 2
+    },
+    {
+        "id": 125,
+        "q": "Woman: \"Do you think she is better, doctor?\" Doctor: _____. Woman: I am very glad to hear that. Thank you.",
+        "o": [
+            "She was all right.",
+            "She has been good.",
+            "She'll be all right in a day or two.",
+            "She has a bad illness.",
+            "She is very ill."
+        ],
+        "a": 2
+    },
+    {
+        "id": 126,
+        "q": "- Your sons are very interested in ship - building.",
+        "o": [
+            "How old are they?",
+            "Did they like this subject?",
+            "Have you ever been to the sea?",
+            "Is their father a sailor?",
+            "Have they got books about ship - building?"
+        ],
+        "a": 4
+    },
+    {
+        "id": 127,
+        "q": "- Which platform does the train 2550 start from? -Let's find it out together",
+        "o": [
+            "Can you help me / You are polite",
+            "I don't understand / Let's",
+            "I think so / Thank you",
+            "From the next / I have no job",
+            "I'm also looking for it / All right"
+        ],
+        "a": 4
+    },
+    {
+        "id": 128,
+        "q": "- Shall we have a snack lunch in a pub for a change?",
+        "o": [
+            "That's a good idea, I haven't been to any pub lately.",
+            "The nearest pub is round the corner.",
+            "We have no pubs in our country.",
+            "Will you look through the menu?",
+            "And what about dessert?"
+        ],
+        "a": 0
+    },
+    {
+        "id": 129,
+        "q": "- What's the weather like?",
+        "o": [
+            "It's warm / it is raining",
+            "It's fine / it rains",
+            "It's cold / it's going to",
+            "It is nice / it rained",
+            "It is bad / it is hot"
+        ],
+        "a": 2
+    },
+    {
+        "id": 130,
+        "q": "- Let's go to the park. It's so nice there.",
+        "o": [
+            "Sorry. I can't / No",
+            "Certainly / I'm afraid not",
+            "Of course / I don t think so",
+            "O.K. / Certainly",
+            "I'm busy / Certainly"
+        ],
+        "a": 3
+    },
+    {
+        "id": 131,
+        "q": "- What's the matter with Dick? He hasn't come to school today.",
+        "o": [
+            "She is ill / All right",
+            "He is not well / O.K.",
+            "He is out / Good",
+            "I don't know / O.K.",
+            "He is well / I'm busy"
+        ],
+        "a": 1
+    },
+    {
+        "id": 132,
+        "q": "- Can you play chess?",
+        "o": [
+            "Yes / I don't",
+            "Yes / I can",
+            "I'm sorry / Of course",
+            "No / I can't",
+            "Of course / Do, please"
+        ],
+        "a": 2
+    },
+    {
+        "id": 133,
+        "q": "- Why didn't you go to the cinema with us, Susan?",
+        "o": [
+            "I couldn't continue writing.",
+            "Thanks to you I've got into the theatre.",
+            "I still believe him in spite of everything.",
+            "I'll mend it within a week.",
+            "I had to stay at home yesterday."
+        ],
+        "a": 4
+    },
+    {
+        "id": 134,
+        "q": "- John is going to buy an expensive car.",
+        "o": [
+            "How do you know",
+            "Where did you take it",
+            "Are you in need of food",
+            "Why are you speaking",
+            "Do you live in the South"
+        ],
+        "a": 0
+    },
+    {
+        "id": 135,
+        "q": "- Tommy, your mother is a teacher and you cannot write a word.",
+        "o": [
+            "Your father is a dentist and your little brother has no teeth",
+            "Your father is an engineer and works at the",
+            "Your mother is a good housewife",
+            "Your aunt can't go to the mountains with us",
+            "Your mother wanted to see us both"
+        ],
+        "a": 0
+    },
+    {
+        "id": 136,
+        "q": "Little Liz came from a birthday party. Her mother asked her, \"Did you thank Mrs. Reed for the nice time you had at the party?\" \"No, I didn't,\" answered the girl. \"Why not?\" asked mother. \"Another girl in front of me thanked Mrs. Reed and she said, '_____' \"",
+        "o": [
+            "Not at all",
+            "Its a pity",
+            "How nice",
+            "Don't mention it",
+            "Excuse me"
+        ],
+        "a": 3
+    },
+    {
+        "id": 137,
+        "q": "- What is the use of quarreling? Let's forgive and forget.",
+        "o": [
+            "That's just the trouble",
+            "I don't quarrel",
+            "I couldn't forget",
+            "You will forget",
+            "I am always forgiving, and you are always forgetting"
+        ],
+        "a": 4
+    },
+    {
+        "id": 138,
+        "q": "- Ken, you live in Riverton, how do you like it?",
+        "o": [
+            "It's a nice town",
+            "I don't know",
+            "It's a nice town. Why do you ask?",
+            "There is a playground there",
+            "Oh, I like it very much"
+        ],
+        "a": 2
+    },
+    {
+        "id": 139,
+        "q": "A: Who is the woman crossing the street? B: _____. A: She is so pretty. B: _____.",
+        "o": [
+            "She is our teacher. / What about you?",
+            "Why are you asking? / I don't know her.",
+            "She is Mrs. green. / He is coming to us.",
+            "These are Ann and Mary. / You are right.",
+            "She is my friend. / You know him well."
+        ],
+        "a": 1
+    },
+    {
+        "id": 140,
+        "q": "A: I don't think English is easy. B: _____. A: Because I have to work hard learning a lot by heart.",
+        "o": [
+            "So do I",
+            "It is easy",
+            "Oh, let's speak",
+            "I want to help",
+            "Why do you think so?"
+        ],
+        "a": 4
+    },
+    {
+        "id": 141,
+        "q": "- When are you leaving?",
+        "o": [
+            "I live not far from here.",
+            "May I see you off?",
+            "I'm not flying.",
+            "I'm flying on Saturday.",
+            "I'm leaving home."
+        ],
+        "a": 3
+    },
+    {
+        "id": 142,
+        "q": "- What do you do?",
+        "o": [
+            "Very well. Thank you.",
+            "I'm an architect.",
+            "Pleased to meet you.",
+            "It doesn't matter.",
+            "Cheers. See you!"
+        ],
+        "a": 1
+    },
+    {
+        "id": 143,
+        "q": "Husband: No dinner ready! I'm going to a restaurant. Wife: _____. H.: Will it be ready then? W.: No, it won't. But I'll be ready myself to come with you.",
+        "o": [
+            "O.K. I'll be ready.",
+            "I don't mind your cooking.",
+            "Couldn't you wait a few minutes?",
+            "Give me some cakes.",
+            "Give me all your money."
+        ],
+        "a": 2
+    },
+    {
+        "id": 144,
+        "q": "- _____?",
+        "o": [
+            "Why have you come here?",
+            "Why are you learning English?",
+            "Who made you buy this book?",
+            "Why are these books on your table?",
+            "Why don't you learn a foreign language?"
+        ],
+        "a": 1
+    },
+    {
+        "id": 145,
+        "q": "- _____.",
+        "o": [
+            "Did you go there on business or for pleasure?",
+            "When did you go to a conference?",
+            "What were you doing there?",
+            "Have you had your contract signed?",
+            "Did you enjoy yourself?"
+        ],
+        "a": 0
+    },
+    {
+        "id": 146,
+        "q": "- Have you got any books by O. Wilde?",
+        "o": [
+            "Please",
+            "Take it",
+            "Here is it",
+            "Here they are",
+            "Here are they"
+        ],
+        "a": 3
+    },
+    {
+        "id": 147,
+        "q": "- It was so kind of you to give me such an interesting book. Thank you for it.",
+        "o": [
+            "Please",
+            "Certainly",
+            "Here you are",
+            "You are welcome",
+            "Here it is"
+        ],
+        "a": 3
+    },
+    {
+        "id": 148,
+        "q": "- Have you heard the news? Mary and Nick are engaged.",
+        "o": [
+            "That's right / Really",
+            "She couldn't / No, she didn't",
+            "Really? / That's right",
+            "You don't say so! / She did.",
+            "I'm sure of it / You are right."
+        ],
+        "a": 3
+    },
+    {
+        "id": 149,
+        "q": "- Will you have some more chicken?",
+        "o": [
+            "Yes / No",
+            "A little more / No, thank you",
+            "No, thank you / Yes, please",
+            "No, I shan't / Yes, have",
+            "Of course / Certainly"
+        ],
+        "a": 2
+    },
+    {
+        "id": 150,
+        "q": "- What outdoor games popular in England? on. -Oh, I'm sorry. Right you are.",
+        "o": [
+            "hockey / golf",
+            "football / billiard",
+            "billiard / table-tennis",
+            "golf / football",
+            "hockey / table-tennis"
+        ],
+        "a": 2
+    },
+    {
+        "id": 151,
+        "q": "- Could I see you on Monday?",
+        "o": [
+            "I'm sorry, I can 't / That won't do",
+            "Yes / No, I'm busy at 10",
+            "No, you can't / Why?",
+            "Certainly / Very good",
+            "Of course / I'm sorry"
+        ],
+        "a": 3
+    },
+    {
+        "id": 152,
+        "q": "- _____.",
+        "o": [
+            "Have you been to Hampton Court? / Did you go there by car?",
+            "Where have you been lately? / Who did you go there with?",
+            "Have you finished your work? / Did you do it yourself?",
+            "Who has taken you to Hampton Court? /",
+            "Did you go to Hampton Court? / How did you go there?"
+        ],
+        "a": 0
+    },
+    {
+        "id": 153,
+        "q": "Mike: What are you doing, Alice? Alice: _____. Mike: Why? Let me see what's the matter with it.",
+        "o": [
+            "I'm looking for my sister.",
+            "I can't close my bag.",
+            "I'm going home.",
+            "I'm reading a book.",
+            "I've got a bad mark."
+        ],
+        "a": 1
+    },
+    {
+        "id": 154,
+        "q": "- Do you go to school ?",
+        "o": [
+            "Yes, I do.",
+            "Yes, I always do.",
+            "No, I'm sent there.",
+            "Yes, I shall.",
+            "Yes, I like it."
+        ],
+        "a": 2
+    },
+    {
+        "id": 155,
+        "q": "Mike: Let me go and buy the newspapers for you, Dad? Father: _____.",
+        "o": [
+            "Do, please.",
+            "All right.",
+            "I have already bought them.",
+            "You can buy them.",
+            "A good idea."
+        ],
+        "a": 2
+    },
+    {
+        "id": 156,
+        "q": "Bob: What about going to the cinema? Tom: _____. Bob: You can do your work after cinema.",
+        "o": [
+            "I am afraid I can't",
+            "I have a lot of things to do",
+            "With pleasure",
+            "I don't feel like going to the cinema",
+            "I like going to the cinema very much"
+        ],
+        "a": 1
+    },
+    {
+        "id": 157,
+        "q": "A: Do you think you could give me your bicycle this morning? B: _____. A: _____.",
+        "o": [
+            "I don't think so/You are right",
+            "You can't have it now/Certainly",
+            "Yes, I can't/Not at all",
+            "I'm sorry, I'm using it myself/Well, thanks",
+            "I thought it over/With pleasure"
+        ],
+        "a": 3
+    },
+    {
+        "id": 158,
+        "q": "A: How long have you been living there? B: For three years already. We often spend our weekends here. A: _____. B: Yes, I have to get up early. But if you want to have a really quiet and healthy day off you've got to stay in the country.",
+        "o": [
+            "But you've got to work much here",
+            "But it depends on the color",
+            "Did you have much snow?",
+            "I think, last spring wasn't very nice",
+            "The heating doesn't work properly"
+        ],
+        "a": 0
+    },
+    {
+        "id": 159,
+        "q": "A: Can I borrow your pen for a moment? B: _____. A: _____.",
+        "o": [
+            "You must / Don't mention it",
+            "No / Here it is",
+            "Sure. Here you are / Thanks",
+            "Not a bit / Thank you",
+            "Please / Certainly"
+        ],
+        "a": 2
+    },
+    {
+        "id": 160,
+        "q": "- Hello! _____?",
+        "o": [
+            "Glad to see you",
+            "How do you do",
+            "How are you",
+            "Is that you",
+            "I haven 't seen you for ages"
+        ],
+        "a": 2
+    },
+    {
+        "id": 161,
+        "q": "A: What are you doing, Bob? B: _____. A: What are you writing to him about? B: Don't ask so many questions _____ .",
+        "o": [
+            "I'm writing a letter to Helen/Curiosity killed the cat",
+            "I'm going to write a letter/There is no time left",
+            "I'm writing/About the letter I've got from my",
+            "I'm going to visit my uncle/He is ill",
+            "I'm busy writing a letter to you/Are you going to read it?"
+        ],
+        "a": 0
+    },
+    {
+        "id": 162,
+        "q": "A: Are you ready to go? B: _____. A: When will you be ready? B: _____. A: Hurry up, I'm waiting for you",
+        "o": [
+            "Not yet / In five minutes",
+            "Yes, of course / I don't know",
+            "Yes, I think / Why, I've no time to go",
+            "I'm afraid I can't / Tomorrow morning",
+            "Why? Shall we go anywhere? / I shan't be ready"
+        ],
+        "a": 0
+    },
+    {
+        "id": 163,
+        "q": "A: Are you free tonight? B: Why? _____? A: Yes, I've got tickets for \"King Lear\". B: It's the first night, isn't it? How did you manage to get seats? A: Don't ask me questions, just say whether you're coming or not. B: _____. How can I miss a chance like that?",
+        "o": [
+            "Are you going to invite me anywhere / Oh",
+            "Shall we go anywhere / No, I'm not",
+            "What can I do for / Yes, I think",
+            "Can you help me / No, I am not",
+            "What for / Yes, I am"
+        ],
+        "a": 0
+    },
+    {
+        "id": 164,
+        "q": "A: _____? B: \"Friends\", I think.",
+        "o": [
+            "Who are you going to call on?",
+            "Whom did you meet?",
+            "Who is your office manager?",
+            "What's on tonight?",
+            "What's in your bag?"
+        ],
+        "a": 3
+    },
+    {
+        "id": 165,
+        "q": "- Can you spare me a few minutes? later?",
+        "o": [
+            "Yes, certainly / Yes / Yesterday",
+            "I'm sorry / Certainly / In an hour or so",
+            "No / Of course / Next year",
+            "Certainly / Yes, I can / Just now",
+            "Really? / I think so / A fortnight"
+        ],
+        "a": 1
+    },
+    {
+        "id": 166,
+        "q": "- What's wrong with you? You look so pale!",
+        "o": [
+            "I'm feverish / Yes, I have",
+            "I've got a cold / Not yet, but I'm going to",
+            "I've got a sore throat / I've consulted the dentist",
+            "I'll be better soon / Certainly",
+            "I'm shivering / I think so"
+        ],
+        "a": 1
+    },
+    {
+        "id": 167,
+        "q": "- I'm flying to New-York tomorrow.",
+        "o": [
+            "Have a good journey!",
+            "A happy landing to you!",
+            "You're welcome!",
+            "Help yourself",
+            "Welcome here"
+        ],
+        "a": 0
+    },
+    {
+        "id": 168,
+        "q": "A: Do you know the men standing over there? B: Yes, of course. A: What are they? B: _____.",
+        "o": [
+            "They are famous sportsmen.",
+            "The man is a famous writer.",
+            "They are Pete and Mike.",
+            "This man is John Smith.",
+            "They are kind."
+        ],
+        "a": 0
+    },
+    {
+        "id": 169,
+        "q": "An Englishman's home is his _____.",
+        "o": [
+            "church",
+            "house",
+            "out doors",
+            "castle",
+            "bank"
+        ],
+        "a": 3
+    },
+    {
+        "id": 170,
+        "q": "\"False friends are _____.\"",
+        "o": [
+            "as clear as day",
+            "out of mind",
+            "better than riches",
+            "worse than open enemies",
+            "good to be true"
+        ],
+        "a": 3
+    },
+    {
+        "id": 171,
+        "q": "A good name is better _____.",
+        "o": [
+            "than richness",
+            "than never",
+            "than in bad company",
+            "than promise long",
+            "than a friend"
+        ],
+        "a": 0
+    },
+    {
+        "id": 172,
+        "q": "After the long school holidays, Mrs. Hay went to talk to Betty's teacher. \"Betty is glad that school has started\", she said. \"She is as _____.\"",
+        "o": [
+            "hungry as a wolf",
+            "busy as a bee",
+            "as happy as a lark",
+            "as slow as a tortoise",
+            "as clever as an owl"
+        ],
+        "a": 2
+    },
+    {
+        "id": 173,
+        "q": "So _____ so done.",
+        "o": [
+            "thought",
+            "done",
+            "had",
+            "saw",
+            "said"
+        ],
+        "a": 4
+    },
+    {
+        "id": 174,
+        "q": "\"While there is _____ there is hope.\"",
+        "o": [
+            "will",
+            "wish",
+            "love",
+            "life",
+            "water"
+        ],
+        "a": 3
+    },
+    {
+        "id": 175,
+        "q": "\"Better face a danger than be always in _____.",
+        "o": [
+            "favor",
+            "moon",
+            "fear",
+            "fire",
+            "flight"
+        ],
+        "a": 2
+    },
+    {
+        "id": 176,
+        "q": "Mr. Brown was very afraid of dentist. Once he had a terrible toothache, and couldn't sleep. The next day, he decided to go to the dentists and have his tooth extracted.",
+        "o": [
+            "While there is life there is hope.",
+            "Where there is smoke, there is fire.",
+            "Where there is a will, there's a way.",
+            "An able sailor hails in stormy weather.",
+            "Better face a danger than be always in fear."
+        ],
+        "a": 4
+    },
+    {
+        "id": 177,
+        "q": "An hour in the morning _____.",
+        "o": [
+            "as near as today and tomorrow",
+            "is better than richness",
+            "has wings",
+            "is worth two in the evening",
+            "as clear as day"
+        ],
+        "a": 3
+    },
+    {
+        "id": 178,
+        "q": "John was a very lazy pupil. During the school years he didn't learn his lessons and always played truant. When the examination time came he was also to take his exams. But, alas, he didn't pass them and he cried bitterly.",
+        "o": [
+            "Living dog is better than a dead man.",
+            "The rotten apple injures its neighbors.",
+            "The appetite comes with eating.",
+            "A good beginning makes a good ending.",
+            "You have made your bed and you must lie on it."
+        ],
+        "a": 4
+    },
+    {
+        "id": 179,
+        "q": "Promise little _____.",
+        "o": [
+            "who laughs last",
+            "but do much",
+            "that ends well",
+            "while the sun shines",
+            "never found again"
+        ],
+        "a": 1
+    },
+    {
+        "id": 180,
+        "q": "Joe had a very big supper. When he asked for a piece of bread and butter at bedtime, his mother said, \" I've never seen anyone eat so much. You are always as hungry as _____.\"",
+        "o": [
+            "a lark",
+            "a wolf",
+            "a bee",
+            "a horse",
+            "a mouse"
+        ],
+        "a": 1
+    },
+    {
+        "id": 181,
+        "q": "The last drop makes _____.",
+        "o": [
+            "both ends meet",
+            "the cat out of the bag",
+            "a horse laugh",
+            "the cup run over",
+            "a cat laugh"
+        ],
+        "a": 3
+    },
+    {
+        "id": 182,
+        "q": "_____ makes the world go round.",
+        "o": [
+            "love",
+            "hatred",
+            "gravity",
+            "money",
+            "poor mouse."
+        ],
+        "a": 3
+    },
+    {
+        "id": 183,
+        "q": "_____ repeats itself.",
+        "o": [
+            "children",
+            "language",
+            "everybody",
+            "stories",
+            "history"
+        ],
+        "a": 4
+    },
+    {
+        "id": 184,
+        "q": "One of our classmates fell ill, and was taken to hospital. In three months he was out and about, but lagged behind the pupils with his studying. He asked many pupils to help him, nobody came to his rescue, but me. After that we became friends.",
+        "o": [
+            "Facts are stubborn things",
+            "Experience is the mother of wisdom",
+            "Live and learn",
+            "Everything is good in its season",
+            "A friend in need is a friend indeed"
+        ],
+        "a": 4
+    },
+    {
+        "id": 185,
+        "q": "A man's best friend is his _____.",
+        "o": [
+            "shirt",
+            "bag",
+            "dog",
+            "house",
+            "money"
+        ],
+        "a": 2
+    },
+    {
+        "id": 186,
+        "q": "Lost time is _____.",
+        "o": [
+            "known by its tree.",
+            "never found again.",
+            "not so black as he painted.",
+            "never too late to learn.",
+            "makes the cup run."
+        ],
+        "a": 1
+    },
+    {
+        "id": 187,
+        "q": "\"Out of sight-out of _____.",
+        "o": [
+            "light",
+            "fight",
+            "guide",
+            "might",
+            "mind"
+        ],
+        "a": 4
+    },
+    {
+        "id": 188,
+        "q": "Everything is _____.",
+        "o": [
+            "shooting without aim",
+            "better than saying",
+            "good in its season",
+            "better to do well than to say well",
+            "worth two tomorrow"
+        ],
+        "a": 2
+    },
+    {
+        "id": 189,
+        "q": "My friend Ann is a very clever girl. She is quick in everything she does. She is not lazy. She always does everything in time. She doesn't like lazy people who always try to put off their work and she says _____.",
+        "o": [
+            "Speech is silver but silence is gold.",
+            "A bad wound is cured, not a bad name.",
+            "What is done can't be undone.",
+            "Never put off till tomorrow what you can do today.",
+            "As is the workman so is the work."
+        ],
+        "a": 3
+    },
+    {
+        "id": 190,
+        "q": "My mother loves my younger sister very much and the latter makes use of it. She always asks to buy her nice dresses, sweets. My sister likes only to play and is a poor pupil. My sister is just a bad naughty girl. I say this because I always _____.",
+        "o": [
+            "call the shots",
+            "change horses in midstream",
+            "call a spade a spade",
+            "cry over spilt milk",
+            "give someone the cold shoulder"
+        ],
+        "a": 2
+    },
+    {
+        "id": 191,
+        "q": "- Hello, Ann? I haven't seen you for ages. Where have you been? week. I'm glad I'm at home.",
+        "o": [
+            "I liked Moscow very much.",
+            "East or West, home is best.",
+            "I met our friends there.",
+            "My family stayed in Moscow.",
+            "Have you been to Moscow?"
+        ],
+        "a": 1
+    },
+    {
+        "id": 192,
+        "q": "Nobody expected them to part so suddenly. They loved each other and they were to get married. One day he told her he was going to Italy on business. He stayed 2 years there. Meanwhile she completely forgot him and married Mr. Black, a rich man.",
+        "o": [
+            "A bad wound is cured, not a bad name.",
+            "No news good news.",
+            "As is the workman so is the work.",
+            "Out of sight - out of mind.",
+            "False friend are worse than open enemies."
+        ],
+        "a": 3
+    },
+    {
+        "id": 193,
+        "q": "Mother gave Ann some money. The girl wanted to go to the cinema very much; at the same time she wanted to buy a book, but there was not enough money for both, \"I'll buy the book and go to the cinema next time when I have money\" she said.",
+        "o": [
+            "A man can die but once.",
+            "A cat in gloves catches no mice.",
+            "You cannot eat your cake and have it.",
+            "He laughs best who laughs last.",
+            "So many men, so many minds."
+        ],
+        "a": 2
+    },
+    {
+        "id": 194,
+        "q": "_____ loose all.",
+        "o": [
+            "He that never climbed",
+            "Grasp all",
+            "If you run after two hares",
+            "If wishes were horses",
+            "Least said"
+        ],
+        "a": 1
+    },
+    {
+        "id": 195,
+        "q": "What will the travelers say when they come safe to the end of their journey, having gone through many dangerous adventures?",
+        "o": [
+            "To take the bull by the horn.",
+            "To kill two birds with one stone.",
+            "Two heads are better than one.",
+            "There is no smoke without fire.",
+            "All is well that ends well."
+        ],
+        "a": 4
+    },
+    {
+        "id": 196,
+        "q": "What would you say to a grumbling group mate who is finding fault with everything around?",
+        "o": [
+            "Better late than never.",
+            "East or West, home is best.",
+            "To get out of bed on the wrong side.",
+            "Promise little, but do much.",
+            "Make hay while the sun shines."
+        ],
+        "a": 2
+    },
+    {
+        "id": 197,
+        "q": "Your friend has been suffering from a bad toothache for a long time as he is afraid to go to the dentist. How would you urge him to overcome his fear.",
+        "o": [
+            "He laughs best who laughs last.",
+            "The devil is not so black as is painted.",
+            "A burnt child dreads the fire.",
+            "One swallow doesn't make a summer.",
+            "If you want a thing well done, do it yourself."
+        ],
+        "a": 1
+    },
+    {
+        "id": 198,
+        "q": "A.: It's risky to take an exam without reading the whole book. B.: But it's my last chance. _____.",
+        "o": [
+            "New brooms sweep clean.",
+            "No new is good news",
+            "Once bitten, twice shy.",
+            "Sink or swim.",
+            "Poverty is no sin."
+        ],
+        "a": 3
+    },
+    {
+        "id": 199,
+        "q": "A.: You say this green dress doesn't suit me and I look dull in it. What about the blue one? B.: Oh, it's quite different. You must always wear it, you are lively in it. A.: You see, and my mother hates it. _____.",
+        "o": [
+            "Rome wasn't built in a day.",
+            "A round peg in a square hole.",
+            "There is no place like home.",
+            "That's another pair of shoes.",
+            "Tastes differ."
+        ],
+        "a": 4
+    },
+    {
+        "id": 200,
+        "q": "A.: What kind of person is our director? B.: Can't make out. Neither kind nor strict. _____.",
+        "o": [
+            "Neither fish nor flesh.",
+            "Too good to be true.",
+            "To turn over a new leaf.",
+            "Woken pigs fly.",
+            "Well begun is half done."
+        ],
+        "a": 0
+    },
+    {
+        "id": 201,
+        "q": "_____, soonest mended.",
+        "o": [
+            "If the sky falls",
+            "All covet",
+            "As you make your bed",
+            "As you sow",
+            "Least said"
+        ],
+        "a": 4
+    },
+    {
+        "id": 202,
+        "q": "When angry _____.",
+        "o": [
+            "do as the Romans do",
+            "sweep clean",
+            "you will catch neither",
+            "you shall mow",
+            "count a hundred"
+        ],
+        "a": 4
+    },
+    {
+        "id": 203,
+        "q": "Many men, many _____.",
+        "o": [
+            "servants",
+            "hands",
+            "minds",
+            "ways",
+            "thoughts"
+        ],
+        "a": 2
+    },
+    {
+        "id": 204,
+        "q": "Well begun is half _____.",
+        "o": [
+            "gone",
+            "done",
+            "undone",
+            "a way",
+            "come"
+        ],
+        "a": 1
+    },
+    {
+        "id": 205,
+        "q": "East or West _____ is best.",
+        "o": [
+            "castle",
+            "hut",
+            "home",
+            "palace",
+            "country"
+        ],
+        "a": 2
+    },
+    {
+        "id": 206,
+        "q": "A bird in the hand _____.",
+        "o": [
+            "is worth two in the bush",
+            "makes even a cat laugh",
+            "has brought forth a mouse",
+            "speaks louder than words",
+            "changes his spots"
+        ],
+        "a": 0
+    },
+    {
+        "id": 207,
+        "q": "We have got two neighbors. One of them is a clever and polite man. He is an educated, cultural man. The other is rather selfish and stupid. He thinks he can buy everything as he is rich enough. He is a narrow-minded person. We don't like him.",
+        "o": [
+            "As the tree so the fruit.",
+            "Health is above wealth.",
+            "No pains, no gains.",
+            "It's never too late to learn.",
+            "Better short of pence than short of sense."
+        ],
+        "a": 4
+    },
+    {
+        "id": 208,
+        "q": "When faced with a difficult problem, it is better to consult other people.",
+        "o": [
+            "To kill two birds with one stone.",
+            "Two heads are better than one.",
+            "If you want a thing well done, do it yourself.",
+            "The devil is not so black as he is painted.",
+            "East or West home is best."
+        ],
+        "a": 1
+    },
+    {
+        "id": 209,
+        "q": "First catch your _____ then cook it.",
+        "o": [
+            "hare",
+            "hair",
+            "heir",
+            "car",
+            "bear"
+        ],
+        "a": 0
+    },
+    {
+        "id": 210,
+        "q": "A stitch in time _____.",
+        "o": [
+            "saves nine",
+            "before they hatch",
+            "makes a good ending",
+            "before they are easy",
+            "makes perfect"
+        ],
+        "a": 0
+    },
+    {
+        "id": 211,
+        "q": "Mr. Smith was rather lazy. He didn't like to work hard and always spared himself. He was sure that his father would support him all his life. But his father died and Mr. Smith had a miserable life.",
+        "o": [
+            "Don't trouble trouble until trouble troubles you.",
+            "Speech is silver but silence is gold.",
+            "No sweet without sweat.",
+            "As the tree so the fruit.",
+            "First think then speak."
+        ],
+        "a": 2
+    },
+    {
+        "id": 212,
+        "q": "It was raining very hard. A lot of people were standing at the bus- stop and were sorry they had not taken their umbrellas with them. But one man among them was cheerful and pleased. He always repeated \"the harder it rains the better I like it.\" Asked why he was happy with rain he answered ...",
+        "o": [
+            "Like to like.",
+            "The fist blow is half the battle.",
+            "Actions speak louder than words.",
+            "An idle brain is the devil's workshop.",
+            "One man's meat is another man's poison."
+        ],
+        "a": 4
+    },
+    {
+        "id": 213,
+        "q": "- What time do you get up on Sundays?",
+        "o": [
+            "deeds, not words",
+            "neck or nothing",
+            "custom is a second nature",
+            "no rose without a thorn",
+            "when angry, count a hundred"
+        ],
+        "a": 2
+    },
+    {
+        "id": 214,
+        "q": "Some people use fine words when they talk about what they have done, but their actions may be quite different and not at all fine.",
+        "o": [
+            "Fine words dress ill deeds.",
+            "You can't eat your cake and have it.",
+            "Fortune favors the brave.",
+            "All work and no play makes Jack a dull boy.",
+            "An apple a day keeps the doctor away."
+        ],
+        "a": 0
+    },
+    {
+        "id": 215,
+        "q": "A man mustn't think that his task is too difficult before he begins doing it.",
+        "o": [
+            "Everything comes to him who waits.",
+            "No living man all things can.",
+            "Live not to eat but eat to live.",
+            "Keep your mouth shut and your ears open.",
+            "Don't cross the bridge before you come to it"
+        ],
+        "a": 4
+    },
+    {
+        "id": 216,
+        "q": "Still waters run _____.",
+        "o": [
+            "quick",
+            "important",
+            "careful",
+            "deep",
+            "strong"
+        ],
+        "a": 3
+    },
+    {
+        "id": 217,
+        "q": "Be slow to promise and _____.",
+        "o": [
+            "speak little",
+            "life is short",
+            "never fell",
+            "quick to perform",
+            "half is done"
+        ],
+        "a": 3
+    },
+    {
+        "id": 218,
+        "q": "- I am lucky today, your turn will come later on. Tomorrow our positions may be reversed.",
+        "o": [
+            "Deeds not words",
+            "Every dog has his day",
+            "Scratch my back and I'll scratch yours",
+            "Everything is good in its season",
+            "All is well that ends well"
+        ],
+        "a": 1
+    },
+    {
+        "id": 219,
+        "q": "If you _____ to be a friend, never borrow, never _____.",
+        "o": [
+            "want / lend",
+            "wanted / lent",
+            "wants / lends",
+            "will want / lend",
+            "want / lent"
+        ],
+        "a": 0
+    }
+]

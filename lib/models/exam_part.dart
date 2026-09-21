@@ -1,13 +1,98 @@
 import 'question.dart';
 
+/// The course a subject belongs to. Tracks are the top level of the subject
+/// browser: the bank holds a Khmer civil-service syllabus and three English
+/// courses, and showing all of them as one flat list of subjects made the two
+/// look like one syllabus.
+enum PartTrack {
+  civilService('ចំណេះដឹងទូទៅ', 'General Knowledge', '🇰🇭'),
+  grammar('វេយ្យាករណ៍អង់គ្លេស', 'English Grammar', '📘'),
+  vocabulary('វាក្យសព្ទអង់គ្លេស', 'English Vocabulary', '🔤'),
+  englishSkills('ភាសាអង់គ្លេសអនុវត្ត', 'English in Use', '💬');
+
+  const PartTrack(this.titleKm, this.titleEn, this.icon);
+
+  final String titleKm;
+  final String titleEn;
+
+  /// Emoji glyph, used as a lightweight icon the way [ExamPart.icon] is.
+  final String icon;
+}
+
+/// How demanding a subject is, on the ladder the source book itself prints in
+/// the running head of nearly every page.
+///
+/// [allLevels] is not a rung: it marks the sets the book calls "multi-level",
+/// where one test deliberately mixes easy and hard items. Those are kept as
+/// they are rather than graded, because splitting them would mean inventing a
+/// difficulty the book never assigned.
+enum PartLevel {
+  elementary('កម្រិតដំបូង', 'Elementary'),
+  preIntermediate('កម្រិតមធ្យមដំបូង', 'Pre-Intermediate'),
+  intermediate('កម្រិតមធ្យម', 'Intermediate'),
+  upperIntermediate('កម្រិតមធ្យមខ្ពស់', 'Upper-Intermediate'),
+  advanced('កម្រិតខ្ពស់', 'Advanced'),
+  allLevels('គ្រប់កម្រិត', 'All levels');
+
+  const PartLevel(this.titleKm, this.titleEn);
+
+  final String titleKm;
+  final String titleEn;
+
+  /// The short form used on the level badge. The badge already says it is a
+  /// level, so the "កម្រិត" prefix is redundant there - and on a 320px screen
+  /// the full name does not fit beside the question count.
+  String get badgeKm => switch (this) {
+    elementary => 'ដំបូង',
+    preIntermediate => 'មធ្យមដំបូង',
+    intermediate => 'មធ្យម',
+    upperIntermediate => 'មធ្យមខ្ពស់',
+    advanced => 'ខ្ពស់',
+    allLevels => 'គ្រប់កម្រិត',
+  };
+
+  /// Position on the ladder, 1-5, or null for [allLevels], which sits beside
+  /// the ladder rather than on it.
+  int? get step => this == allLevels ? null : index + 1;
+
+  /// 0-1, for drawing the rung as a filled bar. [allLevels] reads as full.
+  double get intensity => (step ?? 5) / 5;
+}
+
+/// Static description of one subject, before its questions are loaded.
+class PartMeta {
+  final String titleKm;
+  final String titleEn;
+  final String icon;
+  final PartTrack track;
+
+  /// Null for the Khmer civil-service subjects, which the source syllabus
+  /// does not grade.
+  final PartLevel? level;
+
+  /// Whether the options are lettered A/B/C/D/E instead of ក/ខ/គ/ឃ. It follows
+  /// the language of the questions, not one app-wide convention.
+  final bool latinLabels;
+
+  const PartMeta({
+    required this.titleKm,
+    required this.titleEn,
+    required this.icon,
+    required this.track,
+    this.level,
+    this.latinLabels = false,
+  });
+}
+
 /// One subject section ("ផ្នែកទី") of the QCM question bank: parts 1-13 are the
-/// Khmer civil-service bank, parts 14-24 the English bank from grammar.pdf,
-/// one part per part of that book.
+/// Khmer civil-service bank, parts 14-26 the English bank from grammar.pdf.
 class ExamPart {
   final int id;
   final String titleKm;
   final String titleEn;
   final String icon; // emoji glyph used as a lightweight icon
+  final PartTrack track;
+  final PartLevel? level;
   final List<Question> questions;
 
   const ExamPart({
@@ -15,6 +100,8 @@ class ExamPart {
     required this.titleKm,
     required this.titleEn,
     required this.icon,
+    required this.track,
+    this.level,
     required this.questions,
   });
 
@@ -25,130 +112,201 @@ class ExamPart {
     titleKm: titleKm,
     titleEn: titleEn,
     icon: icon,
+    track: track,
+    level: level,
     questions: questions ?? this.questions,
   );
 
-  static const List<Map<String, String>> catalog = [
-    {'title': 'អំពីប្រវត្តិសាស្ត្រ', 'en': 'History', 'icon': '🏺'},
-    {
-      'title': 'អំពីវប្បធម៌ និងអរិយធម៌',
-      'en': 'Culture & Civilization',
-      'icon': '🎭',
-    },
-    {
-      'title': 'អំពីភូមិសាស្ត្រ និងប្រជាសាស្ត្រ',
-      'en': 'Geography & Demography',
-      'icon': '🗺️',
-    },
-    {
-      'title': 'អំពីរដ្ឋបាលសាធារណៈ',
-      'en': 'Public Administration',
-      'icon': '🏛️',
-    },
-    {
-      'title': 'អំពីសេដ្ឋកិច្ច ហិរញ្ញវត្ថុ និងវិនិយោគ',
-      'en': 'Economy & Finance',
-      'icon': '📈',
-    },
-    {
-      'title': 'អំពីមុខងារសាធារណៈ និងធនធានមនុស្ស',
-      'en': 'Public Function & HR',
-      'icon': '🧑‍💼',
-    },
-    {'title': 'អំពីអាស៊ាន', 'en': 'ASEAN', 'icon': '🌏'},
-    {'title': 'អំពីអន្តរជាតិ', 'en': 'International Affairs', 'icon': '🌐'},
-    {
-      'title': 'អំពីច្បាប់ គោលនយោបាយ និងនយោបាយ',
-      'en': 'Law & Policy',
-      'icon': '⚖️',
-    },
-    {
-      'title': 'អំពីសាសនា ក្រមសីលធម៌ និងសុភាសិត',
-      'en': 'Religion & Ethics',
-      'icon': '🙏',
-    },
-    {
-      'title': 'អំពីវិទ្យាសាស្ត្រ បច្ចេកវិទ្យា និងនវានុវត្តន៍',
-      'en': 'Science & Technology',
-      'icon': '💡',
-    },
-    {
-      'title': 'អំពីល្បែងប្រាជ្ញា តក្កវិទ្យា និងករណីសិក្សា',
-      'en': 'Logic & Case Studies',
-      'icon': '🧩',
-    },
-    {'title': 'អំពីវិស័យយុត្តិធម៌', 'en': 'Justice Sector', 'icon': '🧑‍⚖️'},
-    // Parts 14-24 come from assets/pdf/grammar.pdf. They follow the book's own
-    // division - Book 1 Parts A-E, Book 2 Parts A-E and Book 3 - rather than
-    // one part per book, so no single section holds thousands of questions.
-    // They are lettered A-E as the book prints them; 'labels': 'latin' selects
-    // that. Keep this list in the same order as the PARTS table in
-    // tools/extract_grammar_pdf.py: part N here is assets/data/part_NN.json.
-    {
-      'title': 'វេយ្យាករណ៍អង់គ្លេស ផ្នែក A',
-      'en': 'Book 1 Grammar - Part A',
-      'icon': '📘',
-      'labels': 'latin',
-    },
-    {
-      'title': 'វេយ្យាករណ៍អង់គ្លេស ផ្នែក B',
-      'en': 'Book 1 Grammar - Part B',
-      'icon': '📗',
-      'labels': 'latin',
-    },
-    {
-      'title': 'វេយ្យាករណ៍អង់គ្លេស ផ្នែក C',
-      'en': 'Book 1 Grammar - Part C',
-      'icon': '📙',
-      'labels': 'latin',
-    },
-    {
-      'title': 'វេយ្យាករណ៍អង់គ្លេស ផ្នែក D',
-      'en': 'Book 1 Grammar - Part D',
-      'icon': '📕',
-      'labels': 'latin',
-    },
-    {
-      'title': 'វេយ្យាករណ៍អង់គ្លេស ផ្នែក E',
-      'en': 'Book 1 Grammar - Part E',
-      'icon': '📓',
-      'labels': 'latin',
-    },
-    {
-      'title': 'វាក្យសព្ទអង់គ្លេស ផ្នែក A',
-      'en': 'Book 2 Vocabulary - Part A',
-      'icon': '🔤',
-      'labels': 'latin',
-    },
-    {
-      'title': 'វាក្យសព្ទអង់គ្លេស ផ្នែក B',
-      'en': 'Book 2 Vocabulary - Part B',
-      'icon': '🔡',
-      'labels': 'latin',
-    },
-    {
-      'title': 'កិរិយាសព្ទឃ្លា ផ្នែក C',
-      'en': 'Book 2 Phrasal Verbs - Part C',
-      'icon': '🔗',
-      'labels': 'latin',
-    },
-    {
-      'title': 'វាក្យសព្ទកម្រិតខ្ពស់ ផ្នែក D',
-      'en': 'Book 2 Vocabulary - Part D',
-      'icon': '📚',
-      'labels': 'latin',
-    },
-    {
-      'title': 'ពាក្យមានន័យដូច ផ្នែក E',
-      'en': 'Book 2 Synonyms - Part E',
-      'icon': '🔁',
-      'labels': 'latin',
-    },
-    {
-      'title': 'ភាសាអង់គ្លេសទូទៅ',
-      'en': 'Book 3 - Miscellaneous',
-      'icon': '💬',
-      'labels': 'latin',
-    },
+  /// The catalog, in the order the subject browser shows it: the Khmer
+  /// syllabus first, then each English course from its easiest rung upwards.
+  ///
+  /// Part N here is `assets/data/part_NN.json`, so this list must stay in the
+  /// same order as the `PARTS` table in `tools/extract_grammar_pdf.py`.
+  static const List<PartMeta> catalog = [
+    PartMeta(
+      titleKm: 'អំពីប្រវត្តិសាស្ត្រ',
+      titleEn: 'History',
+      icon: '🏺',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីវប្បធម៌ និងអរិយធម៌',
+      titleEn: 'Culture & Civilization',
+      icon: '🎭',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីភូមិសាស្ត្រ និងប្រជាសាស្ត្រ',
+      titleEn: 'Geography & Demography',
+      icon: '🗺️',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីរដ្ឋបាលសាធារណៈ',
+      titleEn: 'Public Administration',
+      icon: '🏛️',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីសេដ្ឋកិច្ច ហិរញ្ញវត្ថុ និងវិនិយោគ',
+      titleEn: 'Economy & Finance',
+      icon: '📈',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីមុខងារសាធារណៈ និងធនធានមនុស្ស',
+      titleEn: 'Public Function & HR',
+      icon: '🧑‍💼',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីអាស៊ាន',
+      titleEn: 'ASEAN',
+      icon: '🌏',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីអន្តរជាតិ',
+      titleEn: 'International Affairs',
+      icon: '🌐',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីច្បាប់ គោលនយោបាយ និងនយោបាយ',
+      titleEn: 'Law & Policy',
+      icon: '⚖️',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីសាសនា ក្រមសីលធម៌ និងសុភាសិត',
+      titleEn: 'Religion & Ethics',
+      icon: '🙏',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីវិទ្យាសាស្ត្រ បច្ចេកវិទ្យា និងនវានុវត្តន៍',
+      titleEn: 'Science & Technology',
+      icon: '💡',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីល្បែងប្រាជ្ញា តក្កវិទ្យា និងករណីសិក្សា',
+      titleEn: 'Logic & Case Studies',
+      icon: '🧩',
+      track: PartTrack.civilService,
+    ),
+    PartMeta(
+      titleKm: 'អំពីវិស័យយុត្តិធម៌',
+      titleEn: 'Justice Sector',
+      icon: '🧑‍⚖️',
+      track: PartTrack.civilService,
+    ),
+    // Parts 14-26 come from assets/pdf/grammar.pdf, filed by the level the
+    // book prints for them rather than by its Part A-E lettering: a learner
+    // can tell whether "Elementary" is for them, but not whether "Part C" is.
+    PartMeta(
+      titleKm: 'វេយ្យាករណ៍ កម្រិតដំបូង',
+      titleEn: 'Grammar - Elementary',
+      icon: '🌱',
+      track: PartTrack.grammar,
+      level: PartLevel.elementary,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'វេយ្យាករណ៍ កម្រិតមធ្យមដំបូង',
+      titleEn: 'Grammar - Pre-Intermediate',
+      icon: '🌿',
+      track: PartTrack.grammar,
+      level: PartLevel.preIntermediate,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'វេយ្យាករណ៍ កម្រិតមធ្យម',
+      titleEn: 'Grammar - Intermediate',
+      icon: '🌳',
+      track: PartTrack.grammar,
+      level: PartLevel.intermediate,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'វេយ្យាករណ៍ កម្រិតមធ្យមខ្ពស់',
+      titleEn: 'Grammar - Upper-Intermediate',
+      icon: '🏔️',
+      track: PartTrack.grammar,
+      level: PartLevel.upperIntermediate,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'វេយ្យាករណ៍ កម្រិតខ្ពស់',
+      titleEn: 'Grammar - Advanced',
+      icon: '🚀',
+      track: PartTrack.grammar,
+      level: PartLevel.advanced,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'វេយ្យាករណ៍តាមប្រធានបទ',
+      titleEn: 'Grammar by Topic',
+      icon: '🧭',
+      track: PartTrack.grammar,
+      level: PartLevel.allLevels,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'តេស្តវាយតម្លៃវេយ្យាករណ៍',
+      titleEn: 'Grammar Assessment Tests',
+      icon: '📝',
+      track: PartTrack.grammar,
+      level: PartLevel.allLevels,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'វាក្យសព្ទ កម្រិតដំបូង',
+      titleEn: 'Vocabulary - Elementary',
+      icon: '🔤',
+      track: PartTrack.vocabulary,
+      level: PartLevel.elementary,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'វាក្យសព្ទ កម្រិតមធ្យម',
+      titleEn: 'Vocabulary - Intermediate',
+      icon: '🔡',
+      track: PartTrack.vocabulary,
+      level: PartLevel.intermediate,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'វាក្យសព្ទ កម្រិតមធ្យមខ្ពស់',
+      titleEn: 'Vocabulary - Upper-Intermediate',
+      icon: '📚',
+      track: PartTrack.vocabulary,
+      level: PartLevel.upperIntermediate,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'វាក្យសព្ទ កម្រិតខ្ពស់',
+      titleEn: 'Vocabulary - Advanced',
+      icon: '🔁',
+      track: PartTrack.vocabulary,
+      level: PartLevel.advanced,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'កិរិយាសព្ទឃ្លា',
+      titleEn: 'Phrasal Verbs',
+      icon: '🔗',
+      track: PartTrack.vocabulary,
+      level: PartLevel.allLevels,
+      latinLabels: true,
+    ),
+    PartMeta(
+      titleKm: 'ភាសាអង់គ្លេសប្រើប្រាស់',
+      titleEn: 'English in Use',
+      icon: '💬',
+      track: PartTrack.englishSkills,
+      level: PartLevel.allLevels,
+      latinLabels: true,
+    ),
   ];
 }

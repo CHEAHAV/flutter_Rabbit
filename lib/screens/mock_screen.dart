@@ -19,7 +19,6 @@ class MockScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final app = context.watch<AppState>();
-    final available = app.parts.where((p) => p.count > 0).toList();
     final history = app.progress.history;
 
     return ListView(
@@ -43,84 +42,31 @@ class MockScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 18),
-        Container(
-          padding: const EdgeInsets.all(18),
-          decoration: BoxDecoration(
-            color: AppColors.amberBg,
-            border: Border.all(color: AppColors.amberBorder),
-            borderRadius: BorderRadius.circular(24),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    width: 46,
-                    height: 46,
-                    decoration: BoxDecoration(
-                      color: AppColors.amber.withValues(alpha: 0.28),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    alignment: Alignment.center,
-                    child: const Text('🏛️', style: TextStyle(fontSize: 22)),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'សម្រង់លក្ខខណ្ឌប្រឡងស្តង់ដារ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 14,
-                            color: AppColors.ink,
-                          ),
-                        ),
-                        const SizedBox(height: 3),
-                        Text(
-                          'Simulation Mode • ចាប់ពេល • គ្មានការបញ្ឈប់',
-                          style: TextStyle(
-                            fontSize: 10.5,
-                            color: AppColors.isDark
-                                ? AppColors.amber
-                                : const Color(0xFF6D654B),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 14),
-              Row(
-                children: const [
-                  Expanded(
-                    child: StatBox(value: '៥០', label: 'សំណួរ'),
-                  ),
-                  SizedBox(width: 8),
-                  Expanded(
-                    child: StatBox(value: '៤០ នាទី', label: 'រយៈពេល'),
-                  ),
-                  SizedBox(width: 8),
-                  Expanded(
-                    child: StatBox(value: '៥០%', label: 'ពិន្ទុជាប់'),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 14),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: available.isEmpty
-                      ? null
-                      : () => _startStandardMock(context, app),
-                  child: const Text('ចាប់ផ្ដើម Mock Exam'),
-                ),
-              ),
-            ],
-          ),
+        // Two quick starts, one per syllabus. One 50-question paper drawn at
+        // random from both the civil-service bank and the English course would
+        // not resemble either exam.
+        _QuickMock(
+          slug: 'civil-service',
+          icon: '🏛️',
+          accent: _QuickMockAccent.amber,
+          title: 'ប្រឡងស្តង់ដារ មុខងារសាធារណៈ',
+          subtitle: 'Simulation Mode • ចាប់ពេល • គ្មានការបញ្ឈប់',
+          tracks: const [PartTrack.civilService],
+          label: 'ស្តង់ដារផ្លូវការ',
+        ),
+        const SizedBox(height: 12),
+        _QuickMock(
+          slug: 'english',
+          icon: '🔤',
+          accent: _QuickMockAccent.mint,
+          title: 'តេស្តភាសាអង់គ្លេស',
+          subtitle: 'English Test • គ្រប់កម្រិត • ចាប់ពេល',
+          tracks: const [
+            PartTrack.grammar,
+            PartTrack.vocabulary,
+            PartTrack.englishSkills,
+          ],
+          label: 'តេស្តភាសាអង់គ្លេស',
         ),
         const SizedBox(height: 22),
         SectionHeader(
@@ -210,20 +156,143 @@ class MockScreen extends StatelessWidget {
     );
   }
 
-  void _startStandardMock(BuildContext context, AppState app) {
+}
+
+/// The two colour schemes a quick-start card comes in: amber for the
+/// civil-service paper, mint for the English one.
+enum _QuickMockAccent { amber, mint }
+
+/// A one-tap timed exam over one syllabus: 50 questions in 40 minutes, the
+/// shape of the real paper. The card is disabled when none of its courses have
+/// questions bundled.
+class _QuickMock extends StatelessWidget {
+  /// Stable ASCII name for the card's start button key, so a test can press
+  /// one paper or the other without depending on their order on screen.
+  final String slug;
+  final String icon;
+  final String title;
+  final String subtitle;
+  final List<PartTrack> tracks;
+  final String label;
+  final _QuickMockAccent accent;
+
+  const _QuickMock({
+    required this.slug,
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.tracks,
+    required this.label,
+    required this.accent,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final app = context.watch<AppState>();
+    final amber = accent == _QuickMockAccent.amber;
+    final parts = [
+      for (final track in tracks)
+        ...app.partsIn(track).where((p) => p.count > 0),
+    ];
+    final questions = parts.fold<int>(0, (sum, p) => sum + p.count);
+
+    return Container(
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        color: amber ? AppColors.amberBg : AppColors.mint,
+        border: Border.all(
+          color: amber ? AppColors.amberBorder : AppColors.mintSoft,
+        ),
+        borderRadius: BorderRadius.circular(24),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                width: 46,
+                height: 46,
+                decoration: BoxDecoration(
+                  color: (amber ? AppColors.amber : AppColors.emerald)
+                      .withValues(alpha: 0.28),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                alignment: Alignment.center,
+                child: Text(icon, style: const TextStyle(fontSize: 22)),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                        fontSize: 14,
+                        color: AppColors.ink,
+                      ),
+                    ),
+                    const SizedBox(height: 3),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        fontSize: 10.5,
+                        color: amber
+                            ? (AppColors.isDark
+                                  ? AppColors.amber
+                                  : const Color(0xFF6D654B))
+                            : AppColors.emerald,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          Row(
+            children: [
+              const Expanded(child: StatBox(value: '៥០', label: 'សំណួរ')),
+              const SizedBox(width: 8),
+              const Expanded(
+                child: StatBox(value: '៤០ នាទី', label: 'រយៈពេល'),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: StatBox(
+                  value: kh(parts.length),
+                  label: 'មុខវិជ្ជា',
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              key: ValueKey('quick-mock-$slug'),
+              onPressed: questions == 0 ? null : () => _start(context, parts),
+              child: const Text('ចាប់ផ្ដើម Mock Exam'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _start(BuildContext context, List<ExamPart> parts) {
     sfx.tap();
-    final available = app.parts
-        .where((p) => p.count > 0)
-        .map((p) => p.id)
-        .toSet();
+    final pool = parts.fold<int>(0, (sum, p) => sum + p.count);
     final config = ExamConfig(
       mode: ExamMode.mock,
-      partIds: available,
-      questionCount: 50,
+      partIds: parts.map((p) => p.id).toSet(),
+      questionCount: pool < 50 ? pool : 50,
       timeLimit: const Duration(minutes: 40),
       shuffleQuestions: true,
       instantFeedback: false,
-      presetLabel: 'ស្តង់ដារផ្លូវការ',
+      presetLabel: label,
     );
     Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => QuizSessionScreen(config: config)),

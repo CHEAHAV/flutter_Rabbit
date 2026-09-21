@@ -43,9 +43,7 @@ class QuestionRepository {
       final meta = ExamPart.catalog[i];
       final fileName =
           'assets/data/part_${partId.toString().padLeft(2, '0')}.json';
-      final labels = meta['labels'] == 'latin'
-          ? latinOptionLabels
-          : khmerOptionLabels;
+      final labels = meta.latinLabels ? latinOptionLabels : khmerOptionLabels;
       List<Question> questions = const [];
       try {
         final raw = await rootBundle.loadString(fileName);
@@ -66,9 +64,11 @@ class QuestionRepository {
       loaded.add(
         ExamPart(
           id: partId,
-          titleKm: meta['title']!,
-          titleEn: meta['en']!,
-          icon: meta['icon']!,
+          titleKm: meta.titleKm,
+          titleEn: meta.titleEn,
+          icon: meta.icon,
+          track: meta.track,
+          level: meta.level,
           questions: questions,
         ),
       );

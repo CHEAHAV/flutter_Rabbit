@@ -25,6 +25,21 @@ class ProgressService {
   static const _kDarkMode = 'rabbit.darkMode';
   static const _kSoundEnabled = 'rabbit.soundEnabled';
   static const _kSoundVolume = 'rabbit.soundVolume';
+  static const _kBankRevision = 'rabbit.bankRevision';
+
+  /// Bumped whenever the English bank is re-cut into a different set of parts.
+  /// Progress is keyed by part id and by "partId-questionId", so after a re-cut
+  /// the stored keys point at questions that are no longer there; [_migrate]
+  /// drops them instead of showing the user accuracy for a subject they never
+  /// studied.
+  ///
+  /// 2: the English bank moved from the book's Part A-E lettering (parts 14-24)
+  ///    to one part per level (parts 14-26).
+  static const bankRevision = 2;
+
+  /// Parts below this are the Khmer civil-service bank, which has never been
+  /// renumbered; everything from here up is the English bank.
+  static const _firstEnglishPart = 14;
 
   late SharedPreferences _prefs;
   bool _ready = false;
@@ -59,7 +74,38 @@ class ProgressService {
         ),
       );
     }
+    await _migrate();
     _ready = true;
+  }
+
+  /// Drops progress that a re-cut of the English bank has made meaningless.
+  ///
+  /// Only the English side is touched: the Khmer parts keep their ids and
+  /// their questions, so their stats, mistakes and bookmarks stay. Lifetime
+  /// totals and exam history stay too - they record what the user actually
+  /// answered, which re-filing the bank does not undo.
+  Future<void> _migrate() async {
+    final stored = _prefs.getInt(_kBankRevision) ?? 0;
+    if (stored == bankRevision) return;
+    bool isStale(String uid) {
+      final partId = int.tryParse(uid.split('-').first);
+      return partId == null || partId >= _firstEnglishPart;
+    }
+
+    _partStats.removeWhere((partId, _) => partId >= _firstEnglishPart);
+    _mistakes.removeWhere(isStale);
+    _bookmarks.removeWhere(isStale);
+    final goal = _prefs.getInt(_kGoalPartId);
+    if (goal != null && goal >= _firstEnglishPart) {
+      await _prefs.remove(_kGoalPartId);
+    }
+    await _prefs.setStringList(_kMistakes, _mistakes.toList());
+    await _prefs.setStringList(_kBookmarks, _bookmarks.toList());
+    await _prefs.setString(
+      _kPartStats,
+      jsonEncode(_partStats.map((k, v) => MapEntry(k.toString(), v.toJson()))),
+    );
+    await _prefs.setInt(_kBankRevision, bankRevision);
   }
 
   // ---- Streak -------------------------------------------------------
@@ -210,7 +256,7 @@ class ProgressService {
   }
 
   /// A 0-100 heuristic "exam readiness" score blending accuracy, coverage
-  /// breadth across the 13 parts, and recent activity.
+  /// breadth across the subjects that have questions, and recent activity.
   double readinessIndex(int totalPartsWithData) {
     if (totalAnswered == 0) return 0;
     final accuracyScore = overallAccuracy.clamp(0, 1) * 65;

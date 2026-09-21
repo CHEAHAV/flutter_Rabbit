@@ -9,6 +9,7 @@ import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
 import '../widgets/section_header.dart';
 import '../widgets/subject_tile.dart';
+import '../widgets/track_header.dart';
 import 'exam_config_screen.dart';
 import 'quiz_session_screen.dart';
 
@@ -23,12 +24,18 @@ class _PracticeScreenState extends State<PracticeScreen> {
   /// Questions per session; 0 means "every question in the subject".
   int _count = 20;
 
+  /// Which course the subject list is narrowed to; null shows them all.
+  PartTrack? _track;
+
   @override
   Widget build(BuildContext context) {
     final app = context.watch<AppState>();
-    final parts = app.parts;
-    final available = parts.where((p) => p.count > 0).toList();
+    final available = app.partsWithQuestions;
     final totalAvailable = available.fold<int>(0, (sum, p) => sum + p.count);
+    final tracks = app.tracks;
+    final shownTracks = _track == null
+        ? tracks
+        : tracks.where((t) => t == _track).toList();
 
     return ListView(
       padding: const EdgeInsets.fromLTRB(18, 18, 18, 110),
@@ -63,7 +70,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
                     ),
                   ),
                   Text(
-                    'ចំណេះដឹងទូទៅ',
+                    'ចំណេះដឹងទូទៅ និងភាសាអង់គ្លេស',
                     style: TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.w500,
@@ -115,7 +122,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
               ),
               const SizedBox(height: 8),
               Text(
-                'មានសំណួរសរុប ${kh(app.repo.totalQuestionCount)} សំណួរ ពី ${kh(app.partsWithQuestions.length)} ផ្នែកមេរៀនផ្លូវការ',
+                'មានសំណួរសរុប ${kh(app.repo.totalQuestionCount)} សំណួរ ក្នុង ${kh(tracks.length)} វគ្គសិក្សា • ${kh(available.length)} មុខវិជ្ជា',
                 style: const TextStyle(
                   color: Color(0xFFE6F1EB),
                   fontSize: 12,
@@ -193,9 +200,81 @@ class _PracticeScreenState extends State<PracticeScreen> {
         const SizedBox(height: 22),
         SectionHeader(
           title: 'មុខវិជ្ជាសម្រាប់ហ្វឹកហាត់',
-          subtitle: 'ចុចលើមុខវិជ្ជាមួយ ដើម្បីចូលឆ្លើយសំណួរភ្លាម',
+          subtitle: 'ជ្រើសវគ្គសិក្សា រួចចុចលើកម្រិតណាមួយ ដើម្បីចូលឆ្លើយភ្លាម',
         ),
         const SizedBox(height: 10),
+        _trackFilter(tracks),
+        const SizedBox(height: 14),
+        for (final track in shownTracks) ...[
+          _trackBlock(context, app, track),
+          const SizedBox(height: 18),
+        ],
+        Container(
+          margin: const EdgeInsets.only(top: 2),
+          padding: const EdgeInsets.symmetric(vertical: 11),
+          decoration: BoxDecoration(
+            color: AppColors.mint,
+            borderRadius: BorderRadius.circular(14),
+          ),
+          alignment: Alignment.center,
+          child: Text(
+            'មាន ${kh(available.length)} មុខវិជ្ជាត្រៀមរួច • សរុប ${kh(totalAvailable)} សំណួរ',
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w700,
+              color: AppColors.emerald,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  /// The course switcher. "ទាំងអស់" is first and selected by default, so the
+  /// browser still opens on everything the app has; the other chips narrow it
+  /// to one course rather than hiding anything permanently.
+  Widget _trackFilter(List<PartTrack> tracks) {
+    // Wrapped, not scrolled sideways: a horizontal strip inside this vertical
+    // list would hide courses off the right edge and put a second Scrollable
+    // in the page.
+    return Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: [
+        ChoiceChip(
+          label: const Text('គ្រប់វគ្គសិក្សា'),
+          selected: _track == null,
+          onSelected: (_) {
+            sfx.select();
+            setState(() => _track = null);
+          },
+        ),
+        for (final track in tracks)
+          ChoiceChip(
+            avatar: Text(track.icon, style: const TextStyle(fontSize: 13)),
+            label: Text(track.titleKm),
+            selected: _track == track,
+            onSelected: (_) {
+              sfx.select();
+              setState(() => _track = track);
+            },
+          ),
+      ],
+    );
+  }
+
+  /// One course: its heading, then its subjects in order of rising level.
+  Widget _trackBlock(BuildContext context, AppState app, PartTrack track) {
+    final parts = app.partsIn(track);
+    final ready = parts.where((p) => p.count > 0).toList();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        TrackHeader(
+          track: track,
+          subjectCount: ready.length,
+          questionCount: ready.fold<int>(0, (sum, p) => sum + p.count),
+        ),
         Card(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 14),
@@ -212,23 +291,6 @@ class _PracticeScreenState extends State<PracticeScreen> {
                   if (i != parts.length - 1) const Divider(height: 1),
                 ],
               ],
-            ),
-          ),
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 10),
-          padding: const EdgeInsets.symmetric(vertical: 11),
-          decoration: BoxDecoration(
-            color: AppColors.mint,
-            borderRadius: BorderRadius.circular(14),
-          ),
-          alignment: Alignment.center,
-          child: Text(
-            'មាន ${kh(available.length)} មុខវិជ្ជាត្រៀមរួច • សរុប ${kh(totalAvailable)} សំណួរ',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w700,
-              color: AppColors.emerald,
             ),
           ),
         ),

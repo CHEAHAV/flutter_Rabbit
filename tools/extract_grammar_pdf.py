@@ -1,12 +1,19 @@
 # -*- coding: utf-8 -*-
-"""Rebuild assets/data/part_14..24.json from assets/pdf/grammar.pdf.
+"""Rebuild assets/data/part_14..26.json from assets/pdf/grammar.pdf.
 
 The PDF is a 434-page English test bank of three books. Questions and the
 answer key are printed in separate halves of the document, so this script
 parses both, aligns each test's question run with its answer run, and writes
-only the items it can vouch for. One output file is written per part of the
-book - Book 1 Parts A-E, Book 2 Parts A-E and Book 3 - so no single part of
-the app holds a whole book. Run it with PyMuPDF installed:
+only the items it can vouch for.
+
+The output is filed by *level*, not by the book's Part A-E lettering: "Part C"
+tells a learner nothing, while "Grammar - Intermediate" tells them exactly
+where they are. The book prints the level in the running head of nearly every
+Book 1 page (ELEMENTARY, PRE-INTERMEDIATE, ...), and its index states the level
+of every Book 2 part, so the grading below is the book's own, not a guess. The
+two sets the book itself calls multi-level - its topic tests and its assessment
+tests - stay multi-level and are filed as such instead of being forced onto the
+ladder. Run it with PyMuPDF installed:
 
     python tools/extract_grammar_pdf.py
 """
@@ -259,29 +266,98 @@ def usable(q, letter):
     return {'q': text, 'o': opts, 'a': 'ABCDE'.index(letter)}
 
 # -------------------------------------------------------------------- main
-# One app part per part of the book, with the printed page ranges the book's
-# own index gives (physical pages 1-2 of the PDF). The ranges are kept
-# contiguous from printed page 2 to 401 - Book 2 Part A is opened at 219
-# rather than the index's 220 so the divider page cannot swallow a test - so
-# every question the parser accepts lands in exactly one part.
+# Every Book 1 page carries its level in the running head, and Part B's topic
+# tests carry a two-level band ("Intermediate / Upper-Intermediate"). Reading
+# those heads back off the page is what lets Part B be graded test by test
+# instead of in one lump.
+LEVELHEAD = re.compile(
+    r'(UPPER-INTERMEDIATE|PRE-INTERMEDIATE|INTERMEDIATE|ELEMENTARY|ADVANCED)')
+
+HEADS = {printed(phys): set(LEVELHEAD.findall(doc[phys].get_text()))
+         for phys in range(4, 405)}
+
+# One app part per level of each course, in the order a learner climbs them.
+# Keep this list in the same order as ExamPart.catalog in
+# lib/models/exam_part.dart: part N here is assets/data/part_NN.json.
+GRAMMAR_ELEMENTARY   = 14
+GRAMMAR_PRE_INTER    = 15
+GRAMMAR_INTERMEDIATE = 16
+GRAMMAR_UPPER_INTER  = 17
+GRAMMAR_ADVANCED     = 18
+GRAMMAR_TOPICS       = 19
+GRAMMAR_ASSESSMENT   = 20
+VOCAB_ELEMENTARY     = 21
+VOCAB_INTERMEDIATE   = 22
+VOCAB_UPPER_INTER    = 23
+VOCAB_ADVANCED       = 24
+PHRASAL_VERBS        = 25
+GENERAL_ENGLISH      = 26
+
 PARTS = [
-    (14, 2, 50, 'Book 1 Part A - Grammar'),
-    (15, 51, 102, 'Book 1 Part B - Grammar'),
-    (16, 103, 150, 'Book 1 Part C - Grammar'),
-    (17, 151, 190, 'Book 1 Part D - Grammar'),
-    (18, 191, 218, 'Book 1 Part E - Grammar'),
-    (19, 219, 250, 'Book 2 Part A - Vocabulary'),
-    (20, 251, 286, 'Book 2 Part B - Vocabulary'),
-    (21, 287, 302, 'Book 2 Part C - Phrasal Verbs'),
-    (22, 303, 327, 'Book 2 Part D - Vocabulary'),
-    (23, 328, 341, 'Book 2 Part E - Synonyms'),
-    (24, 342, 401, 'Book 3 - Miscellaneous'),
+    (GRAMMAR_ELEMENTARY,   'Grammar - Elementary',        'A 2-23, E 191-202'),
+    (GRAMMAR_PRE_INTER,    'Grammar - Pre-Intermediate',  'A 24-41, B lower band'),
+    (GRAMMAR_INTERMEDIATE, 'Grammar - Intermediate',      'A 42-50, E 203-212'),
+    (GRAMMAR_UPPER_INTER,  'Grammar - Upper-Intermediate','B upper band'),
+    (GRAMMAR_ADVANCED,     'Grammar - Advanced',          'E 213-218'),
+    (GRAMMAR_TOPICS,       'Grammar - Topic practice',    'C 103-150 (multi-level)'),
+    (GRAMMAR_ASSESSMENT,   'Grammar - Assessment tests',  'D 151-190 (multi-level)'),
+    (VOCAB_ELEMENTARY,     'Vocabulary - Elementary',     '219-250'),
+    (VOCAB_INTERMEDIATE,   'Vocabulary - Intermediate',   '251-286'),
+    (VOCAB_UPPER_INTER,    'Vocabulary - Upper-Intermediate', '303-327'),
+    (VOCAB_ADVANCED,       'Vocabulary - Advanced',       '328-341'),
+    (PHRASAL_VERBS,        'Phrasal verbs',               '287-302 (multi-level)'),
+    (GENERAL_ENGLISH,      'General English',             '342-401 (multi-level)'),
 ]
 
 def part_of(printed_page):
-    for pid, lo, hi, _ in PARTS:
-        if lo <= printed_page <= hi:
-            return pid
+    """Which app part a test opening on this printed page belongs to.
+
+    The page ranges are the book's own (its index is physical pages 1-2 of the
+    PDF) and are contiguous from printed page 2 to 401 - Book 2 is opened at
+    219 rather than the index's 220 so the divider page cannot swallow a test -
+    so every question the parser accepts lands in exactly one part.
+    """
+    p = printed_page
+    # Book 1 Part A: three runs of tests, each run's level in its running head.
+    if 2 <= p <= 23:
+        return GRAMMAR_ELEMENTARY
+    if 24 <= p <= 41:
+        return GRAMMAR_PRE_INTER
+    if 42 <= p <= 50:
+        return GRAMMAR_INTERMEDIATE
+    # Book 1 Part B: topic tests, each printed for a band of two levels. A band
+    # test is harder than a pure test of its lower level, so it is filed at the
+    # top of its band - the alternative would drop upper-intermediate material
+    # on someone still working through the intermediate tier.
+    if 51 <= p <= 102:
+        return (GRAMMAR_PRE_INTER
+                if 'ELEMENTARY' in HEADS.get(p, set())
+                else GRAMMAR_UPPER_INTER)
+    # Parts C and D: the book calls both multi-level, so neither is graded.
+    if 103 <= p <= 150:
+        return GRAMMAR_TOPICS
+    if 151 <= p <= 190:
+        return GRAMMAR_ASSESSMENT
+    # Book 1 Part E: the same test format at three rising levels.
+    if 191 <= p <= 202:
+        return GRAMMAR_ELEMENTARY
+    if 203 <= p <= 212:
+        return GRAMMAR_INTERMEDIATE
+    if 213 <= p <= 218:
+        return GRAMMAR_ADVANCED
+    # Book 2, graded by the levels its index gives each part.
+    if 219 <= p <= 250:
+        return VOCAB_ELEMENTARY
+    if 251 <= p <= 286:
+        return VOCAB_INTERMEDIATE
+    if 287 <= p <= 302:
+        return PHRASAL_VERBS
+    if 303 <= p <= 327:
+        return VOCAB_UPPER_INTER
+    if 328 <= p <= 341:
+        return VOCAB_ADVANCED
+    if 342 <= p <= 401:
+        return GENERAL_ENGLISH
     return None
 
 def build():
@@ -368,11 +444,11 @@ def build():
     return buckets, stats, accepted, dropped
 
 def write(buckets):
-    """Write assets/data/part_14..24.json, and remove any part file this run no
+    """Write assets/data/part_14..26.json, and remove any part file this run no
     longer produces so a renumbering cannot leave a stale file behind for the
     app to load."""
     wanted = {p[0] for p in PARTS}
-    for pid, lo, hi, title in PARTS:
+    for pid, title, source in PARTS:
         items = [{'id': i + 1, 'q': it['q'], 'o': it['o'], 'a': it['a']}
                  for i, it in enumerate(buckets[pid])]
         path = os.path.join(OUT, 'part_%02d.json' % pid)
@@ -399,11 +475,11 @@ if __name__ == '__main__':
           % (accepted, stats['block_rejected'], dropped))
     print(dict(stats))
     total = 0
-    for pid, lo, hi, title in PARTS:
+    for pid, title, source in PARTS:
         lst = buckets[pid]
         total += len(lst)
         c = Counter(len(x['o']) for x in lst)
-        print('part_%02d  %-30s pages %3d-%3d  %5d questions   4-opt=%d 5-opt=%d'
-              % (pid, title, lo, hi, len(lst), c[4], c[5]))
+        print('part_%02d  %-32s %-24s %5d questions   4-opt=%d 5-opt=%d'
+              % (pid, title, source, len(lst), c[4], c[5]))
     print('total: %d questions in %d parts' % (total, len(PARTS)))
     write(buckets)

@@ -244,15 +244,8 @@ class ProfileScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(18),
             child: Column(
-              children: [
-                for (final part in partsWithData) ...[
-                  _CompetencyRow(
-                    title: part.titleKm,
-                    stat: progress.statFor(part.id),
-                  ),
-                  if (part != partsWithData.last) const SizedBox(height: 14),
-                ],
-              ],
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: _competencyRows(app),
             ),
           ),
         ),
@@ -287,6 +280,47 @@ class ProfileScreen extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  /// Per-subject mastery, broken by course. Twenty-six bars in a row tell the
+  /// user nothing about where they are strong; under a course heading, and in
+  /// order of rising level, the same bars show exactly how far up each course
+  /// they have got.
+  List<Widget> _competencyRows(AppState app) {
+    final rows = <Widget>[];
+    for (final track in app.tracks) {
+      if (rows.isNotEmpty) rows.add(const SizedBox(height: 20));
+      rows.add(
+        Row(
+          children: [
+            Text(track.icon, style: const TextStyle(fontSize: 13)),
+            const SizedBox(width: 6),
+            Expanded(
+              child: Text(
+                track.titleKm,
+                style: TextStyle(
+                  fontSize: 11.5,
+                  fontWeight: FontWeight.w800,
+                  color: AppColors.slate,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
+      );
+      for (final part in app.partsIn(track).where((p) => p.count > 0)) {
+        rows.add(const SizedBox(height: 14));
+        rows.add(
+          _CompetencyRow(
+            title: part.titleKm,
+            stat: app.progress.statFor(part.id),
+          ),
+        );
+      }
+    }
+    return rows;
   }
 
   Widget _infoRow(IconData icon, String title, String sub) {

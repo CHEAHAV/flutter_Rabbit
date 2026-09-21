@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/exam_config.dart';
+import '../models/exam_part.dart';
 import '../services/sound_service.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
 import '../widgets/section_header.dart';
 import '../widgets/subject_tile.dart';
+import '../widgets/track_header.dart';
 import 'quiz_session_screen.dart';
 
 class _Preset {
@@ -190,30 +192,12 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
             ),
           ),
           const SizedBox(height: 10),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 14),
-              child: Column(
-                children: [
-                  for (var i = 0; i < parts.length; i++) ...[
-                    SubjectTile(
-                      part: parts[i],
-                      mode: SubjectTileMode.select,
-                      selected: _selected.contains(parts[i].id),
-                      onTap: () => setState(() {
-                        if (!_selected.remove(parts[i].id)) {
-                          _selected.add(parts[i].id);
-                        }
-                      }),
-                    ),
-                    if (i != parts.length - 1) const Divider(height: 1),
-                  ],
-                ],
-              ),
-            ),
-          ),
+          for (final track in app.tracks) ...[
+            _trackBlock(app, track),
+            const SizedBox(height: 18),
+          ],
           Container(
-            margin: const EdgeInsets.only(top: 10),
+            margin: const EdgeInsets.only(top: 2),
             padding: const EdgeInsets.symmetric(vertical: 11),
             decoration: BoxDecoration(
               color: AppColors.mint,
@@ -361,6 +345,66 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  /// One course's subjects, with a switch that takes the whole course in or
+  /// out at once. Building a mock exam out of twenty-six subjects one tap at a
+  /// time was the main thing wrong with the old flat list: a learner sitting
+  /// the civil-service exam wants that course and nothing else.
+  Widget _trackBlock(AppState app, PartTrack track) {
+    final parts = app.partsIn(track);
+    final ready = parts.where((p) => p.count > 0).toList();
+    final allIn = ready.every((p) => _selected.contains(p.id));
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        TrackHeader(
+          track: track,
+          subjectCount: ready.length,
+          questionCount: ready.fold<int>(0, (sum, p) => sum + p.count),
+          trailing: TextButton(
+            onPressed: () {
+              sfx.toggle(!allIn);
+              setState(() {
+                for (final p in ready) {
+                  if (allIn) {
+                    _selected.remove(p.id);
+                  } else {
+                    _selected.add(p.id);
+                  }
+                }
+              });
+            },
+            child: Text(
+              allIn ? 'ដកចេញ' : 'ជ្រើសទាំងអស់',
+              style: const TextStyle(fontSize: 11.5),
+            ),
+          ),
+        ),
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14),
+            child: Column(
+              children: [
+                for (var i = 0; i < parts.length; i++) ...[
+                  SubjectTile(
+                    part: parts[i],
+                    mode: SubjectTileMode.select,
+                    selected: _selected.contains(parts[i].id),
+                    onTap: () => setState(() {
+                      if (!_selected.remove(parts[i].id)) {
+                        _selected.add(parts[i].id);
+                      }
+                    }),
+                  ),
+                  if (i != parts.length - 1) const Divider(height: 1),
+                ],
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 

@@ -121,6 +121,34 @@ void main() {
     expectNoOverflow('PracticeScreen');
   });
 
+  testWidgets('Scrolling the whole subject browser does not overflow', (
+    tester,
+  ) async {
+    // The screens above are only checked on their first frame, which never
+    // builds the course headings and level chips further down the page. This
+    // drags each browser to the bottom so every one of those rows is laid out
+    // at 320px, the width where the long Khmer level names are tightest.
+    Future<void> toBottom() async {
+      for (var i = 0; i < 40; i++) {
+        await tester.drag(find.byType(Scrollable).first, const Offset(0, -400));
+        await tester.pump(const Duration(milliseconds: 30));
+      }
+    }
+
+    final app = await buildBootstrappedAppState(tester);
+    await pumpNarrow(tester, app, const PracticeScreen());
+    await toBottom();
+    expectNoOverflow('PracticeScreen (scrolled to the end)');
+
+    await pumpNarrow(tester, app, const ExamConfigScreen(mode: ExamMode.mock));
+    await toBottom();
+    expectNoOverflow('ExamConfigScreen (scrolled to the end)');
+
+    await pumpNarrow(tester, app, const ProfileScreen());
+    await toBottom();
+    expectNoOverflow('ProfileScreen (scrolled to the end)');
+  });
+
   testWidgets('Mock screen with populated history does not overflow', (
     tester,
   ) async {

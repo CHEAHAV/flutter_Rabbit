@@ -4,7 +4,7 @@ import 'package:rabbit/models/exam_part.dart';
 import 'package:rabbit/utils/khmer_numerals.dart';
 
 /// Loads every bundled part through the real repository and checks that the
-/// data the app will actually read is well formed. Parts 14-24 are extracted
+/// data the app will actually read is well formed. Parts 14-26 are extracted
 /// from assets/pdf/grammar.pdf, so this is what keeps a bad extraction from
 /// reaching the quiz screen.
 void main() {
@@ -49,7 +49,7 @@ void main() {
   });
 
   test('the English parts never repeat an option within a question', () {
-    // Scoped to parts 14-24: four questions in the older Khmer parts (5, 6
+    // Scoped to parts 14-26: four questions in the older Khmer parts (5, 6
     // and 8) do print the same option twice, and those files are left as they
     // are.
     for (final part in repo.parts.where((p) => p.id >= 14)) {
@@ -92,21 +92,23 @@ void main() {
   });
 
   test('the English parts carry the expected volume', () {
-    // One part per part of grammar.pdf: Book 1 Parts A-E, Book 2 Parts A-E and
-    // Book 3. The floors are set a little under what the extractor currently
-    // produces, so an extraction that silently loses a test fails here.
+    // One part per level of each English course. The floors are set a little
+    // under what the extractor currently produces, so an extraction that
+    // silently loses a test fails here.
     const floors = {
-      14: 1500, // Book 1 Part A
-      15: 2200, // Book 1 Part B
-      16: 1000, // Book 1 Part C
-      17: 1800, // Book 1 Part D
-      18: 800, // Book 1 Part E
-      19: 650, // Book 2 Part A
-      20: 350, // Book 2 Part B
-      21: 130, // Book 2 Part C
-      22: 900, // Book 2 Part D
-      23: 450, // Book 2 Part E
-      24: 200, // Book 3
+      14: 1200, // Grammar - Elementary
+      15: 1400, // Grammar - Pre-Intermediate
+      16: 600, // Grammar - Intermediate
+      17: 1280, // Grammar - Upper-Intermediate
+      18: 60, // Grammar - Advanced (the book has only three advanced tests)
+      19: 1000, // Grammar by Topic
+      20: 1800, // Grammar Assessment Tests
+      21: 660, // Vocabulary - Elementary
+      22: 360, // Vocabulary - Intermediate
+      23: 940, // Vocabulary - Upper-Intermediate
+      24: 450, // Vocabulary - Advanced
+      25: 135, // Phrasal Verbs
+      26: 200, // English in Use
     };
     for (final entry in floors.entries) {
       expect(
@@ -120,8 +122,8 @@ void main() {
   });
 
   test('no English part is big enough to need splitting again', () {
-    // The whole point of parts 14-24 is that a book is never loaded as one
-    // slab. If a part ever grows past this, the book division has been lost.
+    // The whole point of parts 14-26 is that a book is never loaded as one
+    // slab. If a part ever grows past this, the division has been lost.
     for (final part in repo.parts.where((p) => p.id >= 14)) {
       expect(
         part.count,
@@ -134,13 +136,73 @@ void main() {
   test('the catalog and the bundled data files line up', () {
     // part N in the catalog must be assets/data/part_NN.json: an off-by-one
     // here would letter Khmer questions A-E and English ones with Khmer glyphs.
-    expect(ExamPart.catalog.length, 24);
+    expect(ExamPart.catalog.length, 26);
     for (var i = 0; i < ExamPart.catalog.length; i++) {
       final isEnglish = i + 1 >= 14;
       expect(
-        ExamPart.catalog[i]['labels'] == 'latin',
+        ExamPart.catalog[i].latinLabels,
         isEnglish,
         reason: 'catalog entry ${i + 1} has the wrong label alphabet',
+      );
+    }
+  });
+
+  test('every subject belongs to a course, and only English ones are graded', () {
+    for (final part in repo.parts) {
+      if (part.id < 14) {
+        expect(
+          part.track,
+          PartTrack.civilService,
+          reason: 'part ${part.id} left the Khmer syllabus',
+        );
+        expect(
+          part.level,
+          isNull,
+          reason: 'the civil-service syllabus does not grade its subjects',
+        );
+      } else {
+        expect(
+          part.track,
+          isNot(PartTrack.civilService),
+          reason: 'English part ${part.id} is filed under the Khmer syllabus',
+        );
+        expect(
+          part.level,
+          isNotNull,
+          reason: 'English part ${part.id} has no level',
+        );
+      }
+    }
+  });
+
+  test('each English course is listed from its easiest rung upwards', () {
+    // The browser shows subjects in catalog order, so the order *is* the
+    // learning path: within one course the graded subjects must never step
+    // back down a level.
+    for (final track in PartTrack.values) {
+      final graded = repo.parts
+          .where((p) => p.track == track && p.level?.step != null)
+          .toList();
+      for (var i = 1; i < graded.length; i++) {
+        expect(
+          graded[i].level!.step!,
+          greaterThanOrEqualTo(graded[i - 1].level!.step!),
+          reason:
+              '${graded[i].titleEn} is easier than the subject listed above it',
+        );
+      }
+    }
+  });
+
+  test('every rung of the grammar ladder is stocked', () {
+    // A level the user can see but not practise is worse than no level at all.
+    final grammar = repo.parts.where((p) => p.track == PartTrack.grammar);
+    for (final level in PartLevel.values) {
+      final stocked = grammar.where((p) => p.level == level && p.count > 0);
+      expect(
+        stocked,
+        isNotEmpty,
+        reason: 'the grammar course has nothing at ${level.titleEn}',
       );
     }
   });

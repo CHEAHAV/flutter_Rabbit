@@ -41,6 +41,21 @@ class AppState extends ChangeNotifier {
   List<ExamPart> get partsWithQuestions =>
       repo.parts.where((p) => p.count > 0).toList();
 
+  /// The subjects of one course, in catalog order (easiest rung first).
+  List<ExamPart> partsIn(PartTrack track) =>
+      repo.parts.where((p) => p.track == track).toList();
+
+  /// The courses that actually have questions bundled, in catalog order. The
+  /// subject browser is built from this rather than from [PartTrack.values],
+  /// so a course whose data files are missing simply does not appear.
+  List<PartTrack> get tracks {
+    final seen = <PartTrack>[];
+    for (final p in repo.parts) {
+      if (p.count > 0 && !seen.contains(p.track)) seen.add(p.track);
+    }
+    return seen;
+  }
+
   Future<void> bootstrap() async {
     try {
       await Future.wait([repo.load(), progress.init()]);

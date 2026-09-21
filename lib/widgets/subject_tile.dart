@@ -4,6 +4,7 @@ import '../models/exam_part.dart';
 import '../services/sound_service.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
+import 'level_chip.dart';
 
 /// What tapping a [SubjectTile] does.
 enum SubjectTileMode {
@@ -92,10 +93,24 @@ class SubjectTile extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  const SizedBox(height: 3),
-                  Text(
-                    disabled ? 'មិនទាន់មានទិន្នន័យ' : '${kh(part.count)} សំណួរ',
-                    style: TextStyle(fontSize: 11, color: AppColors.slate),
+                  const SizedBox(height: 4),
+                  // Wrapped rather than a Row: the level names are long in
+                  // Khmer and must fall onto a second line on a narrow phone
+                  // instead of overflowing.
+                  Wrap(
+                    spacing: 6,
+                    runSpacing: 4,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      if (part.level != null && !disabled)
+                        LevelChip(level: part.level!),
+                      Text(
+                        disabled
+                            ? 'មិនទាន់មានទិន្នន័យ'
+                            : '${kh(part.count)} សំណួរ',
+                        style: TextStyle(fontSize: 11, color: AppColors.slate),
+                      ),
+                    ],
                   ),
                 ],
               ),
