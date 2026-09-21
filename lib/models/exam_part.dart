@@ -6,6 +6,7 @@ import 'question.dart';
 /// look like one syllabus.
 enum PartTrack {
   civilService('ចំណេះដឹងទូទៅ', 'General Knowledge', '🇰🇭'),
+  teaching('វិជ្ជាជីវៈគ្រូបង្រៀន', 'Teacher Recruitment', '🎓'),
   grammar('វេយ្យាករណ៍អង់គ្លេស', 'English Grammar', '📘'),
   vocabulary('វាក្យសព្ទអង់គ្លេស', 'English Vocabulary', '🔤'),
   englishSkills('ភាសាអង់គ្លេសអនុវត្ត', 'English in Use', '💬');
@@ -84,8 +85,9 @@ class PartMeta {
   });
 }
 
-/// One subject section ("ផ្នែកទី") of the QCM question bank: parts 1-13 are the
-/// Khmer civil-service bank, parts 14-26 the English bank from grammar.pdf.
+/// One subject of the question bank: parts 1-13 are the Khmer civil-service
+/// bank from QCM.pdf, parts 14-26 the English bank from grammar.pdf, and part
+/// 27 the teacher-ethics collection.
 class ExamPart {
   final int id;
   final String titleKm;
@@ -307,6 +309,16 @@ class ExamPart {
       track: PartTrack.englishSkills,
       level: PartLevel.allLevels,
       latinLabels: true,
+    ),
+    // Part 27 comes from assets/pdf/ក្រមសីលធម៌វិជ្ជាជីវៈគ្រូបង្រៀន.pdf. It sits
+    // in a course of its own because it prepares a different exam: dropping it
+    // into the civil-service syllabus would put teacher ethics into a
+    // general-knowledge mock paper it does not belong in.
+    PartMeta(
+      titleKm: 'ក្រមសីលធម៌វិជ្ជាជីវៈគ្រូបង្រៀន',
+      titleEn: 'Teacher Professional Ethics',
+      icon: '🧑‍🏫',
+      track: PartTrack.teaching,
     ),
   ];
 }

@@ -1,0 +1,273 @@
+# -*- coding: utf-8 -*-
+"""Read the Khmer PDFs in assets/pdf/ as correctly ordered Unicode text.
+
+Both QCM.pdf and the teacher-ethics collection were written in Word with the
+Khmer OS fonts, and **the ToUnicode maps Word embedded are wrong** - PyMuPDF
+and pdftotext both return mangled Khmer ("ទោស" comes out as "តោស"), because
+several shaped glyphs map back to the same base letter. The damage is not a
+consistent cipher, so it cannot be repaired by substitution.
+
+This module rebuilds the text from the *glyph ids* instead. Each id is
+resolved to the characters it was substituted from by walking the original
+font's GSUB table backwards, and the visual glyph order is then put back into
+logical order, because a pre-base vowel and a coeng-ro are drawn before the
+consonant they belong to. That needs the real fonts, which ship with Windows;
+point FONTFILES at a copy on another machine.
+
+Requires PyMuPDF and fonttools.
+"""
+import io
+import os
+import sys
+import pymupdf
+from fontTools.ttLib import TTFont
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PDFDIR = os.path.join(ROOT, 'assets', 'pdf')
+DATA = os.path.join(ROOT, 'assets', 'data')
+FONTS = os.environ.get('WINDIR', r'C:\Windows') + r'\Fonts'
+# Keyed by the font name PyMuPDF reports for a span. KhmerOSBattambang-KhAuto
+# is deliberately absent: Word writes it with its own glyph numbering, and the
+# only text set in it is the ethics collection's footer, which `skip_below`
+# drops.
+FONTFILES = {
+    'KhmerOSBattambang': os.path.join(FONTS, 'KhmerOSBattambang-Regular.ttf'),
+    'KhmerOSBattambang-Bold': os.path.join(FONTS, 'KhmerOSBattambang-Bold.ttf'),
+    'KhmerOSMuolLight': os.path.join(FONTS, 'KhmerOSmuollight.ttf'),
+    'DaunPenh': os.path.join(FONTS, 'daunpenh.ttf'),
+}
+
+# ----------------------------------------------------------- glyph decoding
+
+CONS = set(chr(c) for c in range(0x1780, 0x17A3))
+INDEP = set(chr(c) for c in range(0x17A3, 0x17B4))
+BASECH = CONS | INDEP
+PREV = {'\u17C1', '\u17C2', '\u17C3'}          # drawn to the left of the base
+FULLPRE = {'\u17BE', '\u17BF', '\u17C0', '\u17C4', '\u17C5'}
+VOWELS = set(chr(c) for c in range(0x17B6, 0x17C6))
+SHIFT = {'\u17C9', '\u17CA'}                   # register shifters, before the vowel
+SIGNS = set(chr(c) for c in range(0x17C6, 0x17D2)) | {'\u17DD'}
+COENG = '\u17D2'
+RO = '\u17D2\u179A'
+
+
+def _resolve_map(path):
+    """glyph id -> the characters that glyph was substituted from."""
+    font = TTFont(path)
+    order = font.getGlyphOrder()
+    base = {}
+    for code, name in sorted(font.getBestCmap().items()):
+        base.setdefault(name, chr(code))
+    back = {}
+    if 'GSUB' in font:
+        for lookup in font['GSUB'].table.LookupList.Lookup:
+            for sub in lookup.SubTable:
+                kind = type(sub).__name__
+                if kind == 'SingleSubst':
+                    for src, dst in sub.mapping.items():
+                        back.setdefault(dst, (src,))
+                elif kind == 'MultipleSubst':
+                    for src, seq in sub.mapping.items():
+                        for dst in seq:
+                            back.setdefault(dst, (src,))
+                elif kind == 'LigatureSubst':
+                    for first, ligs in sub.ligatures.items():
+                        for lig in ligs:
+                            back.setdefault(
+                                lig.LigGlyph, tuple([first] + list(lig.Component))
+                            )
+                elif kind == 'AlternateSubst':
+                    for src, alts in sub.alternates.items():
+                        for dst in alts:
+                            back.setdefault(dst, (src,))
+
+    def resolve(name, depth=0):
+        if name in base:
+            return base[name]
+        if depth > 15 or name not in back:
+            return None
+        out = ''
+        for part in back[name]:
+            got = resolve(part, depth + 1)
+            if got is None:
+                return None
+            out += got
+        return out
+
+    text = {}
+    for gid, name in enumerate(order):
+        got = resolve(name)
+        if got is not None:
+            text[gid] = got
+    cmapped = {order.index(n) for n in font.getBestCmap().values() if n in order}
+    return text, order, cmapped
+
+
+_MAPS = None
+
+
+def maps():
+    global _MAPS
+    if _MAPS is None:
+        _MAPS = {}
+        for name, path in FONTFILES.items():
+            if os.path.exists(path):
+                _MAPS[name] = _resolve_map(path)
+    return _MAPS
+
+
+class _Cluster:
+    """One orthographic syllable, collected in visual order."""
+
+    def __init__(self, base='', pre='', ro=False):
+        self.base = base
+        self.coeng = []
+        self.ro = ro
+        self.pre = pre
+        self.shift = ''
+        self.vow = ''
+        self.sign = ''
+
+    def empty(self):
+        return not (self.base or self.coeng or self.ro or self.pre
+                    or self.shift or self.vow or self.sign)
+
+    def text(self):
+        vow, pre = self.vow, self.pre
+        if pre:
+            if vow == '':
+                vow = pre
+            elif vow[0] == '\u17B6' and pre == '\u17C1':
+                vow = '\u17C4' + vow[1:]      # េ + ា = ោ
+            elif vow[0] in FULLPRE:
+                pass                          # the vowel already carries its left half
+            else:
+                vow = pre + vow
+        return (self.base + ''.join(self.coeng) + (RO if self.ro else '')
+                + self.shift + vow + self.sign)
+
+
+def decode(font, gids, ucs):
+    """Rebuild one run of text from its glyph ids."""
+    entry = maps().get(font)
+    if entry is None:                          # Latin fonts map back correctly
+        return ''.join(chr(u) if u and u > 0 else '' for u in ucs)
+    text, names, cmapped = entry
+    chars = []
+    for i, gid in enumerate(gids):
+        got = text.get(gid)
+        if got is None:
+            chars.append('\ufffd')
+            continue
+        if got == COENG:
+            # A bare coeng is either a real one in front of a subscript form,
+            # or Word's zero-width placeholder for a character a ligature has
+            # already swallowed. Only the first is worth keeping.
+            nxt = gids[i + 1] if i + 1 < len(gids) else None
+            nname = names[nxt] if nxt is not None and nxt < len(names) else ''
+            ntext = text.get(nxt) if nxt is not None else None
+            if ntext and nname.startswith('glyph') and ntext[0] in CONS:
+                chars.append(COENG)
+            continue
+        chars.extend(got)
+
+    out, cur, pend_pre, pend_ro = [], _Cluster(), '', False
+
+    def flush():
+        nonlocal cur
+        if not cur.empty():
+            out.append(cur.text())
+        cur = _Cluster()
+
+    i, n = 0, len(chars)
+    while i < n:
+        c = chars[i]
+        if c == COENG and i + 1 < n and chars[i + 1] in CONS:
+            sub = chars[i + 1]
+            i += 2
+            if sub == '\u179A':                # coeng ro is drawn before its base
+                if pend_ro:
+                    out.append(RO)
+                flush()
+                pend_ro = True
+            else:
+                if cur.base == '':
+                    flush()
+                cur.coeng.append(COENG + sub)
+            continue
+        if c in BASECH:
+            flush()
+            cur = _Cluster(c, pend_pre, pend_ro)
+            pend_pre, pend_ro = '', False
+            i += 1
+            continue
+        if c in PREV:
+            if cur.base or cur.vow or cur.sign or cur.shift:
+                flush()
+            if pend_pre:
+                out.append(pend_pre)
+            pend_pre = c
+            i += 1
+            continue
+        if c in SHIFT or c in VOWELS or c in SIGNS:
+            if cur.base == '' or (c in VOWELS and cur.sign):
+                flush()
+                out.append(c)
+            elif c in SHIFT:
+                cur.shift += c
+            elif c in VOWELS:
+                cur.vow += c
+            else:
+                cur.sign += c
+            i += 1
+            continue
+        flush()
+        if pend_pre:
+            out.append(pend_pre)
+            pend_pre = ''
+        if pend_ro:
+            out.append(RO)
+            pend_ro = False
+        out.append(c)
+        i += 1
+    flush()
+    if pend_pre:
+        out.append(pend_pre)
+    if pend_ro:
+        out.append(RO)
+    return ''.join(out)
+
+
+def pdf_lines(path, skip_below=None):
+    """The whole document as lines of correctly ordered Khmer.
+
+    `skip_below` drops everything printed past that y on the page, which is how
+    the ethics collection's footer - set in a font variant whose glyph
+    numbering we cannot resolve - is kept out of the text.
+    """
+    doc = pymupdf.open(path)
+    lines = []
+    for page in doc:
+        runs = []
+        for span in page.get_texttrace():
+            if span['type'] != 0:
+                continue
+            chars = [c for c in span['chars'] if c[1] != -1]
+            if not chars:
+                continue
+            y = round(chars[0][2][1], 1)
+            if skip_below is not None and y > skip_below:
+                continue
+            runs.append((y, chars[0][2][0], span['font'],
+                         [c[1] for c in chars], [c[0] for c in chars]))
+        runs.sort(key=lambda r: (r[0], r[1]))
+        rows = {}
+        for y, x, font, gids, ucs in runs:
+            key = next((k for k in rows if abs(k - y) < 3), y)
+            rows.setdefault(key, []).append((x, font, gids, ucs))
+        for key in sorted(rows):
+            parts = sorted(rows[key], key=lambda p: p[0])
+            lines.append(''.join(decode(f, g, u) for _, f, g, u in parts))
+    return lines

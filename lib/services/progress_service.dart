@@ -40,9 +40,15 @@ class ProgressService {
   ///    order, so every Khmer question id shifted.
   static const bankRevision = 3;
 
-  /// Parts below this are the Khmer civil-service bank, which has never been
-  /// renumbered; everything from here up is the English bank.
+  /// The English bank, parts 14-26. Parts 1-13 are the Khmer civil-service
+  /// bank and 27 up are the Khmer subjects added since; the range is spelled
+  /// out because the two banks were renumbered at different revisions, and a
+  /// part added later has no old numbering to clean up.
   static const _firstEnglishPart = 14;
+  static const _lastEnglishPart = 26;
+
+  static bool _isEnglishPart(int partId) =>
+      partId >= _firstEnglishPart && partId <= _lastEnglishPart;
 
   late SharedPreferences _prefs;
   bool _ready = false;
@@ -95,13 +101,14 @@ class ProgressService {
     bool isStale(String uid) {
       final partId = int.tryParse(uid.split('-').first);
       if (partId == null) return true;
-      return partId >= _firstEnglishPart ? englishMoved : khmerMoved;
+      if (_isEnglishPart(partId)) return englishMoved;
+      return partId <= 13 && khmerMoved;
     }
 
     if (englishMoved) {
-      _partStats.removeWhere((partId, _) => partId >= _firstEnglishPart);
+      _partStats.removeWhere((partId, _) => _isEnglishPart(partId));
       final goal = _prefs.getInt(_kGoalPartId);
-      if (goal != null && goal >= _firstEnglishPart) {
+      if (goal != null && _isEnglishPart(goal)) {
         await _prefs.remove(_kGoalPartId);
       }
     }

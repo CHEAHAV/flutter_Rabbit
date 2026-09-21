@@ -55,6 +55,18 @@ class MockScreen extends StatelessWidget {
           label: 'ស្តង់ដារផ្លូវការ',
         ),
         const SizedBox(height: 12),
+        // Amber again, not for want of a third colour: it marks the official
+        // state exams, and this is one. Mint is the language test.
+        _QuickMock(
+          slug: 'teaching',
+          icon: '🎓',
+          accent: _QuickMockAccent.amber,
+          title: 'ប្រឡងស្តង់ដារ គ្រូបង្រៀន',
+          subtitle: 'Simulation Mode • ចាប់ពេល • គ្មានការបញ្ឈប់',
+          tracks: const [PartTrack.teaching],
+          label: 'ស្តង់ដារវិជ្ជាជីវៈគ្រូបង្រៀន',
+        ),
+        const SizedBox(height: 12),
         _QuickMock(
           slug: 'english',
           icon: '🔤',

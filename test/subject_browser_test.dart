@@ -1,5 +1,5 @@
 // Covers the course/level browser: the bank is no longer one flat list of
-// subjects but four courses, and the English courses are ordered by the level
+// subjects but five courses, and the English courses are ordered by the level
 // their questions are graded at.
 
 import 'package:flutter/material.dart';
@@ -264,7 +264,7 @@ void main() {
 
     expect(
       find.widgetWithText(ElevatedButton, 'ចាប់ផ្ដើមប្រឡងសាកល្បង'),
-      findsNWidgets(2),
+      findsNWidgets(3),
       reason: 'one quick mock per syllabus',
     );
 
@@ -307,6 +307,23 @@ void main() {
       await partsOfMock('english'),
       englishIds,
       reason: 'the English test never reaches into the Khmer bank',
+    );
+
+    await pump(tester, app, const Scaffold(body: MockScreen()));
+    final teachingIds = app
+        .partsIn(PartTrack.teaching)
+        .where((p) => p.count > 0)
+        .map((p) => p.id)
+        .toSet();
+    expect(
+      await partsOfMock('teaching'),
+      teachingIds,
+      reason: 'the teacher paper is the teaching syllabus alone',
+    );
+    expect(
+      teachingIds.intersection(khmerIds),
+      isEmpty,
+      reason: 'teacher ethics is a separate exam from the civil-service one',
     );
   });
 }

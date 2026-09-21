@@ -5,8 +5,14 @@ import 'package:rabbit/utils/khmer_numerals.dart';
 
 /// Loads every bundled part through the real repository and checks that the
 /// data the app will actually read is well formed. Parts 14-26 are extracted
-/// from assets/pdf/grammar.pdf, so this is what keeps a bad extraction from
-/// reaching the quiz screen.
+/// from assets/pdf/grammar.pdf and part 27 from the teacher-ethics PDF, so
+/// this is what keeps a bad extraction from reaching the quiz screen.
+///
+/// Whether a subject is English is a fact about its course, not about its part
+/// number: part 27 is Khmer and is numbered above the English ones.
+bool _isEnglish(ExamPart part) =>
+    part.track != PartTrack.civilService && part.track != PartTrack.teaching;
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -49,10 +55,10 @@ void main() {
   });
 
   test('the English parts never repeat an option within a question', () {
-    // Scoped to parts 14-26: four questions in the older Khmer parts (5, 6
-    // and 8) do print the same option twice, and those files are left as they
-    // are.
-    for (final part in repo.parts.where((p) => p.id >= 14)) {
+    // Scoped to the English parts: four questions in the older Khmer parts
+    // (5, 6 and 8) do print the same option twice, and those files are left as
+    // they are.
+    for (final part in repo.parts.where(_isEnglish)) {
       for (final q in part.questions) {
         expect(
           q.options.map((o) => o.toLowerCase()).toSet().length,
@@ -73,8 +79,10 @@ void main() {
   });
 
   test('the Khmer parts keep ក/ខ/គ/ឃ and the English parts use A/B/C/D/E', () {
+    // Lettering follows the language of the questions, not the part number:
+    // part 27 is Khmer and sits above the English parts.
     for (final part in repo.parts) {
-      final expected = part.id >= 14 ? latinOptionLabels : khmerOptionLabels;
+      final expected = _isEnglish(part) ? latinOptionLabels : khmerOptionLabels;
       expect(
         part.questions.first.optionLabels,
         same(expected),
@@ -86,7 +94,7 @@ void main() {
     // QCM.pdf prints with a ង or a ច choice. Those are kept whole rather than
     // trimmed to fit, but a jump here would mean the options got mis-split.
     final wide = repo.parts
-        .where((p) => p.id < 14)
+        .where((p) => !_isEnglish(p))
         .expand((p) => p.questions)
         .where((q) => q.options.length > 4)
         .length;
@@ -126,7 +134,7 @@ void main() {
   test('no English part is big enough to need splitting again', () {
     // The whole point of parts 14-26 is that a book is never loaded as one
     // slab. If a part ever grows past this, the division has been lost.
-    for (final part in repo.parts.where((p) => p.id >= 14)) {
+    for (final part in repo.parts.where(_isEnglish)) {
       expect(
         part.count,
         lessThan(3000),
@@ -138,12 +146,13 @@ void main() {
   test('the catalog and the bundled data files line up', () {
     // part N in the catalog must be assets/data/part_NN.json: an off-by-one
     // here would letter Khmer questions A-E and English ones with Khmer glyphs.
-    expect(ExamPart.catalog.length, 26);
+    expect(ExamPart.catalog.length, 27);
     for (var i = 0; i < ExamPart.catalog.length; i++) {
-      final isEnglish = i + 1 >= 14;
+      final meta = ExamPart.catalog[i];
       expect(
-        ExamPart.catalog[i].latinLabels,
-        isEnglish,
+        meta.latinLabels,
+        meta.track != PartTrack.civilService &&
+            meta.track != PartTrack.teaching,
         reason: 'catalog entry ${i + 1} has the wrong label alphabet',
       );
     }
@@ -151,16 +160,16 @@ void main() {
 
   test('every subject belongs to a course, and only English ones are graded', () {
     for (final part in repo.parts) {
-      if (part.id < 14) {
+      if (!_isEnglish(part)) {
         expect(
           part.track,
-          PartTrack.civilService,
-          reason: 'part ${part.id} left the Khmer syllabus',
+          anyOf(PartTrack.civilService, PartTrack.teaching),
+          reason: 'part ${part.id} left the Khmer side of the bank',
         );
         expect(
           part.level,
           isNull,
-          reason: 'the civil-service syllabus does not grade its subjects',
+          reason: 'the Khmer syllabus does not grade its subjects',
         );
       } else {
         expect(
