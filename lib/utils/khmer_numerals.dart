@@ -24,9 +24,11 @@ String khDuration(Duration d) {
   return '${kh(m)}:${kh(s)}';
 }
 
-/// Option letters for the Khmer question bank (parts 1-13).
-const List<String> khmerOptionLabels = ['ក', 'ខ', 'គ', 'ឃ', 'ង'];
+/// Option letters for the Khmer question bank (parts 1-13). A handful of
+/// questions in QCM.pdf print five or six choices, so the alphabet runs past
+/// the usual ក-ឃ rather than the extra options being dropped.
+const List<String> khmerOptionLabels = ['ក', 'ខ', 'គ', 'ឃ', 'ង', 'ច'];
 
 /// Option letters for the English parts, which keep the A-E lettering of the
 /// book they were extracted from rather than being transliterated.
-const List<String> latinOptionLabels = ['A', 'B', 'C', 'D', 'E'];
+const List<String> latinOptionLabels = ['A', 'B', 'C', 'D', 'E', 'F'];

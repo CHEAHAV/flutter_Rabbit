@@ -1,7 +1,8 @@
 import '../utils/khmer_numerals.dart';
 
-/// A single multiple-choice question with 4 options, or 5 for the English
-/// parts, whose source book uses an A-E answer key.
+/// A single multiple-choice question with 4 options, or up to 6 where the
+/// source prints more: the English book uses an A-E answer key, and a few
+/// Khmer questions in QCM.pdf run to ង or ច.
 ///
 /// [optionLabels] carries the alphabet the options are lettered with, so the
 /// Khmer question bank keeps ក / ខ / គ / ឃ while the English parts keep the
@@ -23,8 +24,8 @@ class Question {
     required this.answerIndex,
     this.optionLabels = khmerOptionLabels,
   }) : assert(
-         options.length == 4 || options.length == 5,
-         'Every question must have 4 or 5 options',
+         options.length >= 4 && options.length <= 6,
+         'Every question must have between 4 and 6 options',
        ),
        assert(
          answerIndex >= 0 && answerIndex < options.length,

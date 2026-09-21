@@ -1,6 +1,7 @@
-// Re-cutting the English bank renumbered parts 14-24 into parts 14-26, so any
-// progress saved against the old numbering now points at questions that are no
-// longer there. ProgressService drops exactly that and nothing else.
+// Renumbering a bank makes the progress saved against the old numbering point
+// at questions that are no longer there: revision 2 re-cut the English parts
+// 14-24 into 14-26, revision 3 renumbered the Khmer parts after QCM.pdf.
+// ProgressService drops exactly what moved and nothing else.
 
 import 'dart:convert';
 
@@ -34,20 +35,48 @@ void main() {
     return progress;
   }
 
-  test('progress from the old English numbering is dropped', () async {
+  test('an install from before both renumberings loses every note', () async {
     final progress = await load(oldInstall());
 
     expect(
       progress.partStats.keys,
       [3],
-      reason: 'only the Khmer subject keeps its stats',
+      reason: 'part ids never moved, so the Khmer subject keeps its stats',
     );
-    expect(progress.mistakeUids, {'3-7'});
-    expect(progress.bookmarkUids, {'5-1'});
+    expect(
+      progress.mistakeUids,
+      isEmpty,
+      reason: 'both banks were renumbered since this install',
+    );
+    expect(progress.bookmarkUids, isEmpty);
     expect(
       progress.goalPartId,
       isNull,
       reason: 'a goal pointing at a renumbered subject is meaningless',
+    );
+  });
+
+  test('an install at revision 2 loses only its Khmer notes', () async {
+    // Revision 3 renumbered parts 1-13 alone, so notes on the English parts
+    // still point at the questions the user made them on.
+    final progress = await load({
+      'rabbit.bankRevision': 2,
+      'rabbit.partStats': jsonEncode({
+        '3': {'answered': 40, 'correct': 30},
+        '14': {'answered': 80, 'correct': 20},
+      }),
+      'rabbit.mistakes': ['3-7', '14-102'],
+      'rabbit.bookmarks': ['5-1', '19-44'],
+      'rabbit.goalPartId': 20,
+    });
+
+    expect(progress.partStats.keys, [3, 14]);
+    expect(progress.mistakeUids, {'14-102'});
+    expect(progress.bookmarkUids, {'19-44'});
+    expect(
+      progress.goalPartId,
+      20,
+      reason: 'the English parts did not move at revision 3',
     );
   });
 
@@ -62,6 +91,7 @@ void main() {
   test('the drop happens once and is not repeated', () async {
     final first = await load(oldInstall());
     expect(first.partStats.keys, [3]);
+    expect(first.mistakeUids, isEmpty);
 
     // Second launch: the marker is stored, and progress made since - including
     // on the new English parts - must survive.

@@ -31,7 +31,7 @@ void main() {
         expect(q.text.trim(), isNotEmpty, reason: where);
         expect(
           q.options.length,
-          anyOf(4, 5),
+          anyOf(4, 5, 6),
           reason: '$where has ${q.options.length} options',
         );
         expect(
@@ -80,15 +80,17 @@ void main() {
         same(expected),
         reason: 'part ${part.id} is lettered with the wrong alphabet',
       );
-      // Only the English parts were allowed to bring 5-option questions in.
-      if (part.id < 14) {
-        expect(
-          part.questions.every((q) => q.options.length == 4),
-          isTrue,
-          reason: 'part ${part.id} changed shape',
-        );
-      }
     }
+
+    // The Khmer bank is four-option apart from the handful of questions
+    // QCM.pdf prints with a ង or a ច choice. Those are kept whole rather than
+    // trimmed to fit, but a jump here would mean the options got mis-split.
+    final wide = repo.parts
+        .where((p) => p.id < 14)
+        .expand((p) => p.questions)
+        .where((q) => q.options.length > 4)
+        .length;
+    expect(wide, lessThan(15), reason: 'the Khmer bank changed shape');
   });
 
   test('the English parts carry the expected volume', () {

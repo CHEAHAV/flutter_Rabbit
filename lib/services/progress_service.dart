@@ -35,7 +35,10 @@ class ProgressService {
   ///
   /// 2: the English bank moved from the book's Part A-E lettering (parts 14-24)
   ///    to one part per level (parts 14-26).
-  static const bankRevision = 2;
+  /// 3: the Khmer bank (parts 1-13) was re-checked against QCM.pdf - the
+  ///    questions the app was missing were added back in the document's own
+  ///    order, so every Khmer question id shifted.
+  static const bankRevision = 3;
 
   /// Parts below this are the Khmer civil-service bank, which has never been
   /// renumbered; everything from here up is the English bank.
@@ -78,27 +81,32 @@ class ProgressService {
     _ready = true;
   }
 
-  /// Drops progress that a re-cut of the English bank has made meaningless.
+  /// Drops progress that a renumbering of the bank has made meaningless.
   ///
-  /// Only the English side is touched: the Khmer parts keep their ids and
-  /// their questions, so their stats, mistakes and bookmarks stay. Lifetime
-  /// totals and exam history stay too - they record what the user actually
-  /// answered, which re-filing the bank does not undo.
+  /// Each side is dropped only when its own ids actually moved: revision 2
+  /// re-cut the English parts, revision 3 renumbered the Khmer ones. Part ids
+  /// 1-13 never changed, so Khmer part stats stay; so do lifetime totals and
+  /// exam history, which record what the user actually answered.
   Future<void> _migrate() async {
     final stored = _prefs.getInt(_kBankRevision) ?? 0;
     if (stored == bankRevision) return;
+    final englishMoved = stored < 2;
+    final khmerMoved = stored < 3;
     bool isStale(String uid) {
       final partId = int.tryParse(uid.split('-').first);
-      return partId == null || partId >= _firstEnglishPart;
+      if (partId == null) return true;
+      return partId >= _firstEnglishPart ? englishMoved : khmerMoved;
     }
 
-    _partStats.removeWhere((partId, _) => partId >= _firstEnglishPart);
+    if (englishMoved) {
+      _partStats.removeWhere((partId, _) => partId >= _firstEnglishPart);
+      final goal = _prefs.getInt(_kGoalPartId);
+      if (goal != null && goal >= _firstEnglishPart) {
+        await _prefs.remove(_kGoalPartId);
+      }
+    }
     _mistakes.removeWhere(isStale);
     _bookmarks.removeWhere(isStale);
-    final goal = _prefs.getInt(_kGoalPartId);
-    if (goal != null && goal >= _firstEnglishPart) {
-      await _prefs.remove(_kGoalPartId);
-    }
     await _prefs.setStringList(_kMistakes, _mistakes.toList());
     await _prefs.setStringList(_kBookmarks, _bookmarks.toList());
     await _prefs.setString(
