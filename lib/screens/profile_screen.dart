@@ -275,6 +275,12 @@ class ProfileScreen extends StatelessWidget {
                 'កំណែកម្មវិធី',
                 'Rabbit v1.0.0',
               ),
+              const Divider(height: 1),
+              _infoRow(
+                Icons.person,
+                'អ្នកបង្កើតកម្មវិធី',
+                'លោក អុិតជាហាវ',
+              ),
             ],
           ),
         ),
