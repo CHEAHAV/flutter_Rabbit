@@ -56,7 +56,7 @@ class _ResultScreenState extends State<ResultScreen> {
                   const SizedBox(height: 4),
                   Text(
                     result.config.mode == ExamMode.mock
-                        ? 'លទ្ធផល Mock Exam'
+                        ? 'លទ្ធផលការប្រឡងសាកល្បង'
                         : 'លទ្ធផលការហ្វឹកហាត់',
                     style: TextStyle(fontSize: 12, color: AppColors.slate),
                   ),

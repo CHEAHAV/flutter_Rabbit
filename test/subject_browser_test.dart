@@ -263,7 +263,7 @@ void main() {
     await pump(tester, app, const Scaffold(body: MockScreen()));
 
     expect(
-      find.widgetWithText(ElevatedButton, 'ចាប់ផ្ដើម Mock Exam'),
+      find.widgetWithText(ElevatedButton, 'ចាប់ផ្ដើមប្រឡងសាកល្បង'),
       findsNWidgets(2),
       reason: 'one quick mock per syllabus',
     );

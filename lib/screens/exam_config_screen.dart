@@ -92,7 +92,7 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.mode == ExamMode.mock ? 'កំណត់ Mock Exam' : 'កំណត់ការប្រឡង',
+          widget.mode == ExamMode.mock ? 'កំណត់ការប្រឡងសាកល្បង' : 'កំណត់ការប្រឡង',
         ),
         actions: [
           IconButton(

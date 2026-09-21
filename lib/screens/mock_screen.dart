@@ -70,7 +70,7 @@ class MockScreen extends StatelessWidget {
         ),
         const SizedBox(height: 22),
         SectionHeader(
-          title: 'កំណត់ Mock Exam ផ្ទាល់ខ្លួន',
+          title: 'កំណត់ការប្រឡងដោយខ្លួនឯង',
           subtitle: 'ជ្រើសមុខវិជ្ជា រយៈពេល និងចំនួនសំណួរដោយខ្លួនឯង',
         ),
         const SizedBox(height: 10),
@@ -107,7 +107,7 @@ class MockScreen extends StatelessWidget {
                       );
                     },
                     icon: const Icon(Icons.tune_rounded, size: 18),
-                    label: const Text('កំណត់ Mock Exam'),
+                    label: const Text('កំណត់ការប្រឡងសាកល្បង'),
                   ),
                 ),
               ],
@@ -274,7 +274,7 @@ class _QuickMock extends StatelessWidget {
             child: ElevatedButton(
               key: ValueKey('quick-mock-$slug'),
               onPressed: questions == 0 ? null : () => _start(context, parts),
-              child: const Text('ចាប់ផ្ដើម Mock Exam'),
+              child: const Text('ចាប់ផ្ដើមប្រឡងសាកល្បង'),
             ),
           ),
         ],
@@ -337,7 +337,7 @@ class _HistoryRow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  entry.mode == ExamMode.mock ? 'Mock Exam' : 'ហ្វឹកហាត់',
+                  entry.mode == ExamMode.mock ? 'ប្រឡងសាកល្បង' : 'ហ្វឹកហាត់',
                   style: const TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w700,
