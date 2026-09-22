@@ -32,6 +32,9 @@ class _PracticeScreenState extends State<PracticeScreen> {
     final app = context.watch<AppState>();
     final available = app.partsWithQuestions;
     final totalAvailable = available.fold<int>(0, (sum, p) => sum + p.count);
+    // What is actually still on offer: a session never repeats a question the
+    // user has answered, so this - not the raw total - is what the page counts.
+    final totalRemaining = app.remainingInParts(available);
     final tracks = app.tracks;
     final shownTracks = _track == null
         ? tracks
@@ -122,7 +125,9 @@ class _PracticeScreenState extends State<PracticeScreen> {
               ),
               const SizedBox(height: 8),
               Text(
-                'មានសំណួរសរុប ${kh(app.repo.totalQuestionCount)} សំណួរ ក្នុង ${kh(tracks.length)} វគ្គសិក្សា • ${kh(available.length)} មុខវិជ្ជា',
+                totalRemaining == totalAvailable
+                    ? 'មានសំណួរសរុប ${kh(app.repo.totalQuestionCount)} សំណួរ ក្នុង ${kh(tracks.length)} វគ្គសិក្សា • ${kh(available.length)} មុខវិជ្ជា'
+                    : 'នៅសល់ ${kh(totalRemaining)} សំណួរថ្មី ក្នុងចំណោម ${kh(totalAvailable)} • ${kh(available.length)} មុខវិជ្ជា',
                 style: const TextStyle(
                   color: Color(0xFFE6F1EB),
                   fontSize: 12,
@@ -159,7 +164,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
                         backgroundColor: Colors.white.withValues(alpha: 0.14),
                         foregroundColor: Colors.white,
                       ),
-                      onPressed: available.isEmpty
+                      onPressed: totalRemaining == 0
                           ? null
                           : () => _launchMixed(context, available),
                       icon: const Icon(Icons.shuffle_rounded),
@@ -218,7 +223,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
           ),
           alignment: Alignment.center,
           child: Text(
-            'មាន ${kh(available.length)} មុខវិជ្ជាត្រៀមរួច • សរុប ${kh(totalAvailable)} សំណួរ',
+            'មាន ${kh(available.length)} មុខវិជ្ជាត្រៀមរួច • នៅសល់ ${kh(totalRemaining)}/${kh(totalAvailable)} សំណួរ',
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w700,
@@ -286,7 +291,8 @@ class _PracticeScreenState extends State<PracticeScreen> {
                     accuracy: app.progress.statFor(parts[i].id).answered > 0
                         ? app.progress.statFor(parts[i].id).accuracy
                         : null,
-                    onTap: () => _launchPart(context, parts[i]),
+                    remaining: app.remainingIn(parts[i]),
+                    onTap: () => _launchPart(context, app, parts[i]),
                   ),
                   if (i != parts.length - 1) const Divider(height: 1),
                 ],
@@ -301,19 +307,100 @@ class _PracticeScreenState extends State<PracticeScreen> {
   /// Opens a single subject straight into the question screen — the one-tap
   /// path this list is built around. [SubjectTile] already played the tap
   /// sound and blocks subjects with no questions.
-  void _launchPart(BuildContext context, ExamPart part) {
-    _start(context, {part.id}, part.count, part.titleKm);
+  ///
+  /// The session is sized by what is *left* in the subject, never by its raw
+  /// total: a subject of 200 with 50 answered offers the other 150. Once none
+  /// are left the subject cannot start at all, so the tap offers to clear that
+  /// subject's answered memory instead of opening an empty session.
+  void _launchPart(BuildContext context, AppState app, ExamPart part) {
+    final remaining = app.remainingIn(part);
+    if (remaining == 0) {
+      _offerRestart(context, app, part);
+      return;
+    }
+    _start(context, {part.id}, remaining, part.titleKm);
   }
 
-  /// Every available subject mixed into one session.
+  /// Every available subject mixed into one session, again only over the
+  /// questions that are still unanswered.
   void _launchMixed(BuildContext context, List<ExamPart> available) {
     sfx.tap();
+    final app = context.read<AppState>();
     _start(
       context,
       available.map((p) => p.id).toSet(),
-      available.fold<int>(0, (sum, p) => sum + p.count),
+      app.remainingInParts(available),
       'ហ្វឹកហាត់ចម្រុះ',
     );
+  }
+
+  /// Asked when a finished subject is tapped: answering it again means going
+  /// back over questions already seen, so it is never done silently.
+  Future<void> _offerRestart(
+    BuildContext context,
+    AppState app,
+    ExamPart part,
+  ) async {
+    final restart = await showModalBottomSheet<bool>(
+      context: context,
+      backgroundColor: AppColors.card,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(26)),
+      ),
+      builder: (ctx) => Padding(
+        padding: const EdgeInsets.fromLTRB(20, 22, 20, 28),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              '${part.titleKm} — ឆ្លើយគ្រប់ហើយ',
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'អ្នកបានឆ្លើយសំណួរទាំង ${kh(part.count)} ក្នុងមុខវិជ្ជានេះរួចហើយ។ '
+              'បើចាប់ផ្ដើមឡើងវិញ កម្មវិធីនឹងបង្ហាញសំណួរទាំងនោះម្តងទៀត។ '
+              'ពិន្ទុ និងប្រវត្តិការឆ្លើយរបស់អ្នកមិនបាត់ទេ។',
+              style: TextStyle(
+                fontSize: 12.5,
+                color: AppColors.slate,
+                height: 1.7,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: () {
+                      sfx.tap();
+                      Navigator.of(ctx).pop(false);
+                    },
+                    child: const Text('ចាកចេញ'),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      sfx.tap();
+                      Navigator.of(ctx).pop(true);
+                    },
+                    child: const Text('ចាប់ផ្ដើមឡើងវិញ'),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+    if (restart != true || !context.mounted) return;
+    await app.progress.resetAnswered({part.id});
+    app.refresh();
+    if (!context.mounted) return;
+    _start(context, {part.id}, part.count, part.titleKm);
   }
 
   void _start(

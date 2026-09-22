@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -31,26 +32,44 @@ class QuizSessionScreen extends StatefulWidget {
 }
 
 class _QuizSessionScreenState extends State<QuizSessionScreen> {
+  late AppState _app;
   late ExamSession _session;
   final GlobalKey<ShakeWidgetState> _shakeKey = GlobalKey<ShakeWidgetState>();
+
+  /// True when the selected subjects do have questions, but the user has
+  /// already answered every one of them. Told apart from a genuinely empty
+  /// selection so the screen can offer to start the subject over instead of
+  /// just saying there is nothing here.
+  bool _exhausted = false;
 
   @override
   void initState() {
     super.initState();
-    final app = context.read<AppState>();
-    final questions = widget.overrideQuestions ?? _buildQuestionPool(app);
+    _app = context.read<AppState>();
+    _startSession();
+  }
+
+  /// Builds the pool and opens a fresh [ExamSession] over it.
+  void _startSession() {
+    final questions = widget.overrideQuestions ?? _buildQuestionPool(_app);
+    _exhausted =
+        widget.overrideQuestions == null &&
+        questions.isEmpty &&
+        _app.fullPool(widget.config.partIds).isNotEmpty;
     _session = ExamSession(config: widget.config, questions: questions);
     _session.onTimeExpired = _handleTimeExpired;
     _session.onLowTimeWarning = _handleLowTime;
   }
 
+  /// The questions this session will ask.
+  ///
+  /// Only questions the user has never answered are eligible: finishing 50 of
+  /// a 200-question subject and coming back leaves a pool of the other 150,
+  /// and the session is drawn from those. When fewer are left than the session
+  /// asked for, the session is simply that much shorter - it is never padded
+  /// out with questions that have already been answered.
   List<Question> _buildQuestionPool(AppState app) {
-    final pool = <Question>[];
-    for (final part in app.parts) {
-      if (widget.config.partIds.contains(part.id)) {
-        pool.addAll(part.questions);
-      }
-    }
+    final pool = app.unansweredPool(widget.config.partIds);
     if (widget.config.shuffleQuestions) {
       pool.shuffle(Random());
     }
@@ -59,6 +78,17 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
       return pool.sublist(0, count);
     }
     return pool;
+  }
+
+  /// Forgets the answered questions of this session's subjects and starts
+  /// again over the full bank. Reached only from [_ExhaustedPool], once every
+  /// question really has been answered.
+  Future<void> _restartFromScratch() async {
+    await _app.progress.resetAnswered(widget.config.partIds);
+    _app.refresh();
+    if (!mounted) return;
+    _session.dispose();
+    setState(_startSession);
   }
 
   void _handleLowTime() {
@@ -103,7 +133,13 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
             child: Consumer<ExamSession>(
               builder: (context, session, _) {
                 if (session.total == 0) {
-                  return _EmptyPool(onBack: () => Navigator.of(context).pop());
+                  return _exhausted
+                      ? _ExhaustedPool(
+                          answered: _app.fullPool(widget.config.partIds).length,
+                          onRestart: _restartFromScratch,
+                          onBack: () => Navigator.of(context).pop(),
+                        )
+                      : _EmptyPool(onBack: () => Navigator.of(context).pop());
                 }
                 final app = context.read<AppState>();
                 final part = app.repo.partById(session.current.question.partId);
@@ -240,7 +276,12 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
 
   void _handleSelect(ExamSession session, int index) {
     final correct = index == session.current.question.answerIndex;
+    final uid = session.current.question.uid;
     session.selectOption(index);
+    // Remembered straight away rather than at submit time: a session the user
+    // walks out of must still count as "these questions are used up",
+    // otherwise quitting halfway would serve them all over again.
+    unawaited(_app.progress.markAnswered([uid]));
     if (!widget.config.instantFeedback) {
       sfx.select();
       return;
@@ -504,9 +545,8 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
     if (confirmed != true || !mounted) return;
 
     final result = session.finish();
-    final app = context.read<AppState>();
-    await app.progress.recordResult(result);
-    app.refresh();
+    await _app.progress.recordResult(result);
+    _app.refresh();
     if (!mounted) return;
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (_) => ResultScreen(result: result)),
@@ -816,6 +856,90 @@ class _EmptyPool extends StatelessWidget {
                 onBack();
               },
               child: const Text('ត្រឡប់ក្រោយ'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Shown when every question of the chosen subjects has already been
+/// answered. The pool deliberately never recycles a question on its own, so
+/// going round again has to be the user's own decision - and it is offered
+/// right here, rather than leaving them on a dead end.
+class _ExhaustedPool extends StatelessWidget {
+  final int answered;
+  final Future<void> Function() onRestart;
+  final VoidCallback onBack;
+
+  const _ExhaustedPool({
+    required this.answered,
+    required this.onRestart,
+    required this.onBack,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(30),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              Icons.emoji_events_rounded,
+              size: 44,
+              color: AppColors.emerald,
+            ),
+            const SizedBox(height: 14),
+            Text(
+              'អ្នកបានឆ្លើយគ្រប់សំណួរហើយ! 🎉',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.w800,
+                fontSize: 16,
+                color: AppColors.ink,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'សំណួរទាំង ${kh(answered)} ក្នុងការជ្រើសរើសនេះ អ្នកបានឆ្លើយរួចរាល់ហើយ។ '
+              'មិនមានសំណួរថ្មីណាមួយទៀតទេ។',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 12.5,
+                color: AppColors.slate,
+                height: 1.7,
+              ),
+            ),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                key: const ValueKey('restart-exhausted-pool'),
+                onPressed: () {
+                  sfx.tap();
+                  onRestart();
+                },
+                icon: const Icon(Icons.refresh_rounded, size: 18),
+                label: const Text(
+                  'ចាប់ផ្ដើមឡើងវិញពីដើម',
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                onPressed: () {
+                  sfx.tap();
+                  onBack();
+                },
+                child: const Text(
+                  'ជ្រើសមុខវិជ្ជាផ្សេង',
+                ),
+              ),
             ),
           ],
         ),

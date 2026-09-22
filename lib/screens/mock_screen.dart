@@ -206,7 +206,10 @@ class _QuickMock extends StatelessWidget {
       for (final track in tracks)
         ...app.partsIn(track).where((p) => p.count > 0),
     ];
-    final questions = parts.fold<int>(0, (sum, p) => sum + p.count);
+    // Counted over unanswered questions only: a mock paper is drawn from the
+    // same pool as practice, so a syllabus the user has worked through has
+    // nothing left to set a paper from.
+    final questions = app.remainingInParts(parts);
 
     return Container(
       padding: const EdgeInsets.all(18),
@@ -266,9 +269,14 @@ class _QuickMock extends StatelessWidget {
           const SizedBox(height: 14),
           Row(
             children: [
-              const Expanded(child: StatBox(value: '៥០', label: 'សំណួរ')),
+              Expanded(
+                child: StatBox(
+                  value: kh(questions < 50 ? questions : 50),
+                  label: 'សំណួរ',
+                ),
+              ),
               const SizedBox(width: 8),
-              const Expanded(
+              Expanded(
                 child: StatBox(value: '៤០ នាទី', label: 'រយៈពេល'),
               ),
               const SizedBox(width: 8),
@@ -296,7 +304,7 @@ class _QuickMock extends StatelessWidget {
 
   void _start(BuildContext context, List<ExamPart> parts) {
     sfx.tap();
-    final pool = parts.fold<int>(0, (sum, p) => sum + p.count);
+    final pool = context.read<AppState>().remainingInParts(parts);
     final config = ExamConfig(
       mode: ExamMode.mock,
       partIds: parts.map((p) => p.id).toSet(),

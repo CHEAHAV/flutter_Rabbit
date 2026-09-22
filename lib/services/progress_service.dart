@@ -26,6 +26,7 @@ class ProgressService {
   static const _kSoundEnabled = 'rabbit.soundEnabled';
   static const _kSoundVolume = 'rabbit.soundVolume';
   static const _kBankRevision = 'rabbit.bankRevision';
+  static const _kAnswered = 'rabbit.answeredQuestions';
 
   /// Bumped whenever the English bank is re-cut into a different set of parts.
   /// Progress is keyed by part id and by "partId-questionId", so after a re-cut
@@ -55,6 +56,12 @@ class ProgressService {
 
   Set<String> _mistakes = {};
   Set<String> _bookmarks = {};
+
+  /// Every question the user has already answered, grouped by part id, so a
+  /// new session in a part can be built out of the questions that are left.
+  /// Grouping is what makes "how many are left in this subject" a map lookup
+  /// instead of a scan of the whole set on every tile rebuild.
+  final Map<int, Set<String>> _answeredByPart = {};
   List<HistoryEntry> _history = [];
   Map<int, PartStat> _partStats = {};
 
@@ -73,6 +80,8 @@ class ProgressService {
           (s) => HistoryEntry.fromJson(jsonDecode(s) as Map<String, dynamic>),
         )
         .toList();
+    _answeredByPart.clear();
+    _indexAnswered(_prefs.getStringList(_kAnswered) ?? const []);
     final statsRaw = _prefs.getString(_kPartStats);
     if (statsRaw != null) {
       final map = jsonDecode(statsRaw) as Map<String, dynamic>;
@@ -114,6 +123,13 @@ class ProgressService {
     }
     _mistakes.removeWhere(isStale);
     _bookmarks.removeWhere(isStale);
+    // The "already answered" memory is keyed the same way, so a renumbering
+    // would otherwise hide questions the user has never actually seen.
+    for (final set in _answeredByPart.values) {
+      set.removeWhere(isStale);
+    }
+    _answeredByPart.removeWhere((_, set) => set.isEmpty);
+    await _saveAnswered();
     await _prefs.setStringList(_kMistakes, _mistakes.toList());
     await _prefs.setStringList(_kBookmarks, _bookmarks.toList());
     await _prefs.setString(
@@ -206,6 +222,83 @@ class ProgressService {
     await _prefs.setStringList(_kBookmarks, _bookmarks.toList());
   }
 
+  // ---- Already-answered memory -----------------------------------------
+  //
+  // A session must never hand the user a question they have already answered:
+  // asking for 50 more questions in a 200-question subject after finishing 50
+  // of them has to draw from the 150 that are left, not from all 200 again.
+  // Every question the user answers is recorded here the moment they pick an
+  // option, so the memory survives quitting a session halfway through, and
+  // the pool for the next session is built by subtracting it from the bank.
+
+  static int? _partIdOf(String uid) => int.tryParse(uid.split('-').first);
+
+  void _indexAnswered(Iterable<String> uids) {
+    for (final uid in uids) {
+      final partId = _partIdOf(uid);
+      if (partId == null) continue;
+      _answeredByPart.putIfAbsent(partId, () => <String>{}).add(uid);
+    }
+  }
+
+  Future<void> _saveAnswered() => _prefs.setStringList(
+    _kAnswered,
+    [for (final set in _answeredByPart.values) ...set],
+  );
+
+  /// The uids answered in [partId]. Empty - never null - for a fresh subject.
+  Set<String> answeredIn(int partId) =>
+      _answeredByPart[partId] ?? const <String>{};
+
+  /// How many questions of [partId] have been answered at least once.
+  int answeredCountIn(int partId) => _answeredByPart[partId]?.length ?? 0;
+
+  bool hasAnswered(String uid) {
+    final partId = _partIdOf(uid);
+    return partId != null && (_answeredByPart[partId]?.contains(uid) ?? false);
+  }
+
+  /// Total answered uids across every part - the whole memory, flattened.
+  int get answeredQuestionCount =>
+      _answeredByPart.values.fold(0, (sum, set) => sum + set.length);
+
+  /// Remembers that these questions have now been answered. Idempotent:
+  /// answering the same question again (from the mistakes notebook, say)
+  /// changes nothing and writes nothing.
+  Future<void> markAnswered(Iterable<String> uids) async {
+    var changed = false;
+    for (final uid in uids) {
+      final partId = _partIdOf(uid);
+      if (partId == null) continue;
+      if (_answeredByPart.putIfAbsent(partId, () => <String>{}).add(uid)) {
+        changed = true;
+      }
+    }
+    if (!changed) return;
+    await _saveAnswered();
+  }
+
+  /// Forgets the answered questions of [partIds], putting those subjects back
+  /// to a full pool. Used when a subject has been exhausted and the user
+  /// chooses to go round again. Returns how many uids were forgotten.
+  Future<int> resetAnswered(Iterable<int> partIds) async {
+    var removed = 0;
+    for (final partId in partIds) {
+      removed += _answeredByPart.remove(partId)?.length ?? 0;
+    }
+    if (removed > 0) await _saveAnswered();
+    return removed;
+  }
+
+  /// Forgets the answered questions of every subject at once. Accuracy,
+  /// history and the mistakes notebook are deliberately left alone: this only
+  /// reopens the pool, it does not erase what the user has achieved.
+  Future<void> resetAllAnswered() async {
+    if (_answeredByPart.isEmpty) return;
+    _answeredByPart.clear();
+    await _saveAnswered();
+  }
+
   // ---- History & stats --------------------------------------------------
   List<HistoryEntry> get history => List.unmodifiable(_history.reversed);
   Map<int, PartStat> get partStats => _partStats;
@@ -220,6 +313,13 @@ class ProgressService {
 
   /// Call once when an exam/practice session finishes.
   Future<void> recordResult(ExamResult result) async {
+    // Never serve these again: the live marking in the quiz screen has
+    // normally done this already, but a session finished by the timer running
+    // out can submit answers that were never tapped through this path.
+    await markAnswered(
+      result.attempts.where((a) => a.isAnswered).map((a) => a.question.uid),
+    );
+
     // mistakes / mastery per question
     for (final a in result.attempts) {
       if (!a.isAnswered) continue;

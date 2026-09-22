@@ -81,9 +81,13 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
     }
 
     final selectedCount = _selected.length;
-    final maxQuestions = parts
-        .where((p) => _selected.contains(p.id))
-        .fold<int>(0, (s, p) => s + p.count);
+    final selectedParts = parts.where((p) => _selected.contains(p.id));
+    // The ceiling is what is left unanswered, not the size of the bank: a
+    // session is only ever built out of questions the user has not seen, so
+    // offering "100 questions" over a selection with 60 left would promise
+    // more than the session can deliver.
+    final maxQuestions = app.remainingInParts(selectedParts);
+    final bankQuestions = selectedParts.fold<int>(0, (s, p) => s + p.count);
     final effectiveCount = _count.clamp(
       0,
       maxQuestions == 0 ? 0 : maxQuestions,
@@ -205,7 +209,9 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
             ),
             alignment: Alignment.center,
             child: Text(
-              'បានជ្រើសរើស ${kh(selectedCount)} មុខវិជ្ជា • សរុប ${kh(maxQuestions)} សំណួរ',
+              maxQuestions == bankQuestions
+                  ? 'បានជ្រើសរើស ${kh(selectedCount)} មុខវិជ្ជា • សរុប ${kh(bankQuestions)} សំណួរ'
+                  : 'បានជ្រើសរើស ${kh(selectedCount)} មុខវិជ្ជា • នៅសល់ ${kh(maxQuestions)}/${kh(bankQuestions)} សំណួរ',
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
@@ -392,6 +398,7 @@ class _ExamConfigScreenState extends State<ExamConfigScreen> {
                     part: parts[i],
                     mode: SubjectTileMode.select,
                     selected: _selected.contains(parts[i].id),
+                    remaining: app.remainingIn(parts[i]),
                     onTap: () => setState(() {
                       if (!_selected.remove(parts[i].id)) {
                         _selected.add(parts[i].id);

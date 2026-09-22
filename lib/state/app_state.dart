@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 
 import '../data/question_repository.dart';
 import '../models/exam_part.dart';
+import '../models/question.dart';
 import '../services/progress_service.dart';
 import '../services/sound_service.dart';
 import '../theme/app_theme.dart';
@@ -58,6 +59,55 @@ class AppState extends ChangeNotifier {
         .toSet();
     return PartTrack.values.where(stocked.contains).toList();
   }
+
+  // ---- Unanswered pools -------------------------------------------------
+  //
+  // Every session that is built from a set of subjects (rather than from an
+  // explicit list, the way the mistakes notebook is) draws only on questions
+  // the user has not answered yet. These helpers are the one place that rule
+  // lives, so the practice list, the exam configurator, the quick mock papers
+  // and the quiz screen itself can never disagree about how many questions a
+  // subject still has to offer.
+
+  /// The questions of [part] the user has not answered yet.
+  List<Question> unansweredIn(ExamPart part) {
+    final answered = progress.answeredIn(part.id);
+    if (answered.isEmpty) return part.questions;
+    return part.questions.where((q) => !answered.contains(q.uid)).toList();
+  }
+
+  /// How many questions [part] still has left for a new session.
+  ///
+  /// Counted from the bank rather than taken from the size of the answered
+  /// set, so a stored uid whose question no longer exists cannot make a
+  /// subject look emptier than it is.
+  int remainingIn(ExamPart part) {
+    final answered = progress.answeredIn(part.id);
+    if (answered.isEmpty) return part.count;
+    var left = 0;
+    for (final q in part.questions) {
+      if (!answered.contains(q.uid)) left++;
+    }
+    return left;
+  }
+
+  /// [remainingIn], summed over several subjects.
+  int remainingInParts(Iterable<ExamPart> parts) =>
+      parts.fold<int>(0, (sum, p) => sum + remainingIn(p));
+
+  /// Every question of [partIds] the user has not answered yet, in bank order
+  /// (the caller shuffles when the session asks for it).
+  List<Question> unansweredPool(Set<int> partIds) => [
+    for (final part in repo.parts)
+      if (partIds.contains(part.id)) ...unansweredIn(part),
+  ];
+
+  /// Every question of [partIds], answered or not. Only used to tell "this
+  /// selection is empty" apart from "this selection is finished".
+  List<Question> fullPool(Set<int> partIds) => [
+    for (final part in repo.parts)
+      if (partIds.contains(part.id)) ...part.questions,
+  ];
 
   Future<void> bootstrap() async {
     try {

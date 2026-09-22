@@ -33,6 +33,13 @@ class SubjectTile extends StatelessWidget {
   /// 0..1 mastery indicator, omitted when the subject was never answered.
   final double? accuracy;
 
+  /// How many questions the subject still has that the user has never
+  /// answered. Null means "not tracked here" and the row falls back to the
+  /// plain total. A session only ever draws on these, so the row shows the
+  /// number that actually matters once a subject has been started: a subject
+  /// of 200 with 50 answered reads "still 150 of 200".
+  final int? remaining;
+
   const SubjectTile({
     super.key,
     required this.part,
@@ -40,7 +47,25 @@ class SubjectTile extends StatelessWidget {
     this.mode = SubjectTileMode.open,
     this.selected = false,
     this.accuracy,
+    this.remaining,
   });
+
+  /// True once every question of the subject has been answered.
+  bool get isFinished => part.count > 0 && remaining == 0;
+
+  /// What the row says about its questions: the plain total until the user
+  /// starts the subject, then how many are left of it, then a "finished" note
+  /// once none are.
+  String get _countLabel {
+    if (part.count == 0) return 'មិនទាន់មានទិន្នន័យ';
+    if (remaining == null || remaining == part.count) {
+      return '${kh(part.count)} សំណួរ';
+    }
+    if (remaining == 0) {
+      return 'ឆ្លើយគ្រប់ ${kh(part.count)} សំណួរហើយ ✓';
+    }
+    return 'នៅសល់ ${kh(remaining!)}/${kh(part.count)} សំណួរ';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -105,10 +130,14 @@ class SubjectTile extends StatelessWidget {
                       if (part.level != null && !disabled)
                         LevelChip(level: part.level!),
                       Text(
-                        disabled
-                            ? 'មិនទាន់មានទិន្នន័យ'
-                            : '${kh(part.count)} សំណួរ',
-                        style: TextStyle(fontSize: 11, color: AppColors.slate),
+                        _countLabel,
+                        style: TextStyle(
+                          fontSize: 11,
+                          color: isFinished ? AppColors.emerald : AppColors.slate,
+                          fontWeight: isFinished
+                              ? FontWeight.w700
+                              : FontWeight.w400,
+                        ),
                       ),
                     ],
                   ),

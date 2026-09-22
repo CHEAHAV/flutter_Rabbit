@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
+import '../services/sound_service.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
@@ -269,6 +270,8 @@ class ProfileScreen extends StatelessWidget {
                 'ការផ្ទុកទិន្នន័យ',
                 'រក្សាទុកនៅលើឧបករណ៍ ក្នុងទម្រង់ Offline',
               ),
+              const Divider(height: 1),
+              _AnsweredPoolRow(app: app),
               const Divider(height: 1),
               _infoRow(
                 Icons.info_outline_rounded,
@@ -668,5 +671,116 @@ class _SmoothSwitchPill extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+/// "Questions already answered", with the one control that puts them back.
+///
+/// Sessions are built only out of questions the user has never answered, so
+/// this number is the difference between the bank and what the app still has
+/// to offer. Clearing it is the only way back to a full pool, and it clears
+/// nothing else: accuracy, exam history and the mistakes notebook all stay.
+class _AnsweredPoolRow extends StatelessWidget {
+  final AppState app;
+  const _AnsweredPoolRow({required this.app});
+
+  @override
+  Widget build(BuildContext context) {
+    final answered = app.progress.answeredQuestionCount;
+    final total = app.repo.totalQuestionCount;
+    final left = total - answered;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+      child: Row(
+        children: [
+          Container(
+            width: 38,
+            height: 38,
+            decoration: BoxDecoration(
+              color: AppColors.mint,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            alignment: Alignment.center,
+            child: Icon(
+              Icons.playlist_add_check_rounded,
+              size: 19,
+              color: AppColors.emerald,
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'សំណួរដែលបានឆ្លើយរួច',
+                  style: TextStyle(
+                    fontSize: 12.5,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.ink,
+                  ),
+                ),
+                const SizedBox(height: 3),
+                Text(
+                  '${kh(answered)} សំណួរ • នៅសល់ ${kh(left < 0 ? 0 : left)} សំណួរថ្មី',
+                  style: TextStyle(fontSize: 10.5, color: AppColors.slate),
+                ),
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: answered == 0
+                ? null
+                : () => _confirmReset(context),
+            child: const Text(
+              'ចាប់ផ្ដើមឡើងវិញ',
+              style: TextStyle(fontSize: 11.5),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _confirmReset(BuildContext context) async {
+    sfx.tap();
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: AppColors.card,
+        title: const Text(
+          'ចាប់ផ្ដើមសំណួរទាំងអស់ឡើងវិញ?',
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+        ),
+        content: Text(
+          'សំណួរទាំងអស់នឹងអាចចេញមកម្តងទៀត។ '
+          'ពិន្ទុ អត្រាត្រូវ ប្រវត្តិការប្រឡង និងសំណួរខុស នៅដដែល។',
+          style: TextStyle(
+            fontSize: 12.5,
+            color: AppColors.slate,
+            height: 1.7,
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              sfx.tap();
+              Navigator.of(ctx).pop(false);
+            },
+            child: const Text('ចាកចេញ'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              sfx.tap();
+              Navigator.of(ctx).pop(true);
+            },
+            child: const Text('ចាប់ផ្ដើមឡើងវិញ'),
+          ),
+        ],
+      ),
+    );
+    if (ok != true) return;
+    await app.progress.resetAllAnswered();
+    app.refresh();
   }
 }
