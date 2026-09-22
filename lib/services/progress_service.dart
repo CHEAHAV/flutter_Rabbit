@@ -209,17 +209,44 @@ class ProgressService {
     await _prefs.setStringList(_kMistakes, []);
   }
 
-  // ---- Bookmarks --------------------------------------------------------
+  // ---- Bookmarks (the saved-questions notebook) --------------------------
+  //
+  // A bookmark is the user pressing "ចំណាំទុក" on a question: it puts that question,
+  // with its answer, into the notebook's saved list and keeps it there across
+  // sessions and restarts until the same question is unsaved. Unlike the
+  // mistakes list, nothing the user answers ever adds to or removes from it -
+  // it is theirs to curate.
+
+  /// The uids of every saved question, oldest save first. Insertion order is
+  /// kept so the notebook lists saves in the order they were made (a Set
+  /// literal in Dart preserves it, and so does the stored string list).
   Set<String> get bookmarkUids => _bookmarks;
   bool isBookmarked(String uid) => _bookmarks.contains(uid);
 
-  Future<void> toggleBookmark(String uid) async {
-    if (_bookmarks.contains(uid)) {
-      _bookmarks.remove(uid);
-    } else {
-      _bookmarks.add(uid);
-    }
+  /// Saves [uid] if it is not saved, unsaves it if it is, and returns whether
+  /// the question is saved *after* the toggle - so the caller can report
+  /// "បានរក្សាទុក" / "បានដកចេញ" without having to ask again.
+  Future<bool> toggleBookmark(String uid) async {
+    final saved = !_bookmarks.contains(uid);
+    await setBookmark(uid, saved);
+    return saved;
+  }
+
+  /// Saves or unsaves [uid] outright. Idempotent, and writes nothing when the
+  /// question is already in the wanted state - which is what makes an "undo"
+  /// that restores an already-restored save free.
+  Future<void> setBookmark(String uid, bool saved) async {
+    final changed = saved ? _bookmarks.add(uid) : _bookmarks.remove(uid);
+    if (!changed) return;
     await _prefs.setStringList(_kBookmarks, _bookmarks.toList());
+  }
+
+  /// Unsaves every question at once. Used by the notebook's "clear saved"
+  /// action; the mistakes list and all statistics are untouched.
+  Future<void> clearAllBookmarks() async {
+    if (_bookmarks.isEmpty) return;
+    _bookmarks.clear();
+    await _prefs.setStringList(_kBookmarks, const []);
   }
 
   // ---- Already-answered memory -----------------------------------------

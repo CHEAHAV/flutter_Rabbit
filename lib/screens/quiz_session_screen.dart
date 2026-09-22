@@ -14,6 +14,7 @@ import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
 import '../widgets/celebration_overlay.dart';
 import '../widgets/option_tile.dart';
+import '../widgets/save_snackbar.dart';
 import '../widgets/shake_widget.dart';
 import 'result_screen.dart';
 
@@ -57,8 +58,35 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
         questions.isEmpty &&
         _app.fullPool(widget.config.partIds).isNotEmpty;
     _session = ExamSession(config: widget.config, questions: questions);
+    // A question the user saved in an earlier session is still saved, so it
+    // opens showing "បានរក្សាទុក" and pressing the button unsaves it.
+    _session.syncFlags(_app.progress.isBookmarked);
     _session.onTimeExpired = _handleTimeExpired;
     _session.onLowTimeWarning = _handleLowTime;
+  }
+
+  /// Saves or unsaves [question], which is the one on screen when the button
+  /// is pressed and stays the one an undo puts back even if the user has paged
+  /// on since.
+  ///
+  /// The save is written to the notebook first and the session flag is then set
+  /// from what the notebook says, so the button, the question grid and the
+  /// notebook's saved list are always showing the same one fact. A save lasts
+  /// until the user presses the button again - finishing the session, quitting
+  /// it or closing the app never clears it.
+  Future<void> _toggleSave(ExamSession session, Question question) async {
+    sfx.tap();
+    final saved = await _app.progress.toggleBookmark(question.uid);
+    if (!mounted) return;
+    session.setFlagFor(question.uid, saved);
+    // The notebook tab reads the saved list straight out of ProgressService,
+    // so it has to be told the list moved.
+    _app.refresh();
+    showSaveChoiceSnackBar(
+      context,
+      saved: saved,
+      onUndo: () => _toggleSave(session, question),
+    );
   }
 
   /// The questions this session will ask.
@@ -188,30 +216,13 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
                                         ),
                                       ),
                                       const SizedBox(width: 8),
-                                      TextButton.icon(
-                                        onPressed: () {
-                                          sfx.tap();
-                                          session.toggleFlag();
-                                        },
-                                        icon: Icon(
-                                          session.current.flagged
-                                              ? Icons.flag_rounded
-                                              : Icons.outlined_flag_rounded,
-                                          size: 16,
-                                          color: session.current.flagged
-                                              ? AppColors.amber
-                                              : AppColors.slate,
+                                      _SaveButton(
+                                        saved: app.progress.isBookmarked(
+                                          session.current.question.uid,
                                         ),
-                                        label: Text(
-                                          session.current.flagged
-                                              ? 'បានចំណាំ'
-                                              : 'ចំណាំទុក',
-                                          style: TextStyle(
-                                            color: session.current.flagged
-                                                ? AppColors.amber
-                                                : AppColors.slate,
-                                            fontSize: 11.5,
-                                          ),
+                                        onPressed: () => _toggleSave(
+                                          session,
+                                          session.current.question,
                                         ),
                                       ),
                                     ],
@@ -404,7 +415,7 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
                 runSpacing: 12,
                 children: [
                   _legend(AppColors.emerald, 'ឆ្លើយរួច'),
-                  _legend(AppColors.amber, 'ចំណាំ'),
+                  _legend(AppColors.gold, 'បានរក្សាទុក'),
                   _legend(AppColors.line, 'មិនទាន់ឆ្លើយ'),
                 ],
               ),
@@ -430,7 +441,7 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
                       fg = AppColors.onEmerald;
                       border = AppColors.emerald;
                     } else if (a.flagged) {
-                      border = AppColors.amber;
+                      border = AppColors.gold;
                     } else if (a.isAnswered) {
                       border = AppColors.emerald;
                     }
@@ -550,6 +561,37 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
     if (!mounted) return;
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (_) => ResultScreen(result: result)),
+    );
+  }
+}
+
+/// The "save this question" control above the question text.
+///
+/// [saved] comes from the persisted notebook, not from the live session, so
+/// what the button says is what the notebook holds. Never instantiate it with
+/// `const`: its build reads [AppColors], the palette the theme switch mutates
+/// in place, and a const instance would keep the colours of the theme it was
+/// first built under.
+class _SaveButton extends StatelessWidget {
+  final bool saved;
+  final VoidCallback onPressed;
+
+  const _SaveButton({required this.saved, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    final color = saved ? AppColors.gold : AppColors.slate;
+    return TextButton.icon(
+      onPressed: onPressed,
+      icon: Icon(
+        saved ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
+        size: 16,
+        color: color,
+      ),
+      label: Text(
+        saved ? 'បានរក្សាទុក' : 'ចំណាំទុក',
+        style: TextStyle(color: color, fontSize: 11.5),
+      ),
     );
   }
 }
@@ -725,7 +767,7 @@ class _QuickNavigator extends StatelessWidget {
               } else if (a.isAnswered) {
                 border = AppColors.emerald;
               } else if (a.flagged) {
-                border = AppColors.amber;
+                border = AppColors.gold;
               }
               return InkWell(
                 borderRadius: BorderRadius.circular(11),

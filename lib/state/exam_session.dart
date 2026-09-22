@@ -63,9 +63,38 @@ class ExamSession extends ChangeNotifier {
     notifyListeners();
   }
 
-  void toggleFlag() {
-    current.flagged = !current.flagged;
+  /// Marks the question [uid] as saved or not saved.
+  ///
+  /// Addressed by uid rather than by "the current question" on purpose: the
+  /// save is written to the notebook first and only then reflected here, and by
+  /// the time that write lands - or when an undo fires from a snackbar - the
+  /// user may already have moved on to another question.
+  ///
+  /// The quiz screen drives this from the persisted notebook rather than
+  /// flipping the flag on its own, so the save button, the gold squares in the
+  /// question grid and the saved list in the notebook can never disagree.
+  /// Listeners are notified even when nothing moved, because the button reads
+  /// the notebook and it is the rebuild that shows the change.
+  void setFlagFor(String uid, bool flagged) {
+    for (final a in attempts) {
+      if (a.question.uid == uid) a.flagged = flagged;
+    }
     notifyListeners();
+  }
+
+  /// Marks the attempts whose question [isSaved] says is already in the
+  /// notebook. Called once when the session opens, so re-meeting a question
+  /// the user saved earlier shows up as saved from the first frame.
+  void syncFlags(bool Function(String uid) isSaved) {
+    var changed = false;
+    for (final a in attempts) {
+      final saved = isSaved(a.question.uid);
+      if (a.flagged != saved) {
+        a.flagged = saved;
+        changed = true;
+      }
+    }
+    if (changed) notifyListeners();
   }
 
   void goTo(int index) {

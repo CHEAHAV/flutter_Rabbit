@@ -278,13 +278,20 @@ void main() {
       await pumpNarrow(tester, app, QuizSessionScreen(config: config));
       expectNoOverflow('QuizSessionScreen (header, longest subject title)');
 
-      // Answer the current question to exercise the instant-feedback state.
-      final optionFinder = find.byIcon(Icons.outlined_flag_rounded);
-      if (optionFinder.evaluate().isNotEmpty) {
-        await tester.tap(find.text('ចំណាំទុក'));
-        await tester.pump(const Duration(milliseconds: 50));
-        expectNoOverflow('QuizSessionScreen (flagged)');
-      }
+      // Save the question: exercises the saved state of the button and the
+      // confirmation bar, whose two choices are the widest row on the screen.
+      final saveButton = find.text('ចំណាំទុក');
+      expect(
+        saveButton,
+        findsOneWidget,
+        reason: 'the save button has to be on screen for this check to mean '
+            'anything - if its label changed, update it here too',
+      );
+      await tester.tap(saveButton);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+      expectNoOverflow('QuizSessionScreen (saved + confirmation bar)');
+      expect(find.text('មិនត្រឡប់វិញ'), findsOneWidget);
 
       // Open the quick-navigator question grid bottom sheet. Note: this screen
       // keeps a Timer.periodic(1s) ticking for the countdown, so pumpAndSettle()

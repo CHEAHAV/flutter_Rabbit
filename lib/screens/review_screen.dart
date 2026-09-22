@@ -7,6 +7,7 @@ import '../services/sound_service.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../utils/khmer_numerals.dart';
+import '../widgets/save_snackbar.dart';
 
 enum _ReviewFilter { all, wrong, flagged }
 
@@ -83,12 +84,35 @@ class _ReviewScreenState extends State<ReviewScreen> {
                         attempt: a,
                         partTitle: partTitle,
                         index: widget.result.attempts.indexOf(a),
+                        saved: app.progress.isBookmarked(a.question.uid),
+                        onToggleSave: () => _toggleSave(a),
                       );
                     },
                   ),
           ),
         ],
       ),
+    );
+  }
+
+  /// Saves or unsaves the reviewed question, into the same notebook shelf the
+  /// quiz screen's button writes to.
+  ///
+  /// The attempt's own flag is moved with it so the "ចំណាំ" filter and its
+  /// count keep matching the bookmarks shown on the cards.
+  Future<void> _toggleSave(QuestionAttempt attempt) async {
+    final app = context.read<AppState>();
+    sfx.tap();
+    final saved = await app.progress.toggleBookmark(attempt.question.uid);
+    if (!mounted) return;
+    attempt.flagged = saved;
+    app.refresh();
+    setState(() {});
+    if (!context.mounted) return;
+    showSaveChoiceSnackBar(
+      context,
+      saved: saved,
+      onUndo: () => _toggleSave(attempt),
     );
   }
 
@@ -124,14 +148,25 @@ class _ReviewScreenState extends State<ReviewScreen> {
   }
 }
 
+/// One reviewed question. Never instantiate it with `const`: its build reads
+/// [AppColors], the palette the theme switch mutates in place.
 class _ReviewCard extends StatelessWidget {
   final QuestionAttempt attempt;
   final String partTitle;
   final int index;
+
+  /// Whether this question is on the notebook's saved shelf right now - read
+  /// from [ProgressService], not from [attempt], so the icon still tells the
+  /// truth after the question has been unsaved from elsewhere.
+  final bool saved;
+  final VoidCallback onToggleSave;
+
   const _ReviewCard({
     required this.attempt,
     required this.partTitle,
     required this.index,
+    required this.saved,
+    required this.onToggleSave,
   });
 
   @override
@@ -183,6 +218,25 @@ class _ReviewCard extends StatelessWidget {
                   color: skipped
                       ? AppColors.muted
                       : (correct ? AppColors.emerald : AppColors.red),
+                ),
+                IconButton(
+                  visualDensity: VisualDensity.compact,
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(
+                    minWidth: 32,
+                    minHeight: 32,
+                  ),
+                  tooltip: saved
+                      ? 'ដកចេញពីបញ្ជីរក្សាទុក'
+                      : 'រក្សាទុក',
+                  onPressed: onToggleSave,
+                  icon: Icon(
+                    saved
+                        ? Icons.bookmark_rounded
+                        : Icons.bookmark_border_rounded,
+                    size: 18,
+                    color: AppColors.gold,
+                  ),
                 ),
               ],
             ),
