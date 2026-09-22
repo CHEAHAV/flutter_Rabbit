@@ -3,8 +3,10 @@ import 'package:provider/provider.dart';
 
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
-import 'home_shell.dart';
 
+/// Shown while the question bank and local stores load. It does not navigate
+/// anywhere itself: `AppGate` in `app.dart` swaps it for the login screen or
+/// the app as soon as [AppState.booting] turns false.
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
@@ -12,13 +14,6 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AppState>(
       builder: (context, app, _) {
-        if (!app.booting && app.bootError == null) {
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (_) => const HomeShell()),
-            );
-          });
-        }
         return Scaffold(
           backgroundColor: AppColors.emeraldDeep,
           body: Center(

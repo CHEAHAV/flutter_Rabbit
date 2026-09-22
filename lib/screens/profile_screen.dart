@@ -287,8 +287,122 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
         ),
+        const SizedBox(height: 22),
+        SectionHeader(
+          title: 'គណនីចូលប្រើកម្មវិធី',
+          subtitle: 'កម្មវិធីនេះជាកម្មវិធីឯកជន',
+        ),
+        const SizedBox(height: 10),
+        Card(
+          clipBehavior: Clip.antiAlias,
+          child: Column(
+            children: [
+              _infoRow(
+                Icons.verified_user_outlined,
+                app.auth.currentUser ?? '-',
+                _sessionSummary(app),
+              ),
+              const Divider(height: 1),
+              InkWell(
+                onTap: () => _confirmSignOut(context, app),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 14,
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 38,
+                        height: 38,
+                        decoration: BoxDecoration(
+                          color: AppColors.redBg,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        alignment: Alignment.center,
+                        child: Icon(
+                          Icons.logout_rounded,
+                          color: AppColors.red,
+                          size: 18,
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Text(
+                          'ចាកចេញ',
+                          style: TextStyle(
+                            fontSize: 12.5,
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.red,
+                          ),
+                        ),
+                      ),
+                      Icon(
+                        Icons.chevron_right_rounded,
+                        size: 20,
+                        color: AppColors.muted,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
+  }
+
+  /// How much of the one-day session is left, in Khmer. Read once per build:
+  /// it is a reassurance ("you will not be asked again today"), not a clock.
+  String _sessionSummary(AppState app) {
+    final left = app.auth.timeLeft;
+    if (left == null) return 'មិនទាន់ចូលប្រើ';
+    final hours = left.inHours;
+    if (hours >= 1) return 'នៅសល់ ${kh(hours)} ម៉ោង មុនពេលចូលម្ដងទៀត';
+    final minutes = left.inMinutes;
+    if (minutes >= 1) return 'នៅសល់ ${kh(minutes)} នាទី មុនពេលចូលម្ដងទៀត';
+    return 'ជិតផុតកំណត់ · ត្រូវចូលម្ដងទៀតឆាប់ៗ';
+  }
+
+  /// Signing out throws away the saved day, so it asks first. On confirm the
+  /// app returns to the login screen by itself (see `AppGate` in app.dart).
+  Future<void> _confirmSignOut(BuildContext context, AppState app) async {
+    HapticFeedback.selectionClick();
+    sfx.tap();
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(
+          'ចាកចេញ?',
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w800,
+            color: AppColors.ink,
+          ),
+        ),
+        content: Text(
+          'អ្នកនឹងត្រូវបញ្ចូលឈ្មោះអ្នកប្រើ និងពាក្យសម្ងាត់ម្ដងទៀត ដើម្បីចូលប្រើកម្មវិធី។ '
+          'ទិន្នន័យរៀនសូត្ររបស់អ្នកនៅរក្សាទុកដដែល។',
+          style: TextStyle(fontSize: 12.5, color: AppColors.slate),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: Text('បោះបង់', style: TextStyle(color: AppColors.slate)),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            style: FilledButton.styleFrom(
+              backgroundColor: AppColors.red,
+              foregroundColor: AppColors.onRed,
+            ),
+            child: const Text('ចាកចេញ'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true) await app.signOut();
   }
 
   /// Per-subject mastery, broken by course. Twenty-six bars in a row tell the

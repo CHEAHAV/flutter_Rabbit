@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import '../data/question_repository.dart';
 import '../models/exam_part.dart';
 import '../models/question.dart';
+import '../services/auth_service.dart';
 import '../services/progress_service.dart';
 import '../services/sound_service.dart';
 import '../theme/app_theme.dart';
@@ -15,12 +16,20 @@ class AppState extends ChangeNotifier {
   final QuestionRepository repo = QuestionRepository.instance;
   final ProgressService progress = ProgressService.instance;
 
+  /// The private-app gate. See [AuthService]: one allowed account, and a
+  /// successful login is remembered for a day.
+  final AuthService auth = AuthService.instance;
+
   bool _booting = true;
   String? _bootError;
   bool _isDarkMode = false;
 
   bool get booting => _booting;
   String? get bootError => _bootError;
+
+  /// Whether an unexpired login session is on record. `app.dart` watches this
+  /// and shows either the login screen or the app itself.
+  bool get isSignedIn => auth.isSignedIn;
 
   /// The user's saved light/dark preference. Defaults to light until the
   /// on-device preference has loaded (see [bootstrap]). `app.dart` watches
@@ -111,7 +120,7 @@ class AppState extends ChangeNotifier {
 
   Future<void> bootstrap() async {
     try {
-      await Future.wait([repo.load(), progress.init()]);
+      await Future.wait([repo.load(), progress.init(), auth.init()]);
       _isDarkMode = progress.isDarkMode;
       AppColors.setBlend(_isDarkMode ? 1.0 : 0.0);
       sound.configure(
@@ -172,6 +181,31 @@ class AppState extends ChangeNotifier {
     if (sound.enabled != wasEnabled) {
       await progress.setSoundEnabled(sound.enabled);
     }
+  }
+
+  // ---- Login ------------------------------------------------------------
+
+  /// Checks the credentials and opens a one-day session when they match.
+  /// Returns true on success; the caller shows the error message on false.
+  Future<bool> signIn(String username, String password) async {
+    final ok = await auth.signIn(username, password);
+    if (ok) notifyListeners();
+    return ok;
+  }
+
+  /// Ends the session now, sending the user back to the login screen.
+  Future<void> signOut() async {
+    await auth.signOut();
+    notifyListeners();
+  }
+
+  /// Re-checks the session against the clock. Called when the app returns to
+  /// the foreground, so a session left open past its day is closed the moment
+  /// the user comes back rather than at the next cold start.
+  Future<void> revalidateSession() async {
+    final was = auth.isSignedIn;
+    await auth.refresh();
+    if (was != auth.isSignedIn) notifyListeners();
   }
 
   void refresh() => notifyListeners();

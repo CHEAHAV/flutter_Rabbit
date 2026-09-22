@@ -17,6 +17,7 @@ import 'package:rabbit/state/app_state.dart';
 import 'package:rabbit/theme/app_theme.dart';
 import 'package:rabbit/screens/exam_config_screen.dart';
 import 'package:rabbit/screens/home_shell.dart';
+import 'package:rabbit/screens/login_screen.dart';
 import 'package:rabbit/screens/mock_screen.dart';
 import 'package:rabbit/screens/notebook_screen.dart';
 import 'package:rabbit/screens/practice_screen.dart';
@@ -97,6 +98,13 @@ void main() {
     final app = await buildBootstrappedAppState(tester);
     await pumpNarrow(tester, app, const SplashScreen());
     expectNoOverflow('SplashScreen');
+  });
+
+  testWidgets('Login screen does not overflow', (tester) async {
+    final app = await buildBootstrappedAppState(tester);
+    // Not const: LoginScreen's build reads the mutable AppColors palette.
+    await pumpNarrow(tester, app, LoginScreen());
+    expectNoOverflow('LoginScreen');
   });
 
   testWidgets(
