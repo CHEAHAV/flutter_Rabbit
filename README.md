@@ -112,13 +112,13 @@ lib/
   widgets/                  # reusable UI: subject tile, option tile, stat box,
                              # readiness gauge, section header
 assets/
-  data/part_01.json … part_13.json   # question bank, one file per subject
+  data/part_01.json … part_28.json   # question bank, one file per subject
   fonts/Hanuman-VariableFont_wght.ttf
 ```
 
 Everything is plain `StatefulWidget`/`ChangeNotifier` + `provider` — no code
 generation, no backend, no auth. Adding more questions is a JSON edit; adding a
-14th subject is one entry in `ExamPart.catalog` + a new `part_14.json`.
+subject is one entry in `ExamPart.catalog` + a new `part_NN.json`.
 
 ## 🔜 Natural next steps
 

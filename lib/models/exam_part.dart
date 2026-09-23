@@ -90,8 +90,8 @@ class PartMeta {
 }
 
 /// One subject of the question bank: parts 1-13 are the Khmer civil-service
-/// bank from QCM.pdf, parts 14-26 the English bank from grammar.pdf, and part
-/// 27 the teacher-ethics collection.
+/// bank from QCM.pdf, parts 14-26 the English bank from grammar.pdf, and parts
+/// 27-28 the two teacher-recruitment papers.
 class ExamPart {
   final int id;
   final String titleKm;
@@ -317,14 +317,26 @@ class ExamPart {
       level: PartLevel.allLevels,
       latinLabels: true,
     ),
-    // Part 27 comes from assets/pdf/ក្រមសីលធម៌វិជ្ជាជីវៈគ្រូបង្រៀន.pdf. It sits
-    // in a course of its own because it prepares a different exam: dropping it
-    // into the civil-service syllabus would put teacher ethics into a
-    // general-knowledge mock paper it does not belong in.
+    // Parts 27-28 prepare the teacher-recruitment exam, so they sit in a
+    // course of their own rather than in the civil-service syllabus: dropping
+    // them there would put teacher ethics and the ICT paper into a
+    // general-knowledge mock paper they do not belong in. The course is
+    // declared after the civil-service one in [PartTrack], so it is the second
+    // course the browser lists, under General Knowledge.
+    //
+    // Part 27 comes from assets/pdf/ក្រមសីលធម៌វិជ្ជាជីវៈគ្រូបង្រៀន.pdf.
     PartMeta(
       titleKm: 'ក្រមសីលធម៌វិជ្ជាជីវៈគ្រូបង្រៀន',
       titleEn: 'Teacher Professional Ethics',
       icon: '🧑‍🏫',
+      track: PartTrack.teaching,
+    ),
+    // Part 28 comes from the 300-question ICT paper in assets/pdf/, via
+    // tools/extract_ict_pdf.py.
+    PartMeta(
+      titleKm: 'ព័ត៌មានវិទ្យា (ICT)',
+      titleEn: 'ICT for Teachers',
+      icon: '💻',
       track: PartTrack.teaching,
     ),
   ];

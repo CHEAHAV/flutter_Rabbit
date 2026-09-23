@@ -125,8 +125,27 @@ void main() {
       seen.order.indexOf(PartTrack.teaching),
       lessThan(seen.order.indexOf(PartTrack.grammar)),
       reason: 'the teacher syllabus is a Khmer exam: it belongs above English, '
-          'not below it because its data file happens to be part 27',
+          'not below it because its data files happen to be parts 27-28',
     );
+    expect(
+      seen.order.indexOf(PartTrack.teaching),
+      seen.order.indexOf(PartTrack.civilService) + 1,
+      reason: 'the teacher course is read straight after general knowledge',
+    );
+  });
+
+  testWidgets('the ICT paper is a subject of the teacher course', (
+    tester,
+  ) async {
+    final app = await boot(tester);
+    final ict = app.partsIn(PartTrack.teaching).firstWhere(
+      (p) => p.titleEn == 'ICT for Teachers',
+    );
+    expect(ict.count, 300);
+
+    await pump(tester, app, const Scaffold(body: PracticeScreen()));
+    final seen = await browse(tester);
+    expect(seen.subjects, contains(ict.titleKm));
   });
 
   testWidgets('a course chip narrows the browser to that course alone', (

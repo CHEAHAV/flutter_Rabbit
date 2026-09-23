@@ -42,7 +42,7 @@ class ProgressService {
   static const bankRevision = 3;
 
   /// The English bank, parts 14-26. Parts 1-13 are the Khmer civil-service
-  /// bank and 27 up are the Khmer subjects added since; the range is spelled
+  /// bank and 27 up the Khmer subjects added since; the range is spelled
   /// out because the two banks were renumbered at different revisions, and a
   /// part added later has no old numbering to clean up.
   static const _firstEnglishPart = 14;

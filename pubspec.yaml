@@ -1,5 +1,5 @@
 name: rabbit
-description: "Rabbit QCM — កម្មវិធីត្រៀមប្រឡងមន្ត្រីរាជការ គ្រូបង្រៀន និងភាសាអង់គ្លេស ជាភាសាខ្មែរ។ Khmer exam-prep app: 11,800+ MCQs across 27 subjects, offline and free."
+description: "Rabbit QCM — កម្មវិធីត្រៀមប្រឡងមន្ត្រីរាជការ គ្រូបង្រៀន និងភាសាអង់គ្លេស ជាភាសាខ្មែរ។ Khmer exam-prep app: 12,100+ MCQs across 28 subjects, offline and free."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev

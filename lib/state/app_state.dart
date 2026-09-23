@@ -59,8 +59,9 @@ class AppState extends ChangeNotifier {
   /// [PartTrack] declares them - Khmer syllabuses first, then the English
   /// ones. Course order cannot be taken from the catalog: that has to follow
   /// the part numbering, which is the order the data files were *added*, so
-  /// the teacher course would trail the English ones purely because its file
-  /// is part 27. A course whose data files are missing simply does not appear.
+  /// the teacher course would trail the English ones purely because its files
+  /// are parts 27-28. A course whose data files are missing simply does not
+  /// appear.
   List<PartTrack> get tracks {
     final stocked = repo.parts
         .where((p) => p.count > 0)
