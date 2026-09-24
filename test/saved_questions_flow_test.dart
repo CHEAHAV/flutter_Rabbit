@@ -116,9 +116,7 @@ void main() {
     );
     expect(
       find.byIcon(
-        saved
-            ? Icons.bookmark_added_rounded
-            : Icons.bookmark_remove_rounded,
+        saved ? Icons.bookmark_added_rounded : Icons.bookmark_remove_rounded,
       ),
       findsOneWidget,
     );
@@ -153,6 +151,15 @@ void main() {
     await tester.scrollUntilVisible(tab, 120, maxScrolls: 30);
     await tester.tap(tab);
     await tester.pump();
+  }
+
+  /// Opens the page of the saved part [partId] from the notebook's saved tab,
+  /// which lists saved questions part by part.
+  Future<void> openSavedPart(WidgetTester tester, int partId) async {
+    final tile = find.byKey(ValueKey('saved-part-$partId'));
+    await tester.scrollUntilVisible(tile, 120, maxScrolls: 30);
+    await tester.tap(tile);
+    await tester.pumpAndSettle();
   }
 
   /// Saves the question the quiz screen is showing. Scrolled into view first:
@@ -200,9 +207,7 @@ void main() {
     await closeQuiz(tester);
   });
 
-  testWidgets('មិនត្រឡប់វិញ keeps the save and closes the bar', (
-    tester,
-  ) async {
+  testWidgets('មិនត្រឡប់វិញ keeps the save and closes the bar', (tester) async {
     final app = await boot(tester);
     final question = firstQuestion(app);
     await pump(tester, app, quizOver(question));
@@ -233,6 +238,7 @@ void main() {
 
     await pump(tester, app, const Scaffold(body: NotebookScreen()));
     await openSavedTab(tester);
+    await openSavedPart(tester, question.partId);
 
     // The card carries the question, every option, and the correct answer.
     expect(find.text(question.text), findsOneWidget);
@@ -255,6 +261,7 @@ void main() {
 
     await pump(tester, second, const Scaffold(body: NotebookScreen()));
     await openSavedTab(tester);
+    await openSavedPart(tester, question.partId);
     expect(find.text(question.text), findsOneWidget);
   });
 
@@ -300,6 +307,7 @@ void main() {
 
     await pump(tester, app, const Scaffold(body: NotebookScreen()));
     await openSavedTab(tester);
+    await openSavedPart(tester, question.partId);
     expect(find.text(question.text), findsOneWidget);
 
     // By tooltip, not by icon: the "practise the saved questions" button sits
@@ -311,8 +319,14 @@ void main() {
 
     expect(app.progress.isBookmarked(question.uid), isFalse);
     expect(find.text(question.text), findsNothing);
-    expect(find.text('អ្នកមិនទាន់រក្សាទុកសំណួរណាមួយទេ'), findsOneWidget);
+    expect(find.text('មិនមានសំណួររក្សាទុកក្នុងផ្នែកនេះទៀតទេ'), findsOneWidget);
     expectSaveCard(saved: false);
+
+    // Back in the notebook, the part has left the shelf with its last question.
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    expect(find.byKey(ValueKey('saved-part-${question.partId}')), findsNothing);
+    expect(find.text('អ្នកមិនទាន់រក្សាទុកសំណួរណាមួយទេ'), findsOneWidget);
   });
 
   testWidgets('a save belongs to its own question, not to the cursor', (
@@ -367,6 +381,7 @@ void main() {
 
     await pump(tester, app, const Scaffold(body: NotebookScreen()));
     await openSavedTab(tester);
+    await openSavedPart(tester, question.partId);
 
     final unsave = find.byTooltip('ដកចេញពីបញ្ជីរក្សាទុក');
     await tester.ensureVisible(unsave);
@@ -389,6 +404,7 @@ void main() {
 
     await pump(tester, app, const Scaffold(body: NotebookScreen()));
     await openSavedTab(tester);
+    await openSavedPart(tester, question.partId);
 
     final unsave = find.byTooltip('ដកចេញពីបញ្ជីរក្សាទុក');
     await tester.ensureVisible(unsave);
@@ -435,5 +451,150 @@ void main() {
       expect(app.progress.isBookmarked(question.uid), isTrue);
     }
     expect(app.progress.mistakeUids, contains(question.uid));
+  });
+
+  group('the saved shelf is kept part by part', () {
+    // The two teacher-course subjects, as in the user's own example.
+    const teacherPart = 27; // ក្រមសីលធម៌វិជ្ជាជីវៈគ្រូបង្រៀន
+    const ictPart = 28; // ព័ត៌មានវិទ្យា (ICT)
+
+    Finder row(int partId) => find.byKey(ValueKey('saved-part-$partId'));
+
+    /// Saves 3 ICT and 2 teacher-ethics questions, interleaved the way a user
+    /// saves across sessions.
+    Future<(List<Question>, List<Question>)> saveSome(AppState app) async {
+      final ict = app.repo.partById(ictPart).questions.take(3).toList();
+      final teacher = app.repo.partById(teacherPart).questions.take(2).toList();
+      for (final q in [ict[0], teacher[0], ict[1], teacher[1], ict[2]]) {
+        await app.progress.setBookmark(q.uid, true);
+      }
+      return (ict, teacher);
+    }
+
+    testWidgets('each part saved from is one row, with its own count', (
+      tester,
+    ) async {
+      final app = await boot(tester);
+      final (ict, teacher) = await saveSome(app);
+      await pump(tester, app, const Scaffold(body: NotebookScreen()));
+      await openSavedTab(tester);
+
+      expect(find.textContaining('$savedLabel (៥)'), findsOneWidget);
+      await tester.scrollUntilVisible(row(ictPart), 120, maxScrolls: 30);
+      expect(
+        find.descendant(
+          of: row(ictPart),
+          matching: find.text('ព័ត៌មានវិទ្យា (ICT)'),
+        ),
+        findsOneWidget,
+      );
+      expect(
+        find.descendant(of: row(ictPart), matching: find.text('៣')),
+        findsOneWidget,
+      );
+      expect(
+        find.descendant(of: row(teacherPart), matching: find.text('២')),
+        findsOneWidget,
+      );
+      // Only those two parts: nothing was saved anywhere else.
+      expect(
+        find.byWidgetPredicate(
+          (w) =>
+              w.key is ValueKey<String> &&
+              (w.key! as ValueKey<String>).value.startsWith('saved-part-'),
+        ),
+        findsNWidgets(2),
+      );
+      // The questions themselves are not all dumped on the shelf.
+      for (final q in [...ict, ...teacher]) {
+        expect(find.text(q.text), findsNothing);
+      }
+      // And no "practise every saved question" button on this tab.
+      expect(find.byType(ElevatedButton), findsNothing);
+    });
+
+    testWidgets('a part page holds only the questions saved from that part', (
+      tester,
+    ) async {
+      final app = await boot(tester);
+      final (ict, teacher) = await saveSome(app);
+      await pump(tester, app, const Scaffold(body: NotebookScreen()));
+      await openSavedTab(tester);
+
+      await openSavedPart(tester, ictPart);
+      expect(find.text('បានរក្សាទុក ៣ សំណួរ'), findsOneWidget);
+      for (final q in ict) {
+        await tester.scrollUntilVisible(find.text(q.text), 200, maxScrolls: 40);
+        expect(find.text(q.text), findsOneWidget);
+      }
+      for (final q in teacher) {
+        expect(find.text(q.text), findsNothing);
+      }
+
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+      await openSavedPart(tester, teacherPart);
+      expect(find.text('បានរក្សាទុក ២ សំណួរ'), findsOneWidget);
+      for (final q in teacher) {
+        await tester.scrollUntilVisible(find.text(q.text), 200, maxScrolls: 40);
+        expect(find.text(q.text), findsOneWidget);
+      }
+      for (final q in ict) {
+        expect(find.text(q.text), findsNothing);
+      }
+    });
+
+    testWidgets("practising a part runs only that part's saved questions", (
+      tester,
+    ) async {
+      final app = await boot(tester);
+      final (ict, _) = await saveSome(app);
+      await pump(tester, app, const Scaffold(body: NotebookScreen()));
+      await openSavedTab(tester);
+      await openSavedPart(tester, ictPart);
+
+      await tester.tap(find.text('ហ្វឹកហាត់សំណួរទាំង ៣'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 400));
+
+      final quiz = tester.widget<QuizSessionScreen>(
+        find.byType(QuizSessionScreen),
+      );
+      expect(quiz.config.partIds, {ictPart});
+      expect(
+        quiz.overrideQuestions!.map((q) => q.uid).toSet(),
+        ict.map((q) => q.uid).toSet(),
+      );
+      await closeQuiz(tester);
+    });
+
+    testWidgets('unsaving on a part page leaves the other parts alone', (
+      tester,
+    ) async {
+      final app = await boot(tester);
+      final (ict, teacher) = await saveSome(app);
+      await pump(tester, app, const Scaffold(body: NotebookScreen()));
+      await openSavedTab(tester);
+      await openSavedPart(tester, teacherPart);
+
+      for (var n = 0; n < teacher.length; n++) {
+        final unsave = find.byTooltip('ដកចេញពីបញ្ជីរក្សាទុក').first;
+        await tester.ensureVisible(unsave);
+        await tester.tap(unsave);
+        await settle(tester);
+      }
+      for (final q in teacher) {
+        expect(app.progress.isBookmarked(q.uid), isFalse);
+      }
+      for (final q in ict) {
+        expect(app.progress.isBookmarked(q.uid), isTrue);
+      }
+
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+      expect(row(teacherPart), findsNothing);
+      expect(row(ictPart), findsOneWidget);
+      expect(find.textContaining('$savedLabel (៣)'), findsOneWidget);
+    });
   });
 }

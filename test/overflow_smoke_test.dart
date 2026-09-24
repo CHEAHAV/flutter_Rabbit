@@ -235,6 +235,11 @@ void main() {
     await tester.tap(find.text('បានរក្សាទុក (៣)'));
     await tester.pump(const Duration(milliseconds: 50));
     expectNoOverflow('NotebookScreen (bookmarks tab, long subject title)');
+
+    // The saved shelf lists parts; the part's own page holds its questions.
+    await tester.tap(find.byKey(ValueKey('saved-part-${longTitlePart.id}')));
+    await tester.pumpAndSettle();
+    expectNoOverflow('SavedPartScreen (long subject title)');
   });
 
   testWidgets('Profile screen does not overflow', (tester) async {
@@ -284,7 +289,8 @@ void main() {
       expect(
         saveButton,
         findsOneWidget,
-        reason: 'the save button has to be on screen for this check to mean '
+        reason:
+            'the save button has to be on screen for this check to mean '
             'anything - if its label changed, update it here too',
       );
       await tester.tap(saveButton);

@@ -226,9 +226,7 @@ class _ReviewCard extends StatelessWidget {
                     minWidth: 32,
                     minHeight: 32,
                   ),
-                  tooltip: saved
-                      ? 'ដកចេញពីបញ្ជីរក្សាទុក'
-                      : 'រក្សាទុក',
+                  tooltip: saved ? 'ដកចេញពីបញ្ជីរក្សាទុក' : 'រក្សាទុក',
                   onPressed: onToggleSave,
                   icon: Icon(
                     saved
@@ -284,7 +282,9 @@ class _ReviewCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '${attempt.question.labelAt(i)}. ',
+            // Unlettered, like the quiz screen: the options were shuffled
+            // for this session, so a letter would mean nothing.
+            '•  ',
             style: TextStyle(color: color, fontWeight: weight, fontSize: 12.5),
           ),
           Expanded(

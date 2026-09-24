@@ -50,11 +50,13 @@ class QuestionRepository {
         final list = jsonDecode(raw) as List;
         questions = list
             .map(
+              // No option letters are shown, so "ចម្លើយ ក និង ខ" is put
+              // into words here, once, for every screen that reads the bank.
               (e) => Question.fromJson(
                 e as Map<String, dynamic>,
                 partId,
                 optionLabels: labels,
-              ),
+              ).withLetterReferencesSpelledOut(),
             )
             .toList();
       } catch (_) {

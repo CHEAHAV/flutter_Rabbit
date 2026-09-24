@@ -280,7 +280,6 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
       index: index,
       text: attempt.question.options[index],
       state: state,
-      labels: attempt.question.optionLabels,
       onTap: locked ? null : () => _handleSelect(session, index),
     );
   }
@@ -965,9 +964,7 @@ class _ExhaustedPool extends StatelessWidget {
                   onRestart();
                 },
                 icon: const Icon(Icons.refresh_rounded, size: 18),
-                label: const Text(
-                  'ចាប់ផ្ដើមឡើងវិញពីដើម',
-                ),
+                label: const Text('ចាប់ផ្ដើមឡើងវិញពីដើម'),
               ),
             ),
             const SizedBox(height: 10),
@@ -978,9 +975,7 @@ class _ExhaustedPool extends StatelessWidget {
                   sfx.tap();
                   onBack();
                 },
-                child: const Text(
-                  'ជ្រើសមុខវិជ្ជាផ្សេង',
-                ),
+                child: const Text('ជ្រើសមុខវិជ្ជាផ្សេង'),
               ),
             ),
           ],

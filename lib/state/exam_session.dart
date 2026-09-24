@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 
@@ -19,11 +20,24 @@ class ExamSession extends ChangeNotifier {
   bool _alertShown = false;
   Timer? _timer;
 
-  ExamSession({required this.config, required List<Question> questions})
-    : attempts = questions.map((q) => QuestionAttempt(question: q)).toList() {
+  /// Every question's options are dealt in a fresh random order when the
+  /// session opens (see [Question.withShuffledOptions]), so the correct answer
+  /// is not always in the slot it had last time. The order is fixed for the
+  /// life of the session: paging back to a question, and the review screen
+  /// afterwards, show it exactly as it was answered.
+  ExamSession({
+    required this.config,
+    required List<Question> questions,
+    Random? random,
+  }) : attempts = _deal(questions, random ?? Random()) {
     remaining = config.timeLimit;
     _timer = Timer.periodic(const Duration(seconds: 1), _tick);
   }
+
+  static List<QuestionAttempt> _deal(List<Question> questions, Random rng) => [
+    for (final q in questions)
+      QuestionAttempt(question: q.withShuffledOptions(rng)),
+  ];
 
   QuestionAttempt get current => attempts[currentIndex];
   int get total => attempts.length;

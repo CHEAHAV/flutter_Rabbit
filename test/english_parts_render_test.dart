@@ -42,7 +42,8 @@ void main() {
     expect(
       _overflowErrors,
       isEmpty,
-      reason: '$where overflowed: '
+      reason:
+          '$where overflowed: '
           '${_overflowErrors.map((e) => e.exceptionAsString()).join('; ')}',
     );
   }
@@ -77,27 +78,25 @@ void main() {
     await tester.pump(const Duration(milliseconds: 350));
   }
 
-  testWidgets('a 5-option English question shows all five A-E choices', (
-    tester,
-  ) async {
-    final app = await boot(tester);
-    final question = _firstFiveOption(app.repo);
+  testWidgets(
+    'a 5-option English question shows all five choices, unlettered',
+    (tester) async {
+      final app = await boot(tester);
+      final question = _firstFiveOption(app.repo);
 
-    await pumpNarrow(
-      tester,
-      app,
-      _OneQuestion(question: question),
-    );
+      await pumpNarrow(tester, app, _OneQuestion(question: question));
 
-    expect(find.byType(OptionTile), findsNWidgets(5));
-    for (final letter in ['A', 'B', 'C', 'D', 'E']) {
-      expect(find.text(letter), findsOneWidget);
-    }
-    for (final option in question.options) {
-      expect(find.text(option), findsOneWidget);
-    }
-    expectNoOverflow('5-option question');
-  });
+      expect(find.byType(OptionTile), findsNWidgets(5));
+      // Options are shuffled every session, so none of them is lettered.
+      for (final letter in ['A', 'B', 'C', 'D', 'E']) {
+        expect(find.text(letter), findsNothing);
+      }
+      for (final option in question.options) {
+        expect(find.text(option), findsOneWidget);
+      }
+      expectNoOverflow('5-option question');
+    },
+  );
 
   testWidgets('the quiz screen runs an English part end to end', (
     tester,
@@ -131,31 +130,34 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
   });
 
-  testWidgets('the review screen lists all five options of an English question',
-      (tester) async {
-    final app = await boot(tester);
-    final question = _firstFiveOption(app.repo);
-    final attempt = QuestionAttempt(question: question, selectedIndex: 0);
-    final result = ExamResult(
-      completedAt: DateTime.now(),
-      config: ExamConfig(
-        mode: ExamMode.practice,
-        partIds: {question.partId},
-        questionCount: 1,
-        timeLimit: null,
-      ),
-      attempts: [attempt],
-      timeSpent: const Duration(minutes: 1),
-    );
+  testWidgets(
+    'the review screen lists all five options of an English question',
+    (tester) async {
+      final app = await boot(tester);
+      final question = _firstFiveOption(app.repo);
+      final attempt = QuestionAttempt(question: question, selectedIndex: 0);
+      final result = ExamResult(
+        completedAt: DateTime.now(),
+        config: ExamConfig(
+          mode: ExamMode.practice,
+          partIds: {question.partId},
+          questionCount: 1,
+          timeLimit: null,
+        ),
+        attempts: [attempt],
+        timeSpent: const Duration(minutes: 1),
+      );
 
-    await pumpNarrow(tester, app, ReviewScreen(result: result));
+      await pumpNarrow(tester, app, ReviewScreen(result: result));
 
-    for (final option in question.options) {
-      expect(find.text(option), findsOneWidget);
-    }
-    expect(find.text('E. '), findsOneWidget);
-    expectNoOverflow('ReviewScreen (5 options)');
-  });
+      for (final option in question.options) {
+        expect(find.text(option), findsOneWidget);
+      }
+      expect(find.text('E. '), findsNothing);
+      expect(find.text('•  '), findsNWidgets(5));
+      expectNoOverflow('ReviewScreen (5 options)');
+    },
+  );
 }
 
 /// The first 5-option question in the English bank. Which part holds one moves
@@ -190,7 +192,6 @@ class _OneQuestion extends StatelessWidget {
             state: i == question.answerIndex
                 ? OptionState.correct
                 : OptionState.neutral,
-            labels: question.optionLabels,
           ),
       ],
     );

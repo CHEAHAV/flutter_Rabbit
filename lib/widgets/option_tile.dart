@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../theme/app_theme.dart';
-import '../utils/khmer_numerals.dart';
 
 enum OptionState { neutral, selected, correct, wrong }
 
@@ -11,17 +10,12 @@ class OptionTile extends StatelessWidget {
   final OptionState state;
   final VoidCallback? onTap;
 
-  /// The alphabet the option key is drawn from - ក/ខ/គ/ឃ for the Khmer parts,
-  /// A/B/C/D/E for the English ones. See [Question.optionLabels].
-  final List<String> labels;
-
   const OptionTile({
     super.key,
     required this.index,
     required this.text,
     required this.state,
     this.onTap,
-    this.labels = khmerOptionLabels,
   });
 
   @override
@@ -31,8 +25,6 @@ class OptionTile extends StatelessWidget {
     Color keyBg = AppColors.card;
     Color keyFg = AppColors.ink;
     Color keyBorder = AppColors.line;
-    IconData? trailingIcon;
-    Color trailingColor = AppColors.emerald;
 
     switch (state) {
       case OptionState.neutral:
@@ -50,8 +42,6 @@ class OptionTile extends StatelessWidget {
         keyBg = AppColors.emerald;
         keyFg = AppColors.onEmerald;
         keyBorder = AppColors.emerald;
-        trailingIcon = Icons.check_circle_rounded;
-        trailingColor = AppColors.emerald;
         break;
       case OptionState.wrong:
         border = AppColors.red;
@@ -59,10 +49,23 @@ class OptionTile extends StatelessWidget {
         keyBg = AppColors.red;
         keyFg = AppColors.onRed;
         keyBorder = AppColors.red;
-        trailingIcon = Icons.cancel_rounded;
-        trailingColor = AppColors.red;
         break;
     }
+
+    // Options are never lettered - they are shuffled every session, so a
+    // ក/ខ/គ/ឃ or A-E would name a different answer each time. The key is a
+    // radio-style marker instead: an empty ring, a dot once chosen, and a tick
+    // or a cross once checked.
+    final Widget marker = switch (state) {
+      OptionState.neutral => const SizedBox.shrink(),
+      OptionState.selected => Container(
+        width: 10,
+        height: 10,
+        decoration: BoxDecoration(color: keyFg, shape: BoxShape.circle),
+      ),
+      OptionState.correct => Icon(Icons.check_rounded, size: 16, color: keyFg),
+      OptionState.wrong => Icon(Icons.close_rounded, size: 16, color: keyFg),
+    };
 
     return Padding(
       padding: const EdgeInsets.only(top: 10),
@@ -84,23 +87,23 @@ class OptionTile extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // A 24px ring in the 30px slot the option text is aligned to.
                 Container(
-                  width: 30,
-                  height: 30,
+                  width: 24,
+                  height: 24,
+                  margin: const EdgeInsets.all(3),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: keyBg,
                     shape: BoxShape.circle,
-                    border: Border.all(color: keyBorder),
-                  ),
-                  child: Text(
-                    labels[index],
-                    style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      color: keyFg,
-                      fontSize: 13,
+                    border: Border.all(
+                      color: state == OptionState.neutral
+                          ? AppColors.muted
+                          : keyBorder,
+                      width: 2,
                     ),
                   ),
+                  child: marker,
                 ),
                 const SizedBox(width: 12),
                 Expanded(
@@ -116,10 +119,6 @@ class OptionTile extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (trailingIcon != null) ...[
-                  const SizedBox(width: 8),
-                  Icon(trailingIcon, color: trailingColor, size: 20),
-                ],
               ],
             ),
           ),
