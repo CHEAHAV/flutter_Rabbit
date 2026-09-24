@@ -9,6 +9,7 @@ import '../services/auth_service.dart';
 import '../services/progress_service.dart';
 import '../services/sound_service.dart';
 import '../theme/app_theme.dart';
+import '../widgets/celebration_overlay.dart';
 
 /// Root application state: bootstraps the question bank + local progress
 /// store, and exposes them to the widget tree via Provider.
@@ -130,6 +131,8 @@ class AppState extends ChangeNotifier {
       );
       // Load audio in the background: it must never delay or fail app start.
       unawaited(sound.init());
+      // Same for the correct-answer animation, so its first play is instant.
+      unawaited(precacheCelebration());
     } catch (e) {
       _bootError = e.toString();
     } finally {

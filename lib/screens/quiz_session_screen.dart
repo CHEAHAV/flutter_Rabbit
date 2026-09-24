@@ -142,6 +142,7 @@ class _QuizSessionScreenState extends State<QuizSessionScreen> {
 
   @override
   void dispose() {
+    dismissCelebrationOverlay();
     _session.dispose();
     super.dispose();
   }
