@@ -5,7 +5,7 @@ import '../theme/app_theme.dart';
 
 /// Confirms that a question has just been put on - or taken off - the
 /// notebook's saved shelf, and offers the two choices the change deserves:
-/// **ត្រឡប់វិញ** puts it back the way it was, **មិនត្រឡប់វិញ** keeps the change.
+/// **ត្រឡប់វិញ** puts it back the way it was, **បាទ/ចាស៎** keeps the change.
 ///
 /// Shown as a floating card rather than a plain snackbar: the bar's own
 /// background and padding are switched off and the whole thing is drawn here,
@@ -154,7 +154,7 @@ class _SaveCard extends StatelessWidget {
                     side: BorderSide(color: AppColors.line, width: 1.2),
                     padding: const EdgeInsets.symmetric(vertical: 11),
                   ),
-                  child: _label('ត្រឡប់វិញ'),
+                  child: _label('ថយក្រោយ'),
                 ),
               ),
               const SizedBox(width: 10),
@@ -164,7 +164,7 @@ class _SaveCard extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 11),
                   ),
-                  child: _label('មិនត្រឡប់វិញ'),
+                  child: _label('បាទ/ចាស៎'),
                 ),
               ),
             ],

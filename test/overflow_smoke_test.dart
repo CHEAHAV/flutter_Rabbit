@@ -297,7 +297,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 400));
       expectNoOverflow('QuizSessionScreen (saved + confirmation bar)');
-      expect(find.text('មិនត្រឡប់វិញ'), findsOneWidget);
+      expect(find.text('បាទ/ចាស៎'), findsOneWidget);
 
       // Open the quick-navigator question grid bottom sheet. Note: this screen
       // keeps a Timer.periodic(1s) ticking for the countdown, so pumpAndSettle()

@@ -103,12 +103,12 @@ void main() {
 
   // The two choices the confirmation bar offers. Exact-text finders, so the
   // shorter label cannot match inside the longer one.
-  const undoLabel = 'ត្រឡប់វិញ';
-  const keepLabel = 'មិនត្រឡប់វិញ';
+  const undoLabel = 'ថយក្រោយ';
+  const keepLabel = 'បាទ/ចាស៎';
 
   /// The confirmation card, as every screen that can save a question shows it:
   /// the right heading and icon for what just happened, and two real buttons -
-  /// an outlined ត្រឡប់វិញ beside a filled មិនត្រឡប់វិញ.
+  /// an outlined ថយក្រោយ beside a filled បាទ/ចាស៎.
   void expectSaveCard({required bool saved}) {
     expect(
       find.text(saved ? 'បានរក្សាទុកសំណួរ' : 'បានដកសំណួរចេញ'),
@@ -207,7 +207,7 @@ void main() {
     await closeQuiz(tester);
   });
 
-  testWidgets('មិនត្រឡប់វិញ keeps the save and closes the bar', (tester) async {
+  testWidgets('បាទ/ចាស៎ keeps the save and closes the bar', (tester) async {
     final app = await boot(tester);
     final question = firstQuestion(app);
     await pump(tester, app, quizOver(question));
@@ -397,7 +397,7 @@ void main() {
     expect(find.text(question.text), findsOneWidget);
   });
 
-  testWidgets('មិនត្រឡប់វិញ lets an unsave stand', (tester) async {
+  testWidgets('បាទ/ចាស៎ lets an unsave stand', (tester) async {
     final app = await boot(tester);
     final question = firstQuestion(app);
     await app.progress.setBookmark(question.uid, true);
