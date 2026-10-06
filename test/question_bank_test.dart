@@ -5,11 +5,11 @@ import 'package:rabbit/utils/khmer_numerals.dart';
 
 /// Loads every bundled part through the real repository and checks that the
 /// data the app will actually read is well formed. Parts 14-26 are extracted
-/// from assets/pdf/grammar.pdf and parts 27-28 from the two teacher PDFs, so
+/// from assets/pdf/grammar.pdf and parts 27-29 from the Khmer PDFs added since, so
 /// this is what keeps a bad extraction from reaching the quiz screen.
 ///
 /// Whether a subject is English is a fact about its course, not about its part
-/// number: parts 27-28 are Khmer and are numbered above the English ones.
+/// number: parts 27-29 are Khmer and are numbered above the English ones.
 bool _isEnglish(ExamPart part) =>
     part.track != PartTrack.civilService && part.track != PartTrack.teaching;
 
@@ -80,7 +80,7 @@ void main() {
 
   test('the Khmer parts keep ក/ខ/គ/ឃ and the English parts use A/B/C/D/E', () {
     // Lettering follows the language of the questions, not the part number:
-    // parts 27-28 are Khmer and sit above the English parts.
+    // parts 27-29 are Khmer and sit above the English parts.
     for (final part in repo.parts) {
       final expected = _isEnglish(part) ? latinOptionLabels : khmerOptionLabels;
       expect(
@@ -146,7 +146,7 @@ void main() {
   test('the catalog and the bundled data files line up', () {
     // part N in the catalog must be assets/data/part_NN.json: an off-by-one
     // here would letter Khmer questions A-E and English ones with Khmer glyphs.
-    expect(ExamPart.catalog.length, 28);
+    expect(ExamPart.catalog.length, 29);
     for (var i = 0; i < ExamPart.catalog.length; i++) {
       final meta = ExamPart.catalog[i];
       expect(

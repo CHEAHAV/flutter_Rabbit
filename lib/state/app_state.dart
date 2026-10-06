@@ -61,7 +61,7 @@ class AppState extends ChangeNotifier {
   /// ones. Course order cannot be taken from the catalog: that has to follow
   /// the part numbering, which is the order the data files were *added*, so
   /// the teacher course would trail the English ones purely because its files
-  /// are parts 27-28. A course whose data files are missing simply does not
+  /// are parts 27-29. A course whose data files are missing simply does not
   /// appear.
   List<PartTrack> get tracks {
     final stocked = repo.parts

@@ -112,7 +112,7 @@ lib/
   widgets/                  # reusable UI: subject tile, option tile, stat box,
                              # readiness gauge, section header
 assets/
-  data/part_01.json … part_28.json   # question bank, one file per subject
+  data/part_01.json … part_29.json   # question bank, one file per subject
   fonts/Hanuman-VariableFont_wght.ttf
 ```
 

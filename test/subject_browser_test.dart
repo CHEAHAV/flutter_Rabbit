@@ -125,7 +125,7 @@ void main() {
       seen.order.indexOf(PartTrack.teaching),
       lessThan(seen.order.indexOf(PartTrack.grammar)),
       reason: 'the teacher syllabus is a Khmer exam: it belongs above English, '
-          'not below it because its data files happen to be parts 27-28',
+          'not below it because its data files happen to be parts 27-29',
     );
     expect(
       seen.order.indexOf(PartTrack.teaching),
@@ -146,6 +146,21 @@ void main() {
     await pump(tester, app, const Scaffold(body: PracticeScreen()));
     final seen = await browse(tester);
     expect(seen.subjects, contains(ict.titleKm));
+  });
+
+  testWidgets('the National Police paper is a subject of the teacher course', (
+    tester,
+  ) async {
+    final app = await boot(tester);
+    final police = app.partsIn(PartTrack.teaching).firstWhere(
+      (p) => p.titleEn == 'National Police & Prisons',
+    );
+    // 1-300 and 401-500 as the PDF prints them, less the three it garbles.
+    expect(police.count, 399);
+
+    await pump(tester, app, const Scaffold(body: PracticeScreen()));
+    final seen = await browse(tester);
+    expect(seen.subjects, contains(police.titleKm));
   });
 
   testWidgets('a course chip narrows the browser to that course alone', (

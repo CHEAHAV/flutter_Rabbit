@@ -91,7 +91,7 @@ class PartMeta {
 
 /// One subject of the question bank: parts 1-13 are the Khmer civil-service
 /// bank from QCM.pdf, parts 14-26 the English bank from grammar.pdf, and parts
-/// 27-28 the two teacher-recruitment papers.
+/// 27-29 the papers filed under the teacher course.
 class ExamPart {
   final int id;
   final String titleKm;
@@ -337,6 +337,16 @@ class ExamPart {
       titleKm: 'ព័ត៌មានវិទ្យា (ICT)',
       titleEn: 'ICT for Teachers',
       icon: '💻',
+      track: PartTrack.teaching,
+    ),
+    // Part 29 is the National Police and prison-officer paper in assets/pdf/,
+    // via tools/extract_police_pdf.py. It prepares a different exam, but it is
+    // filed under the teacher course because that is where the app's users
+    // asked to find it.
+    PartMeta(
+      titleKm: 'នគរបាលជាតិ និងពន្ធនាគារ',
+      titleEn: 'National Police & Prisons',
+      icon: '👮',
       track: PartTrack.teaching,
     ),
   ];
