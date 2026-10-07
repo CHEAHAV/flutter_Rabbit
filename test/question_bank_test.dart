@@ -6,7 +6,7 @@ import 'package:rabbit/utils/khmer_numerals.dart';
 
 /// Loads every bundled part through the real repository and checks that the
 /// data the app will actually read is well formed. Parts 14-26 are extracted
-/// from assets/pdf/grammar.pdf and parts 27-34 from the Khmer PDFs added since, so
+/// from assets/pdf/grammar.pdf and parts 27-38 from the Khmer PDFs added since, so
 /// this is what keeps a bad extraction from reaching the quiz screen.
 ///
 /// Whether a subject is English is a fact about its course, not about its part
@@ -185,7 +185,7 @@ void main() {
   test('the catalog and the bundled data files line up', () {
     // part N in the catalog must be assets/data/part_NN.json: an off-by-one
     // here would letter Khmer questions A-E and English ones with Khmer glyphs.
-    expect(ExamPart.catalog.length, 34);
+    expect(ExamPart.catalog.length, 38);
     for (var i = 0; i < ExamPart.catalog.length; i++) {
       final meta = ExamPart.catalog[i];
       expect(

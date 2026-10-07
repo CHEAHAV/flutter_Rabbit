@@ -171,19 +171,23 @@ void main() {
     final khmer = app.partsIn(PartTrack.civilService);
     expect(khmer[0].titleEn, 'History');
     // Straight after History, in catalog order, and before Culture.
-    final added = khmer.sublist(1, 6);
+    final added = khmer.sublist(1, 10);
     expect([for (final p in added) p.titleEn], [
       'Cambodia-Siam Border War',
       'Funan Techo Canal',
       'Techo International Airport',
       'Ministry of Interior',
       'The 32nd SEA Games in Cambodia',
+      'Khmer Heritage on the UNESCO Lists',
+      'National Parks of Cambodia',
+      'The Eras of Cambodian History',
+      'Key Events in History',
     ]);
-    expect(khmer[6].titleEn, 'Culture & Civilization');
-    expect(khmer.length, 18);
+    expect(khmer[10].titleEn, 'Culture & Civilization');
+    expect(khmer.length, 22);
     // Canal question 31 has no answer in its PDF; Interior questions 2 and 8
     // cannot be asked as printed.
-    expect([for (final p in added) p.count], [50, 49, 50, 198, 50]);
+    expect([for (final p in added) p.count], [50, 49, 50, 198, 50, 21, 20, 20, 354]);
 
     await pump(tester, app, const Scaffold(body: PracticeScreen()));
     final seen = await browse(tester);

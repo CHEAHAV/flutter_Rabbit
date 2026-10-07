@@ -98,7 +98,7 @@ class PartMeta {
 
 /// One subject of the question bank: parts 1-13 are the Khmer civil-service
 /// bank from QCM.pdf, parts 14-26 the English bank from grammar.pdf, and parts
-/// 27-29 the papers filed under the teacher course, and parts 30-34 the
+/// 27-29 the papers filed under the teacher course, and parts 30-38 the
 /// papers on the border war, the Funan Techo canal, Techo airport, the
 /// Ministry of Interior and the 32nd SEA Games, listed under History.
 class ExamPart {
@@ -411,6 +411,45 @@ class ExamPart {
       titleKm: 'អំពីស៊ីហ្គេមលើកទី៣២ នៅកម្ពុជា',
       titleEn: 'The 32nd SEA Games in Cambodia',
       icon: '🏅',
+      track: PartTrack.civilService,
+      shownAfter: 1,
+    ),
+    // Part 35 is សម្បត្តិវប្បធម៌ខ្មែរក្នុងបញ្ជីយូណេស្កូ.pdf, 21 questions read
+    // from its text layer and its answer key. It follows part 34 under History.
+    PartMeta(
+      titleKm: 'អំពីសម្បត្តិវប្បធម៌ខ្មែរក្នុងបញ្ជីយូណេស្កូ',
+      titleEn: 'Khmer Heritage on the UNESCO Lists',
+      icon: '🏯',
+      track: PartTrack.civilService,
+      shownAfter: 1,
+    ),
+    // Part 36 is ឩទ្យានជាតិនៃប្រទេសកម្ពុជា.pdf, 20 questions read from its
+    // text layer and its answer key. It follows part 35 under History.
+    PartMeta(
+      titleKm: 'អំពីឧទ្យានជាតិនៃប្រទេសកម្ពុជា',
+      titleEn: 'National Parks of Cambodia',
+      icon: '🌲',
+      track: PartTrack.civilService,
+      shownAfter: 1,
+    ),
+    // Part 37 is សម័យកាលរបស់ប្រទេសកម្ពុជា.pdf, 20 questions read from its
+    // text layer and its answer key. It follows part 36 under History.
+    PartMeta(
+      titleKm: 'អំពីសម័យកាលរបស់ប្រទេសកម្ពុជា',
+      titleEn: 'The Eras of Cambodian History',
+      icon: '⏳',
+      track: PartTrack.civilService,
+      shownAfter: 1,
+    ),
+    // Part 38 is ព្រឹត្តិការន៏សំខាន់ៗ.pdf, a 26-page timeline of facts with no
+    // questions and no text layer (the Khmer is drawn as outlines). It was
+    // transcribed from the page images and each fact turned into a question
+    // whose answer is the fact as printed. Facts the PDF contradicts elsewhere
+    // or repeats were left out. It follows part 37 under History.
+    PartMeta(
+      titleKm: 'អំពីព្រឹត្តិការណ៍សំខាន់ៗ',
+      titleEn: 'Key Events in History',
+      icon: '📜',
       track: PartTrack.civilService,
       shownAfter: 1,
     ),
