@@ -52,7 +52,8 @@ class AppState extends ChangeNotifier {
   List<ExamPart> get partsWithQuestions =>
       repo.parts.where((p) => p.count > 0).toList();
 
-  /// The subjects of one course, in catalog order (easiest rung first).
+  /// The subjects of one course, in display order (easiest rung first, and
+  /// a subject with [PartMeta.shownAfter] under the one it names).
   List<ExamPart> partsIn(PartTrack track) =>
       repo.parts.where((p) => p.track == track).toList();
 

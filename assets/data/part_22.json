@@ -3786,17 +3786,6 @@
         "a": 2
     },
     {
-        "id": 331,
-        "q": "Find the word which is out of the logic list. ",
-        "o": [
-            "question",
-            "conclude",
-            "inquire",
-            "interrogate"
-        ],
-        "a": 1
-    },
-    {
         "id": 332,
         "q": "Find the word which is out of the logic list. ",
         "o": [
@@ -3938,17 +3927,6 @@
             "kneel"
         ],
         "a": 3
-    },
-    {
-        "id": 345,
-        "q": "Find the word which is out of the logic list. ",
-        "o": [
-            "compress",
-            "squeeze",
-            "scatter",
-            "crush"
-        ],
-        "a": 2
     },
     {
         "id": 346,
@@ -4138,17 +4116,6 @@
         "a": 0
     },
     {
-        "id": 363,
-        "q": "Find the word which is out of the logic list. ",
-        "o": [
-            "entire",
-            "exact",
-            "right",
-            "accurate"
-        ],
-        "a": 0
-    },
-    {
         "id": 364,
         "q": "Find the word which is out of the logic list. ",
         "o": [
@@ -4292,28 +4259,6 @@
         "a": 2
     },
     {
-        "id": 377,
-        "q": "Find the word which is out of the logic list. ",
-        "o": [
-            "settlement",
-            "combat",
-            "war",
-            "battle"
-        ],
-        "a": 0
-    },
-    {
-        "id": 378,
-        "q": "Find the word which is out of the logic list. ",
-        "o": [
-            "chant",
-            "yell",
-            "clap",
-            "shout"
-        ],
-        "a": 2
-    },
-    {
         "id": 379,
         "q": "Find the word which is out of the logic list. ",
         "o": [
@@ -4376,17 +4321,6 @@
             "crouch",
             "come across",
             "encounter"
-        ],
-        "a": 1
-    },
-    {
-        "id": 385,
-        "q": "Find the word which is out of the logic list. ",
-        "o": [
-            "hazard",
-            "security",
-            "danger",
-            "peril"
         ],
         "a": 1
     },

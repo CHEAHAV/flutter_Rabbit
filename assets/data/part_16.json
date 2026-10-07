@@ -946,17 +946,6 @@
         "a": 0
     },
     {
-        "id": 87,
-        "q": "What did you do _____ the weekend?",
-        "o": [
-            "at",
-            "in",
-            "with",
-            "*"
-        ],
-        "a": 0
-    },
-    {
         "id": 88,
         "q": "_____ Friday evening we went to a party.",
         "o": [
@@ -2130,17 +2119,6 @@
             "to tell",
             "telling",
             "told"
-        ],
-        "a": 1
-    },
-    {
-        "id": 195,
-        "q": "I'm looking forward _____ you again soon.",
-        "o": [
-            "to see",
-            "to seeing",
-            "seeing",
-            "too seeing"
         ],
         "a": 1
     },
@@ -4805,17 +4783,6 @@
             "for getting"
         ],
         "a": 2
-    },
-    {
-        "id": 438,
-        "q": "I don't know where _____ .",
-        "o": [
-            "the lavatory to be",
-            "is the lavatory",
-            "be the lavatory",
-            "the lavatory is"
-        ],
-        "a": 3
     },
     {
         "id": 439,

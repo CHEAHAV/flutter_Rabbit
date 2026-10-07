@@ -141,7 +141,8 @@ void main() {
     final ict = app.partsIn(PartTrack.teaching).firstWhere(
       (p) => p.titleEn == 'ICT for Teachers',
     );
-    expect(ict.count, 300);
+    // 300 printed, less question 33, which repeats question 3.
+    expect(ict.count, 299);
 
     await pump(tester, app, const Scaffold(body: PracticeScreen()));
     final seen = await browse(tester);
@@ -161,6 +162,34 @@ void main() {
     await pump(tester, app, const Scaffold(body: PracticeScreen()));
     final seen = await browse(tester);
     expect(seen.subjects, contains(police.titleKm));
+  });
+
+  testWidgets('the papers added under History are listed straight after it', (
+    tester,
+  ) async {
+    final app = await boot(tester);
+    final khmer = app.partsIn(PartTrack.civilService);
+    expect(khmer[0].titleEn, 'History');
+    // Straight after History, in catalog order, and before Culture.
+    final added = khmer.sublist(1, 6);
+    expect([for (final p in added) p.titleEn], [
+      'Cambodia-Siam Border War',
+      'Funan Techo Canal',
+      'Techo International Airport',
+      'Ministry of Interior',
+      'The 32nd SEA Games in Cambodia',
+    ]);
+    expect(khmer[6].titleEn, 'Culture & Civilization');
+    expect(khmer.length, 18);
+    // Canal question 31 has no answer in its PDF; Interior questions 2 and 8
+    // cannot be asked as printed.
+    expect([for (final p in added) p.count], [50, 49, 50, 198, 50]);
+
+    await pump(tester, app, const Scaffold(body: PracticeScreen()));
+    final seen = await browse(tester);
+    for (final p in added) {
+      expect(seen.subjects, contains(p.titleKm));
+    }
   });
 
   testWidgets('a course chip narrows the browser to that course alone', (

@@ -75,7 +75,30 @@ class QuestionRepository {
         ),
       );
     }
-    _parts = loaded;
+    _parts = _inDisplayOrder(loaded);
     _loaded = true;
+  }
+
+  /// [loaded] in catalog order, except that each part with
+  /// [PartMeta.shownAfter] is moved directly under the part it names, so every
+  /// screen that walks [parts] lists it there.
+  static List<ExamPart> _inDisplayOrder(List<ExamPart> loaded) {
+    final ordered = [
+      for (final p in loaded)
+        if (ExamPart.catalog[p.id - 1].shownAfter == null) p,
+    ];
+    for (final p in loaded) {
+      final after = ExamPart.catalog[p.id - 1].shownAfter;
+      if (after == null) continue;
+      final at = ordered.indexWhere((o) => o.id == after);
+      // Several parts under one anchor keep their catalog order.
+      var insert = at < 0 ? ordered.length : at + 1;
+      while (insert < ordered.length &&
+          ExamPart.catalog[ordered[insert].id - 1].shownAfter == after) {
+        insert++;
+      }
+      ordered.insert(insert, p);
+    }
+    return ordered;
   }
 }

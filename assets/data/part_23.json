@@ -2436,18 +2436,6 @@
         "a": 4
     },
     {
-        "id": 204,
-        "q": "To get my travelers' cheques I had to _____ a special cheque to the Bank for the total amount.",
-        "o": [
-            "make for",
-            "make off",
-            "make out",
-            "makeover",
-            "make up"
-        ],
-        "a": 2
-    },
-    {
         "id": 205,
         "q": "If we can _____ our present difficulties, then everything should be all right.",
         "o": [
@@ -3262,18 +3250,6 @@
             "fashion"
         ],
         "a": 1
-    },
-    {
-        "id": 273,
-        "q": "If we _____ the plan you suggest, we are more likely to be successful.",
-        "o": [
-            "decide",
-            "elect",
-            "command",
-            "vote",
-            "adopt"
-        ],
-        "a": 4
     },
     {
         "id": 274,
@@ -9648,18 +9624,6 @@
         "a": 0
     },
     {
-        "id": 805,
-        "q": "He _____ out of the window for a moment and then went on working.",
-        "o": [
-            "glanced",
-            "glimpsed",
-            "regarded",
-            "saw",
-            "viewed"
-        ],
-        "a": 0
-    },
-    {
         "id": 806,
         "q": "The company made a record _____ last year.",
         "o": [
@@ -9682,18 +9646,6 @@
             "trade"
         ],
         "a": 2
-    },
-    {
-        "id": 808,
-        "q": "He was killed in a car _____.",
-        "o": [
-            "blow",
-            "crash",
-            "flash",
-            "hit",
-            "shock"
-        ],
-        "a": 1
     },
     {
         "id": 809,
@@ -11052,18 +11004,6 @@
         "a": 1
     },
     {
-        "id": 922,
-        "q": "Where do you _____ the writing paper? In this desk?",
-        "o": [
-            "drawer",
-            "guard",
-            "hold",
-            "keep",
-            "maintain"
-        ],
-        "a": 3
-    },
-    {
         "id": 923,
         "q": "Please _____ your hand if you want to ask a question.",
         "o": [
@@ -11316,18 +11256,6 @@
         "a": 2
     },
     {
-        "id": 944,
-        "q": "He _____ to hit me if I didn't do as he said.",
-        "o": [
-            "pretended",
-            "said",
-            "thought",
-            "threatened",
-            "warned"
-        ],
-        "a": 3
-    },
-    {
         "id": 945,
         "q": "He said he was not guilty but the police proved he had _____.",
         "o": [
@@ -11436,18 +11364,6 @@
         "a": 4
     },
     {
-        "id": 954,
-        "q": "The _____ outside the house said: 'Private'.",
-        "o": [
-            "advice",
-            "label",
-            "notice",
-            "signal",
-            "threat"
-        ],
-        "a": 2
-    },
-    {
         "id": 955,
         "q": "Are you going to _____ your house in London while you are abroad?",
         "o": [
@@ -11520,18 +11436,6 @@
         "a": 4
     },
     {
-        "id": 961,
-        "q": "I learnt to _____ a bicycle when I was six years old.",
-        "o": [
-            "conduct",
-            "drive",
-            "guide",
-            "ride",
-            "run"
-        ],
-        "a": 3
-    },
-    {
         "id": 962,
         "q": "Do as you think best. It doesn't _____ whether he agrees or not.",
         "o": [
@@ -11554,18 +11458,6 @@
             "presented"
         ],
         "a": 3
-    },
-    {
-        "id": 964,
-        "q": "If the boss sees you doing that, you'll get into _____.",
-        "o": [
-            "mess",
-            "nuisance",
-            "problem",
-            "struggle",
-            "trouble"
-        ],
-        "a": 4
     },
     {
         "id": 965,

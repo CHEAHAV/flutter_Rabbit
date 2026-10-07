@@ -439,9 +439,60 @@ def build():
                 stats['duplicate'] += 1; continue
             seen.add(k)
             keep.append(it)
-            stats['part_%d' % part] += 1
         buckets[part] = keep
+    drop_repeats(buckets, stats)
+    for part in buckets:
+        stats['part_%d' % part] = len(buckets[part])
     return buckets, stats, accepted, dropped
+
+
+def _norm(s):
+    s = s.lower().replace('​', '')
+    return re.sub(r'[\s\?\!\.\,\:\;\-–—"\'()_*/]+', '', s)
+
+
+def drop_repeats(buckets, stats):
+    """Drop questions the learner would meet twice, keeping the first copy.
+
+    The exact-match pass above compares raw text, so copies that differ only in
+    punctuation, a placeholder option ("*" or "_") or one distractor got
+    through. Two items are the same question when the stem and the correct
+    answer match once punctuation is ignored. A stem that recurs with five or
+    more different answers is an instruction ("Find the word which is out of
+    the logic list"), and its copies are only the same item when at least three
+    of their options match too.
+
+    Ids are assigned before anything is dropped, so removing a repeat never
+    renumbers the questions after it - progress is stored by id."""
+    for part in buckets:
+        for i, it in enumerate(buckets[part]):
+            it['_id'] = i + 1
+    answers = {}
+    for part in buckets:
+        for it in buckets[part]:
+            answers.setdefault(_norm(it['q']), set()).add(_norm(it['o'][it['a']]))
+    generic = {s for s, a in answers.items() if len(a) >= 5}
+
+    def same(a, b):
+        if _norm(a['o'][a['a']]) != _norm(b['o'][b['a']]):
+            return False
+        if _norm(a['q']) in generic:
+            oa = {_norm(o) for o in a['o']} - {''}
+            ob = {_norm(o) for o in b['o']} - {''}
+            return len(oa & ob) >= 3
+        return True
+
+    kept = {}
+    for part in sorted(buckets):
+        keep = []
+        for it in buckets[part]:
+            twins = kept.setdefault(_norm(it['q']), [])
+            if any(same(t, it) for t in twins):
+                stats['repeat'] += 1
+                continue
+            twins.append(it)
+            keep.append(it)
+        buckets[part] = keep
 
 def write(buckets):
     """Write assets/data/part_14..26.json, and remove any part file this run no
@@ -449,8 +500,8 @@ def write(buckets):
     app to load."""
     wanted = {p[0] for p in PARTS}
     for pid, title, source in PARTS:
-        items = [{'id': i + 1, 'q': it['q'], 'o': it['o'], 'a': it['a']}
-                 for i, it in enumerate(buckets[pid])]
+        items = [{'id': it['_id'], 'q': it['q'], 'o': it['o'], 'a': it['a']}
+                 for it in buckets[pid]]
         path = os.path.join(OUT, 'part_%02d.json' % pid)
         if not items:
             print('part_%02d: no usable questions, file not written' % pid)

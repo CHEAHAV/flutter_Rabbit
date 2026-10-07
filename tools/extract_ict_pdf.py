@@ -141,7 +141,7 @@ def main():
     rows = parse_questions(lines[:cut])
     key = parse_key(lines[cut:])
 
-    out, problems = [], []
+    out, problems, seen, repeats = [], [], {}, []
     for slot, row in enumerate(rows, 1):
         where = 'question %d' % slot
         if row['n'] != slot and MISPRINTED.get(slot) != row['n']:
@@ -161,8 +161,18 @@ def main():
         if slot not in key:
             problems.append('%s is missing from the answer key' % where)
             continue
+        # The paper prints some questions twice; the learner should meet each
+        # once. The id stays the printed number, so dropping a repeat never
+        # renumbers the rest.
+        twin = (re.sub(r'\W+', '', stem.lower()), re.sub(r'\W+', '', opts[key[slot]].lower()))
+        if twin in seen:
+            repeats.append('question %d repeats question %d' % (slot, seen[twin]))
+            continue
+        seen[twin] = slot
         out.append({'id': slot, 'q': stem, 'o': opts, 'a': key[slot]})
 
+    for line in repeats:
+        print('note: ' + line + ', left out')
     if len(rows) != EXPECTED:
         problems.append('the paper prints %d question(s), %d expected'
                         % (len(rows), EXPECTED))

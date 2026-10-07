@@ -220,8 +220,17 @@ def main():
                 print('%s: marks "%s" but the key (%s) says "%s"'
                       % (where, picked[:45], LET[key], opts[key][:45]))
                 problems += 1
+        matched_src = [s for s in pdfq if s['n'] in seen]
         for src in pdfq:
             if src['n'] in seen:
+                continue
+            # QCM.pdf prints some questions twice; the app keeps one copy, so
+            # a printing that repeats another printing the app does ask is
+            # expected. The PDF's two copies are spelled slightly differently,
+            # hence the similarity rather than an exact match.
+            if any(sim(src['q'], s['q']) >= 0.8 for s in matched_src):
+                print('part_%02d: note - PDF question %d repeats a question the '
+                      'app keeps once' % (part, src['n']))
                 continue
             opts = [o for o in src['o'] if o]
             note = ('' if len(opts) >= 4
@@ -229,9 +238,9 @@ def main():
             print('part_%02d: PDF question %d is missing%s\n    %s'
                   % (part, src['n'], note, src['q'][:90]))
             problems += 1
-        # Repeated stems are worth knowing about, but QCM.pdf repeats plenty of
-        # them itself - each copy above matched a question of its own - so they
-        # are a note, not a fault.
+        # Repeated stems are worth knowing about. Copies with the same answer
+        # were removed, so what remains asks something different under the
+        # same wording - a note, not a fault.
         for text, n in Counter(norm(q['q']) for q in app).items():
             if n > 1:
                 ids = [q['id'] for q in app if norm(q['q']) == text]

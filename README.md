@@ -42,26 +42,26 @@ code changes:
 ```
 (`a` is the 0-based index of the correct option.)
 
-**All 13 subjects are now populated — 937 questions total.**
+**All 13 subjects are now populated — 978 questions total.**
 
 | # | Subject (ផ្នែក) | Questions |
 |---|---|---|
 | 1 | ប្រវត្តិសាស្ត្រ (History) | 72 |
-| 2 | វប្បធម៌ អរិយធម៌ (Culture & Civilization) | 39 |
-| 3 | ភូមិសាស្ត្រ និងប្រជាសាស្ត្រ (Geography & Demography) | 59 |
-| 4 | រដ្ឋបាលសាធារណៈ (Public Administration) | 139 |
+| 2 | វប្បធម៌ អរិយធម៌ (Culture & Civilization) | 62 |
+| 3 | ភូមិសាស្ត្រ និងប្រជាសាស្ត្រ (Geography & Demography) | 61 |
+| 4 | រដ្ឋបាលសាធារណៈ (Public Administration) | 144 |
 | 5 | សេដ្ឋកិច្ច ហិរញ្ញវត្ថុ និងវិនិយោគ (Economy & Finance) | 88 |
-| 6 | មុខងារសាធារណៈ និងធនធានមនុស្ស (Public Function & HR) | 171 |
-| 7 | អាស៊ាន (ASEAN) | 95 |
-| 8 | អន្តរជាតិ (International Affairs) | 70 |
-| 9 | ច្បាប់ គោលនយោបាយ និងនយោបាយ (Law & Policy) | 108 |
-| 10 | សាសនា ក្រមសីលធម៌ និងសុភាសិត (Religion & Ethics) | 38 |
-| 11 | វិទ្យាសាស្ត្រ បច្ចេកវិទ្យា និងនវានុវត្តន៍ (Science & Technology) | 17 |
+| 6 | មុខងារសាធារណៈ និងធនធានមនុស្ស (Public Function & HR) | 172 |
+| 7 | អាស៊ាន (ASEAN) | 96 |
+| 8 | អន្តរជាតិ (International Affairs) | 71 |
+| 9 | ច្បាប់ គោលនយោបាយ និងនយោបាយ (Law & Policy) | 112 |
+| 10 | សាសនា ក្រមសីលធម៌ និងសុភាសិត (Religion & Ethics) | 40 |
+| 11 | វិទ្យាសាស្ត្រ បច្ចេកវិទ្យា និងនវានុវត្តន៍ (Science & Technology) | 19 |
 | 12 | ល្បែងប្រាជ្ញា តក្កវិទ្យា និងករណីសិក្សា (Logic & Case Studies) | 26 |
 | 13 | វិស័យយុត្តិធម៌ (Justice Sector) | 15 |
 
-**How this was built:** the original `QCM.pdf` (219 pages, now included in the
-project root for reference) has a broken embedded font encoding — extracting its
+**How this was built:** the original `QCM.pdf` (219 pages, kept in
+`assets/pdf/` for reference) has a broken embedded font encoding — extracting its
 text yields systematically corrupted Khmer (not real OCR noise, but a consistent
 character-level substitution from the font's cmap table: e.g. "តតើ"→should read
 "តើ", a consistent ខ↔ែ glyph swap, reordered subscript-consonant clusters). Every
@@ -112,7 +112,7 @@ lib/
   widgets/                  # reusable UI: subject tile, option tile, stat box,
                              # readiness gauge, section header
 assets/
-  data/part_01.json … part_29.json   # question bank, one file per subject
+  data/part_01.json … part_34.json   # question bank, one file per subject
   fonts/Hanuman-VariableFont_wght.ttf
 ```
 

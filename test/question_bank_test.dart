@@ -1,11 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rabbit/data/question_repository.dart';
 import 'package:rabbit/models/exam_part.dart';
+import 'package:rabbit/models/question.dart';
 import 'package:rabbit/utils/khmer_numerals.dart';
 
 /// Loads every bundled part through the real repository and checks that the
 /// data the app will actually read is well formed. Parts 14-26 are extracted
-/// from assets/pdf/grammar.pdf and parts 27-29 from the Khmer PDFs added since, so
+/// from assets/pdf/grammar.pdf and parts 27-34 from the Khmer PDFs added since, so
 /// this is what keeps a bad extraction from reaching the quiz screen.
 ///
 /// Whether a subject is English is a fact about its course, not about its part
@@ -66,6 +67,44 @@ void main() {
           reason: 'part ${part.id} question ${q.id} repeats an option',
         );
       }
+    }
+  });
+
+  test('no question is asked twice anywhere in the bank', () {
+    // The same rule as tools/extract_grammar_pdf.py: two items are one
+    // question when the stem and the correct answer match once punctuation is
+    // ignored. A stem that recurs with five or more different answers is an
+    // instruction ("Find the word which is out of the logic list"), and its
+    // copies only repeat when at least three options match as well.
+    String norm(String s) => s
+        .toLowerCase()
+        .replaceFirst(RegExp(r'^\s*តើ\s*'), '')
+        .replaceAll(RegExp('[\\s?!.,:;\\-–—៖។"«»“”\'()_*/​]+'), '');
+
+    final all = [for (final p in repo.parts) ...p.questions];
+    final answers = <String, Set<String>>{};
+    for (final q in all) {
+      answers.putIfAbsent(norm(q.text), () => {}).add(norm(q.correctOptionText));
+    }
+    final kept = <String, List<Question>>{};
+    for (final q in all) {
+      final stem = norm(q.text);
+      final generic = answers[stem]!.length >= 5;
+      final twin = kept[stem]?.where((k) {
+        if (norm(k.correctOptionText) != norm(q.correctOptionText)) {
+          return false;
+        }
+        if (!generic) return true;
+        final a = k.options.map(norm).toSet()..remove('');
+        final b = q.options.map(norm).toSet()..remove('');
+        return a.intersection(b).length >= 3;
+      }).firstOrNull;
+      expect(
+        twin,
+        isNull,
+        reason: 'question ${q.uid} repeats ${twin?.uid}: "${q.text}"',
+      );
+      kept.putIfAbsent(stem, () => []).add(q);
     }
   });
 
@@ -146,7 +185,7 @@ void main() {
   test('the catalog and the bundled data files line up', () {
     // part N in the catalog must be assets/data/part_NN.json: an off-by-one
     // here would letter Khmer questions A-E and English ones with Khmer glyphs.
-    expect(ExamPart.catalog.length, 29);
+    expect(ExamPart.catalog.length, 34);
     for (var i = 0; i < ExamPart.catalog.length; i++) {
       final meta = ExamPart.catalog[i];
       expect(

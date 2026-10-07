@@ -3381,18 +3381,6 @@
         "a": 2
     },
     {
-        "id": 283,
-        "q": "What _____ you _____ at 6 tomorrow?",
-        "o": [
-            "did/do",
-            "will/be doing",
-            "do/do",
-            "do/did",
-            "have/done"
-        ],
-        "a": 1
-    },
-    {
         "id": 284,
         "q": "He _____ for you at 7 in the evening next Sunday.",
         "o": [

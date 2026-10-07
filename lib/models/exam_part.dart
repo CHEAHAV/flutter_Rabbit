@@ -79,6 +79,12 @@ class PartMeta {
   /// the language of the questions, not one app-wide convention.
   final bool latinLabels;
 
+  /// The id of the part this subject is listed directly under, or null to
+  /// keep its place in catalog order. A new subject can only be appended to
+  /// the catalog, so this is how one that belongs beside an older subject is
+  /// shown there.
+  final int? shownAfter;
+
   const PartMeta({
     required this.titleKm,
     required this.titleEn,
@@ -86,12 +92,15 @@ class PartMeta {
     required this.track,
     this.level,
     this.latinLabels = false,
+    this.shownAfter,
   });
 }
 
 /// One subject of the question bank: parts 1-13 are the Khmer civil-service
 /// bank from QCM.pdf, parts 14-26 the English bank from grammar.pdf, and parts
-/// 27-29 the papers filed under the teacher course.
+/// 27-29 the papers filed under the teacher course, and parts 30-34 the
+/// papers on the border war, the Funan Techo canal, Techo airport, the
+/// Ministry of Interior and the 32nd SEA Games, listed under History.
 class ExamPart {
   final int id;
   final String titleKm;
@@ -130,7 +139,9 @@ class ExamPart {
   ///
   /// This is *not* the order the browser shows: courses are ordered by
   /// [PartTrack], and only the subjects within one course are shown in the
-  /// order they appear here (for the English courses, easiest rung upwards).
+  /// order they appear here (for the English courses, easiest rung upwards),
+  /// except that a subject with [PartMeta.shownAfter] is moved up under the
+  /// subject it names.
   static const List<PartMeta> catalog = [
     PartMeta(
       titleKm: 'អំពីប្រវត្តិសាស្ត្រ',
@@ -348,6 +359,60 @@ class ExamPart {
       titleEn: 'National Police & Prisons',
       icon: '👮',
       track: PartTrack.teaching,
+    ),
+    // Parts 30-32 are the three 50-question papers in assets/pdf/ on recent
+    // national events, listed directly under History, where the app's users
+    // asked for them.
+    //
+    // Part 30 is សង្គ្រាមជម្លោះព្រំដែនកម្ពុជា-សៀម.pdf, read from its text layer
+    // and its answer key.
+    PartMeta(
+      titleKm: 'អំពីសង្គ្រាមជម្លោះព្រំដែនកម្ពុជា-សៀម',
+      titleEn: 'Cambodia-Siam Border War',
+      icon: '🛡️',
+      track: PartTrack.civilService,
+      shownAfter: 1,
+    ),
+    // Part 31 is ព្រែកជីកហ្វូណនតេជោ.pdf. Its text layer is garbled, so it was
+    // transcribed from the page images. Its answer key is cut off after
+    // question 20, so the answers to 21-50 were judged from the options, and
+    // question 31, whose answer could not be established, was left out.
+    PartMeta(
+      titleKm: 'អំពីព្រែកជីកហ្វូណនតេជោ',
+      titleEn: 'Funan Techo Canal',
+      icon: '🚢',
+      track: PartTrack.civilService,
+      shownAfter: 1,
+    ),
+    // Part 32 is អាកាសយានដ្ឋានអន្តរជាតិតេជោ.pdf, read from its text layer and
+    // its answer key.
+    PartMeta(
+      titleKm: 'អំពីអាកាសយានដ្ឋានអន្តរជាតិតេជោ',
+      titleEn: 'Techo International Airport',
+      icon: '✈️',
+      track: PartTrack.civilService,
+      shownAfter: 1,
+    ),
+    // Part 33 is ក្រសួងមហាផ្ទៃកម្ពុជា.pdf, 200 questions read from its text
+    // layer. Its answer key leaves nearly every answer on ក, so the answers
+    // were checked against the options: nine were corrected, and questions 2
+    // and 8 were left out (one cannot be answered from its options, the other
+    // prints its answer in the stem). It follows parts 30-32 under History.
+    PartMeta(
+      titleKm: 'អំពីក្រសួងមហាផ្ទៃកម្ពុជា',
+      titleEn: 'Ministry of Interior',
+      icon: '🏢',
+      track: PartTrack.civilService,
+      shownAfter: 1,
+    ),
+    // Part 34 is ស៊ីហ្គេមលើកទី៣២ នៅកម្ពុជា.pdf, 50 questions read from its
+    // text layer and its answer key. It follows part 33 under History.
+    PartMeta(
+      titleKm: 'អំពីស៊ីហ្គេមលើកទី៣២ នៅកម្ពុជា',
+      titleEn: 'The 32nd SEA Games in Cambodia',
+      icon: '🏅',
+      track: PartTrack.civilService,
+      shownAfter: 1,
     ),
   ];
 }

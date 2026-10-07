@@ -2893,17 +2893,6 @@
         "a": 0
     },
     {
-        "id": 264,
-        "q": "What's _____ TV tonight?",
-        "o": [
-            "at",
-            "in",
-            "on",
-            "with"
-        ],
-        "a": 2
-    },
-    {
         "id": 265,
         "q": "I often go abroad _____ business.",
         "o": [
@@ -14014,17 +14003,6 @@
         "a": 0
     },
     {
-        "id": 1275,
-        "q": "Where is your mother? Is she _____ the hairdresser's again?",
-        "o": [
-            "in",
-            "on",
-            "at",
-            "_"
-        ],
-        "a": 2
-    },
-    {
         "id": 1276,
         "q": "Who's the blonde girl _____ the first raw?",
         "o": [
@@ -14036,17 +14014,6 @@
         "a": 0
     },
     {
-        "id": 1277,
-        "q": "You'll find the poem _____ page 16.",
-        "o": [
-            "at",
-            "on",
-            "in",
-            "_"
-        ],
-        "a": 1
-    },
-    {
         "id": 1278,
         "q": "He lived with Nomads _____ the Sahara desert for two days.",
         "o": [
@@ -14056,17 +14023,6 @@
             "of"
         ],
         "a": 2
-    },
-    {
-        "id": 1279,
-        "q": "I last saw her_____ the car park.",
-        "o": [
-            "in",
-            "at",
-            "on",
-            "-"
-        ],
-        "a": 0
     },
     {
         "id": 1280,
@@ -14089,61 +14045,6 @@
             "on"
         ],
         "a": 3
-    },
-    {
-        "id": 1282,
-        "q": "She said hello _____ everyone except me.",
-        "o": [
-            "to",
-            "_",
-            "at",
-            "of"
-        ],
-        "a": 0
-    },
-    {
-        "id": 1283,
-        "q": "She is worried _____ her exams.",
-        "o": [
-            "of",
-            "about",
-            "with",
-            "_"
-        ],
-        "a": 1
-    },
-    {
-        "id": 1284,
-        "q": "Tell us _____ your holiday.",
-        "o": [
-            "_",
-            "of",
-            "about",
-            "with"
-        ],
-        "a": 2
-    },
-    {
-        "id": 1285,
-        "q": "Will you come _____ bus or _____ a late train?",
-        "o": [
-            "by / by",
-            "on / in",
-            "by / on",
-            "in / by"
-        ],
-        "a": 2
-    },
-    {
-        "id": 1286,
-        "q": "I usually stay at home _____ night.",
-        "o": [
-            "on",
-            "at",
-            "in",
-            "over"
-        ],
-        "a": 1
     },
     {
         "id": 1287,
@@ -14179,39 +14080,6 @@
         "a": 3
     },
     {
-        "id": 1290,
-        "q": "John and Mary are talking _____ the telephone.",
-        "o": [
-            "_",
-            "to",
-            "on",
-            "with"
-        ],
-        "a": 2
-    },
-    {
-        "id": 1291,
-        "q": "Classes began _____ last week.",
-        "o": [
-            "in",
-            "_",
-            "at",
-            "on"
-        ],
-        "a": 1
-    },
-    {
-        "id": 1292,
-        "q": "They took my temperature _____ the operation.",
-        "o": [
-            "before",
-            "by",
-            "_",
-            "of"
-        ],
-        "a": 0
-    },
-    {
         "id": 1293,
         "q": "Do you take sugar _____ your tea?",
         "o": [
@@ -14223,17 +14091,6 @@
         "a": 0
     },
     {
-        "id": 1294,
-        "q": "I sometimes listen _____ the radio or watch _____ TV.",
-        "o": [
-            "of / on",
-            "to / on",
-            "_ / to",
-            "to / _"
-        ],
-        "a": 3
-    },
-    {
         "id": 1295,
         "q": "Are they going to stay _____ a tent?",
         "o": [
@@ -14241,28 +14098,6 @@
             "over",
             "on",
             "of"
-        ],
-        "a": 0
-    },
-    {
-        "id": 1296,
-        "q": "The Prime Minister arrived _____ Tokyo last night.",
-        "o": [
-            "_",
-            "in",
-            "at",
-            "to"
-        ],
-        "a": 1
-    },
-    {
-        "id": 1297,
-        "q": "I couldn't get _____ school in time.",
-        "o": [
-            "to",
-            "at",
-            "_",
-            "in"
         ],
         "a": 0
     },
@@ -14322,28 +14157,6 @@
         "a": 2
     },
     {
-        "id": 1303,
-        "q": "What are you interested _____?",
-        "o": [
-            "in",
-            "of",
-            "on",
-            "over"
-        ],
-        "a": 0
-    },
-    {
-        "id": 1304,
-        "q": "Please put your homework _____ my desk.",
-        "o": [
-            "at",
-            "to",
-            "on",
-            "with"
-        ],
-        "a": 2
-    },
-    {
         "id": 1305,
         "q": "He's lived _____ that street for many years.",
         "o": [
@@ -14353,39 +14166,6 @@
             "to"
         ],
         "a": 1
-    },
-    {
-        "id": 1306,
-        "q": "It takes about five minutes to walk _____ the bridge.",
-        "o": [
-            "over",
-            "to",
-            "at",
-            "till"
-        ],
-        "a": 1
-    },
-    {
-        "id": 1307,
-        "q": "I took the train _____ Dover to Ostend.",
-        "o": [
-            "by",
-            "on",
-            "of",
-            "from"
-        ],
-        "a": 3
-    },
-    {
-        "id": 1308,
-        "q": "David was very busy _____ the afternoon.",
-        "o": [
-            "with",
-            "on",
-            "at",
-            "in"
-        ],
-        "a": 3
     },
     {
         "id": 1309,
@@ -14419,28 +14199,6 @@
             "eat"
         ],
         "a": 1
-    },
-    {
-        "id": 1312,
-        "q": "Boys and girls go _____ dancing.",
-        "o": [
-            "to",
-            "at",
-            "_____",
-            "with"
-        ],
-        "a": 2
-    },
-    {
-        "id": 1313,
-        "q": "I'll phone _____ you tomorrow.",
-        "o": [
-            "to",
-            "at",
-            "on",
-            "_____"
-        ],
-        "a": 3
     },
     {
         "id": 1314,
@@ -14771,17 +14529,6 @@
             "in"
         ],
         "a": 3
-    },
-    {
-        "id": 1344,
-        "q": "I'm still waiting _____ the Blue Train.",
-        "o": [
-            "to",
-            "of",
-            "for",
-            "at"
-        ],
-        "a": 2
     },
     {
         "id": 1345,

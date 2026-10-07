@@ -1166,17 +1166,6 @@
         "a": 3
     },
     {
-        "id": 107,
-        "q": "Many cameras _____ in Japan.",
-        "o": [
-            "made",
-            "here",
-            "are making",
-            "are made"
-        ],
-        "a": 3
-    },
-    {
         "id": 108,
         "q": "Watson _____ needed here tomorrow.",
         "o": [
@@ -1516,28 +1505,6 @@
             "sitting"
         ],
         "a": 0
-    },
-    {
-        "id": 139,
-        "q": "Don't be nervous. I want you _____ .",
-        "o": [
-            "not nervous",
-            "to relax",
-            "relax",
-            "relaxing"
-        ],
-        "a": 1
-    },
-    {
-        "id": 140,
-        "q": "Excuse me, officer. I'd like you _____ me.",
-        "o": [
-            "helping",
-            "to help",
-            "help",
-            "for helping"
-        ],
-        "a": 1
     },
     {
         "id": 141,
@@ -2409,17 +2376,6 @@
         "a": 3
     },
     {
-        "id": 220,
-        "q": "The reason _____ I'm writing is to tell you about a party on Saturday.",
-        "o": [
-            "because",
-            "for",
-            "why",
-            "of"
-        ],
-        "a": 2
-    },
-    {
         "id": 221,
         "q": "Let's stay at home tonight, _____ you want to watch TV.",
         "o": [
@@ -3179,17 +3135,6 @@
         "a": 1
     },
     {
-        "id": 290,
-        "q": "Where's the book?",
-        "o": [
-            "There's it",
-            "He's under the chair",
-            "It's here",
-            "There's on a chair"
-        ],
-        "a": 2
-    },
-    {
         "id": 291,
         "q": "What's her brother doing?",
         "o": [
@@ -3300,17 +3245,6 @@
         "a": 2
     },
     {
-        "id": 301,
-        "q": "Is that a dog?",
-        "o": [
-            "Yes, it is",
-            "Yes, that's",
-            "Yes, it's that dog",
-            "Yes, a dog is that"
-        ],
-        "a": 0
-    },
-    {
         "id": 302,
         "q": "There are _____ in the classroom but only one teacher.",
         "o": [
@@ -3329,17 +3263,6 @@
             "gave the pen Tom",
             "gave to Tom the pen",
             "gave to the pen Tom"
-        ],
-        "a": 0
-    },
-    {
-        "id": 304,
-        "q": "There isn't _____ at the bus-stop.",
-        "o": [
-            "anybody",
-            "any persons",
-            "people",
-            "somebody"
         ],
         "a": 0
     },
@@ -3432,28 +3355,6 @@
         "a": 1
     },
     {
-        "id": 313,
-        "q": "This is _____ that.",
-        "o": [
-            "the same as",
-            "the same that",
-            "different that",
-            "different"
-        ],
-        "a": 0
-    },
-    {
-        "id": 314,
-        "q": "I don't know who _____ chocolate.",
-        "o": [
-            "like",
-            "likes",
-            "is liking",
-            "is like"
-        ],
-        "a": 1
-    },
-    {
         "id": 315,
         "q": "Fred eats _____ bread.",
         "o": [
@@ -3474,17 +3375,6 @@
             "is"
         ],
         "a": 0
-    },
-    {
-        "id": 317,
-        "q": "Ask him _____ .",
-        "o": [
-            "how old is he",
-            "how old he is",
-            "Helen is",
-            "how old he has"
-        ],
-        "a": 1
     },
     {
         "id": 318,
@@ -5093,17 +4983,6 @@
         "a": 3
     },
     {
-        "id": 464,
-        "q": "Mary _____ the house early yesterday morning",
-        "o": [
-            "lived",
-            "left",
-            "has left",
-            "leaves"
-        ],
-        "a": 1
-    },
-    {
         "id": 465,
         "q": "Has she ever _____ her leg?",
         "o": [
@@ -5300,17 +5179,6 @@
             "don't"
         ],
         "a": 0
-    },
-    {
-        "id": 483,
-        "q": "It's been rainy all afternoon, _____ it?",
-        "o": [
-            "wasn't",
-            "isn't",
-            "hasn't",
-            "doesn't"
-        ],
-        "a": 2
     },
     {
         "id": 484,
@@ -8657,17 +8525,6 @@
         "a": 2
     },
     {
-        "id": 788,
-        "q": "This is _____ friend.",
-        "o": [
-            "Helen",
-            "Helen's",
-            "one of Helen's",
-            "of Helen's"
-        ],
-        "a": 1
-    },
-    {
         "id": 789,
         "q": "Maria _____ at home yesterday.",
         "o": [
@@ -9031,17 +8888,6 @@
         "a": 1
     },
     {
-        "id": 822,
-        "q": "Are there six books on the table?",
-        "o": [
-            "No, five are.",
-            "No, there is.",
-            "No, there are three.",
-            "No, there are any."
-        ],
-        "a": 2
-    },
-    {
         "id": 823,
         "q": "A: _____ does she go to work? B: At nine o'clock.",
         "o": [
@@ -9394,17 +9240,6 @@
         "a": 2
     },
     {
-        "id": 855,
-        "q": "This is my friend _____ house is near mine.",
-        "o": [
-            "who lives is",
-            "who is",
-            "whose",
-            "in his"
-        ],
-        "a": 2
-    },
-    {
         "id": 856,
         "q": "Helen is wearing a jacket _____ is red.",
         "o": [
@@ -9522,17 +9357,6 @@
             "are looking at",
             "is looking at",
             "are looking"
-        ],
-        "a": 1
-    },
-    {
-        "id": 867,
-        "q": "Do they live in England?",
-        "o": [
-            "Yes, they live.",
-            "No, they don't.",
-            "Yes, they are.",
-            "No, they don't live"
         ],
         "a": 1
     },
@@ -9834,17 +9658,6 @@
         "a": 2
     },
     {
-        "id": 895,
-        "q": "Where _____ yesterday?",
-        "o": [
-            "was you",
-            "have you been",
-            "did you",
-            "were you"
-        ],
-        "a": 3
-    },
-    {
         "id": 896,
         "q": "Where _____ .",
         "o": [
@@ -9865,17 +9678,6 @@
             "He's a pilot"
         ],
         "a": 3
-    },
-    {
-        "id": 898,
-        "q": "Do you dance or draw?",
-        "o": [
-            "I'm dancing but drawing.",
-            "I'm dancing, but I not drawing.",
-            "I dance, but I don't draw.",
-            "I dance, but I am not drawing."
-        ],
-        "a": 2
     },
     {
         "id": 899,
@@ -10043,28 +9845,6 @@
         "a": 3
     },
     {
-        "id": 914,
-        "q": "There wasn't _____ traffic on that street last night.",
-        "o": [
-            "many",
-            "some",
-            "a little",
-            "much"
-        ],
-        "a": 3
-    },
-    {
-        "id": 915,
-        "q": "He has spent a large _____ of money on his new house.",
-        "o": [
-            "deal",
-            "amount",
-            "number",
-            "place"
-        ],
-        "a": 1
-    },
-    {
         "id": 916,
         "q": "Helen has answered _____ questions.",
         "o": [
@@ -10230,17 +10010,6 @@
         "a": 3
     },
     {
-        "id": 931,
-        "q": "I've just finished _____ my shopping.",
-        "o": [
-            "to make",
-            "doing",
-            "to do",
-            "to"
-        ],
-        "a": 1
-    },
-    {
         "id": 932,
         "q": "Do you know where _____ ?",
         "o": [
@@ -10380,17 +10149,6 @@
             "listening",
             "listening to",
             "to listen to"
-        ],
-        "a": 2
-    },
-    {
-        "id": 945,
-        "q": "Would you mind _____ the window?",
-        "o": [
-            "open",
-            "to open",
-            "opening",
-            "opened"
         ],
         "a": 2
     },
@@ -10791,17 +10549,6 @@
         "a": 3
     },
     {
-        "id": 982,
-        "q": "A: Whose is that? B: It's _____ .",
-        "o": [
-            "my",
-            "ours",
-            "of Tom",
-            "my sisters."
-        ],
-        "a": 1
-    },
-    {
         "id": 983,
         "q": "I didn't call the police. My son didn't call _____ .",
         "o": [
@@ -11154,17 +10901,6 @@
         "a": 1
     },
     {
-        "id": 1015,
-        "q": "She felt ill after _____ the food.",
-        "o": [
-            "eat",
-            "eating",
-            "to eat",
-            "eaten"
-        ],
-        "a": 1
-    },
-    {
         "id": 1016,
         "q": "I saw somebody _____ towards your house.",
         "o": [
@@ -11374,17 +11110,6 @@
         "a": 0
     },
     {
-        "id": 1035,
-        "q": "This is an old photograph of me when I _____ .",
-        "o": [
-            "was having short hair",
-            "have short hair",
-            "have had",
-            "had short hair"
-        ],
-        "a": 3
-    },
-    {
         "id": 1036,
         "q": "A: What is your new partner like? B: She _____ .",
         "o": [
@@ -11570,17 +11295,6 @@
             "usually does Ali do"
         ],
         "a": 1
-    },
-    {
-        "id": 1053,
-        "q": "_____ lovely food!",
-        "o": [
-            "Which",
-            "How",
-            "What",
-            "Where"
-        ],
-        "a": 2
     },
     {
         "id": 1054,
@@ -12375,17 +12089,6 @@
         "a": 1
     },
     {
-        "id": 1126,
-        "q": "I look forward _____ you soon.",
-        "o": [
-            "of visiting",
-            "to visiting",
-            "to visit",
-            "will visit"
-        ],
-        "a": 1
-    },
-    {
         "id": 1127,
         "q": "Before _____ to the meeting, Harry was at his office.",
         "o": [
@@ -12672,17 +12375,6 @@
         "a": 2
     },
     {
-        "id": 1153,
-        "q": "He can climb trees _____ a monkey.",
-        "o": [
-            "as though",
-            "like",
-            "as",
-            "as if"
-        ],
-        "a": 1
-    },
-    {
         "id": 1154,
         "q": "_____ poverty in the world.",
         "o": [
@@ -12826,17 +12518,6 @@
         "a": 0
     },
     {
-        "id": 1167,
-        "q": "Wilma _____ called if she had forgotten her keys.",
-        "o": [
-            "had",
-            "was",
-            "would",
-            "would have"
-        ],
-        "a": 3
-    },
-    {
         "id": 1168,
         "q": "If they _____ harder, they would succeed.",
         "o": [
@@ -12879,17 +12560,6 @@
             "sent"
         ],
         "a": 1
-    },
-    {
-        "id": 1172,
-        "q": "When the door _____ Frank was very surprised.",
-        "o": [
-            "opens",
-            "is opened",
-            "was opened",
-            "shuts"
-        ],
-        "a": 2
     },
     {
         "id": 1173,
@@ -13233,17 +12903,6 @@
         "a": 3
     },
     {
-        "id": 1204,
-        "q": "_____ to become a film star.",
-        "o": [
-            "Every child want",
-            "Not every child wants",
-            "Not every child want",
-            "Not children want"
-        ],
-        "a": 1
-    },
-    {
         "id": 1205,
         "q": "Next month you _____.",
         "o": [
@@ -13321,17 +12980,6 @@
         "a": 3
     },
     {
-        "id": 1212,
-        "q": "Men _____ work is good receive high wages.",
-        "o": [
-            "whom",
-            "who",
-            "whose",
-            "of whom"
-        ],
-        "a": 2
-    },
-    {
         "id": 1213,
         "q": "Children _____ behavior is bad may be punished.",
         "o": [
@@ -13405,17 +13053,6 @@
             "getting up",
             "can get up",
             "gotten up"
-        ],
-        "a": 1
-    },
-    {
-        "id": 1220,
-        "q": "How _____ from Leeds to Liverpool?",
-        "o": [
-            "far is there",
-            "far is it",
-            "long is there",
-            "long is it"
         ],
         "a": 1
     },
@@ -14685,17 +14322,6 @@
         "a": 2
     },
     {
-        "id": 1336,
-        "q": "James wants to buy a new car; _____, he doesn't have enough money",
-        "o": [
-            "therefore",
-            "however",
-            "moreover",
-            "consequently"
-        ],
-        "a": 1
-    },
-    {
         "id": 1337,
         "q": "Mrs. Chunk doesn't enjoy driving, and _____ .",
         "o": [
@@ -14804,17 +14430,6 @@
             "have to keep"
         ],
         "a": 0
-    },
-    {
-        "id": 1347,
-        "q": "The painters _____ finished their work by tomorrow.",
-        "o": [
-            "have",
-            "will have",
-            "have been",
-            "had"
-        ],
-        "a": 1
     },
     {
         "id": 1348,
@@ -15290,17 +14905,6 @@
         "a": 2
     },
     {
-        "id": 1391,
-        "q": "The children _____ play with them.",
-        "o": [
-            "want that I",
-            "want me to",
-            "want me for",
-            "want my"
-        ],
-        "a": 1
-    },
-    {
         "id": 1392,
         "q": "Send him to the baker's _____ some bread.",
         "o": [
@@ -15552,17 +15156,6 @@
             "If there is one important drawback of aerobics."
         ],
         "a": 0
-    },
-    {
-        "id": 1415,
-        "q": "I insisted that he _____ me the money.",
-        "o": [
-            "is paying",
-            "pays",
-            "was paying",
-            "pay"
-        ],
-        "a": 3
     },
     {
         "id": 1416,
@@ -16940,17 +16533,6 @@
         "a": 1
     },
     {
-        "id": 1541,
-        "q": "I'm afraid we can't agree _____ each other _____ anything.",
-        "o": [
-            "with/on",
-            "with/with",
-            "on/on",
-            "on/with"
-        ],
-        "a": 0
-    },
-    {
         "id": 1542,
         "q": "The fluctuation in the money market is _____ worries the economists.",
         "o": [
@@ -17169,17 +16751,6 @@
             "Would"
         ],
         "a": 1
-    },
-    {
-        "id": 1562,
-        "q": "Would Bruce _____ his car if he had driven slowly?",
-        "o": [
-            "damage",
-            "have damage",
-            "have damaged",
-            "damaged"
-        ],
-        "a": 2
     },
     {
         "id": 1563,
@@ -17587,17 +17158,6 @@
             "that it"
         ],
         "a": 1
-    },
-    {
-        "id": 1600,
-        "q": "He imagined the man _____ him.",
-        "o": [
-            "to be following",
-            "were following",
-            "want to follow",
-            "follow"
-        ],
-        "a": 0
     },
     {
         "id": 1601,
@@ -18073,17 +17633,6 @@
         "a": 0
     },
     {
-        "id": 1644,
-        "q": "Jean has _____ paid a good salary.",
-        "o": [
-            "been",
-            "being",
-            "had",
-            "_____"
-        ],
-        "a": 0
-    },
-    {
         "id": 1645,
         "q": "Al repairs are _____ without charge.",
         "o": [
@@ -18150,17 +17699,6 @@
         "a": 2
     },
     {
-        "id": 1651,
-        "q": "They were in danger of _____ .",
-        "o": [
-            "injured",
-            "injure",
-            "been injured",
-            "being injured"
-        ],
-        "a": 3
-    },
-    {
         "id": 1652,
         "q": "_____ her never- ending energy, the project turned out to be a failure.",
         "o": [
@@ -18192,17 +17730,6 @@
             "What I wanted to do"
         ],
         "a": 3
-    },
-    {
-        "id": 1655,
-        "q": "_____best is riding horses.",
-        "o": [
-            "She likes",
-            "What she likes",
-            "That she likes",
-            "What she is like"
-        ],
-        "a": 1
     },
     {
         "id": 1656,
@@ -18271,17 +17798,6 @@
         "a": 1
     },
     {
-        "id": 1662,
-        "q": "The landlord _____ just rented the apartment when I got there.",
-        "o": [
-            "was",
-            "had been",
-            "have",
-            "had"
-        ],
-        "a": 3
-    },
-    {
         "id": 1663,
         "q": "Nucleoproteins are the essential chemicals _____ living matter duplicates itself.",
         "o": [
@@ -18344,17 +17860,6 @@
             "accidents occur",
             "occurring accidents",
             "an accident has occurred"
-        ],
-        "a": 0
-    },
-    {
-        "id": 1669,
-        "q": "I thought that he _____ something for me.",
-        "o": [
-            "was supposed to do",
-            "was supposed to",
-            "is supposed to do",
-            "is supposed to"
         ],
         "a": 0
     },
@@ -18667,17 +18172,6 @@
         "a": 0
     },
     {
-        "id": 1698,
-        "q": "Tom is waiting _____ the doctor.",
-        "o": [
-            "to see",
-            "for to see",
-            "for seeing",
-            "see"
-        ],
-        "a": 0
-    },
-    {
         "id": 1699,
         "q": "I haven't a chair _____.",
         "o": [
@@ -18720,17 +18214,6 @@
             "of whom"
         ],
         "a": 1
-    },
-    {
-        "id": 1703,
-        "q": "A person who talks to _____ is not necessarily mad.",
-        "o": [
-            "himself",
-            "oneself",
-            "him",
-            "itself"
-        ],
-        "a": 0
     },
     {
         "id": 1704,
@@ -18962,17 +18445,6 @@
             "is closed"
         ],
         "a": 0
-    },
-    {
-        "id": 1725,
-        "q": "The last time _____ to the library was last week.",
-        "o": [
-            "I have gone",
-            "I have been to",
-            "I was",
-            "I went"
-        ],
-        "a": 3
     },
     {
         "id": 1726,
@@ -19393,17 +18865,6 @@
         "a": 1
     },
     {
-        "id": 1764,
-        "q": "You _____ drive carefully. The roads are wet.",
-        "o": [
-            "would rather",
-            "had better",
-            "had rather",
-            "are better"
-        ],
-        "a": 1
-    },
-    {
         "id": 1765,
         "q": "Mary _____ be in Paris because I saw her here in Ankara only two hours ago.",
         "o": [
@@ -19411,17 +18872,6 @@
             "mustn't be",
             "isn't able to",
             "may not"
-        ],
-        "a": 0
-    },
-    {
-        "id": 1766,
-        "q": "He's _____ to know the answer.",
-        "o": [
-            "likely",
-            "probably",
-            "maybe",
-            "obviously"
         ],
         "a": 0
     },
@@ -19624,17 +19074,6 @@
         "a": 0
     },
     {
-        "id": 1785,
-        "q": "Take an umbrella _____ it rains.",
-        "o": [
-            "so that",
-            "in case",
-            "so",
-            "_ _ _"
-        ],
-        "a": 1
-    },
-    {
         "id": 1786,
         "q": "Have something to eat _____ you can't get anything to eat later.",
         "o": [
@@ -19800,17 +19239,6 @@
         "a": 1
     },
     {
-        "id": 1801,
-        "q": "War and Peace is a long novel _____by Leo Tolstoy.",
-        "o": [
-            "written",
-            "it was written",
-            "was written",
-            "wrote"
-        ],
-        "a": 0
-    },
-    {
         "id": 1802,
         "q": "His parents died when he was young, so he was _____ by his aunt.",
         "o": [
@@ -19820,17 +19248,6 @@
             "grown"
         ],
         "a": 2
-    },
-    {
-        "id": 1803,
-        "q": "Don't make him _____ it if he doesn't want to.",
-        "o": [
-            "do",
-            "doing",
-            "to do",
-            "done"
-        ],
-        "a": 0
     },
     {
         "id": 1804,
@@ -20075,39 +19492,6 @@
         "a": 2
     },
     {
-        "id": 1826,
-        "q": "_____ the weather was fine, I opened all the windows.",
-        "o": [
-            "As",
-            "Because of",
-            "Due to",
-            "Since that"
-        ],
-        "a": 0
-    },
-    {
-        "id": 1827,
-        "q": "I'll leave him a note _____ he'll know where we are.",
-        "o": [
-            "so that",
-            "that",
-            "in order that",
-            "for"
-        ],
-        "a": 0
-    },
-    {
-        "id": 1828,
-        "q": "_____ he worked all day, he couldn't finish the job.",
-        "o": [
-            "Even",
-            "In case",
-            "So",
-            "Although"
-        ],
-        "a": 3
-    },
-    {
         "id": 1829,
         "q": "_____, the music company cancelled the record contract.",
         "o": [
@@ -20117,17 +19501,6 @@
             "The band broke up"
         ],
         "a": 0
-    },
-    {
-        "id": 1830,
-        "q": "It's difficult to make both ends meet these days, the taxes _____ so high.",
-        "o": [
-            "with",
-            "being",
-            "are",
-            "be"
-        ],
-        "a": 1
     },
     {
         "id": 1831,
@@ -20328,17 +19701,6 @@
         "a": 1
     },
     {
-        "id": 1849,
-        "q": "Is this _____ looking for?",
-        "o": [
-            "you were",
-            "that you were",
-            "what you were",
-            "which you were"
-        ],
-        "a": 2
-    },
-    {
         "id": 1850,
         "q": "The UN has destroyed an Iraqi factory which _____ to produce biological weapons.",
         "o": [
@@ -20370,17 +19732,6 @@
             "talked"
         ],
         "a": 1
-    },
-    {
-        "id": 1853,
-        "q": "He didn't thank me for the present. That is _____ annoyed me.",
-        "o": [
-            "_ _ _",
-            "the thing",
-            "what",
-            "the thing what"
-        ],
-        "a": 2
     },
     {
         "id": 1854,

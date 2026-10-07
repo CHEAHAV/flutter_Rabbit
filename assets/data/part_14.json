@@ -6919,17 +6919,6 @@
         "a": 0
     },
     {
-        "id": 630,
-        "q": "Help me _____ my homework.",
-        "o": [
-            "in",
-            "by",
-            "with",
-            "on"
-        ],
-        "a": 2
-    },
-    {
         "id": 631,
         "q": "These exercises are _____ in the exam.",
         "o": [
@@ -6972,17 +6961,6 @@
             "not"
         ],
         "a": 1
-    },
-    {
-        "id": 635,
-        "q": "Last week was _____ than this week.",
-        "o": [
-            "busy",
-            "more busy",
-            "busier",
-            "the busiest"
-        ],
-        "a": 2
     },
     {
         "id": 636,
@@ -9856,17 +9834,6 @@
         "a": 2
     },
     {
-        "id": 897,
-        "q": "What's that man?",
-        "o": [
-            "He's John.",
-            "Yes, it's a man.",
-            "It's John.",
-            "He's a teacher."
-        ],
-        "a": 3
-    },
-    {
         "id": 898,
         "q": "Do you like the boat?",
         "o": [
@@ -12296,17 +12263,6 @@
             "has got"
         ],
         "a": 2
-    },
-    {
-        "id": 1119,
-        "q": "What's that man?",
-        "o": [
-            "He's Eric.",
-            "It's Bill.",
-            "He's student.",
-            "He's a teacher."
-        ],
-        "a": 3
     },
     {
         "id": 1120,

@@ -7186,17 +7186,6 @@
         "a": 1
     },
     {
-        "id": 642,
-        "q": "Find the words which are out of the logic list. ",
-        "o": [
-            "sun",
-            "sand",
-            "star",
-            "sky"
-        ],
-        "a": 1
-    },
-    {
         "id": 643,
         "q": "Find the words which are out of the logic list. ",
         "o": [
@@ -7228,17 +7217,6 @@
             "stream"
         ],
         "a": 1
-    },
-    {
-        "id": 646,
-        "q": "Find the words which are out of the logic list. ",
-        "o": [
-            "wrong",
-            "true",
-            "right",
-            "correct"
-        ],
-        "a": 0
     },
     {
         "id": 647,

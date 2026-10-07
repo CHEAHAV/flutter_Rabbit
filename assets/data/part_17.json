@@ -6347,17 +6347,6 @@
         "a": 3
     },
     {
-        "id": 578,
-        "q": "_____ you say to her, she still keeps smiling.",
-        "o": [
-            "However",
-            "Moreover",
-            "Whatever",
-            "Whenever"
-        ],
-        "a": 2
-    },
-    {
         "id": 579,
         "q": "You shouldn't be rude, _____ you're very angry.",
         "o": [
@@ -8160,17 +8149,6 @@
             "in"
         ],
         "a": 1
-    },
-    {
-        "id": 743,
-        "q": "I last saw her _____ the car park.",
-        "o": [
-            "in",
-            "at",
-            "on",
-            "over"
-        ],
-        "a": 0
     },
     {
         "id": 744,
@@ -10349,17 +10327,6 @@
             "on"
         ],
         "a": 0
-    },
-    {
-        "id": 942,
-        "q": "What are you interested _____?",
-        "o": [
-            "at",
-            "on",
-            "by",
-            "in"
-        ],
-        "a": 3
     },
     {
         "id": 943,
@@ -13154,17 +13121,6 @@
             "to be filled"
         ],
         "a": 1
-    },
-    {
-        "id": 1197,
-        "q": "It is probably about time we _____ the car serviced.",
-        "o": [
-            "have",
-            "having",
-            "had",
-            "to have"
-        ],
-        "a": 2
     },
     {
         "id": 1198,
